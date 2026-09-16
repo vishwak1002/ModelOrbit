@@ -26,6 +26,7 @@ Read the [MVP plan](docs/mvp-plan.md) and [handoff](docs/handoff.md) before chan
 - `data/snapshots`: immutable source inputs.
 - `data/research`: dated discovery inventory and reproducibility notes.
 - `evidence/runs`: validated benchmark artifacts, never model weights.
+- `data/research/remote`: credential-free, dated public-source research snapshots from the remote GitHub Actions collector.
 
 ## Trust boundary
 
@@ -46,6 +47,7 @@ The research inventory is validated and the host-specific POC/preflight status c
 npm run research:validate
 npm run research:preflight
 npm run research:poc-status
+npm run research:remote:validate
 npm test
 npm run validate
 ```

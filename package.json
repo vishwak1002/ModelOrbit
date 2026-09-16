@@ -14,6 +14,8 @@
     "normalize": "node tools/normalize-snapshot.mjs && node tools/build-read-model.mjs",
     "research:validate": "node tools/research/validate-inventory.mjs",
     "research:poc-status": "node tools/research/build-poc-status.mjs",
-    "research:preflight": "node tools/research/build-preflight.mjs"
+    "research:preflight": "node tools/research/build-preflight.mjs",
+    "research:remote:collect": "node tools/ingest/collect-remote-research.mjs",
+    "research:remote:validate": "node tools/ingest/validate-remote-research.mjs"
   }
 }

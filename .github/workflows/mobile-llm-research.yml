@@ -1,4 +1,4 @@
-name: ModelOrbit mobile LLM research
+name: ModelOrbit free remote mobile LLM research
 
 on:
   schedule:
@@ -16,7 +16,7 @@ permissions:
 jobs:
   research:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 20
     steps:
       - name: Check out ModelOrbit
         uses: actions/checkout@v4
@@ -28,17 +28,12 @@ jobs:
         with:
           node-version: 22
 
-      - name: Run Codex research agent
-        uses: openai/codex-action@v1
-        with:
-          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
-          permission-profile: ":workspace"
-          safety-strategy: drop-sudo
-          effort: high
-          prompt-file: .github/prompts/mobile-llm-research.md
+      - name: Collect public research evidence
+        run: npm run research:remote:collect
 
-      - name: Validate repository and research artifacts
+      - name: Validate collected evidence and repository
         run: |
+          npm run research:remote:validate
           npm test
           npm run validate
           npm run research:validate
@@ -58,7 +53,7 @@ jobs:
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add .github/prompts .github/workflows data docs evidence packages pocs test tools README.md package.json
+          git add -A .github data/research/remote docs/handoff.md README.md package.json spec test tools/ingest
           git diff --cached --check
           git commit -m "chore: refresh mobile LLM research"
           git push origin HEAD:main

@@ -1,0 +1,2240 @@
+{
+  "schemaVersion": "0.1.0",
+  "snapshotId": "remote-mobile-llm-2026-09-16T21-01-19-654Z",
+  "collectedAt": "2026-09-16T21:01:19.654Z",
+  "collector": {
+    "name": "ModelOrbit free remote research collector",
+    "version": "1.0.0",
+    "credentialsRequired": false,
+    "rawPayloadsCommitted": false
+  },
+  "scope": {
+    "purpose": "Collect public leads for mobile-specific open-source LLM research before manual Codex synthesis.",
+    "modelFilter": "Hugging Face text-generation repositories returned by mobile, ExecuTorch, edge-LLM, and Core ML searches.",
+    "communitySources": [
+      "Hacker News",
+      "Reddit r/LocalLLaMA",
+      "Bluesky public search"
+    ]
+  },
+  "sources": [
+    {
+      "sourceId": "huggingface-models",
+      "authority": "huggingface",
+      "sourceType": "public-model-api",
+      "url": "https://huggingface.co/models?pipeline_tag=text-generation",
+      "status": "ok",
+      "itemCount": 50,
+      "items": [
+        {
+          "modelId": "facebook/MobileLLM-125M",
+          "repositoryUrl": "https://huggingface.co/facebook/MobileLLM-125M",
+          "revision": "f6820a829b347aaa6674a705c82be3db47b1f9ee",
+          "pipelineTag": "text-generation",
+          "libraryName": "transformers",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 1870,
+          "likes": 136,
+          "lastModified": "2025-05-05T21:32:24.000Z",
+          "gated": true,
+          "tags": [
+            "transformers",
+            "pytorch",
+            "mobilellm",
+            "text-generation",
+            "facebook",
+            "meta",
+            "custom_code",
+            "en",
+            "arxiv:2402.14905",
+            "license:other",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "mobile",
+            "llm"
+          ],
+          "discoveryScore": 59.4,
+          "evidenceUrls": [
+            "https://huggingface.co/facebook/MobileLLM-125M",
+            "https://huggingface.co/facebook/MobileLLM-125M/tree/f6820a829b347aaa6674a705c82be3db47b1f9ee"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "software-mansion/react-native-executorch-gemma-4",
+          "repositoryUrl": "https://huggingface.co/software-mansion/react-native-executorch-gemma-4",
+          "revision": "e20831dd07f0f0d2bb6ee85e204e974a8a69b903",
+          "pipelineTag": "text-generation",
+          "libraryName": "executorch",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 3775,
+          "likes": 3,
+          "lastModified": "2026-09-07T13:54:38.000Z",
+          "gated": false,
+          "tags": [
+            "executorch",
+            "google",
+            "deepmind",
+            "gemma4",
+            "edge",
+            "text-generation",
+            "base_model:google/gemma-4-E2B",
+            "base_model:quantized:google/gemma-4-E2B",
+            "license:gemma",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "executorch",
+            "edge"
+          ],
+          "discoveryScore": 54.78,
+          "evidenceUrls": [
+            "https://huggingface.co/software-mansion/react-native-executorch-gemma-4",
+            "https://huggingface.co/software-mansion/react-native-executorch-gemma-4/tree/e20831dd07f0f0d2bb6ee85e204e974a8a69b903"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "enterprise-explorers/Llama-2-7b-chat-coreml",
+          "repositoryUrl": "https://huggingface.co/enterprise-explorers/Llama-2-7b-chat-coreml",
+          "revision": "eaf97358a37d03fd48e5a87d15aff2e8423c1afb",
+          "pipelineTag": "text-generation",
+          "libraryName": "transformers",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 3142,
+          "likes": 136,
+          "lastModified": "2023-07-18T22:34:22.000Z",
+          "gated": false,
+          "tags": [
+            "transformers",
+            "coreml",
+            "llama",
+            "text-generation",
+            "meta",
+            "llama-2",
+            "license:other",
+            "endpoints_compatible",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "coreml"
+          ],
+          "discoveryScore": 53.66,
+          "evidenceUrls": [
+            "https://huggingface.co/enterprise-explorers/Llama-2-7b-chat-coreml",
+            "https://huggingface.co/enterprise-explorers/Llama-2-7b-chat-coreml/tree/eaf97358a37d03fd48e5a87d15aff2e8423c1afb"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "software-mansion/react-native-executorch-qwen-3",
+          "repositoryUrl": "https://huggingface.co/software-mansion/react-native-executorch-qwen-3",
+          "revision": "0049de4e78cdb61ac146db07e55f0d34a05529b7",
+          "pipelineTag": "text-generation",
+          "libraryName": "executorch",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 12638,
+          "likes": 5,
+          "lastModified": "2026-09-07T13:55:09.000Z",
+          "gated": false,
+          "tags": [
+            "executorch",
+            "text-generation",
+            "conversational",
+            "license:apache-2.0",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "executorch"
+          ],
+          "discoveryScore": 52.91,
+          "evidenceUrls": [
+            "https://huggingface.co/software-mansion/react-native-executorch-qwen-3",
+            "https://huggingface.co/software-mansion/react-native-executorch-qwen-3/tree/0049de4e78cdb61ac146db07e55f0d34a05529b7"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "software-mansion/react-native-executorch-qwen-2.5",
+          "repositoryUrl": "https://huggingface.co/software-mansion/react-native-executorch-qwen-2.5",
+          "revision": "317a0eac7f04d9c83fdf17e5a5a3fc615350d0ec",
+          "pipelineTag": "text-generation",
+          "libraryName": "executorch",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 27982,
+          "likes": 0,
+          "lastModified": "2026-09-07T13:55:08.000Z",
+          "gated": false,
+          "tags": [
+            "executorch",
+            "text-generation",
+            "conversational",
+            "license:apache-2.0",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "executorch"
+          ],
+          "discoveryScore": 52.47,
+          "evidenceUrls": [
+            "https://huggingface.co/software-mansion/react-native-executorch-qwen-2.5",
+            "https://huggingface.co/software-mansion/react-native-executorch-qwen-2.5/tree/317a0eac7f04d9c83fdf17e5a5a3fc615350d0ec"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "software-mansion/react-native-executorch-smolLm-2",
+          "repositoryUrl": "https://huggingface.co/software-mansion/react-native-executorch-smolLm-2",
+          "revision": "ca256eec04136b82507d78d08e22a95ddd9172d2",
+          "pipelineTag": "text-generation",
+          "libraryName": "executorch",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 2587,
+          "likes": 1,
+          "lastModified": "2026-09-07T13:55:20.000Z",
+          "gated": false,
+          "tags": [
+            "executorch",
+            "text-generation",
+            "conversational",
+            "license:apache-2.0",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "executorch",
+            "llm"
+          ],
+          "discoveryScore": 51.63,
+          "evidenceUrls": [
+            "https://huggingface.co/software-mansion/react-native-executorch-smolLm-2",
+            "https://huggingface.co/software-mansion/react-native-executorch-smolLm-2/tree/ca256eec04136b82507d78d08e22a95ddd9172d2"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "litert-community/functiongemma-270m-ft-mobile-actions",
+          "repositoryUrl": "https://huggingface.co/litert-community/functiongemma-270m-ft-mobile-actions",
+          "revision": "f752a74080682b379823794defdbbdf8c2663609",
+          "pipelineTag": "text-generation",
+          "libraryName": "litert-lm",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 976,
+          "likes": 225,
+          "lastModified": "2026-08-31T13:49:04.000Z",
+          "gated": true,
+          "tags": [
+            "litert-lm",
+            "gemma3",
+            "gemma",
+            "functiongemma",
+            "text-generation",
+            "base_model:google/functiongemma-270m-it",
+            "base_model:finetune:google/functiongemma-270m-it",
+            "license:gemma",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "mobile"
+          ],
+          "discoveryScore": 49.67,
+          "evidenceUrls": [
+            "https://huggingface.co/litert-community/functiongemma-270m-ft-mobile-actions",
+            "https://huggingface.co/litert-community/functiongemma-270m-ft-mobile-actions/tree/f752a74080682b379823794defdbbdf8c2663609"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "software-mansion/react-native-executorch-llama-3.2",
+          "repositoryUrl": "https://huggingface.co/software-mansion/react-native-executorch-llama-3.2",
+          "revision": "79216107364ad9dcad8df0c24a2165aaa9c5cbda",
+          "pipelineTag": "text-generation",
+          "libraryName": "executorch",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 8453,
+          "likes": 1,
+          "lastModified": "2026-09-07T15:10:25.000Z",
+          "gated": false,
+          "tags": [
+            "executorch",
+            "text-generation",
+            "conversational",
+            "license:llama3.2",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "executorch"
+          ],
+          "discoveryScore": 48.78,
+          "evidenceUrls": [
+            "https://huggingface.co/software-mansion/react-native-executorch-llama-3.2",
+            "https://huggingface.co/software-mansion/react-native-executorch-llama-3.2/tree/79216107364ad9dcad8df0c24a2165aaa9c5cbda"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "smkrv/Qwen3-0.6B-CoreML-4bit",
+          "repositoryUrl": "https://huggingface.co/smkrv/Qwen3-0.6B-CoreML-4bit",
+          "revision": "e136da1d48ee962fb3d3a6014143be43d38eb76c",
+          "pipelineTag": "text-generation",
+          "libraryName": "coreml",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 23,
+          "likes": 2,
+          "lastModified": "2025-12-03T00:42:32.000Z",
+          "gated": false,
+          "tags": [
+            "coreml",
+            "apple-silicon",
+            "neural-engine",
+            "ane",
+            "llm",
+            "quantized",
+            "4bit",
+            "mobile",
+            "ios",
+            "macos",
+            "qwen3",
+            "text-generation",
+            "en",
+            "zh",
+            "multilingual",
+            "ru",
+            "base_model:Qwen/Qwen3-0.6B",
+            "base_model:quantized:Qwen/Qwen3-0.6B",
+            "license:apache-2.0",
+            "model-index",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "mobile",
+            "ios",
+            "coreml",
+            "llm"
+          ],
+          "discoveryScore": 48.19,
+          "evidenceUrls": [
+            "https://huggingface.co/smkrv/Qwen3-0.6B-CoreML-4bit",
+            "https://huggingface.co/smkrv/Qwen3-0.6B-CoreML-4bit/tree/e136da1d48ee962fb3d3a6014143be43d38eb76c"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "experimentalmachines/SmolLM2-135M-Instruct-ExecuTorch",
+          "repositoryUrl": "https://huggingface.co/experimentalmachines/SmolLM2-135M-Instruct-ExecuTorch",
+          "revision": "4fa535d4e735db3c0aa57e3c29fbf26be82ac3b3",
+          "pipelineTag": "text-generation",
+          "libraryName": "executorch",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 36,
+          "likes": 0,
+          "lastModified": "2026-09-13T16:32:44.000Z",
+          "gated": false,
+          "tags": [
+            "executorch",
+            "android",
+            "on-device",
+            "openweights",
+            "qnn",
+            "xnnpack",
+            "text-generation",
+            "base_model:HuggingFaceTB/SmolLM2-135M-Instruct",
+            "base_model:quantized:HuggingFaceTB/SmolLM2-135M-Instruct",
+            "license:apache-2.0",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "android",
+            "executorch",
+            "on-device",
+            "llm"
+          ],
+          "discoveryScore": 47.68,
+          "evidenceUrls": [
+            "https://huggingface.co/experimentalmachines/SmolLM2-135M-Instruct-ExecuTorch",
+            "https://huggingface.co/experimentalmachines/SmolLM2-135M-Instruct-ExecuTorch/tree/4fa535d4e735db3c0aa57e3c29fbf26be82ac3b3"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "facebook/MobileLLM-Pro-base",
+          "repositoryUrl": "https://huggingface.co/facebook/MobileLLM-Pro-base",
+          "revision": "de68400a83061403d662e79464b4d818586b7b66",
+          "pipelineTag": "text-generation",
+          "libraryName": "transformers",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 300,
+          "likes": 11,
+          "lastModified": "2025-11-11T17:15:23.000Z",
+          "gated": true,
+          "tags": [
+            "transformers",
+            "safetensors",
+            "llama4_text",
+            "text-generation",
+            "facebook",
+            "meta",
+            "pytorch",
+            "conversational",
+            "custom_code",
+            "en",
+            "arxiv:2511.06719",
+            "license:fair-noncommercial-research-license",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "mobile",
+            "llm"
+          ],
+          "discoveryScore": 46.18,
+          "evidenceUrls": [
+            "https://huggingface.co/facebook/MobileLLM-Pro-base",
+            "https://huggingface.co/facebook/MobileLLM-Pro-base/tree/de68400a83061403d662e79464b4d818586b7b66"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "zhangsq-nju/MobileLLM-350M-EdgeRazor-1.58bit",
+          "repositoryUrl": "https://huggingface.co/zhangsq-nju/MobileLLM-350M-EdgeRazor-1.58bit",
+          "revision": "ca4cb5ad0122e20a1aeba834bac1b9fa211870c7",
+          "pipelineTag": "text-generation",
+          "libraryName": "transformers",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 111,
+          "likes": 1,
+          "lastModified": "2026-06-11T13:17:51.000Z",
+          "gated": false,
+          "tags": [
+            "transformers",
+            "safetensors",
+            "llama",
+            "text-generation",
+            "mobilellm",
+            "edgerazor",
+            "quantization",
+            "conversational",
+            "custom_code",
+            "arxiv:2605.04062",
+            "base_model:facebook/MobileLLM-ParetoQ-350M-BF16",
+            "base_model:quantized:facebook/MobileLLM-ParetoQ-350M-BF16",
+            "license:other",
+            "text-generation-inference",
+            "endpoints_compatible",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "mobile",
+            "edge",
+            "llm"
+          ],
+          "discoveryScore": 46,
+          "evidenceUrls": [
+            "https://huggingface.co/zhangsq-nju/MobileLLM-350M-EdgeRazor-1.58bit",
+            "https://huggingface.co/zhangsq-nju/MobileLLM-350M-EdgeRazor-1.58bit/tree/ca4cb5ad0122e20a1aeba834bac1b9fa211870c7"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "facebook/MobileLLM-R1-140M",
+          "repositoryUrl": "https://huggingface.co/facebook/MobileLLM-R1-140M",
+          "revision": "df21db6bd739b9b82c2caf2647b724ed63b8521e",
+          "pipelineTag": "text-generation",
+          "libraryName": "transformers",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 161,
+          "likes": 37,
+          "lastModified": "2025-11-10T22:52:36.000Z",
+          "gated": true,
+          "tags": [
+            "transformers",
+            "safetensors",
+            "llama4_text",
+            "text-generation",
+            "facebook",
+            "meta",
+            "pytorch",
+            "mobilellm",
+            "conversational",
+            "en",
+            "arxiv:2509.24945",
+            "base_model:facebook/MobileLLM-R1-140M-base",
+            "base_model:finetune:facebook/MobileLLM-R1-140M-base",
+            "license:other",
+            "endpoints_compatible",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "mobile",
+            "llm"
+          ],
+          "discoveryScore": 45.99,
+          "evidenceUrls": [
+            "https://huggingface.co/facebook/MobileLLM-R1-140M",
+            "https://huggingface.co/facebook/MobileLLM-R1-140M/tree/df21db6bd739b9b82c2caf2647b724ed63b8521e"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "experimentalmachines/SmolLM2-135M-ExecuTorch",
+          "repositoryUrl": "https://huggingface.co/experimentalmachines/SmolLM2-135M-ExecuTorch",
+          "revision": "ac9a47e1e442b44000d1a80239825689bf6fc255",
+          "pipelineTag": "text-generation",
+          "libraryName": "executorch",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 23,
+          "likes": 0,
+          "lastModified": "2026-09-13T12:54:46.000Z",
+          "gated": false,
+          "tags": [
+            "executorch",
+            "android",
+            "on-device",
+            "openweights",
+            "vulkan",
+            "xnnpack",
+            "text-generation",
+            "base_model:HuggingFaceTB/SmolLM2-135M",
+            "base_model:quantized:HuggingFaceTB/SmolLM2-135M",
+            "license:apache-2.0",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "android",
+            "executorch",
+            "on-device",
+            "llm"
+          ],
+          "discoveryScore": 45.8,
+          "evidenceUrls": [
+            "https://huggingface.co/experimentalmachines/SmolLM2-135M-ExecuTorch",
+            "https://huggingface.co/experimentalmachines/SmolLM2-135M-ExecuTorch/tree/ac9a47e1e442b44000d1a80239825689bf6fc255"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "mtgv/MobileLLaMA-1.4B-Chat",
+          "repositoryUrl": "https://huggingface.co/mtgv/MobileLLaMA-1.4B-Chat",
+          "revision": "7073081bd6b02d97ac4f9c7e8167fd3c28483c1c",
+          "pipelineTag": "text-generation",
+          "libraryName": "transformers",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 1198,
+          "likes": 21,
+          "lastModified": "2023-12-30T03:33:30.000Z",
+          "gated": false,
+          "tags": [
+            "transformers",
+            "pytorch",
+            "llama",
+            "text-generation",
+            "dataset:Aeala/ShareGPT_Vicuna_unfiltered",
+            "arxiv:2312.16886",
+            "license:apache-2.0",
+            "text-generation-inference",
+            "endpoints_compatible",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "mobile"
+          ],
+          "discoveryScore": 45.5,
+          "evidenceUrls": [
+            "https://huggingface.co/mtgv/MobileLLaMA-1.4B-Chat",
+            "https://huggingface.co/mtgv/MobileLLaMA-1.4B-Chat/tree/7073081bd6b02d97ac4f9c7e8167fd3c28483c1c"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "facebook/MobileMoE-S-Base",
+          "repositoryUrl": "https://huggingface.co/facebook/MobileMoE-S-Base",
+          "revision": "23b6f610d688b3448705d2027ae716da0bb40d72",
+          "pipelineTag": "text-generation",
+          "libraryName": "transformers",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 222,
+          "likes": 14,
+          "lastModified": "2026-08-25T19:14:03.000Z",
+          "gated": true,
+          "tags": [
+            "transformers",
+            "safetensors",
+            "mobilemoe",
+            "text-generation",
+            "facebook",
+            "meta",
+            "pytorch",
+            "mixture-of-experts",
+            "MoE",
+            "on-device",
+            "custom_code",
+            "en",
+            "arxiv:2605.27358",
+            "license:fair-noncommercial-research-license",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "mobile",
+            "on-device"
+          ],
+          "discoveryScore": 45.36,
+          "evidenceUrls": [
+            "https://huggingface.co/facebook/MobileMoE-S-Base",
+            "https://huggingface.co/facebook/MobileMoE-S-Base/tree/23b6f610d688b3448705d2027ae716da0bb40d72"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "younghan-meta/LFM2.5-ExecuTorch-MLX",
+          "repositoryUrl": "https://huggingface.co/younghan-meta/LFM2.5-ExecuTorch-MLX",
+          "revision": "a40440e2f4a414f7143e56f80d3a0b54337ed82b",
+          "pipelineTag": "text-generation",
+          "libraryName": "executorch",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 125,
+          "likes": 0,
+          "lastModified": "2026-05-15T21:47:59.000Z",
+          "gated": false,
+          "tags": [
+            "executorch",
+            "ExecuTorch",
+            "MLX",
+            "apple-silicon",
+            "text-generation",
+            "lfm2",
+            "lfm2.5",
+            "on-device",
+            "base_model:LiquidAI/LFM2.5-1.2B-Instruct",
+            "base_model:quantized:LiquidAI/LFM2.5-1.2B-Instruct",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "executorch",
+            "on-device",
+            "mlx"
+          ],
+          "discoveryScore": 45,
+          "evidenceUrls": [
+            "https://huggingface.co/younghan-meta/LFM2.5-ExecuTorch-MLX",
+            "https://huggingface.co/younghan-meta/LFM2.5-ExecuTorch-MLX/tree/a40440e2f4a414f7143e56f80d3a0b54337ed82b"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "DevQuasar/facebook.MobileLLM-R1-140M-GGUF",
+          "repositoryUrl": "https://huggingface.co/DevQuasar/facebook.MobileLLM-R1-140M-GGUF",
+          "revision": "fa603226774f8891f78c50668591292433c1cc9e",
+          "pipelineTag": "text-generation",
+          "libraryName": null,
+          "license": null,
+          "parameterCount": null,
+          "downloads": 406,
+          "likes": 2,
+          "lastModified": "2025-09-26T01:38:30.000Z",
+          "gated": false,
+          "tags": [
+            "gguf",
+            "text-generation",
+            "base_model:facebook/MobileLLM-R1-140M",
+            "base_model:quantized:facebook/MobileLLM-R1-140M",
+            "endpoints_compatible",
+            "region:us",
+            "conversational"
+          ],
+          "mobileSignals": [
+            "mobile",
+            "llm"
+          ],
+          "discoveryScore": 44.48,
+          "evidenceUrls": [
+            "https://huggingface.co/DevQuasar/facebook.MobileLLM-R1-140M-GGUF",
+            "https://huggingface.co/DevQuasar/facebook.MobileLLM-R1-140M-GGUF/tree/fa603226774f8891f78c50668591292433c1cc9e"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "facebook/MobileMoE-S-QAT",
+          "repositoryUrl": "https://huggingface.co/facebook/MobileMoE-S-QAT",
+          "revision": "afda132cad380ac47da5ef055f186884d1c12f65",
+          "pipelineTag": "text-generation",
+          "libraryName": "transformers",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 242,
+          "likes": 6,
+          "lastModified": "2026-08-30T01:56:37.000Z",
+          "gated": true,
+          "tags": [
+            "transformers",
+            "safetensors",
+            "mobilemoe",
+            "text-generation",
+            "facebook",
+            "meta",
+            "pytorch",
+            "mixture-of-experts",
+            "MoE",
+            "on-device",
+            "quantization",
+            "int4",
+            "conversational",
+            "custom_code",
+            "en",
+            "arxiv:2605.27358",
+            "license:fair-noncommercial-research-license",
+            "8-bit",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "mobile",
+            "on-device"
+          ],
+          "discoveryScore": 44.08,
+          "evidenceUrls": [
+            "https://huggingface.co/facebook/MobileMoE-S-QAT",
+            "https://huggingface.co/facebook/MobileMoE-S-QAT/tree/afda132cad380ac47da5ef055f186884d1c12f65"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "experimentalmachines/Qwen3-0.6B-ExecuTorch",
+          "repositoryUrl": "https://huggingface.co/experimentalmachines/Qwen3-0.6B-ExecuTorch",
+          "revision": "f873935d125167e13482b0cc51e57d80e5f335e2",
+          "pipelineTag": "text-generation",
+          "libraryName": "executorch",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 55,
+          "likes": 2,
+          "lastModified": "2026-09-13T16:29:03.000Z",
+          "gated": false,
+          "tags": [
+            "executorch",
+            "android",
+            "mtk",
+            "on-device",
+            "openweights",
+            "qnn",
+            "xnnpack",
+            "text-generation",
+            "base_model:Qwen/Qwen3-0.6B",
+            "base_model:quantized:Qwen/Qwen3-0.6B",
+            "license:apache-2.0",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "android",
+            "executorch",
+            "on-device"
+          ],
+          "discoveryScore": 43.87,
+          "evidenceUrls": [
+            "https://huggingface.co/experimentalmachines/Qwen3-0.6B-ExecuTorch",
+            "https://huggingface.co/experimentalmachines/Qwen3-0.6B-ExecuTorch/tree/f873935d125167e13482b0cc51e57d80e5f335e2"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "facebook/MobileLLM-R1-140M-base",
+          "repositoryUrl": "https://huggingface.co/facebook/MobileLLM-R1-140M-base",
+          "revision": "27cb0e3b88e117559000732d26d3b08d0339cf7e",
+          "pipelineTag": "text-generation",
+          "libraryName": "transformers",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 123,
+          "likes": 22,
+          "lastModified": "2025-11-10T22:50:45.000Z",
+          "gated": true,
+          "tags": [
+            "transformers",
+            "safetensors",
+            "llama4_text",
+            "text-generation",
+            "facebook",
+            "meta",
+            "pytorch",
+            "mobilellm",
+            "en",
+            "arxiv:2509.24945",
+            "license:other",
+            "endpoints_compatible",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "mobile",
+            "llm"
+          ],
+          "discoveryScore": 43.74,
+          "evidenceUrls": [
+            "https://huggingface.co/facebook/MobileLLM-R1-140M-base",
+            "https://huggingface.co/facebook/MobileLLM-R1-140M-base/tree/27cb0e3b88e117559000732d26d3b08d0339cf7e"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "facebook/MobileMoE-S-SFT",
+          "repositoryUrl": "https://huggingface.co/facebook/MobileMoE-S-SFT",
+          "revision": "4decae01abfeaf46046b8774fdc4404b3e33a3a4",
+          "pipelineTag": "text-generation",
+          "libraryName": "transformers",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 258,
+          "likes": 4,
+          "lastModified": "2026-08-27T20:20:07.000Z",
+          "gated": true,
+          "tags": [
+            "transformers",
+            "safetensors",
+            "mobilemoe",
+            "text-generation",
+            "facebook",
+            "meta",
+            "pytorch",
+            "mixture-of-experts",
+            "MoE",
+            "on-device",
+            "conversational",
+            "custom_code",
+            "en",
+            "arxiv:2605.27358",
+            "license:fair-noncommercial-research-license",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "mobile",
+            "on-device"
+          ],
+          "discoveryScore": 43.63,
+          "evidenceUrls": [
+            "https://huggingface.co/facebook/MobileMoE-S-SFT",
+            "https://huggingface.co/facebook/MobileMoE-S-SFT/tree/4decae01abfeaf46046b8774fdc4404b3e33a3a4"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "mlboydaisuke/qwen3.5-2B-CoreML",
+          "repositoryUrl": "https://huggingface.co/mlboydaisuke/qwen3.5-2B-CoreML",
+          "revision": "a5c0fe1d22f1bb00a19ff8e05d60d3fd07b30d74",
+          "pipelineTag": "text-generation",
+          "libraryName": "coreml",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 394,
+          "likes": 1,
+          "lastModified": "2026-09-04T15:21:16.000Z",
+          "gated": false,
+          "tags": [
+            "coreml",
+            "apple-silicon",
+            "ane",
+            "on-device",
+            "qwen3.5",
+            "text-generation",
+            "base_model:Qwen/Qwen3.5-2B",
+            "base_model:quantized:Qwen/Qwen3.5-2B",
+            "license:apache-2.0",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "coreml",
+            "on-device"
+          ],
+          "discoveryScore": 43.47,
+          "evidenceUrls": [
+            "https://huggingface.co/mlboydaisuke/qwen3.5-2B-CoreML",
+            "https://huggingface.co/mlboydaisuke/qwen3.5-2B-CoreML/tree/a5c0fe1d22f1bb00a19ff8e05d60d3fd07b30d74"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "facebook/MobileMoE-M-Base",
+          "repositoryUrl": "https://huggingface.co/facebook/MobileMoE-M-Base",
+          "revision": "f231740144b18f980fc1d7cce0ba60eb6f08b446",
+          "pipelineTag": "text-generation",
+          "libraryName": "transformers",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 198,
+          "likes": 6,
+          "lastModified": "2026-08-25T19:21:02.000Z",
+          "gated": true,
+          "tags": [
+            "transformers",
+            "safetensors",
+            "mobilemoe",
+            "text-generation",
+            "facebook",
+            "meta",
+            "pytorch",
+            "mixture-of-experts",
+            "MoE",
+            "on-device",
+            "custom_code",
+            "en",
+            "arxiv:2605.27358",
+            "license:fair-noncommercial-research-license",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "mobile",
+            "on-device"
+          ],
+          "discoveryScore": 43.21,
+          "evidenceUrls": [
+            "https://huggingface.co/facebook/MobileMoE-M-Base",
+            "https://huggingface.co/facebook/MobileMoE-M-Base/tree/f231740144b18f980fc1d7cce0ba60eb6f08b446"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "mlboydaisuke/qwen3.5-0.8B-CoreML",
+          "repositoryUrl": "https://huggingface.co/mlboydaisuke/qwen3.5-0.8B-CoreML",
+          "revision": "82700f499b705c64c594c42deff684ec0321bcce",
+          "pipelineTag": "text-generation",
+          "libraryName": "coreml",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 431,
+          "likes": 0,
+          "lastModified": "2026-09-04T15:21:14.000Z",
+          "gated": false,
+          "tags": [
+            "coreml",
+            "apple-silicon",
+            "ane",
+            "on-device",
+            "qwen3.5",
+            "text-generation",
+            "base_model:Qwen/Qwen3.5-0.8B",
+            "base_model:quantized:Qwen/Qwen3.5-0.8B",
+            "license:apache-2.0",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "coreml",
+            "on-device"
+          ],
+          "discoveryScore": 42.35,
+          "evidenceUrls": [
+            "https://huggingface.co/mlboydaisuke/qwen3.5-0.8B-CoreML",
+            "https://huggingface.co/mlboydaisuke/qwen3.5-0.8B-CoreML/tree/82700f499b705c64c594c42deff684ec0321bcce"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "Arm/smollm2-360m-instruct-8da4w-xnnpack-executorch",
+          "repositoryUrl": "https://huggingface.co/Arm/smollm2-360m-instruct-8da4w-xnnpack-executorch",
+          "revision": "e36c98bfbd25e4803264fe7bdd69f45a9b39de49",
+          "pipelineTag": "text-generation",
+          "libraryName": "executorch",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 64,
+          "likes": 0,
+          "lastModified": "2026-09-07T16:07:21.000Z",
+          "gated": false,
+          "tags": [
+            "executorch",
+            "arm",
+            "arm-optimized",
+            "premium-smartphone",
+            "int4",
+            "int8",
+            "8da4w",
+            "xnnpack",
+            "kleidiai",
+            "mmlu",
+            "text-generation",
+            "base_model:HuggingFaceTB/SmolLM2-360M-Instruct",
+            "base_model:quantized:HuggingFaceTB/SmolLM2-360M-Instruct",
+            "license:apache-2.0",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "executorch",
+            "phone",
+            "llm"
+          ],
+          "discoveryScore": 42.13,
+          "evidenceUrls": [
+            "https://huggingface.co/Arm/smollm2-360m-instruct-8da4w-xnnpack-executorch",
+            "https://huggingface.co/Arm/smollm2-360m-instruct-8da4w-xnnpack-executorch/tree/e36c98bfbd25e4803264fe7bdd69f45a9b39de49"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "software-mansion/react-native-executorch-hammer-2.1",
+          "repositoryUrl": "https://huggingface.co/software-mansion/react-native-executorch-hammer-2.1",
+          "revision": "c4199705378c028f677edea3f8efccb9a4252d46",
+          "pipelineTag": "text-generation",
+          "libraryName": "executorch",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 2568,
+          "likes": 0,
+          "lastModified": "2026-09-07T13:54:41.000Z",
+          "gated": false,
+          "tags": [
+            "executorch",
+            "text-generation",
+            "conversational",
+            "license:cc-by-nc-4.0",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "executorch"
+          ],
+          "discoveryScore": 42.1,
+          "evidenceUrls": [
+            "https://huggingface.co/software-mansion/react-native-executorch-hammer-2.1",
+            "https://huggingface.co/software-mansion/react-native-executorch-hammer-2.1/tree/c4199705378c028f677edea3f8efccb9a4252d46"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "DevQuasar/facebook.MobileLLM-R1-140M-base-GGUF",
+          "repositoryUrl": "https://huggingface.co/DevQuasar/facebook.MobileLLM-R1-140M-base-GGUF",
+          "revision": "7285750785792209bd9d7727b0bb0bed97253c26",
+          "pipelineTag": "text-generation",
+          "libraryName": null,
+          "license": null,
+          "parameterCount": null,
+          "downloads": 278,
+          "likes": 1,
+          "lastModified": "2025-09-26T01:40:38.000Z",
+          "gated": false,
+          "tags": [
+            "gguf",
+            "text-generation",
+            "base_model:facebook/MobileLLM-R1-140M-base",
+            "base_model:quantized:facebook/MobileLLM-R1-140M-base",
+            "endpoints_compatible",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "mobile",
+            "llm"
+          ],
+          "discoveryScore": 41.96,
+          "evidenceUrls": [
+            "https://huggingface.co/DevQuasar/facebook.MobileLLM-R1-140M-base-GGUF",
+            "https://huggingface.co/DevQuasar/facebook.MobileLLM-R1-140M-base-GGUF/tree/7285750785792209bd9d7727b0bb0bed97253c26"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "mtgv/MobileVLM_V2-1.7B",
+          "repositoryUrl": "https://huggingface.co/mtgv/MobileVLM_V2-1.7B",
+          "revision": "9a5b623a83feae6a6b2ecad7a843334ccc119ce1",
+          "pipelineTag": "text-generation",
+          "libraryName": "transformers",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 393,
+          "likes": 33,
+          "lastModified": "2024-02-07T08:56:24.000Z",
+          "gated": false,
+          "tags": [
+            "transformers",
+            "pytorch",
+            "mobilevlm",
+            "text-generation",
+            "MobileVLM V2",
+            "arxiv:2402.03766",
+            "license:apache-2.0",
+            "endpoints_compatible",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "mobile"
+          ],
+          "discoveryScore": 41.61,
+          "evidenceUrls": [
+            "https://huggingface.co/mtgv/MobileVLM_V2-1.7B",
+            "https://huggingface.co/mtgv/MobileVLM_V2-1.7B/tree/9a5b623a83feae6a6b2ecad7a843334ccc119ce1"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "dispatchAI/Qwen2.5-Coder-7B-mobile",
+          "repositoryUrl": "https://huggingface.co/dispatchAI/Qwen2.5-Coder-7B-mobile",
+          "revision": "0b771232aedd3665a46114c9dac772cdd2979769",
+          "pipelineTag": "text-generation",
+          "libraryName": "transformers",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 252,
+          "likes": 1,
+          "lastModified": "2026-06-26T23:31:46.000Z",
+          "gated": false,
+          "tags": [
+            "transformers",
+            "gguf",
+            "mobile",
+            "on-device",
+            "quantized",
+            "dispatchai",
+            "text-generation",
+            "en",
+            "license:apache-2.0",
+            "endpoints_compatible",
+            "region:us",
+            "imatrix",
+            "conversational"
+          ],
+          "mobileSignals": [
+            "mobile",
+            "on-device"
+          ],
+          "discoveryScore": 41.54,
+          "evidenceUrls": [
+            "https://huggingface.co/dispatchAI/Qwen2.5-Coder-7B-mobile",
+            "https://huggingface.co/dispatchAI/Qwen2.5-Coder-7B-mobile/tree/0b771232aedd3665a46114c9dac772cdd2979769"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "DevQuasar/facebook.MobileLLM-R1-360M-base-GGUF",
+          "repositoryUrl": "https://huggingface.co/DevQuasar/facebook.MobileLLM-R1-360M-base-GGUF",
+          "revision": "0e3a0b14c7780c2352695fc7e5ac748aedc2701b",
+          "pipelineTag": "text-generation",
+          "libraryName": null,
+          "license": null,
+          "parameterCount": null,
+          "downloads": 248,
+          "likes": 1,
+          "lastModified": "2025-09-26T01:48:57.000Z",
+          "gated": false,
+          "tags": [
+            "gguf",
+            "text-generation",
+            "base_model:facebook/MobileLLM-R1-360M-base",
+            "base_model:quantized:facebook/MobileLLM-R1-360M-base",
+            "endpoints_compatible",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "mobile",
+            "llm"
+          ],
+          "discoveryScore": 41.47,
+          "evidenceUrls": [
+            "https://huggingface.co/DevQuasar/facebook.MobileLLM-R1-360M-base-GGUF",
+            "https://huggingface.co/DevQuasar/facebook.MobileLLM-R1-360M-base-GGUF/tree/0e3a0b14c7780c2352695fc7e5ac748aedc2701b"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "DevQuasar/facebook.MobileLLM-R1-360M-GGUF",
+          "repositoryUrl": "https://huggingface.co/DevQuasar/facebook.MobileLLM-R1-360M-GGUF",
+          "revision": "6df20c38c5618004ad9985784d9dfb1a7d134133",
+          "pipelineTag": "text-generation",
+          "libraryName": null,
+          "license": null,
+          "parameterCount": null,
+          "downloads": 343,
+          "likes": 0,
+          "lastModified": "2025-09-26T01:36:26.000Z",
+          "gated": false,
+          "tags": [
+            "gguf",
+            "text-generation",
+            "base_model:facebook/MobileLLM-R1-360M",
+            "base_model:quantized:facebook/MobileLLM-R1-360M",
+            "endpoints_compatible",
+            "region:us",
+            "conversational"
+          ],
+          "mobileSignals": [
+            "mobile",
+            "llm"
+          ],
+          "discoveryScore": 41.37,
+          "evidenceUrls": [
+            "https://huggingface.co/DevQuasar/facebook.MobileLLM-R1-360M-GGUF",
+            "https://huggingface.co/DevQuasar/facebook.MobileLLM-R1-360M-GGUF/tree/6df20c38c5618004ad9985784d9dfb1a7d134133"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "DevQuasar/facebook.MobileLLM-R1-950M-GGUF",
+          "repositoryUrl": "https://huggingface.co/DevQuasar/facebook.MobileLLM-R1-950M-GGUF",
+          "revision": "8ebb371e042b45eeb9407d7c5917bbeae0391c96",
+          "pipelineTag": "text-generation",
+          "libraryName": null,
+          "license": null,
+          "parameterCount": null,
+          "downloads": 311,
+          "likes": 0,
+          "lastModified": "2025-09-26T01:33:20.000Z",
+          "gated": false,
+          "tags": [
+            "gguf",
+            "text-generation",
+            "base_model:facebook/MobileLLM-R1-950M",
+            "base_model:quantized:facebook/MobileLLM-R1-950M",
+            "endpoints_compatible",
+            "region:us",
+            "conversational"
+          ],
+          "mobileSignals": [
+            "mobile",
+            "llm"
+          ],
+          "discoveryScore": 40.94,
+          "evidenceUrls": [
+            "https://huggingface.co/DevQuasar/facebook.MobileLLM-R1-950M-GGUF",
+            "https://huggingface.co/DevQuasar/facebook.MobileLLM-R1-950M-GGUF/tree/8ebb371e042b45eeb9407d7c5917bbeae0391c96"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "mlboydaisuke/Qwen3.5-0.8B-ExecuTorch",
+          "repositoryUrl": "https://huggingface.co/mlboydaisuke/Qwen3.5-0.8B-ExecuTorch",
+          "revision": "ce0255c2aa7c17887d98e6bdadaf01a89d74acae",
+          "pipelineTag": "text-generation",
+          "libraryName": null,
+          "license": null,
+          "parameterCount": null,
+          "downloads": 310,
+          "likes": 0,
+          "lastModified": "2026-09-04T15:25:12.000Z",
+          "gated": false,
+          "tags": [
+            "executorch",
+            "executorch-pte",
+            "xnnpack",
+            "pte",
+            "on-device",
+            "text-generation",
+            "base_model:Qwen/Qwen3.5-0.8B",
+            "base_model:quantized:Qwen/Qwen3.5-0.8B",
+            "license:apache-2.0",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "executorch",
+            "on-device"
+          ],
+          "discoveryScore": 40.93,
+          "evidenceUrls": [
+            "https://huggingface.co/mlboydaisuke/Qwen3.5-0.8B-ExecuTorch",
+            "https://huggingface.co/mlboydaisuke/Qwen3.5-0.8B-ExecuTorch/tree/ce0255c2aa7c17887d98e6bdadaf01a89d74acae"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "mlboydaisuke/LFM2.5-1.2B-Instruct-ExecuTorch",
+          "repositoryUrl": "https://huggingface.co/mlboydaisuke/LFM2.5-1.2B-Instruct-ExecuTorch",
+          "revision": "854961e479873b2975a811bda36879b6ae4bb4c0",
+          "pipelineTag": "text-generation",
+          "libraryName": null,
+          "license": null,
+          "parameterCount": null,
+          "downloads": 280,
+          "likes": 0,
+          "lastModified": "2026-09-04T15:25:16.000Z",
+          "gated": false,
+          "tags": [
+            "executorch",
+            "executorch-pte",
+            "xnnpack",
+            "pte",
+            "on-device",
+            "text-generation",
+            "base_model:LiquidAI/LFM2.5-1.2B-Instruct",
+            "base_model:quantized:LiquidAI/LFM2.5-1.2B-Instruct",
+            "license:other",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "executorch",
+            "on-device"
+          ],
+          "discoveryScore": 40.49,
+          "evidenceUrls": [
+            "https://huggingface.co/mlboydaisuke/LFM2.5-1.2B-Instruct-ExecuTorch",
+            "https://huggingface.co/mlboydaisuke/LFM2.5-1.2B-Instruct-ExecuTorch/tree/854961e479873b2975a811bda36879b6ae4bb4c0"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "dispatchAI/Qwen2.5-1.5B-Instruct-mobile-int4",
+          "repositoryUrl": "https://huggingface.co/dispatchAI/Qwen2.5-1.5B-Instruct-mobile-int4",
+          "revision": "f42c93eb5ab37f33b662c23142fe33e3ebd1ef82",
+          "pipelineTag": "text-generation",
+          "libraryName": "transformers",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 198,
+          "likes": 1,
+          "lastModified": "2026-06-27T11:01:00.000Z",
+          "gated": false,
+          "tags": [
+            "transformers",
+            "gguf",
+            "mobile",
+            "on-device",
+            "quantized",
+            "dispatchai",
+            "text-generation",
+            "en",
+            "license:apache-2.0",
+            "endpoints_compatible",
+            "region:us",
+            "conversational"
+          ],
+          "mobileSignals": [
+            "mobile",
+            "on-device"
+          ],
+          "discoveryScore": 40.49,
+          "evidenceUrls": [
+            "https://huggingface.co/dispatchAI/Qwen2.5-1.5B-Instruct-mobile-int4",
+            "https://huggingface.co/dispatchAI/Qwen2.5-1.5B-Instruct-mobile-int4/tree/f42c93eb5ab37f33b662c23142fe33e3ebd1ef82"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "anziank/grio-qwen2.5-1.5b-instruct-coreml-stateful-int8",
+          "repositoryUrl": "https://huggingface.co/anziank/grio-qwen2.5-1.5b-instruct-coreml-stateful-int8",
+          "revision": "a9442469f80fc807d5f2e3a138a69fb023f9f7d7",
+          "pipelineTag": "text-generation",
+          "libraryName": "coreml",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 43,
+          "likes": 0,
+          "lastModified": "2026-05-28T06:16:34.000Z",
+          "gated": false,
+          "tags": [
+            "coreml",
+            "qwen2",
+            "on-device",
+            "ios",
+            "ipad",
+            "macos",
+            "apple-silicon",
+            "stateful",
+            "kv-cache",
+            "grio",
+            "text-generation",
+            "text-enhancement",
+            "translation",
+            "qwen2.5",
+            "int8",
+            "weight-quantized",
+            "w8a16",
+            "conversational",
+            "en",
+            "multilingual",
+            "base_model:Qwen/Qwen2.5-1.5B-Instruct",
+            "base_model:quantized:Qwen/Qwen2.5-1.5B-Instruct",
+            "license:apache-2.0",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "ios",
+            "coreml",
+            "on-device"
+          ],
+          "discoveryScore": 40.43,
+          "evidenceUrls": [
+            "https://huggingface.co/anziank/grio-qwen2.5-1.5b-instruct-coreml-stateful-int8",
+            "https://huggingface.co/anziank/grio-qwen2.5-1.5b-instruct-coreml-stateful-int8/tree/a9442469f80fc807d5f2e3a138a69fb023f9f7d7"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "mlboydaisuke/LFM2.5-350M-ExecuTorch",
+          "repositoryUrl": "https://huggingface.co/mlboydaisuke/LFM2.5-350M-ExecuTorch",
+          "revision": "904b1170a851d9ba471b865aabd6ca4f034012fe",
+          "pipelineTag": "text-generation",
+          "libraryName": null,
+          "license": null,
+          "parameterCount": null,
+          "downloads": 259,
+          "likes": 0,
+          "lastModified": "2026-09-04T15:25:14.000Z",
+          "gated": false,
+          "tags": [
+            "executorch",
+            "executorch-pte",
+            "xnnpack",
+            "pte",
+            "on-device",
+            "text-generation",
+            "base_model:LiquidAI/LFM2.5-350M",
+            "base_model:quantized:LiquidAI/LFM2.5-350M",
+            "license:other",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "executorch",
+            "on-device"
+          ],
+          "discoveryScore": 40.15,
+          "evidenceUrls": [
+            "https://huggingface.co/mlboydaisuke/LFM2.5-350M-ExecuTorch",
+            "https://huggingface.co/mlboydaisuke/LFM2.5-350M-ExecuTorch/tree/904b1170a851d9ba471b865aabd6ca4f034012fe"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "software-mansion/react-native-executorch-phi-4-mini",
+          "repositoryUrl": "https://huggingface.co/software-mansion/react-native-executorch-phi-4-mini",
+          "revision": "e1d400b8ab567a037ea9661cdb92b9151699c140",
+          "pipelineTag": "text-generation",
+          "libraryName": "executorch",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 1141,
+          "likes": 1,
+          "lastModified": "2026-09-07T13:55:00.000Z",
+          "gated": false,
+          "tags": [
+            "executorch",
+            "text-generation",
+            "conversational",
+            "license:mit",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "executorch"
+          ],
+          "discoveryScore": 40.08,
+          "evidenceUrls": [
+            "https://huggingface.co/software-mansion/react-native-executorch-phi-4-mini",
+            "https://huggingface.co/software-mansion/react-native-executorch-phi-4-mini/tree/e1d400b8ab567a037ea9661cdb92b9151699c140"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "DevQuasar/facebook.MobileLLM-R1-950M-base-GGUF",
+          "repositoryUrl": "https://huggingface.co/DevQuasar/facebook.MobileLLM-R1-950M-base-GGUF",
+          "revision": "412f678fb34ce74e69af3a68a32ca007a163cc4e",
+          "pipelineTag": "text-generation",
+          "libraryName": null,
+          "license": null,
+          "parameterCount": null,
+          "downloads": 234,
+          "likes": 0,
+          "lastModified": "2025-09-26T01:46:00.000Z",
+          "gated": false,
+          "tags": [
+            "gguf",
+            "text-generation",
+            "base_model:facebook/MobileLLM-R1-950M-base",
+            "base_model:quantized:facebook/MobileLLM-R1-950M-base",
+            "endpoints_compatible",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "mobile",
+            "llm"
+          ],
+          "discoveryScore": 39.71,
+          "evidenceUrls": [
+            "https://huggingface.co/DevQuasar/facebook.MobileLLM-R1-950M-base-GGUF",
+            "https://huggingface.co/DevQuasar/facebook.MobileLLM-R1-950M-base-GGUF/tree/412f678fb34ce74e69af3a68a32ca007a163cc4e"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "andrijdavid/MobileLLaMA-1.4B-Base-GGUF",
+          "repositoryUrl": "https://huggingface.co/andrijdavid/MobileLLaMA-1.4B-Base-GGUF",
+          "revision": "c9e04c8cca5d51e938cac5bbdcce5238129330e8",
+          "pipelineTag": "text-generation",
+          "libraryName": "transformers",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 706,
+          "likes": 3,
+          "lastModified": "2024-01-02T15:31:43.000Z",
+          "gated": false,
+          "tags": [
+            "transformers",
+            "gguf",
+            "llama",
+            "text-generation",
+            "GGUF",
+            "dataset:togethercomputer/RedPajama-Data-1T",
+            "arxiv:2312.16886",
+            "license:apache-2.0",
+            "endpoints_compatible",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "mobile"
+          ],
+          "discoveryScore": 39.5,
+          "evidenceUrls": [
+            "https://huggingface.co/andrijdavid/MobileLLaMA-1.4B-Base-GGUF",
+            "https://huggingface.co/andrijdavid/MobileLLaMA-1.4B-Base-GGUF/tree/c9e04c8cca5d51e938cac5bbdcce5238129330e8"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "mtgv/MobileVLM_V2-3B",
+          "repositoryUrl": "https://huggingface.co/mtgv/MobileVLM_V2-3B",
+          "revision": "a985787d31160f7f847cdb88a59e6954bbc421aa",
+          "pipelineTag": "text-generation",
+          "libraryName": "transformers",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 480,
+          "likes": 7,
+          "lastModified": "2024-02-07T08:54:59.000Z",
+          "gated": false,
+          "tags": [
+            "transformers",
+            "pytorch",
+            "mobilevlm",
+            "text-generation",
+            "MobileVLM V2",
+            "arxiv:2402.03766",
+            "license:apache-2.0",
+            "endpoints_compatible",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "mobile"
+          ],
+          "discoveryScore": 39.34,
+          "evidenceUrls": [
+            "https://huggingface.co/mtgv/MobileVLM_V2-3B",
+            "https://huggingface.co/mtgv/MobileVLM_V2-3B/tree/a985787d31160f7f847cdb88a59e6954bbc421aa"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "DevQuasar/facebook.MobileLLM-1.5B-GGUF",
+          "repositoryUrl": "https://huggingface.co/DevQuasar/facebook.MobileLLM-1.5B-GGUF",
+          "revision": "4b2ad8b953cecc29b164cbba69a169da0f08b9d4",
+          "pipelineTag": "text-generation",
+          "libraryName": null,
+          "license": null,
+          "parameterCount": null,
+          "downloads": 211,
+          "likes": 0,
+          "lastModified": "2025-05-17T23:29:30.000Z",
+          "gated": false,
+          "tags": [
+            "gguf",
+            "text-generation",
+            "base_model:facebook/MobileLLM-1.5B",
+            "base_model:quantized:facebook/MobileLLM-1.5B",
+            "endpoints_compatible",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "mobile",
+            "llm"
+          ],
+          "discoveryScore": 39.26,
+          "evidenceUrls": [
+            "https://huggingface.co/DevQuasar/facebook.MobileLLM-1.5B-GGUF",
+            "https://huggingface.co/DevQuasar/facebook.MobileLLM-1.5B-GGUF/tree/4b2ad8b953cecc29b164cbba69a169da0f08b9d4"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "aufklarer/Qwen3-0.6B-Chat-CoreML",
+          "repositoryUrl": "https://huggingface.co/aufklarer/Qwen3-0.6B-Chat-CoreML",
+          "revision": "a92923a0a3624025a81cd485e9dedbbb23c2586b",
+          "pipelineTag": "text-generation",
+          "libraryName": "coremltools",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 32,
+          "likes": 0,
+          "lastModified": "2026-05-28T06:54:11.000Z",
+          "gated": false,
+          "tags": [
+            "coremltools",
+            "coreml",
+            "qwen3_chat",
+            "qwen3",
+            "on-device",
+            "ios",
+            "apple-silicon",
+            "text-generation",
+            "conversational",
+            "en",
+            "zh",
+            "ja",
+            "ko",
+            "fr",
+            "de",
+            "es",
+            "base_model:Qwen/Qwen3-0.6B",
+            "base_model:quantized:Qwen/Qwen3-0.6B",
+            "license:apache-2.0",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "ios",
+            "coreml",
+            "on-device"
+          ],
+          "discoveryScore": 39.19,
+          "evidenceUrls": [
+            "https://huggingface.co/aufklarer/Qwen3-0.6B-Chat-CoreML",
+            "https://huggingface.co/aufklarer/Qwen3-0.6B-Chat-CoreML/tree/a92923a0a3624025a81cd485e9dedbbb23c2586b"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "mtgv/MobileLLaMA-1.4B-Base",
+          "repositoryUrl": "https://huggingface.co/mtgv/MobileLLaMA-1.4B-Base",
+          "revision": "c7d8472e1f5a83bbe51460a5ee610a2340077ca7",
+          "pipelineTag": "text-generation",
+          "libraryName": "transformers",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 267,
+          "likes": 21,
+          "lastModified": "2023-12-29T06:11:55.000Z",
+          "gated": false,
+          "tags": [
+            "transformers",
+            "pytorch",
+            "llama",
+            "text-generation",
+            "dataset:togethercomputer/RedPajama-Data-1T",
+            "arxiv:2312.16886",
+            "license:apache-2.0",
+            "text-generation-inference",
+            "endpoints_compatible",
+            "region:us",
+            "deploy:azure"
+          ],
+          "mobileSignals": [
+            "mobile"
+          ],
+          "discoveryScore": 38.99,
+          "evidenceUrls": [
+            "https://huggingface.co/mtgv/MobileLLaMA-1.4B-Base",
+            "https://huggingface.co/mtgv/MobileLLaMA-1.4B-Base/tree/c7d8472e1f5a83bbe51460a5ee610a2340077ca7"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "experimentalmachines/Qwen2.5-0.5B-ExecuTorch",
+          "repositoryUrl": "https://huggingface.co/experimentalmachines/Qwen2.5-0.5B-ExecuTorch",
+          "revision": "2aa678411830dcbe460bdb6b788c216c892b8233",
+          "pipelineTag": "text-generation",
+          "libraryName": "executorch",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 30,
+          "likes": 0,
+          "lastModified": "2026-09-13T15:41:20.000Z",
+          "gated": false,
+          "tags": [
+            "executorch",
+            "android",
+            "on-device",
+            "openweights",
+            "qnn",
+            "xnnpack",
+            "text-generation",
+            "base_model:Qwen/Qwen2.5-0.5B",
+            "base_model:quantized:Qwen/Qwen2.5-0.5B",
+            "license:apache-2.0",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "android",
+            "executorch",
+            "on-device"
+          ],
+          "discoveryScore": 38.91,
+          "evidenceUrls": [
+            "https://huggingface.co/experimentalmachines/Qwen2.5-0.5B-ExecuTorch",
+            "https://huggingface.co/experimentalmachines/Qwen2.5-0.5B-ExecuTorch/tree/2aa678411830dcbe460bdb6b788c216c892b8233"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "dispatchAI/Gemma-2B-Arabic-mobile",
+          "repositoryUrl": "https://huggingface.co/dispatchAI/Gemma-2B-Arabic-mobile",
+          "revision": "add211833c1c7b2972b99764ca778af7658ece0d",
+          "pipelineTag": "text-generation",
+          "libraryName": null,
+          "license": null,
+          "parameterCount": null,
+          "downloads": 110,
+          "likes": 2,
+          "lastModified": "2026-06-28T21:30:21.000Z",
+          "gated": false,
+          "tags": [
+            "gguf",
+            "mobile",
+            "edge-ai",
+            "arabic",
+            "multilingual",
+            "quantized",
+            "text-generation",
+            "en",
+            "ar",
+            "license:gemma",
+            "endpoints_compatible",
+            "region:us",
+            "conversational"
+          ],
+          "mobileSignals": [
+            "mobile",
+            "edge"
+          ],
+          "discoveryScore": 38.84,
+          "evidenceUrls": [
+            "https://huggingface.co/dispatchAI/Gemma-2B-Arabic-mobile",
+            "https://huggingface.co/dispatchAI/Gemma-2B-Arabic-mobile/tree/add211833c1c7b2972b99764ca778af7658ece0d"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "experimentalmachines/Qwen3-4B-ExecuTorch",
+          "repositoryUrl": "https://huggingface.co/experimentalmachines/Qwen3-4B-ExecuTorch",
+          "revision": "3b74f69e91b8fd9f6cd74516b27d4511540a1618",
+          "pipelineTag": "text-generation",
+          "libraryName": "executorch",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 27,
+          "likes": 0,
+          "lastModified": "2026-09-13T13:13:50.000Z",
+          "gated": false,
+          "tags": [
+            "executorch",
+            "android",
+            "on-device",
+            "openweights",
+            "xnnpack",
+            "text-generation",
+            "base_model:Qwen/Qwen3-4B",
+            "base_model:quantized:Qwen/Qwen3-4B",
+            "license:apache-2.0",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "android",
+            "executorch",
+            "on-device"
+          ],
+          "discoveryScore": 38.47,
+          "evidenceUrls": [
+            "https://huggingface.co/experimentalmachines/Qwen3-4B-ExecuTorch",
+            "https://huggingface.co/experimentalmachines/Qwen3-4B-ExecuTorch/tree/3b74f69e91b8fd9f6cd74516b27d4511540a1618"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "anziank/grio-qwen2.5-0.5b-coreml-anyLM-seq512",
+          "repositoryUrl": "https://huggingface.co/anziank/grio-qwen2.5-0.5b-coreml-anyLM-seq512",
+          "revision": "62fd3cf37d98976b6ed9a044b21e4d8c2d8ffe22",
+          "pipelineTag": "text-generation",
+          "libraryName": "coreml",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 24,
+          "likes": 0,
+          "lastModified": "2026-05-20T04:15:55.000Z",
+          "gated": false,
+          "tags": [
+            "coreml",
+            "qwen2",
+            "on-device",
+            "ios",
+            "ipad",
+            "apple-silicon",
+            "swift-transformers",
+            "anyLanguageModel",
+            "text-generation",
+            "text-enhancement",
+            "translation",
+            "conversational",
+            "en",
+            "multilingual",
+            "base_model:Qwen/Qwen2.5-0.5B-Instruct",
+            "base_model:quantized:Qwen/Qwen2.5-0.5B-Instruct",
+            "license:apache-2.0",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "ios",
+            "coreml",
+            "on-device"
+          ],
+          "discoveryScore": 37.98,
+          "evidenceUrls": [
+            "https://huggingface.co/anziank/grio-qwen2.5-0.5b-coreml-anyLM-seq512",
+            "https://huggingface.co/anziank/grio-qwen2.5-0.5b-coreml-anyLM-seq512/tree/62fd3cf37d98976b6ed9a044b21e4d8c2d8ffe22"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "modelId": "anziank/grio-gemma-3-1b-coreml-anyLM-seq2048",
+          "repositoryUrl": "https://huggingface.co/anziank/grio-gemma-3-1b-coreml-anyLM-seq2048",
+          "revision": "876a4708b2d134a9c1cc1153d126eba5076f9fb8",
+          "pipelineTag": "text-generation",
+          "libraryName": "coreml",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 23,
+          "likes": 0,
+          "lastModified": "2026-05-23T21:57:48.000Z",
+          "gated": false,
+          "tags": [
+            "coreml",
+            "gemma3_text",
+            "on-device",
+            "ios",
+            "ipad",
+            "macos",
+            "apple-silicon",
+            "swift-transformers",
+            "anyLanguageModel",
+            "text-generation",
+            "text-enhancement",
+            "translation",
+            "gemma3",
+            "conversational",
+            "en",
+            "multilingual",
+            "base_model:google/gemma-3-1b-it",
+            "base_model:quantized:google/gemma-3-1b-it",
+            "license:gemma",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "ios",
+            "coreml",
+            "on-device"
+          ],
+          "discoveryScore": 37.8,
+          "evidenceUrls": [
+            "https://huggingface.co/anziank/grio-gemma-3-1b-coreml-anyLM-seq2048",
+            "https://huggingface.co/anziank/grio-gemma-3-1b-coreml-anyLM-seq2048/tree/876a4708b2d134a9c1cc1153d126eba5076f9fb8"
+          ],
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        }
+      ],
+      "queries": [
+        {
+          "label": "mobile",
+          "url": "https://huggingface.co/api/models?search=mobile&pipeline_tag=text-generation&sort=downloads&direction=-1&limit=30&full=true",
+          "status": "ok",
+          "itemCount": 30
+        },
+        {
+          "label": "executorch",
+          "url": "https://huggingface.co/api/models?search=executorch&pipeline_tag=text-generation&sort=downloads&direction=-1&limit=30&full=true",
+          "status": "ok",
+          "itemCount": 30
+        },
+        {
+          "label": "edge-llm",
+          "url": "https://huggingface.co/api/models?search=edge%20llm&pipeline_tag=text-generation&sort=downloads&direction=-1&limit=30&full=true",
+          "status": "ok",
+          "itemCount": 4
+        },
+        {
+          "label": "coreml",
+          "url": "https://huggingface.co/api/models?search=coreml&pipeline_tag=text-generation&sort=downloads&direction=-1&limit=30&full=true",
+          "status": "ok",
+          "itemCount": 30
+        }
+      ],
+      "observedAt": "2026-09-16T21:01:19.654Z"
+    },
+    {
+      "sourceId": "github-runtime-repositories",
+      "authority": "github",
+      "sourceType": "public-repository-api",
+      "url": "https://github.com/apple/coreai-models",
+      "status": "ok",
+      "itemCount": 4,
+      "items": [
+        {
+          "repositoryId": "apple/coreai-models",
+          "url": "https://github.com/apple/coreai-models",
+          "description": "Model export recipes, Python primitives, and Swift runtime utilities for on-device AI",
+          "stars": 2110,
+          "forks": 206,
+          "openIssues": 22,
+          "defaultBranch": "main",
+          "pushedAt": "2026-09-14T23:08:11Z",
+          "topics": [],
+          "license": "BSD-3-Clause",
+          "archived": false,
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "repositoryId": "apple/coremltools",
+          "url": "https://github.com/apple/coremltools",
+          "description": "Core ML tools contain supporting tools for Core ML model conversion, editing, and validation.",
+          "stars": 5426,
+          "forks": 850,
+          "openIssues": 507,
+          "defaultBranch": "main",
+          "pushedAt": "2026-09-14T20:55:42Z",
+          "topics": [
+            "coreml",
+            "coremltools",
+            "machine-learning",
+            "model-conversion",
+            "model-converter",
+            "pytorch",
+            "tensorflow"
+          ],
+          "license": "BSD-3-Clause",
+          "archived": false,
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "repositoryId": "pytorch/executorch",
+          "url": "https://github.com/pytorch/executorch",
+          "description": "On-device AI across mobile, embedded and edge for PyTorch",
+          "stars": 5030,
+          "forks": 1159,
+          "openIssues": 1316,
+          "defaultBranch": "main",
+          "pushedAt": "2026-09-16T20:56:20Z",
+          "topics": [
+            "deep-learning",
+            "embedded",
+            "gpu",
+            "machine-learning",
+            "mobile",
+            "neural-network",
+            "tensor"
+          ],
+          "license": "NOASSERTION",
+          "archived": false,
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        },
+        {
+          "repositoryId": "google-ai-edge/litert-torch",
+          "url": "https://github.com/google-ai-edge/litert-torch",
+          "description": "Support PyTorch model conversion with LiteRT.",
+          "stars": 1098,
+          "forks": 189,
+          "openIssues": 197,
+          "defaultBranch": "main",
+          "pushedAt": "2026-09-16T20:20:56Z",
+          "topics": [],
+          "license": "Apache-2.0",
+          "archived": false,
+          "observedAt": "2026-09-16T21:01:19.654Z"
+        }
+      ],
+      "observedAt": "2026-09-16T21:01:19.654Z"
+    },
+    {
+      "sourceId": "hacker-news-mobile-llm",
+      "authority": "hacker-news",
+      "sourceType": "public-community-search",
+      "url": "https://hn.algolia.com/api/v1/search_by_date?query=mobile%20LLM&tags=story&hitsPerPage=25",
+      "status": "ok",
+      "itemCount": 25,
+      "items": [
+        {
+          "title": "Ask HN: How do you test an app from a region you're not physically in?",
+          "url": "https://news.ycombinator.com/item?id=49723043",
+          "discussionUrl": "https://news.ycombinator.com/item?id=49723043",
+          "author": "Stranger5901",
+          "points": 1,
+          "comments": 1,
+          "createdAt": "2026-09-16T07:11:09Z"
+        },
+        {
+          "title": "Show HN: StemJSON – a language for LLMs to extend native mobile apps on the fly",
+          "url": "https://stemjson.com/",
+          "discussionUrl": "https://news.ycombinator.com/item?id=49695057",
+          "author": "vkrychun",
+          "points": 8,
+          "comments": 7,
+          "createdAt": "2026-09-14T11:26:45Z"
+        },
+        {
+          "title": "Kelivo: A Flutter LLM Chat Client. Support Mobile and Desktop",
+          "url": "https://github.com/Chevey339/kelivo",
+          "discussionUrl": "https://news.ycombinator.com/item?id=49639819",
+          "author": "xbmcuser",
+          "points": 2,
+          "comments": 0,
+          "createdAt": "2026-09-10T07:37:08Z"
+        },
+        {
+          "title": "Show HN: Apollo Lunar Module landing simulation",
+          "url": "https://gosandeep.com/eagles-descent/",
+          "discussionUrl": "https://news.ycombinator.com/item?id=49631365",
+          "author": "gosandeep",
+          "points": 50,
+          "comments": 5,
+          "createdAt": "2026-09-09T18:29:37Z"
+        },
+        {
+          "title": "The universal programming language of LLMs",
+          "url": "https://news.ycombinator.com/item?id=49617509",
+          "discussionUrl": "https://news.ycombinator.com/item?id=49617509",
+          "author": "senorqa",
+          "points": 5,
+          "comments": 9,
+          "createdAt": "2026-09-08T21:42:35Z"
+        },
+        {
+          "title": "Show HN: Texttile, a multiplayer blog engine for people who write together",
+          "url": "https://www.texttile.blog/",
+          "discussionUrl": "https://news.ycombinator.com/item?id=49477217",
+          "author": "klausbreyer",
+          "points": 13,
+          "comments": 2,
+          "createdAt": "2026-08-28T11:52:11Z"
+        },
+        {
+          "title": "Launch HN: Salem Robotics (YC S26) – Software for industrial inspection robots",
+          "url": "https://news.ycombinator.com/item?id=49466715",
+          "discussionUrl": "https://news.ycombinator.com/item?id=49466715",
+          "author": "Salem_robotics",
+          "points": 49,
+          "comments": 31,
+          "createdAt": "2026-08-27T15:46:04Z"
+        },
+        {
+          "title": "Show HN: Canaster is a canvas based visual workspace",
+          "url": "https://news.ycombinator.com/item?id=49436551",
+          "discussionUrl": "https://news.ycombinator.com/item?id=49436551",
+          "author": "shardullavekar",
+          "points": 2,
+          "comments": 1,
+          "createdAt": "2026-08-25T16:21:05Z"
+        },
+        {
+          "title": "Show HN: Youtilitics, energy usage analytics from utility data, no hardware",
+          "url": "https://youtilitics.com/",
+          "discussionUrl": "https://news.ycombinator.com/item?id=49380974",
+          "author": "ClaudyFocan",
+          "points": 2,
+          "comments": 0,
+          "createdAt": "2026-08-20T22:13:14Z"
+        },
+        {
+          "title": "Show HN: Bisecto – A minimalist game about cutting shapes into 50/50 halves",
+          "url": "https://bisecto.com/",
+          "discussionUrl": "https://news.ycombinator.com/item?id=49374879",
+          "author": "bpx51",
+          "points": 7,
+          "comments": 4,
+          "createdAt": "2026-08-20T14:15:29Z"
+        },
+        {
+          "title": "Show HN: Orca – Instant cross-platform in-app purchase orchestration",
+          "url": "https://news.ycombinator.com/item?id=49286271",
+          "discussionUrl": "https://news.ycombinator.com/item?id=49286271",
+          "author": "pcvetkovski",
+          "points": 5,
+          "comments": 0,
+          "createdAt": "2026-08-13T14:12:06Z"
+        },
+        {
+          "title": "Show HN: Word-finder/anagram solver web app for mobile browsers",
+          "url": "https://wanderinghorse.net/gaming/paperback/words.html",
+          "discussionUrl": "https://news.ycombinator.com/item?id=49272369",
+          "author": "sgbeal",
+          "points": 2,
+          "comments": 0,
+          "createdAt": "2026-08-12T13:46:48Z"
+        },
+        {
+          "title": "Show HN: Needle2: 14MB agentic LLM for phones, wearables, smart home and robots",
+          "url": "https://cactuscompute.com/needle",
+          "discussionUrl": "https://news.ycombinator.com/item?id=49246804",
+          "author": "HenryNdubuaku",
+          "points": 537,
+          "comments": 185,
+          "createdAt": "2026-08-10T17:22:07Z"
+        },
+        {
+          "title": "Ask HN: Why mobile software infrastructure never belongs to its owner?",
+          "url": "https://news.ycombinator.com/item?id=49187820",
+          "discussionUrl": "https://news.ycombinator.com/item?id=49187820",
+          "author": "rezvovmobile",
+          "points": 2,
+          "comments": 6,
+          "createdAt": "2026-08-05T19:34:47Z"
+        },
+        {
+          "title": "Show HN: I spent 2.5 years developing my 3D portfolio website, all under 5 MB",
+          "url": "https://shees.dev",
+          "discussionUrl": "https://news.ycombinator.com/item?id=49145566",
+          "author": "sheesdev",
+          "points": 3,
+          "comments": 4,
+          "createdAt": "2026-08-02T15:38:22Z"
+        },
+        {
+          "title": "Show HN: One page personal calendar with hierarchy",
+          "url": "https://news.ycombinator.com/item?id=49119723",
+          "discussionUrl": "https://news.ycombinator.com/item?id=49119723",
+          "author": "eltonlin",
+          "points": 2,
+          "comments": 0,
+          "createdAt": "2026-07-31T06:33:17Z"
+        },
+        {
+          "title": "How to get more coding productivity with LLMs",
+          "url": "https://news.ycombinator.com/item?id=49104392",
+          "discussionUrl": "https://news.ycombinator.com/item?id=49104392",
+          "author": "DaveParkCity",
+          "points": 9,
+          "comments": 2,
+          "createdAt": "2026-07-29T23:28:10Z"
+        },
+        {
+          "title": "Show HN: WhipDesk – Control your full dev machine from your phone",
+          "url": "https://github.com/BinaryBananaLLC/WhipDesk",
+          "discussionUrl": "https://news.ycombinator.com/item?id=49044039",
+          "author": "FreeGuessr",
+          "points": 3,
+          "comments": 0,
+          "createdAt": "2026-07-25T02:49:10Z"
+        },
+        {
+          "title": "Ask HN: What's the best AI coding tool today?",
+          "url": "https://news.ycombinator.com/item?id=49040025",
+          "discussionUrl": "https://news.ycombinator.com/item?id=49040025",
+          "author": "FrenchDevRemote",
+          "points": 2,
+          "comments": 2,
+          "createdAt": "2026-07-24T18:49:35Z"
+        },
+        {
+          "title": "Show HN: A live map of the news cycle, rebuilt hourly from embedded headlines",
+          "url": "https://journofinder.com/news-graph",
+          "discussionUrl": "https://news.ycombinator.com/item?id=49019336",
+          "author": "sach90",
+          "points": 4,
+          "comments": 3,
+          "createdAt": "2026-07-23T10:21:58Z"
+        },
+        {
+          "title": "Build: Mobile-First AI Creation on Roblox",
+          "url": "https://about.roblox.com/newsroom/2026/07/build-without-limits-on-roblox",
+          "discussionUrl": "https://news.ycombinator.com/item?id=48958809",
+          "author": "nyku",
+          "points": 1,
+          "comments": 0,
+          "createdAt": "2026-07-18T15:07:39Z"
+        },
+        {
+          "title": "Show HN: OSS Pi Agent for Slack and Linear",
+          "url": "https://github.com/brainwavesio/pi-digby",
+          "discussionUrl": "https://news.ycombinator.com/item?id=48943863",
+          "author": "grrowl",
+          "points": 3,
+          "comments": 0,
+          "createdAt": "2026-07-17T06:14:04Z"
+        },
+        {
+          "title": "Show HN: Rejourney – Open-source revenue leak prediction for web and mobile apps",
+          "url": "https://github.com/rejourneyco/rejourney",
+          "discussionUrl": "https://news.ycombinator.com/item?id=48904912",
+          "author": "mrr7337",
+          "points": 34,
+          "comments": 6,
+          "createdAt": "2026-07-14T11:06:09Z"
+        },
+        {
+          "title": "Show HN: ContextVault – Shared memory layer for your AI and your team",
+          "url": "https://www.contextvault.dev/",
+          "discussionUrl": "https://news.ycombinator.com/item?id=48900288",
+          "author": "Repeater22746",
+          "points": 12,
+          "comments": 11,
+          "createdAt": "2026-07-13T23:22:18Z"
+        },
+        {
+          "title": "Show HN: Wyrm – Solve algebra by touch, built on an open-source soundness engine",
+          "url": "https://github.com/dicroce/wyrm_math",
+          "discussionUrl": "https://news.ycombinator.com/item?id=48844046",
+          "author": "dicroce",
+          "points": 81,
+          "comments": 24,
+          "createdAt": "2026-07-09T11:16:18Z"
+        }
+      ],
+      "observedAt": "2026-09-16T21:01:19.654Z"
+    },
+    {
+      "sourceId": "reddit-localllama-mobile",
+      "authority": "reddit",
+      "sourceType": "public-community-search",
+      "url": "https://www.reddit.com/r/LocalLLaMA/search.json?q=mobile%20LLM&restrict_sr=1&sort=new&limit=25",
+      "status": "error",
+      "itemCount": 0,
+      "items": [],
+      "observedAt": "2026-09-16T21:01:19.654Z",
+      "error": "HTTP 403 Blocked"
+    },
+    {
+      "sourceId": "bluesky-mobile-llm",
+      "authority": "bluesky",
+      "sourceType": "public-community-search",
+      "url": "https://public.api.bsky.app/xrpc/app.bsky.feed.searchPosts?q=mobile%20LLM&limit=25",
+      "status": "error",
+      "itemCount": 0,
+      "items": [],
+      "observedAt": "2026-09-16T21:01:19.654Z",
+      "error": "HTTP 403 Forbidden"
+    }
+  ],
+  "shortlist": [
+    {
+      "rank": 1,
+      "modelId": "facebook/MobileLLM-125M",
+      "revision": "f6820a829b347aaa6674a705c82be3db47b1f9ee",
+      "discoveryScore": 59.4,
+      "reason": "Transparent popularity plus mobile-signal heuristic; requires Codex review against primary runtime evidence before admission."
+    },
+    {
+      "rank": 2,
+      "modelId": "software-mansion/react-native-executorch-gemma-4",
+      "revision": "e20831dd07f0f0d2bb6ee85e204e974a8a69b903",
+      "discoveryScore": 54.78,
+      "reason": "Transparent popularity plus mobile-signal heuristic; requires Codex review against primary runtime evidence before admission."
+    },
+    {
+      "rank": 3,
+      "modelId": "enterprise-explorers/Llama-2-7b-chat-coreml",
+      "revision": "eaf97358a37d03fd48e5a87d15aff2e8423c1afb",
+      "discoveryScore": 53.66,
+      "reason": "Transparent popularity plus mobile-signal heuristic; requires Codex review against primary runtime evidence before admission."
+    }
+  ],
+  "limitations": [
+    "Popularity and community signals are discovery aids, not proof of iOS or Android execution.",
+    "Exact immutable revisions and primary Apple Core AI/ExecuTorch evidence must be reviewed before changing the verified inventory.",
+    "Unavailable sources remain visible as errors; a run is invalid only when every source fails."
+  ]
+}
