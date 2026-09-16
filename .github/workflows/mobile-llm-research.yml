@@ -1,0 +1,64 @@
+name: ModelOrbit mobile LLM research
+
+on:
+  schedule:
+    # Mondays at 09:00 Asia/Kolkata (03:30 UTC). GitHub may delay scheduled runs.
+    - cron: "30 3 * * 1"
+  workflow_dispatch:
+
+concurrency:
+  group: modelorbit-mobile-llm-research
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Check out ModelOrbit
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Run Codex research agent
+        uses: openai/codex-action@v1
+        with:
+          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+          permission-profile: ":workspace"
+          safety-strategy: drop-sudo
+          effort: high
+          prompt-file: .github/prompts/mobile-llm-research.md
+
+      - name: Validate repository and research artifacts
+        run: |
+          npm test
+          npm run validate
+          npm run research:validate
+          npm run research:preflight
+          npm run research:poc-status
+          npm run normalize
+          git diff --check
+
+      - name: Commit and push validated refresh
+        if: github.ref == 'refs/heads/main'
+        shell: bash
+        run: |
+          if [[ -z "$(git status --porcelain)" ]]; then
+            echo "No research changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .github/prompts .github/workflows data docs evidence packages pocs test tools README.md package.json
+          git diff --cached --check
+          git commit -m "chore: refresh mobile LLM research"
+          git push origin HEAD:main

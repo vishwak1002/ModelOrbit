@@ -115,3 +115,7 @@ The current discovery inventory is `data/research/mobile-llm-inventory-2026-09-1
 The derived artifacts are `data/preflight/research-2026-09-17.json` and `evidence/runs/research-poc-status.json`. They are intentionally blocked on this host, not empty or successful: iOS has Xcode 26.4.1/iOS SDK 26.4 and no physical iPhone, while Android has no SDK/ADB/Gradle/Java/Kotlin toolchain or device. The next operator should supply trusted iOS 27/Xcode 27 and Android/device manifests, export the three admitted revisions, then run the shared fixture on both native adapters.
 
 Reproduce with `npm run research:validate`, `npm run research:preflight`, `npm run research:poc-status`, `npm test`, and `npm run validate`. See `docs/research-notes/2026-09-17-mobile-llm-discovery.md` for the source-by-source rationale.
+
+## Remote recurring research
+
+The remote scheduler is `.github/workflows/mobile-llm-research.yml`, with its full agent instructions in `.github/prompts/mobile-llm-research.md`. It runs weekly on Monday at 09:00 Asia/Kolkata via GitHub Actions and can also be started with `workflow_dispatch`. It requires the repository secret `OPENAI_API_KEY`. The workflow lets Codex edit the checked-out repository, runs the contract/research/normalization gates, and only then commits and pushes a validated refresh to `main`. It never adds weights or private device data and leaves blocked device states explicit.
