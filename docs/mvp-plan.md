@@ -1,6 +1,6 @@
 # ModelOrbit MVP Plan
 
-Status: CEO-reviewed, engineering-reviewed, design-reviewed, schema/preflight/device phase implemented; physical-device POCs blocked by missing prerequisites
+Status: CEO-reviewed, engineering-reviewed, design-reviewed, schema/preflight/device/research phase implemented; physical-device POCs blocked by missing prerequisites
 Date: 2026-09-17
 Repository: new standalone GitHub repository named `ModelOrbit`
 
@@ -38,10 +38,12 @@ ModelOrbit/
     android-executorch/         # Kotlin/Android POC
   tools/
     preflight/                  # 26-model export eligibility matrix
+    research/                   # mobile-LLM discovery and POC status reduction
     benchmark/                  # evidence capture and manifest tooling
     ingest/                     # scheduled Hugging Face refresh
   data/
     snapshots/                  # immutable source snapshots
+    research/                   # dated mobile-LLM inventory and notes
     normalized/                 # generated normalized records
   evidence/
     runs/                       # benchmark artifacts, never model weights
@@ -588,3 +590,15 @@ Post-design result: no new critical architecture gap. The existing engineering g
 
 - **UNRESOLVED:** 0 decisions; device manifests remain an implementation prerequisite, not a plan-choice blocker.
 - **VERDICT:** CEO + ENG + DESIGN CLEARED; ready for isolated-repo implementation, with visual QA after the first web build.
+
+## Phase 4 — current mobile-LLM discovery
+
+The dated research inventory is `data/research/mobile-llm-inventory-2026-09-17.json`. It contains 15 scoped records: 3 exact verified intersections, 7 claimed-but-unverified records, 4 exclusions, and 1 deduplicated artifact variant. The verified repositories are Qwen3 0.6B, 1.7B, and 4B, each with Apple Core AI and ExecuTorch source evidence and a recorded Hugging Face revision.
+
+The discovery scripts are:
+
+- `npm run research:validate`: validate the inventory and enforce the exact-intersection rule.
+- `npm run research:preflight`: create the six candidate/platform host-preflight rows.
+- `npm run research:poc-status`: reduce candidate POC status against the current device manifest.
+
+All six host-preflight rows and all six candidate POC lanes are currently `blocked`. iOS lacks Xcode/iOS 27 and a physical iPhone; Android lacks the SDK/ADB/Gradle/Java/Kotlin toolchain and a physical device. No latency, memory, output, or device-run claims are made.

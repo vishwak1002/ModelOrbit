@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "0.2.0",
+  "inventoryId": "research-fixture",
+  "searchedAt": "2026-09-17T00:00:00.000Z",
+  "scope": { "queryScope": "fixture", "queries": ["fixture"], "inclusionRule": "fixture", "excludedRule": "fixture" },
+  "records": [{
+    "recordId": "research-record-fixture",
+    "modelId": "fixture/model",
+    "canonicalModelId": "fixture/model",
+    "disposition": "verified",
+    "repositoryUrl": "https://huggingface.co/fixture/model",
+    "revision": "0123456789abcdef0123456789abcdef01234567",
+    "license": "apache-2.0",
+    "architecture": "FixtureForCausalLM",
+    "parameterCount": 1,
+    "quantization": "fixture",
+    "sourceEvidence": [{ "sourceId": "source-fixture", "url": "https://example.com/fixture", "sourceType": "official-runtime-doc", "authority": "pytorch", "observedAt": "2026-09-17T00:00:00.000Z", "repositoryId": "fixture/model", "revision": null, "claim": "Fixture." }],
+    "runtimeSupport": [{ "platform": "ios", "runtime": "core-ai", "status": "verified", "evidenceSourceIds": ["source-fixture"], "artifactFormat": "fixture" }, { "platform": "android", "runtime": "executorch", "status": "verified", "evidenceSourceIds": ["source-fixture"], "artifactFormat": "fixture" }],
+    "reason": "Fixture."
+  }],
+  "verifiedIntersection": ["fixture/model"],
+  "intersectionReason": "Fixture."
+}

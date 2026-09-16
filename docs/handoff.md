@@ -1,7 +1,7 @@
 # ModelOrbit Handoff
 
 Date: 2026-09-17
-Status: CEO, engineering, and design reviews complete; schema/preflight/device phase implemented; physical-device POCs blocked by missing prerequisites
+Status: CEO, engineering, and design reviews complete; schema/preflight/device/research phase implemented; physical-device POCs blocked by missing prerequisites
 
 ## What was decided
 
@@ -19,7 +19,7 @@ Status: CEO, engineering, and design reviews complete; schema/preflight/device p
 
 ## Repository isolation
 
-Do not modify or nest this project inside the existing `jarvis-personal-os` checkout. The target repository does not exist yet.
+Do not modify or nest this project inside the existing `jarvis-personal-os` checkout. This project is the standalone repository at `/Users/vishwasaikarnati/Documents/Codex/2026-09-17/ModelOrbit` with remote `https://github.com/vishwak1002/ModelOrbit.git`.
 
 ## Source input
 
@@ -107,3 +107,11 @@ The checked-in matrix has 52 validated rows in `data/preflight/2026-09-17.json`.
 The exact device detection artifact is `data/devices/2026-09-16.json` (timestamps are UTC; manifests `device-ios-20260916T195533Z` and `device-android-20260916T195533Z`). Xcode 26.4.1 / build 17E202, xcrun 72, Swift 6.3.1, iOS SDK 26.4 were available; no physical iPhone was listed. ADB, Android SDK, Gradle, Java, and Kotlin were unavailable; no Android device was listed. The host is an Apple M1 MacBook Air running macOS 26.4.1. No private device identifiers were retained.
 
 The Swift fail-closed harness is in `pocs/ios-coreai/main.swift`; the portable Kotlin harness is in `pocs/android-executorch/Main.kt`. They emit no measurements without an admitted candidate and exact device manifest. Once a same-repository, immutable-revision candidate appears in the matrix and both manifests are available, the next safe work is to add the platform adapter, run `data/fixtures/*-basic-v1.json` on both devices, validate benchmark results, and rebuild the read model.
+
+## Phase 4 handoff — mobile-LLM discovery
+
+The current discovery inventory is `data/research/mobile-llm-inventory-2026-09-17.json`. It records 15 records: 3 verified exact candidates, 7 claimed-but-unverified records, 4 exclusions, and 1 deduplicated artifact variant. The verified intersection is `Qwen/Qwen3-0.6B`, `Qwen/Qwen3-1.7B`, and `Qwen/Qwen3-4B`; the inventory records the exact revisions and primary Apple/ExecuTorch source URLs.
+
+The derived artifacts are `data/preflight/research-2026-09-17.json` and `evidence/runs/research-poc-status.json`. They are intentionally blocked on this host, not empty or successful: iOS has Xcode 26.4.1/iOS SDK 26.4 and no physical iPhone, while Android has no SDK/ADB/Gradle/Java/Kotlin toolchain or device. The next operator should supply trusted iOS 27/Xcode 27 and Android/device manifests, export the three admitted revisions, then run the shared fixture on both native adapters.
+
+Reproduce with `npm run research:validate`, `npm run research:preflight`, `npm run research:poc-status`, `npm test`, and `npm run validate`. See `docs/research-notes/2026-09-17-mobile-llm-discovery.md` for the source-by-source rationale.

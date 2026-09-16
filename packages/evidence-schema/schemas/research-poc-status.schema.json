@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://modelorbit.dev/schema/0.2.0/research-poc-status.json",
+  "title": "ModelOrbit research POC status ledger",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "inventoryId", "generatedAt", "records"],
+  "properties": {
+    "schemaVersion": { "const": "0.2.0" },
+    "inventoryId": { "type": "string", "pattern": "^research-[a-z0-9-]+$" },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "records": { "type": "array", "minItems": 1, "items": { "type": "object", "additionalProperties": false, "required": ["pocId", "modelId", "modelRevision", "fixtureId", "ios", "android"], "properties": {
+      "pocId": { "type": "string", "pattern": "^poc-[a-z0-9-]+$" },
+      "modelId": { "type": "string", "pattern": "^[^/]+/.+" },
+      "modelRevision": { "type": "string", "pattern": "^[0-9a-f]{7,64}$" },
+      "fixtureId": { "type": "string", "minLength": 1 },
+      "ios": { "$ref": "#/$defs/lane" },
+      "android": { "$ref": "#/$defs/lane" }
+    } } }
+  },
+  "$defs": { "lane": { "type": "object", "additionalProperties": false, "required": ["runtime", "status", "harnessPath", "reason"], "properties": {
+    "runtime": { "enum": ["core-ai", "executorch"] },
+    "status": { "enum": ["built", "blocked", "run", "pass", "fail", "unknown"] },
+    "harnessPath": { "type": "string", "pattern": "^pocs/.+" },
+    "reason": { "type": "string", "minLength": 1 },
+    "artifactPath": { "type": ["string", "null"], "pattern": "^(evidence|data)/.+" }
+  } } }
+}

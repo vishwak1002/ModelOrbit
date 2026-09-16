@@ -11,6 +11,9 @@
     "benchmark:validate": "node tools/benchmark/validate-result.mjs",
     "read-model": "node tools/build-read-model.mjs",
     "native:check": "node tools/compile-native.mjs",
-    "normalize": "node tools/normalize-snapshot.mjs && node tools/build-read-model.mjs"
+    "normalize": "node tools/normalize-snapshot.mjs && node tools/build-read-model.mjs",
+    "research:validate": "node tools/research/validate-inventory.mjs",
+    "research:poc-status": "node tools/research/build-poc-status.mjs",
+    "research:preflight": "node tools/research/build-preflight.mjs"
   }
 }

@@ -8,7 +8,7 @@ The first interface is a visual model galaxy backed by an evidence ledger. Phase
 
 ## Current status
 
-Design and engineering reviews are complete. The executable schema/preflight/device-detection phase and benchmark evidence gate are now checked in. The current run has no verified cross-platform candidates because the snapshot has no immutable revisions, Android tooling is unavailable, and no physical phones were detected; the native harnesses fail closed until those prerequisites exist.
+Design and engineering reviews are complete. The executable schema/preflight/device-detection phase and benchmark evidence gate are checked in. The dated mobile-LLM discovery contains 15 scoped records: 3 verified exact cross-platform candidates, 7 claimed-but-unverified records, 4 exclusions, and 1 deduplicated artifact variant. The verified candidates are Qwen3 0.6B, 1.7B, and 4B; all native runs remain blocked on this host because Xcode/iOS 27 and physical devices are unavailable, and Android SDK/ADB/device prerequisites are absent.
 
 Read the [MVP plan](docs/mvp-plan.md) and [handoff](docs/handoff.md) before changing scope.
 
@@ -20,9 +20,11 @@ Read the [MVP plan](docs/mvp-plan.md) and [handoff](docs/handoff.md) before chan
 - `pocs/ios-coreai`: iOS Core AI prototype.
 - `pocs/android-executorch`: Android ExecuTorch prototype.
 - `tools/preflight`: cross-platform export eligibility matrix.
+- `tools/research`: mobile-LLM inventory validation, research preflight, and POC status reduction.
 - `tools/benchmark`: device manifests and evidence capture.
 - `tools/ingest`: scheduled Hugging Face snapshot refresh.
 - `data/snapshots`: immutable source inputs.
+- `data/research`: dated discovery inventory and reproducibility notes.
 - `evidence/runs`: validated benchmark artifacts, never model weights.
 
 ## Trust boundary
@@ -35,3 +37,17 @@ Model cards, URLs, metadata, pull requests, and contributor artifacts are untrus
 - Android: [ExecuTorch](https://docs.pytorch.org/executorch/stable/edge-platforms-section.html)
 
 The project does not claim mobile readiness from parameter count, desktop wrappers, or a single-platform result.
+
+## Research reproduction
+
+The research inventory is validated and the host-specific POC/preflight status can be rebuilt with:
+
+```text
+npm run research:validate
+npm run research:preflight
+npm run research:poc-status
+npm test
+npm run validate
+```
+
+See [`data/research/mobile-llm-inventory-2026-09-17.json`](data/research/mobile-llm-inventory-2026-09-17.json) and [`docs/research-notes/2026-09-17-mobile-llm-discovery.md`](docs/research-notes/2026-09-17-mobile-llm-discovery.md) for the exact repository IDs, revisions, runtime claims, evidence URLs, and exclusions.

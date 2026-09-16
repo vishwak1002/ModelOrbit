@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "0.2.0",
+  "inventoryId": "research-mobile-llm-2026-09-17",
+  "generatedAt": "2026-09-16T20:20:04.000Z",
+  "records": [
+    {
+      "pocId": "poc-qwen-qwen3-0-6b",
+      "modelId": "Qwen/Qwen3-0.6B",
+      "modelRevision": "a9c98e602b9d36d2a2f7ba1eb0f5f31e4e8e5143",
+      "fixtureId": "text-generation/basic-v1",
+      "ios": {
+        "runtime": "core-ai",
+        "status": "blocked",
+        "harnessPath": "pocs/ios-coreai/main.swift",
+        "reason": "Core AI POC blocked: requires Xcode/iOS 27 and an available physical iPhone; observed Xcode 26.4.1\nBuild version 17E202."
+      },
+      "android": {
+        "runtime": "executorch",
+        "status": "blocked",
+        "harnessPath": "pocs/android-executorch/Main.kt",
+        "reason": "ExecuTorch POC blocked: requires Android SDK/adb and an available physical Android device; observed ADB is unavailable or no Android device is connected; no device evidence was fabricated."
+      }
+    },
+    {
+      "pocId": "poc-qwen-qwen3-1-7b",
+      "modelId": "Qwen/Qwen3-1.7B",
+      "modelRevision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+      "fixtureId": "text-generation/basic-v1",
+      "ios": {
+        "runtime": "core-ai",
+        "status": "blocked",
+        "harnessPath": "pocs/ios-coreai/main.swift",
+        "reason": "Core AI POC blocked: requires Xcode/iOS 27 and an available physical iPhone; observed Xcode 26.4.1\nBuild version 17E202."
+      },
+      "android": {
+        "runtime": "executorch",
+        "status": "blocked",
+        "harnessPath": "pocs/android-executorch/Main.kt",
+        "reason": "ExecuTorch POC blocked: requires Android SDK/adb and an available physical Android device; observed ADB is unavailable or no Android device is connected; no device evidence was fabricated."
+      }
+    },
+    {
+      "pocId": "poc-qwen-qwen3-4b",
+      "modelId": "Qwen/Qwen3-4B",
+      "modelRevision": "1cfa9a7",
+      "fixtureId": "text-generation/basic-v1",
+      "ios": {
+        "runtime": "core-ai",
+        "status": "blocked",
+        "harnessPath": "pocs/ios-coreai/main.swift",
+        "reason": "Core AI POC blocked: requires Xcode/iOS 27 and an available physical iPhone; observed Xcode 26.4.1\nBuild version 17E202."
+      },
+      "android": {
+        "runtime": "executorch",
+        "status": "blocked",
+        "harnessPath": "pocs/android-executorch/Main.kt",
+        "reason": "ExecuTorch POC blocked: requires Android SDK/adb and an available physical Android device; observed ADB is unavailable or no Android device is connected; no device evidence was fabricated."
+      }
+    }
+  ]
+}

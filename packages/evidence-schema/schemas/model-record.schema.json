@@ -27,6 +27,11 @@
     "orbitIndex": { "type": "integer", "minimum": 0 },
     "preflight": { "type": "object" },
     "evidence": { "type": "array", "items": { "type": "string" } },
+    "license": { "type": ["string", "null"] },
+    "architecture": { "type": ["string", "null"] },
+    "quantization": { "type": ["string", "null"] },
+    "provenance": { "type": "object" },
+    "sourceEvidence": { "type": "array", "items": { "type": "object" } },
     "statusReason": { "type": "string", "minLength": 1 }
   }
 }

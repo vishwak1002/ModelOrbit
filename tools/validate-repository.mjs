@@ -14,4 +14,9 @@ if (matrix.results.length !== 52) throw new Error(`Expected 52 preflight results
 const manifests = json(`data/devices/${readdirSync(resolve(root, "data/devices")).sort().at(-1)}`).manifests;
 manifests.forEach((manifest) => assertValid(manifest, "device-manifest"));
 assertValid(json("evidence/runs/phase-2-status.json"), "phase-run-status");
+const inventory = json("data/research/mobile-llm-inventory-2026-09-17.json");
+assertValid(inventory, "research-inventory");
+assertValid(json("evidence/runs/research-poc-status.json"), "research-poc-status");
+assertValid(json("data/preflight/research-2026-09-17.json"), "preflight-matrix");
+inventory.records.forEach((record) => { if (record.disposition === "verified" && !record.revision) throw new Error(`Verified research record lacks revision: ${record.modelId}`); });
 console.log(`Validated ${normalized.records.length} model records, ${matrix.results.length} preflight results, ${manifests.length} device manifests, and the phase ledger.`);

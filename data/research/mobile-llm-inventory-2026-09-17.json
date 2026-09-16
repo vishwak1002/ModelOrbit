@@ -1,0 +1,342 @@
+{
+  "schemaVersion": "0.2.0",
+  "inventoryId": "research-mobile-llm-2026-09-17",
+  "searchedAt": "2026-09-16T20:20:04.000Z",
+  "scope": {
+    "queryScope": "Discoverable Hugging Face generative text LLM repositories and official runtime/model repositories with direct evidence for iOS and/or Android on 2026-09-17.",
+    "queries": [
+      "site:huggingface.co official model card iOS Core ML LLM ExecuTorch",
+      "site:github.com/apple coreai-models LLM Hugging Face iOS",
+      "site:github.com/pytorch/executorch LLM Android Hugging Face",
+      "site:huggingface.co executorch mobile LLM",
+      "site:github.com/pytorch/executorch Qwen3 SmolLM2 Phi-4-mini Qwen2.5"
+    ],
+    "inclusionRule": "Include a record only when the exact HF repository ID, immutable HF revision, architecture/parameter metadata, license, and at least one direct primary-source runtime claim are recorded. Mark verified only when direct current primary-source evidence covers both iOS and Android for that exact repository; use the intersection of those exact IDs, never family names alone.",
+    "excludedRule": "Do not infer mobile support from parameter count, GGUF/ONNX existence, popularity, desktop/Apple Silicon results, a single platform, or a non-generative encoder. Keep near-matches and community claims visible as claimed-but-unverified or deduplicated-variant."
+  },
+  "records": [
+    {
+      "recordId": "research-record-qwen3-0-6b",
+      "modelId": "Qwen/Qwen3-0.6B",
+      "canonicalModelId": "Qwen/Qwen3-0.6B",
+      "disposition": "verified",
+      "repositoryUrl": "https://huggingface.co/Qwen/Qwen3-0.6B",
+      "revision": "a9c98e602b9d36d2a2f7ba1eb0f5f31e4e8e5143",
+      "license": "apache-2.0",
+      "architecture": "Qwen3ForCausalLM",
+      "parameterCount": 751000000,
+      "quantization": "Core AI iOS mixed 4-bit/8-bit palettization; ExecuTorch Android XNNPACK 8da4w recipe",
+      "sourceEvidence": [
+        { "sourceId": "source-hf-qwen3-0-6b", "url": "https://huggingface.co/Qwen/Qwen3-0.6B/tree/a9c98e602b9d36d2a2f7ba1eb0f5f31e4e8e5143", "sourceType": "hf-revision", "authority": "huggingface", "observedAt": "2026-09-16T20:20:04.000Z", "repositoryId": "Qwen/Qwen3-0.6B", "revision": "a9c98e602b9d36d2a2f7ba1eb0f5f31e4e8e5143", "claim": "HF revision is a text-generation Qwen3 repository with Apache-2.0 license." },
+        { "sourceId": "source-apple-qwen3", "url": "https://github.com/apple/coreai-models/blob/main/models/qwen3/README.md", "sourceType": "official-runtime-repo", "authority": "apple", "observedAt": "2026-09-16T20:20:04.000Z", "repositoryId": "Qwen/Qwen3-0.6B", "revision": null, "claim": "Apple Core AI catalog lists Qwen3 0.6B as iOS Yes and provides the exact HF export command." },
+        { "sourceId": "source-pytorch-qwen3", "url": "https://github.com/pytorch/executorch/blob/main/examples/models/qwen3/README.md", "sourceType": "official-runtime-repo", "authority": "pytorch", "observedAt": "2026-09-16T20:20:04.000Z", "repositoryId": "Qwen/Qwen3-0.6B", "revision": "a9c98e602b9d36d2a2f7ba1eb0f5f31e4e8e5143", "claim": "ExecuTorch documents Qwen3 0.6B export/run commands and an Android app path, including the exact HF snapshot path." }
+      ],
+      "runtimeSupport": [
+        { "platform": "ios", "runtime": "core-ai", "status": "verified", "evidenceSourceIds": ["source-apple-qwen3"], "artifactFormat": ".aimodel resource folder" },
+        { "platform": "android", "runtime": "executorch", "status": "verified", "evidenceSourceIds": ["source-pytorch-qwen3"], "artifactFormat": ".pte + tokenizer.json" }
+      ],
+      "reason": "Exact HF repository and revision are named by the Apple Core AI and ExecuTorch Qwen3 lanes for both mobile platforms."
+    },
+    {
+      "recordId": "research-record-qwen3-1-7b",
+      "modelId": "Qwen/Qwen3-1.7B",
+      "canonicalModelId": "Qwen/Qwen3-1.7B",
+      "disposition": "verified",
+      "repositoryUrl": "https://huggingface.co/Qwen/Qwen3-1.7B",
+      "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+      "license": "apache-2.0",
+      "architecture": "Qwen3ForCausalLM",
+      "parameterCount": 1700000000,
+      "quantization": "Core AI iOS 6-bit palettization; ExecuTorch Android XNNPACK 8da4w recipe",
+      "sourceEvidence": [
+        { "sourceId": "source-hf-qwen3-1-7b", "url": "https://huggingface.co/Qwen/Qwen3-1.7B/tree/70d244cc86ccca08cf5af4e1e306ecf908b1ad5e", "sourceType": "hf-revision", "authority": "huggingface", "observedAt": "2026-09-16T20:20:04.000Z", "repositoryId": "Qwen/Qwen3-1.7B", "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e", "claim": "HF revision is a text-generation Qwen3 repository with Apache-2.0 license." },
+        { "sourceId": "source-apple-qwen3", "url": "https://github.com/apple/coreai-models/blob/main/models/qwen3/README.md", "sourceType": "official-runtime-repo", "authority": "apple", "observedAt": "2026-09-16T20:20:04.000Z", "repositoryId": "Qwen/Qwen3-1.7B", "revision": null, "claim": "Apple Core AI catalog lists Qwen3 1.7B as iOS Yes and provides the family export recipe." },
+        { "sourceId": "source-pytorch-qwen3", "url": "https://github.com/pytorch/executorch/blob/main/examples/models/qwen3/README.md", "sourceType": "official-runtime-repo", "authority": "pytorch", "observedAt": "2026-09-16T20:20:04.000Z", "repositoryId": "Qwen/Qwen3-1.7B", "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e", "claim": "ExecuTorch documents Qwen3 1.7B export/run commands and Android app reuse." }
+      ],
+      "runtimeSupport": [
+        { "platform": "ios", "runtime": "core-ai", "status": "verified", "evidenceSourceIds": ["source-apple-qwen3"], "artifactFormat": ".aimodel resource folder" },
+        { "platform": "android", "runtime": "executorch", "status": "verified", "evidenceSourceIds": ["source-pytorch-qwen3"], "artifactFormat": ".pte + tokenizer" }
+      ],
+      "reason": "Exact Qwen3 1.7B repository is covered by both official mobile runtime paths; no device execution is implied."
+    },
+    {
+      "recordId": "research-record-qwen3-4b",
+      "modelId": "Qwen/Qwen3-4B",
+      "canonicalModelId": "Qwen/Qwen3-4B",
+      "disposition": "verified",
+      "repositoryUrl": "https://huggingface.co/Qwen/Qwen3-4B",
+      "revision": "1cfa9a7",
+      "license": "apache-2.0",
+      "architecture": "Qwen3ForCausalLM",
+      "parameterCount": 4000000000,
+      "quantization": "Core AI iOS mixed 4-bit/8-bit palettization; ExecuTorch Android XNNPACK 8da4w recipe",
+      "sourceEvidence": [
+        { "sourceId": "source-hf-qwen3-4b", "url": "https://huggingface.co/Qwen/Qwen3-4B/tree/1cfa9a7", "sourceType": "hf-revision", "authority": "huggingface", "observedAt": "2026-09-16T20:20:04.000Z", "repositoryId": "Qwen/Qwen3-4B", "revision": "1cfa9a7", "claim": "HF revision is a text-generation Qwen3 repository with Apache-2.0 license." },
+        { "sourceId": "source-apple-qwen3", "url": "https://github.com/apple/coreai-models/blob/main/models/qwen3/README.md", "sourceType": "official-runtime-repo", "authority": "apple", "observedAt": "2026-09-16T20:20:04.000Z", "repositoryId": "Qwen/Qwen3-4B", "revision": null, "claim": "Apple Core AI catalog lists Qwen3 4B as iOS Yes and provides the family export recipe." },
+        { "sourceId": "source-pytorch-qwen3", "url": "https://github.com/pytorch/executorch/blob/main/examples/models/qwen3/README.md", "sourceType": "official-runtime-repo", "authority": "pytorch", "observedAt": "2026-09-16T20:20:04.000Z", "repositoryId": "Qwen/Qwen3-4B", "revision": "1cfa9a7", "claim": "ExecuTorch documents Qwen3 4B export/run commands and Android app reuse." }
+      ],
+      "runtimeSupport": [
+        { "platform": "ios", "runtime": "core-ai", "status": "verified", "evidenceSourceIds": ["source-apple-qwen3"], "artifactFormat": ".aimodel resource folder" },
+        { "platform": "android", "runtime": "executorch", "status": "verified", "evidenceSourceIds": ["source-pytorch-qwen3"], "artifactFormat": ".pte + tokenizer" }
+      ],
+      "reason": "Exact Qwen3 4B repository is listed in both official mobile runtime recipes; the short HF revision is immutable and unambiguous."
+    },
+    {
+      "recordId": "research-record-qwen25-1-5b-instruct",
+      "modelId": "Qwen/Qwen2.5-1.5B-Instruct",
+      "canonicalModelId": "Qwen/Qwen2.5-1.5B-Instruct",
+      "disposition": "claimed-but-unverified",
+      "repositoryUrl": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct",
+      "revision": "989aa79",
+      "license": "apache-2.0",
+      "architecture": "Qwen2ForCausalLM",
+      "parameterCount": 1540000000,
+      "quantization": "Core AI iOS 4-bit palettization; ExecuTorch source supports Qwen2.5 base 1.5B recipe",
+      "sourceEvidence": [
+        { "sourceId": "source-hf-qwen25-instruct", "url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/tree/989aa79", "sourceType": "hf-revision", "authority": "huggingface", "observedAt": "2026-09-16T20:20:04.000Z", "repositoryId": "Qwen/Qwen2.5-1.5B-Instruct", "revision": "989aa79", "claim": "HF revision is a text-generation Qwen2.5 Instruct repository with Apache-2.0 license." },
+        { "sourceId": "source-apple-qwen25", "url": "https://github.com/apple/coreai-models/blob/main/models/qwen2/README.md", "sourceType": "official-runtime-repo", "authority": "apple", "observedAt": "2026-09-16T20:20:04.000Z", "repositoryId": "Qwen/Qwen2.5-1.5B-Instruct", "revision": null, "claim": "Apple Core AI lists this exact Instruct repository as iOS Yes." },
+        { "sourceId": "source-pytorch-qwen25", "url": "https://github.com/pytorch/executorch/blob/main/examples/models/llama/export_llama_lib.py", "sourceType": "official-runtime-repo", "authority": "pytorch", "observedAt": "2026-09-16T20:20:04.000Z", "repositoryId": "Qwen/Qwen2.5-1.5B", "revision": null, "claim": "ExecuTorch registers the Qwen2.5 1.5B base repository, not this Instruct repository." }
+      ],
+      "runtimeSupport": [
+        { "platform": "ios", "runtime": "core-ai", "status": "verified", "evidenceSourceIds": ["source-apple-qwen25"], "artifactFormat": ".aimodel resource folder" },
+        { "platform": "android", "runtime": "executorch", "status": "claimed", "evidenceSourceIds": ["source-pytorch-qwen25"], "artifactFormat": ".pte" }
+      ],
+      "reason": "The iOS recipe names Instruct, while the official ExecuTorch mapping names the different Qwen/Qwen2.5-1.5B base repository; exact-ID intersection therefore fails."
+    },
+    {
+      "recordId": "research-record-smollm2-135m-instruct",
+      "modelId": "HuggingFaceTB/SmolLM2-135M-Instruct",
+      "canonicalModelId": "HuggingFaceTB/SmolLM2-135M-Instruct",
+      "disposition": "claimed-but-unverified",
+      "repositoryUrl": "https://huggingface.co/HuggingFaceTB/SmolLM2-135M-Instruct",
+      "revision": "12fd25f",
+      "license": "apache-2.0",
+      "architecture": "LlamaForCausalLM",
+      "parameterCount": 135000000,
+      "quantization": "Core AI iOS FP16; ExecuTorch community artifact is derived from the base SmolLM2-135M repository",
+      "sourceEvidence": [
+        { "sourceId": "source-hf-smollm2-135m-instruct", "url": "https://huggingface.co/HuggingFaceTB/SmolLM2-135M-Instruct/tree/12fd25f", "sourceType": "hf-revision", "authority": "huggingface", "observedAt": "2026-09-16T20:20:04.000Z", "repositoryId": "HuggingFaceTB/SmolLM2-135M-Instruct", "revision": "12fd25f", "claim": "HF revision is an Apache-2.0 text-generation SmolLM2 Instruct repository." },
+        { "sourceId": "source-apple-smollm2", "url": "https://github.com/apple/coreai-models/blob/main/models/smollm2/README.md", "sourceType": "official-runtime-repo", "authority": "apple", "observedAt": "2026-09-16T20:20:04.000Z", "repositoryId": "HuggingFaceTB/SmolLM2-135M-Instruct", "revision": null, "claim": "Apple Core AI lists SmolLM2-135M-Instruct as iOS Yes." },
+        { "sourceId": "source-pytorch-smollm2-artifact", "url": "https://huggingface.co/executorch-community/SmolLM2-135M", "sourceType": "official-artifact-card", "authority": "community", "observedAt": "2026-09-16T20:20:04.000Z", "repositoryId": "HuggingFaceTB/SmolLM2-135M", "revision": null, "claim": "ExecuTorch Community card provides a .pte artifact derived from the SmolLM2-135M base repository." }
+      ],
+      "runtimeSupport": [
+        { "platform": "ios", "runtime": "core-ai", "status": "verified", "evidenceSourceIds": ["source-apple-smollm2"], "artifactFormat": ".aimodel resource folder" },
+        { "platform": "android", "runtime": "executorch", "status": "claimed", "evidenceSourceIds": ["source-pytorch-smollm2-artifact"], "artifactFormat": ".pte" }
+      ],
+      "reason": "The direct mobile artifact is for the base repository, not the Instruct repository; preserved as a near-match rather than merged."
+    },
+    {
+      "recordId": "research-record-smollm2-360m-instruct",
+      "modelId": "HuggingFaceTB/SmolLM2-360M-Instruct",
+      "canonicalModelId": "HuggingFaceTB/SmolLM2-360M-Instruct",
+      "disposition": "claimed-but-unverified",
+      "repositoryUrl": "https://huggingface.co/HuggingFaceTB/SmolLM2-360M-Instruct",
+      "revision": "a10cc15",
+      "license": "apache-2.0",
+      "architecture": "LlamaForCausalLM",
+      "parameterCount": 360000000,
+      "quantization": "Core AI iOS FP16; ExecuTorch family support claim without exact Android artifact",
+      "sourceEvidence": [
+        { "sourceId": "source-hf-smollm2-360m-instruct", "url": "https://huggingface.co/HuggingFaceTB/SmolLM2-360M-Instruct/tree/a10cc15", "sourceType": "hf-revision", "authority": "huggingface", "observedAt": "2026-09-16T20:20:04.000Z", "repositoryId": "HuggingFaceTB/SmolLM2-360M-Instruct", "revision": "a10cc15", "claim": "HF revision is an Apache-2.0 text-generation SmolLM2 Instruct repository." },
+        { "sourceId": "source-apple-smollm2", "url": "https://github.com/apple/coreai-models/blob/main/models/smollm2/README.md", "sourceType": "official-runtime-repo", "authority": "apple", "observedAt": "2026-09-16T20:20:04.000Z", "repositoryId": "HuggingFaceTB/SmolLM2-360M-Instruct", "revision": null, "claim": "Apple Core AI lists SmolLM2-360M-Instruct as iOS Yes." },
+        { "sourceId": "source-pytorch-export-llm", "url": "https://github.com/pytorch/executorch/blob/main/docs/source/llm/export-llm.md", "sourceType": "official-runtime-doc", "authority": "pytorch", "observedAt": "2026-09-16T20:20:04.000Z", "repositoryId": "HuggingFaceTB/SmolLM2-360M-Instruct", "revision": null, "claim": "ExecuTorch lists SmolLM2 as a supported family, but the cited exact example does not identify this repository." }
+      ],
+      "runtimeSupport": [
+        { "platform": "ios", "runtime": "core-ai", "status": "verified", "evidenceSourceIds": ["source-apple-smollm2"], "artifactFormat": ".aimodel resource folder" },
+        { "platform": "android", "runtime": "executorch", "status": "claimed", "evidenceSourceIds": ["source-pytorch-export-llm"], "artifactFormat": ".pte" }
+      ],
+      "reason": "Family-level Android documentation is insufficient to admit this exact Instruct repository."
+    },
+    {
+      "recordId": "research-record-smollm2-1-7b-instruct",
+      "modelId": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+      "canonicalModelId": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+      "disposition": "claimed-but-unverified",
+      "repositoryUrl": "https://huggingface.co/HuggingFaceTB/SmolLM2-1.7B-Instruct",
+      "revision": "31b70e2",
+      "license": "apache-2.0",
+      "architecture": "LlamaForCausalLM",
+      "parameterCount": 1700000000,
+      "quantization": "Core AI iOS 6-bit palettization; ExecuTorch family support claim without exact Android artifact",
+      "sourceEvidence": [
+        { "sourceId": "source-hf-smollm2-1-7b-instruct", "url": "https://huggingface.co/HuggingFaceTB/SmolLM2-1.7B-Instruct/tree/31b70e2", "sourceType": "hf-revision", "authority": "huggingface", "observedAt": "2026-09-16T20:20:04.000Z", "repositoryId": "HuggingFaceTB/SmolLM2-1.7B-Instruct", "revision": "31b70e2", "claim": "HF revision is an Apache-2.0 text-generation SmolLM2 Instruct repository." },
+        { "sourceId": "source-apple-smollm2", "url": "https://github.com/apple/coreai-models/blob/main/models/smollm2/README.md", "sourceType": "official-runtime-repo", "authority": "apple", "observedAt": "2026-09-16T20:20:04.000Z", "repositoryId": "HuggingFaceTB/SmolLM2-1.7B-Instruct", "revision": null, "claim": "Apple Core AI lists SmolLM2-1.7B-Instruct as iOS Yes." },
+        { "sourceId": "source-pytorch-export-llm", "url": "https://github.com/pytorch/executorch/blob/main/docs/source/llm/export-llm.md", "sourceType": "official-runtime-doc", "authority": "pytorch", "observedAt": "2026-09-16T20:20:04.000Z", "repositoryId": "HuggingFaceTB/SmolLM2-1.7B-Instruct", "revision": null, "claim": "ExecuTorch lists SmolLM2 as a supported family, but the cited exact example does not identify this repository." }
+      ],
+      "runtimeSupport": [
+        { "platform": "ios", "runtime": "core-ai", "status": "verified", "evidenceSourceIds": ["source-apple-smollm2"], "artifactFormat": ".aimodel resource folder" },
+        { "platform": "android", "runtime": "executorch", "status": "claimed", "evidenceSourceIds": ["source-pytorch-export-llm"], "artifactFormat": ".pte" }
+      ],
+      "reason": "Family-level Android documentation is insufficient to admit this exact Instruct repository."
+    },
+    {
+      "recordId": "research-record-mistral-7b-instruct",
+      "modelId": "mistralai/Mistral-7B-Instruct-v0.3",
+      "canonicalModelId": "mistralai/Mistral-7B-Instruct-v0.3",
+      "disposition": "claimed-but-unverified",
+      "repositoryUrl": "https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.3",
+      "revision": null,
+      "license": "apache-2.0",
+      "architecture": "MistralForCausalLM",
+      "parameterCount": 7000000000,
+      "quantization": "Core AI iOS example supports FP16 and 4-bit palettization; no exact ExecuTorch Android artifact found",
+      "sourceEvidence": [
+        { "sourceId": "source-apple-mistral", "url": "https://github.com/apple/coreai-models/blob/main/models/mistral/README.md", "sourceType": "official-runtime-repo", "authority": "apple", "observedAt": "2026-09-16T20:20:04.000Z", "repositoryId": "mistralai/Mistral-7B-Instruct-v0.3", "revision": null, "claim": "Apple Core AI lists Mistral 7B Instruct as iOS Yes and provides the exact HF export command." },
+        { "sourceId": "source-hf-mistral", "url": "https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.3", "sourceType": "hf-model-card", "authority": "huggingface", "observedAt": "2026-09-16T20:20:04.000Z", "repositoryId": "mistralai/Mistral-7B-Instruct-v0.3", "revision": null, "claim": "HF model card identifies a Mistral text-generation repository; an immutable revision was not captured in the live page." },
+        { "sourceId": "source-pytorch-export-llm", "url": "https://github.com/pytorch/executorch/blob/main/docs/source/llm/export-llm.md", "sourceType": "official-runtime-doc", "authority": "pytorch", "observedAt": "2026-09-16T20:20:04.000Z", "repositoryId": "mistralai/Mistral-7B-Instruct-v0.3", "revision": null, "claim": "Mistral is not in the narrow official LLM list used for this exact Android gate." }
+      ],
+      "runtimeSupport": [
+        { "platform": "ios", "runtime": "core-ai", "status": "verified", "evidenceSourceIds": ["source-apple-mistral"], "artifactFormat": ".aimodel resource folder" },
+        { "platform": "android", "runtime": "executorch", "status": "unknown", "evidenceSourceIds": ["source-pytorch-export-llm"], "artifactFormat": null }
+      ],
+      "reason": "Strong iOS evidence exists, but the exact immutable repository revision and direct Android mobile evidence are missing."
+    },
+    {
+      "recordId": "research-record-llama-3-2-1b-instruct",
+      "modelId": "meta-llama/Llama-3.2-1B-Instruct",
+      "canonicalModelId": "meta-llama/Llama-3.2-1B-Instruct",
+      "disposition": "claimed-but-unverified",
+      "repositoryUrl": "https://huggingface.co/meta-llama/Llama-3.2-1B-Instruct",
+      "revision": "9213176726f574b556790deb65791e0c5aa438b6",
+      "license": "llama3.2",
+      "architecture": "LlamaForCausalLM",
+      "parameterCount": 1235814400,
+      "quantization": "ExecuTorch Android quantized .pte artifacts exist; no Apple Core AI catalog entry for this exact repository",
+      "sourceEvidence": [
+        { "sourceId": "source-hf-llama32-1b", "url": "https://huggingface.co/meta-llama/Llama-3.2-1B-Instruct/tree/9213176726f574b556790deb65791e0c5aa438b6", "sourceType": "hf-revision", "authority": "huggingface", "observedAt": "2026-09-16T20:20:04.000Z", "repositoryId": "meta-llama/Llama-3.2-1B-Instruct", "revision": "9213176726f574b556790deb65791e0c5aa438b6", "claim": "HF API identifies the exact text-generation repository, revision, architecture family, and Llama 3.2 license." },
+        { "sourceId": "source-pytorch-llama-android", "url": "https://github.com/pytorch/executorch/blob/main/examples/models/llama/README.md", "sourceType": "official-runtime-repo", "authority": "pytorch", "observedAt": "2026-09-16T20:20:04.000Z", "repositoryId": "meta-llama/Llama-3.2-1B-Instruct", "revision": "9213176726f574b556790deb65791e0c5aa438b6", "claim": "ExecuTorch documents Android phone execution for Llama 3.2 1B and the official HF model path." },
+        { "sourceId": "source-apple-coreai-catalog", "url": "https://github.com/apple/coreai-models/tree/main/models", "sourceType": "official-runtime-repo", "authority": "apple", "observedAt": "2026-09-16T20:20:04.000Z", "repositoryId": "meta-llama/Llama-3.2-1B-Instruct", "revision": null, "claim": "The current Apple Core AI model catalog does not list a Llama 3.2 recipe; no iOS admission is made." }
+      ],
+      "runtimeSupport": [
+        { "platform": "ios", "runtime": "core-ai", "status": "unknown", "evidenceSourceIds": ["source-apple-coreai-catalog"], "artifactFormat": null },
+        { "platform": "android", "runtime": "executorch", "status": "verified", "evidenceSourceIds": ["source-pytorch-llama-android"], "artifactFormat": ".pte + tokenizer" }
+      ],
+      "reason": "Android evidence is direct, but the current Apple Core AI catalog does not provide the matching iOS lane."
+    },
+    {
+      "recordId": "research-record-phi-4-mini",
+      "modelId": "microsoft/Phi-4-mini-instruct",
+      "canonicalModelId": "microsoft/Phi-4-mini-instruct",
+      "disposition": "excluded",
+      "repositoryUrl": "https://huggingface.co/microsoft/Phi-4-mini-instruct",
+      "revision": "cfbefac",
+      "license": "mit",
+      "architecture": "Phi3ForCausalLM",
+      "parameterCount": 3800000000,
+      "quantization": "Core AI catalog marks iOS No; ExecuTorch supports an Android export path",
+      "sourceEvidence": [
+        { "sourceId": "source-hf-phi4-mini", "url": "https://huggingface.co/microsoft/Phi-4-mini-instruct/tree/cfbefac", "sourceType": "hf-revision", "authority": "huggingface", "observedAt": "2026-09-16T20:20:04.000Z", "repositoryId": "microsoft/Phi-4-mini-instruct", "revision": "cfbefac", "claim": "HF model card identifies MIT-licensed Phi-4-mini text-generation model with 3.8B parameters." },
+        { "sourceId": "source-apple-phi", "url": "https://github.com/apple/coreai-models/blob/main/models/phi/README.md", "sourceType": "official-runtime-repo", "authority": "apple", "observedAt": "2026-09-16T20:20:04.000Z", "repositoryId": "microsoft/Phi-4-mini-instruct", "revision": null, "claim": "Apple Core AI table explicitly marks Phi-4-mini-instruct iOS No." },
+        { "sourceId": "source-pytorch-phi", "url": "https://github.com/pytorch/executorch/blob/main/examples/models/phi_4_mini/README.md", "sourceType": "official-runtime-repo", "authority": "pytorch", "observedAt": "2026-09-16T20:20:04.000Z", "repositoryId": "microsoft/Phi-4-mini-instruct", "revision": null, "claim": "ExecuTorch documents Phi-4-mini export/run flow reusable for Android." }
+      ],
+      "runtimeSupport": [
+        { "platform": "ios", "runtime": "core-ai", "status": "unsupported", "evidenceSourceIds": ["source-apple-phi"], "artifactFormat": null },
+        { "platform": "android", "runtime": "executorch", "status": "verified", "evidenceSourceIds": ["source-pytorch-phi"], "artifactFormat": ".pte + tokenizer" }
+      ],
+      "reason": "Explicit official iOS No prevents cross-platform admission."
+    },
+    {
+      "recordId": "research-record-openelm-270m-instruct",
+      "modelId": "apple/OpenELM-270M-Instruct",
+      "canonicalModelId": "apple/OpenELM-270M-Instruct",
+      "disposition": "claimed-but-unverified",
+      "repositoryUrl": "https://huggingface.co/apple/OpenELM-270M-Instruct",
+      "revision": "1096244b62a03bedc770f8521512fd071f3aa5fd",
+      "license": "apple-amlr",
+      "architecture": "OpenELMForCausalLM",
+      "parameterCount": 270000000,
+      "quantization": "Apple OpenELM BF16 source weights; no current Core AI or ExecuTorch mobile artifact tied to this exact repo",
+      "sourceEvidence": [
+        { "sourceId": "source-hf-openelm", "url": "https://huggingface.co/apple/OpenELM-270M-Instruct/tree/1096244b62a03bedc770f8521512fd071f3aa5fd", "sourceType": "hf-revision", "authority": "huggingface", "observedAt": "2026-09-16T20:20:04.000Z", "repositoryId": "apple/OpenELM-270M-Instruct", "revision": "1096244b62a03bedc770f8521512fd071f3aa5fd", "claim": "Apple HF model card identifies a 0.3B text-generation OpenELM Instruct repository." },
+        { "sourceId": "source-hf-swift-transformers", "url": "https://github.com/huggingface/blog/blob/main/swift-coreml-llm.md", "sourceType": "official-runtime-doc", "authority": "huggingface", "observedAt": "2026-09-16T20:20:04.000Z", "repositoryId": "apple/OpenELM-270M-Instruct", "revision": null, "claim": "Hugging Face describes Core ML text-generation tooling and names OpenELM as a small model candidate, but does not provide a direct current iOS artifact for this exact repo." },
+        { "sourceId": "source-pytorch-export-llm", "url": "https://github.com/pytorch/executorch/blob/main/docs/source/llm/export-llm.md", "sourceType": "official-runtime-doc", "authority": "pytorch", "observedAt": "2026-09-16T20:20:04.000Z", "repositoryId": "apple/OpenELM-270M-Instruct", "revision": null, "claim": "OpenELM is not in the narrow ExecuTorch supported LLM list." }
+      ],
+      "runtimeSupport": [
+        { "platform": "ios", "runtime": "core-ml", "status": "claimed", "evidenceSourceIds": ["source-hf-swift-transformers"], "artifactFormat": ".mlpackage possible via conversion" },
+        { "platform": "android", "runtime": "executorch", "status": "unknown", "evidenceSourceIds": ["source-pytorch-export-llm"], "artifactFormat": null }
+      ],
+      "reason": "Historical Core ML guidance is not current exact mobile evidence, and no Android artifact was found."
+    },
+    {
+      "recordId": "research-record-smollm2-135m-executorch-variant",
+      "modelId": "executorch-community/SmolLM2-135M",
+      "canonicalModelId": "HuggingFaceTB/SmolLM2-135M",
+      "disposition": "deduplicated-variant",
+      "repositoryUrl": "https://huggingface.co/executorch-community/SmolLM2-135M",
+      "revision": null,
+      "license": "apache-2.0",
+      "architecture": "ExecuTorch exported SmolLM2",
+      "parameterCount": 135000000,
+      "quantization": "ExecuTorch .pte artifact",
+      "sourceEvidence": [
+        { "sourceId": "source-pytorch-smollm2-artifact", "url": "https://huggingface.co/executorch-community/SmolLM2-135M", "sourceType": "official-artifact-card", "authority": "community", "observedAt": "2026-09-16T20:20:04.000Z", "repositoryId": "executorch-community/SmolLM2-135M", "revision": null, "claim": "Community artifact card identifies the original HuggingFaceTB/SmolLM2-135M model and contains a .pte export." },
+        { "sourceId": "source-hf-smollm2-base", "url": "https://huggingface.co/HuggingFaceTB/SmolLM2-135M", "sourceType": "hf-model-card", "authority": "huggingface", "observedAt": "2026-09-16T20:20:04.000Z", "repositoryId": "HuggingFaceTB/SmolLM2-135M", "revision": null, "claim": "Original base repository retained as the canonical identity for deduplication." }
+      ],
+      "runtimeSupport": [
+        { "platform": "android", "runtime": "executorch", "status": "verified", "evidenceSourceIds": ["source-pytorch-smollm2-artifact"], "artifactFormat": ".pte" }
+      ],
+      "reason": "Exported runtime variant is preserved with its exact HF identity but deduplicated from the base-model candidate set; it cannot create a verified intersection alone."
+    },
+    {
+      "recordId": "research-record-gemma3-4b",
+      "modelId": "google/gemma-3-4b-it",
+      "canonicalModelId": "google/gemma-3-4b-it",
+      "disposition": "excluded",
+      "repositoryUrl": "https://huggingface.co/google/gemma-3-4b-it",
+      "revision": null,
+      "license": "gemma",
+      "architecture": "Gemma3ForConditionalGeneration",
+      "parameterCount": 4000000000,
+      "quantization": "Apple Core AI catalog marks iOS No",
+      "sourceEvidence": [
+        { "sourceId": "source-apple-gemma3", "url": "https://github.com/apple/coreai-models/blob/main/models/gemma3/README.md", "sourceType": "official-runtime-repo", "authority": "apple", "observedAt": "2026-09-16T20:20:04.000Z", "repositoryId": "google/gemma-3-4b-it", "revision": null, "claim": "Apple Core AI lists Gemma 3 4B as iOS No and macOS Yes." },
+        { "sourceId": "source-hf-gemma3", "url": "https://huggingface.co/google/gemma-3-4b-it", "sourceType": "hf-model-card", "authority": "huggingface", "observedAt": "2026-09-16T20:20:04.000Z", "repositoryId": "google/gemma-3-4b-it", "revision": null, "claim": "HF gated Gemma text-generation repository." }
+      ],
+      "runtimeSupport": [
+        { "platform": "ios", "runtime": "core-ai", "status": "unsupported", "evidenceSourceIds": ["source-apple-gemma3"], "artifactFormat": null }
+      ],
+      "reason": "Explicit official iOS No prevents cross-platform admission."
+    },
+    {
+      "recordId": "research-record-gpt2",
+      "modelId": "openai-community/gpt2",
+      "canonicalModelId": "openai-community/gpt2",
+      "disposition": "excluded",
+      "repositoryUrl": "https://huggingface.co/openai-community/gpt2",
+      "revision": null,
+      "license": "mit",
+      "architecture": "GPT2LMHeadModel",
+      "parameterCount": 137000000,
+      "quantization": null,
+      "sourceEvidence": [
+        { "sourceId": "source-hf-gpt2", "url": "https://huggingface.co/openai-community/gpt2", "sourceType": "hf-model-card", "authority": "huggingface", "observedAt": "2026-09-16T20:20:04.000Z", "repositoryId": "openai-community/gpt2", "revision": null, "claim": "HF card identifies a text-generation GPT-2 repository, but no direct current iOS and Android mobile evidence was found." }
+      ],
+      "runtimeSupport": [
+        { "platform": "ios", "runtime": "other", "status": "unknown", "evidenceSourceIds": ["source-hf-gpt2"], "artifactFormat": null },
+        { "platform": "android", "runtime": "other", "status": "unknown", "evidenceSourceIds": ["source-hf-gpt2"], "artifactFormat": null }
+      ],
+      "reason": "Generative model, but no direct current two-platform primary-source evidence in this search scope."
+    },
+    {
+      "recordId": "research-record-minilm",
+      "modelId": "sentence-transformers/all-MiniLM-L6-v2",
+      "canonicalModelId": "sentence-transformers/all-MiniLM-L6-v2",
+      "disposition": "excluded",
+      "repositoryUrl": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2",
+      "revision": null,
+      "license": "apache-2.0",
+      "architecture": "BertModel encoder",
+      "parameterCount": 22700000,
+      "quantization": null,
+      "sourceEvidence": [
+        { "sourceId": "source-hf-minilm", "url": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2", "sourceType": "hf-model-card", "authority": "huggingface", "observedAt": "2026-09-16T20:20:04.000Z", "repositoryId": "sentence-transformers/all-MiniLM-L6-v2", "revision": null, "claim": "HF card identifies a sentence-similarity encoder, not a generative text LLM." }
+      ],
+      "runtimeSupport": [
+        { "platform": "ios", "runtime": "other", "status": "unsupported", "evidenceSourceIds": ["source-hf-minilm"], "artifactFormat": null }
+      ],
+      "reason": "Excluded as a non-generative sentence-similarity encoder; it is retained to show the LLM boundary."
+    }
+  ],
+  "verifiedIntersection": ["Qwen/Qwen3-0.6B", "Qwen/Qwen3-1.7B", "Qwen/Qwen3-4B"],
+  "intersectionReason": "Only these three exact HF repository IDs have current Apple Core AI iOS evidence and PyTorch ExecuTorch Android evidence in the recorded search. This is a discoverable intersection, not a mathematically exhaustive claim; device execution is still unverified."
+}
