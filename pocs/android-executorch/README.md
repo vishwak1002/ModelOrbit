@@ -2,7 +2,7 @@
 
 This directory is a real Android Studio/Gradle app project. It uses the official `org.pytorch:executorch-android:1.4.1` AAR and `LlmModule`/`LlmGenerationConfig`/`LlmCallback` to load `.pte` assets, run the canonical text-generation fixture, and write a ModelOrbit benchmark JSON artifact into app-private storage.
 
-The app picker contains all three verified candidates and records their exact inventory revisions. It measures cold and warm generation latency, samples process PSS, computes SHA-256 checksums, and deliberately omits the Android `INTERNET` permission. A captured device manifest ID is required before a run can be saved.
+The app contains an offline chat interface with all three verified candidates and records their exact inventory revisions. Each sent message uses the selected native model, measures cold and warm generation latency, samples process PSS, computes SHA-256 checksums, and deliberately omits the Android `INTERNET` permission. A captured device manifest ID is required before a chat generation and benchmark can be saved.
 
 ## Prepare model assets
 
@@ -21,7 +21,7 @@ The model files are local-only and ignored by Git. The ExecuTorch Qwen3 example 
 
 ## Build and run
 
-Open `pocs/android-executorch` in Android Studio, sync Gradle, enable USB debugging on a trusted physical Android device, and run the app. Enter its captured `device-android-...` manifest ID, choose a candidate, and tap **Run cold + warm benchmark**. The artifact is written under the displayed `filesDir/benchmarks/` path; pull it with `adb` and validate it in the repository:
+Open `pocs/android-executorch` in Android Studio, sync Gradle, enable USB debugging on a trusted physical Android device, and run the app. Enter its captured `device-android-...` manifest ID, choose a candidate, and send a message in **ModelOrbit · ExecuTorch chat**. The artifact is written under the displayed `filesDir/benchmarks/` path; pull it with `adb` and validate it in the repository:
 
 ```text
 adb shell run-as dev.modelorbit.executorch ls files/benchmarks

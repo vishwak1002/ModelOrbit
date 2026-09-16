@@ -1,9 +1,13 @@
 package dev.modelorbit.executorch
 
 import android.app.Activity
+import android.graphics.Color
+import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
 import android.os.Debug
 import android.os.SystemClock
+import android.text.InputType
+import android.view.Gravity
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Button
@@ -53,9 +57,10 @@ class MainActivity : Activity() {
     private val executor: ExecutorService = Executors.newSingleThreadExecutor()
     private lateinit var candidateSpinner: Spinner
     private lateinit var manifestInput: EditText
-    private lateinit var promptInput: EditText
-    private lateinit var output: TextView
-    private lateinit var runButton: Button
+    private lateinit var chatInput: EditText
+    private lateinit var chatMessages: LinearLayout
+    private lateinit var chatScroll: ScrollView
+    private lateinit var sendButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -66,40 +71,57 @@ class MainActivity : Activity() {
             }
         }
         manifestInput = EditText(this).apply { hint = "device-android-... manifest ID" }
-        promptInput = EditText(this).apply {
-            hint = "Write one short sentence about a quiet orbit."
-            setText("Write one short sentence about a quiet orbit.")
-            minLines = 3
+        chatInput = EditText(this).apply {
+            hint = "Ask the selected model..."
+            minLines = 1
+            maxLines = 5
+            inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_CAP_SENTENCES or InputType.TYPE_TEXT_FLAG_MULTI_LINE
         }
-        output = TextView(this).apply { text = "Ready. Add exported assets before running." }
-        runButton = Button(this).apply {
-            text = "Run cold + warm benchmark"
-            setOnClickListener { startRun() }
+        sendButton = Button(this).apply {
+            text = "Send"
+            setOnClickListener { sendMessage() }
+        }
+        chatMessages = LinearLayout(this).apply {
+            orientation = LinearLayout.VERTICAL
+            setPadding(24, 24, 24, 24)
+            addMessage("ExecuTorch chat is ready. Enter a device manifest and ask a question; each message runs through the selected native POC and saves benchmark evidence.", false)
+        }
+        chatScroll = ScrollView(this).apply {
+            addView(chatMessages, ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT))
         }
 
         val content = LinearLayout(this).apply {
             orientation = LinearLayout.VERTICAL
             setPadding(32, 32, 32, 32)
-            addView(TextView(this@MainActivity).apply { text = "Verified Qwen3 candidate" })
+            addView(TextView(this@MainActivity).apply { text = "ModelOrbit · ExecuTorch chat"; textSize = 22f })
+            addView(TextView(this@MainActivity).apply { text = "Offline native POC · no INTERNET permission"; setTextColor(Color.DKGRAY) })
+            addView(TextView(this@MainActivity).apply { text = "Model record"; setPadding(0, 24, 0, 0) })
             addView(candidateSpinner, matchParent())
             addView(manifestInput, matchParent())
-            addView(promptInput, matchParent())
-            addView(runButton, matchParent())
-            addView(output, matchParent())
+            addView(chatScroll, LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1f).apply { topMargin = 18 })
+            addView(LinearLayout(this@MainActivity).apply {
+                orientation = LinearLayout.HORIZONTAL
+                gravity = Gravity.BOTTOM
+                addView(chatInput, LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1f))
+                addView(sendButton, LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT))
+            })
         }
-        setContentView(ScrollView(this).apply { addView(content) })
+        setContentView(content)
     }
 
-    private fun startRun() {
+    private fun sendMessage() {
         val candidate = candidateSpinner.selectedItem as Candidate
         val manifestId = manifestInput.text.toString().trim()
-        val prompt = promptInput.text.toString().trim()
-        if (manifestId.isEmpty() || prompt.isEmpty()) {
-            output.text = "Enter the captured device manifest ID and a non-empty prompt."
+        val prompt = chatInput.text.toString().trim()
+        if (prompt.isEmpty()) return
+        addMessage(prompt, true)
+        chatInput.text.clear()
+        if (manifestId.isEmpty()) {
+            addMessage("This chat is wired to the native POC, but it is blocked until you enter the captured device-android-… manifest ID. No model load was attempted.", false)
             return
         }
-        runButton.isEnabled = false
-        output.text = "Preparing assets and loading ExecuTorch..."
+        sendButton.isEnabled = false
+        addMessage("Loading ${candidate.modelId} through ExecuTorch...", false)
         executor.execute {
             val message = try {
                 runCandidate(candidate, manifestId, prompt)
@@ -107,10 +129,32 @@ class MainActivity : Activity() {
                 "BLOCKED/FAIL: ${error.message ?: error::class.java.simpleName}"
             }
             runOnUiThread {
-                output.text = message
-                runButton.isEnabled = true
+                addMessage(message, false)
+                sendButton.isEnabled = true
             }
         }
+    }
+
+    private fun addMessage(text: String, fromUser: Boolean) {
+        val bubble = TextView(this).apply {
+            this.text = if (fromUser) "You\n$text" else "ExecuTorch\n$text"
+            textSize = 15f
+            setTextColor(Color.WHITE)
+            setPadding(24, 18, 24, 18)
+            background = GradientDrawable().apply {
+                cornerRadius = 18f
+                setColor(if (fromUser) Color.rgb(50, 80, 30) else Color.rgb(45, 52, 55))
+            }
+        }
+        val row = LinearLayout(this).apply {
+            gravity = if (fromUser) Gravity.END else Gravity.START
+            setPadding(0, 0, 0, 16)
+            addView(bubble, LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT).apply {
+                width = (resources.displayMetrics.widthPixels * 0.78f).toInt()
+            })
+        }
+        chatMessages.addView(row)
+        chatScroll.post { chatScroll.fullScroll(ScrollView.FOCUS_DOWN) }
     }
 
     private fun runCandidate(candidate: Candidate, manifestId: String, prompt: String): String {

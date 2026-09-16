@@ -2,7 +2,7 @@
 
 This directory is a real Xcode iOS app project. It uses Apple's `CoreAILanguageModels` Swift package and `CoreAILanguageModel(resourcesAt:)` to load exported `.aimodel` resource folders, run the canonical text-generation fixture, and write a ModelOrbit benchmark JSON artifact into the app's Documents directory.
 
-The app picker contains all three verified candidates and records their exact inventory revisions. It measures cold and warm generation latency, samples process resident memory before/after inference, computes SHA-256 checksums, and makes no network requests. A captured device manifest ID is required before a run can be saved.
+The app contains an offline chat interface with all three verified candidates and records their exact inventory revisions. Each sent message uses the selected native model, measures cold and warm generation latency, samples process resident memory before/after inference, computes SHA-256 checksums, and makes no network requests. A captured device manifest ID is required before a chat generation and benchmark can be saved.
 
 ## Prepare model resources
 
@@ -19,7 +19,7 @@ The exported directories are local-only and ignored by Git. Keep the source revi
 
 ## Build and run
 
-Open `ModelOrbitCoreAI.xcodeproj`, select a trusted physical iPhone running iOS 27+, choose a candidate, enter its captured `device-ios-...` manifest ID, and tap **Run cold + warm benchmark**. The generated artifact can be copied from the app container and validated with:
+Open `ModelOrbitCoreAI.xcodeproj`, select a trusted physical iPhone running iOS 27+, choose a candidate, enter its captured `device-ios-...` manifest ID, and send a message in **ModelOrbit Chat**. The generated artifact can be copied from the app container and validated with:
 
 ```text
 node tools/benchmark/validate-result.mjs evidence/runs/<benchmark-result>.json
