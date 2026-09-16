@@ -8,6 +8,7 @@
     "preflight": "node tools/preflight/run-preflight.mjs",
     "devices": "node tools/benchmark/detect-devices.mjs",
     "phase-status": "node tools/benchmark/write-phase-status.mjs",
+    "benchmark:validate": "node tools/benchmark/validate-result.mjs",
     "read-model": "node tools/build-read-model.mjs",
     "native:check": "node tools/compile-native.mjs",
     "normalize": "node tools/normalize-snapshot.mjs && node tools/build-read-model.mjs"

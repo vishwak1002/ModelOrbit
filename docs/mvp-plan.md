@@ -181,6 +181,13 @@ The next phase was executed from `main` at `395bf11` in the standalone `ModelOrb
 - Swift POC harness compile check passes with Swift 6.3.1. Android POC compile check is blocked by the unavailable Android/Kotlin toolchain. No model weights were downloaded and no benchmark result was emitted.
 - Phase ledger `evidence/runs/phase-2-status.json` records zero POC runs and the unknown intersection. This is not a verified empty intersection: unknown prerequisites remain.
 
+## Phase 3 implementation record — evidence gate and CI
+
+- Added benchmark result validation that rejects a `pass` without valid output, output checksum, cold and warm latency, peak memory, or a zero-request no-network observation.
+- Added checksum-bearing evidence-link generation for benchmark artifacts; the test suite verifies the checksum against the artifact bytes.
+- Added GitHub Actions contract CI for schemas, tests, repository validation, reproducible normalization, and native checks where the runner supports them.
+- Current device and candidate blockers remain unchanged and are intentionally preserved in the phase ledger; no synthetic benchmark was promoted to evidence.
+
 ### Architecture review
 
 ```text

@@ -8,7 +8,7 @@ The first interface is a visual model galaxy backed by an evidence ledger. Phase
 
 ## Current status
 
-Design and engineering reviews are complete. The executable schema/preflight/device-detection phase is now checked in. The current run has no verified cross-platform candidates because the snapshot has no immutable revisions, Android tooling is unavailable, and no physical phones were detected; the native harnesses fail closed until those prerequisites exist.
+Design and engineering reviews are complete. The executable schema/preflight/device-detection phase and benchmark evidence gate are now checked in. The current run has no verified cross-platform candidates because the snapshot has no immutable revisions, Android tooling is unavailable, and no physical phones were detected; the native harnesses fail closed until those prerequisites exist.
 
 Read the [MVP plan](docs/mvp-plan.md) and [handoff](docs/handoff.md) before changing scope.
 

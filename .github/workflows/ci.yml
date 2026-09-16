@@ -1,0 +1,28 @@
+name: ModelOrbit contracts
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm test
+      - run: npm run validate
+      - name: Rebuild normalized read model reproducibly
+        shell: bash
+        run: |
+          node tools/normalize-snapshot.mjs
+          node tools/build-read-model.mjs
+          first="$(sha256sum data/normalized/models.json | cut -d' ' -f1)"
+          node tools/normalize-snapshot.mjs
+          node tools/build-read-model.mjs
+          second="$(sha256sum data/normalized/models.json | cut -d' ' -f1)"
+          test "$first" = "$second"
+      - run: npm run native:check

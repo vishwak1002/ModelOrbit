@@ -96,6 +96,8 @@ Commit `50c8728` adds the first working galaxy MVP, deterministic snapshot norma
 
 The versioned schema package and preflight/device evidence are now implemented; remaining work is physical-device adapter execution once the documented prerequisites are available.
 
+The evidence gate is also implemented. A platform runner must emit a validated benchmark result, then `node tools/benchmark/link-artifact.mjs evidence/runs/<run>.json` creates a checksum-bearing link. CI runs the contract tests and verifies that rebuilding the normalized read model produces the same SHA-256 twice.
+
 ## Phase 2 handoff — actual run
 
 The phase is implemented on `main` from baseline `395bf11`. Start with `npm test`, `npm run validate`, and inspect `evidence/runs/phase-2-status.json`.

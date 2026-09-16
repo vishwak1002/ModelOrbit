@@ -8,6 +8,7 @@ const normalized = json("data/normalized/models.json");
 if (normalized.records.length !== 26) throw new Error(`Expected 26 normalized records, found ${normalized.records.length}`);
 normalized.records.forEach((record) => assertValid(record, "model-record"));
 const matrix = json("data/preflight/2026-09-17.json");
+assertValid(matrix, "preflight-matrix");
 matrix.results.forEach((result) => assertValid(result, "preflight-result"));
 if (matrix.results.length !== 52) throw new Error(`Expected 52 preflight results, found ${matrix.results.length}`);
 const manifests = json(`data/devices/${readdirSync(resolve(root, "data/devices")).sort().at(-1)}`).manifests;
