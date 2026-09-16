@@ -1,0 +1,28 @@
+model_id	author	pipeline_tag	url	days_seen	frequency_pct	first_seen	last_seen	latest_rank	latest_downloads	latest_likes	latest_numParameters	latest_lastModified	rank_2026-09-10	rank_2026-09-11	rank_2026-09-12	rank_2026-09-13	rank_2026-09-14	rank_2026-09-15	rank_2026-09-16
+openbmb/MiniCPM5-2B	openbmb	text-generation	https://huggingface.co/openbmb/MiniCPM5-2B	7	100	2026-09-10	2026-09-16	3	271754	1467	2516756480	2026-09-12T07:20:14.000Z	1	2	2	2	2	3	3
+Qwen/Qwen3.8-27B	Qwen	image-text-to-text	https://huggingface.co/Qwen/Qwen3.8-27B	7	100	2026-09-10	2026-09-16	4	7702543	15286	27781427952	2026-08-14T15:00:01.000Z	4	5	5	4	5	5	4
+ISTA-DASLab/Qwen3.8-27B-GSQ-RCO-GGUF	ISTA-DASLab	image-text-to-text	https://huggingface.co/ISTA-DASLab/Qwen3.8-27B-GSQ-RCO-GGUF	7	100	2026-09-10	2026-09-16	8	884926	1146	26895998464	2026-09-02T09:11:34.000Z	3	4	6	8	7	8	8
+Lightricks/LTX-2.5	Lightricks	image-to-video	https://huggingface.co/Lightricks/LTX-2.5	7	100	2026-09-10	2026-09-16	9	1580077	4010		2026-09-01T06:29:03.000Z	6	7	8	9	10	9	9
+deepseek-ai/DeepSeek-V4.1-Flash	deepseek-ai	image-text-to-text	https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash	6	85.7	2026-09-11	2026-09-16	1	325712	2716	763205315794	2026-09-10T08:18:10.000Z		1	1	1	1	1	1
+nex-agi/Nex-N2.5-mini	nex-agi	text-generation	https://huggingface.co/nex-agi/Nex-N2.5-mini	6	85.7	2026-09-11	2026-09-16	5	5202	810	35107181936	2026-09-08T16:17:10.000Z		6	4	3	4	4	5
+nex-agi/Nex-N2.5-Pro	nex-agi	text-generation	https://huggingface.co/nex-agi/Nex-N2.5-Pro	5	71.4	2026-09-12	2026-09-16	7	30881	652	396802360816	2026-09-11T03:37:15.000Z			7	7	6	6	7
+XHToken/Spark-X2.5-4B	XHToken	text-generation	https://huggingface.co/XHToken/Spark-X2.5-4B	5	71.4	2026-09-10	2026-09-14	8	21336	1155	4112079360	2026-09-14T02:58:09.000Z	2	3	3	6	8		
+Edge0/Edge0-35B-A3B-preview	Edge0	text-generation	https://huggingface.co/Edge0/Edge0-35B-A3B-preview	4	57.1	2026-09-13	2026-09-16	2	17853	2845	34660610688	2026-09-14T04:08:09.000Z				5	3	2	2
+unsloth/Qwen3.8-27B-GGUF	unsloth		https://huggingface.co/unsloth/Qwen3.8-27B-GGUF	4	57.1	2026-09-10	2026-09-13	10	11529203	3952	27320697856	2026-08-20T12:04:25.000Z	7	8	9	10			
+m-a-p/YuE2-3B	m-a-p	text-to-audio	https://huggingface.co/m-a-p/YuE2-3B	3	42.9	2026-09-14	2026-09-16	6	6716	575	3630684224	2026-09-11T17:36:44.000Z					9	7	6
+google/timesfm-3.0-pytorch	google	time-series-forecasting	https://huggingface.co/google/timesfm-3.0-pytorch	2	28.6	2026-09-10	2026-09-11	9	483787	718	330710976	2026-08-24T22:05:51.000Z	5	9					
+dealignai/GLM-5.3-CYBERSECURITY-FP8	dealignai	text-generation	https://huggingface.co/dealignai/GLM-5.3-CYBERSECURITY-FP8	2	28.6	2026-09-11	2026-09-12	10	28328	384	753329940480	2026-09-08T14:59:56.000Z		10	10				
+TokenRhythm/NeoHorse-1-4B	TokenRhythm	text-generation	https://huggingface.co/TokenRhythm/NeoHorse-1-4B	2	28.6	2026-09-15	2026-09-16	10	11904	2063	4205751296	2026-09-10T07:47:12.000Z						10	10
+DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF	DavidAU	image-text-to-text	https://huggingface.co/DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF	2	28.6	2026-09-10	2026-09-11	11	517644	452		2026-09-01T07:01:09.000Z	10	11					
+sentence-transformers/all-MiniLM-L6-v2	sentence-transformers	sentence-similarity	https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2	1	14.3	2026-09-10	2026-09-10	8	253331994	5723	22713728	2026-06-01T06:29:13.000Z	8						
+openai-community/gpt2	openai-community	text-generation	https://huggingface.co/openai-community/gpt2	1	14.3	2026-09-10	2026-09-10	9	14770863	3857	137022720	2024-02-19T10:57:45.000Z	9						
+WarmBloodAban/Minimax-h3_Singularity	WarmBloodAban	image-to-video	https://huggingface.co/WarmBloodAban/Minimax-h3_Singularity	1	14.3	2026-09-11	2026-09-11	12	96682	262		2026-09-05T18:51:01.000Z		12					
+Qwen/Qwen3.8-Flash-Next	Qwen	image-text-to-text	https://huggingface.co/Qwen/Qwen3.8-Flash-Next	1	14.3	2026-09-11	2026-09-11	13	564079	5084		2026-08-24T08:24:59.000Z		13					
+deepseek-ai/DeepSeek-V4-Flash-Vision-Exp	deepseek-ai	image-text-to-text	https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-Vision-Exp	1	14.3	2026-09-11	2026-09-11	14	400892	859		2026-08-31T06:16:18.000Z		14					
+MiniMaxAI/MiniMax-H3	MiniMaxAI	image-text-to-video	https://huggingface.co/MiniMaxAI/MiniMax-H3	1	14.3	2026-09-11	2026-09-11	15	5080204	5131		2026-07-28T10:45:18.000Z		15					
+nvidia/Qwen3.8-Flash-Next-NVFP4	nvidia	image-text-to-text	https://huggingface.co/nvidia/Qwen3.8-Flash-Next-NVFP4	1	14.3	2026-09-11	2026-09-11	16	62813	192		2026-09-02T04:03:35.000Z		16					
+IFM/K2-Horizon-MoVA-36B-A4B	IFM	text-generation	https://huggingface.co/IFM/K2-Horizon-MoVA-36B-A4B	1	14.3	2026-09-11	2026-09-11	17	4488	275		2026-09-01T23:01:25.000Z		17					
+Jackrong/Qwopus3.8-27B-Flash-GGUF	Jackrong	image-text-to-text	https://huggingface.co/Jackrong/Qwopus3.8-27B-Flash-GGUF	1	14.3	2026-09-11	2026-09-11	18	192107	189		2026-09-04T12:43:31.000Z		18					
+zai-org/GLM-5.3-Flash	zai-org	image-text-to-text	https://huggingface.co/zai-org/GLM-5.3-Flash	1	14.3	2026-09-11	2026-09-11	19	1023103	2230		2026-08-25T06:43:14.000Z		19					
+openbmb/MiniCPM5-2B-GGUF	openbmb	text-generation	https://huggingface.co/openbmb/MiniCPM5-2B-GGUF	1	14.3	2026-09-11	2026-09-11	20	51179	155		2026-09-05T01:44:34.000Z		20					
+																			

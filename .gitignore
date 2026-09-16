@@ -1,0 +1,32 @@
+# Dependencies and build output
+node_modules/
+.venv/
+build/
+dist/
+.swiftpm/
+.gradle/
+
+# Local tool state
+.DS_Store
+.env
+.env.*
+!.env.example
+
+# Model and device data that must never enter Git
+*.safetensors
+*.bin
+*.gguf
+*.pt
+*.pth
+*.onnx
+*.mlmodelc/
+*.tflite
+*.zip
+*.ipa
+*.apk
+*.xcarchive/
+evidence/runs/*/private/
+evidence/runs/*/network-payloads/
+
+# Keep directory placeholders
+!.gitkeep

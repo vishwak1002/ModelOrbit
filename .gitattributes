@@ -1,0 +1,3 @@
+# The raw source snapshot preserves empty trailing TSV fields and the original EOF.
+# Do not treat those delimiters as whitespace errors in reviews.
+*.tsv whitespace=-trailing-space,-blank-at-eof
