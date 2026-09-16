@@ -8,7 +8,7 @@ The first interface is a visual model galaxy backed by an evidence ledger. Phase
 
 ## Current status
 
-Design and engineering reviews are complete. Implementation is beginning with the immutable 26-model snapshot, versioned evidence contracts, and deterministic preflight tooling.
+Design and engineering reviews are complete. The first galaxy MVP is live in `apps/galaxy-web`; preflight tooling, versioned evidence contracts, and native POCs are next.
 
 Read the [MVP plan](docs/mvp-plan.md) and [handoff](docs/handoff.md) before changing scope.
 

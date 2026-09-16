@@ -1,7 +1,7 @@
 # ModelOrbit Handoff
 
 Date: 2026-09-17
-Status: CEO, engineering, and design reviews complete; implementation not started
+Status: CEO, engineering, and design reviews complete; galaxy MVP implemented; preflight/native POCs pending
 
 ## What was decided
 
@@ -89,3 +89,9 @@ The visual mockup generator could not run because the local design tool has no c
 - Keep one semantic inspector and evidence table across desktop and mobile layouts.
 - Test keyboard navigation, live regions, reduced motion, filter reset, deep links, and invalid comparison links.
 - Self-host or non-blockingly fall back for fonts, and include font assets in the web bundle budget.
+
+## Implementation checkpoint
+
+Commit `50c8728` adds the first working galaxy MVP, deterministic snapshot normalizer, and 26-record normalized read model. The default lens intentionally shows zero verified models because no preflight or physical-device evidence has been collected yet.
+
+Next implementation work is the versioned schema package, preflight matrix, exact device manifests, and the iOS Core AI and Android ExecuTorch POCs.

@@ -1,6 +1,6 @@
 # ModelOrbit MVP Plan
 
-Status: CEO-reviewed, engineering-reviewed, design-reviewed, ready for implementation
+Status: CEO-reviewed, engineering-reviewed, design-reviewed, galaxy MVP implemented; preflight and native POCs pending
 Date: 2026-09-17
 Repository: new standalone GitHub repository named `ModelOrbit`
 
@@ -338,6 +338,18 @@ The product has meaningful UI scope: galaxy navigation, comparison links, eviden
 - Parallel implementation lanes: 5 execution lanes plus 1 integration lane.
 - Implementation changes made during review: none.
 - Existing Jarvis checkout modified: no.
+
+## Implementation checkpoint
+
+The first functional MVP is implemented and pushed in commit `50c8728`:
+
+- `apps/galaxy-web`: static ModelOrbit galaxy workspace with evidence inspector, full-catalog fallback, search, pipeline filters, list mirror, and accessible status states.
+- `tools/normalize-snapshot.mjs`: deterministic normalizer for the dated TSV snapshot.
+- `data/normalized/models.json`: 26-record read model with source checksum; every readiness field remains `unknown` until preflight/device evidence exists.
+
+Verified locally with a static HTTP server: the default cross-platform lens shows a truthful zero-result intersection, the full catalog shows all 26 records, search narrows results, list selection fills the inspector, and browser console logs are clean.
+
+Remaining implementation gates are unchanged: schema package, Core AI/ExecuTorch preflight matrix, exact device manifests, native POCs, and physical-device evidence.
 
 ## Design review
 
