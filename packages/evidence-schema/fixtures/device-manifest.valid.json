@@ -1,0 +1,3 @@
+{
+  "schemaVersion": "0.2.0", "manifestId": "device-ios-20260917T000000Z", "platform": "ios", "status": "available", "detectedAt": "2026-09-17T00:00:00.000Z", "toolchain": { "name": "Xcode/devicectl", "available": true, "version": "Xcode 26.4.1", "command": "fixture" }, "device": { "model": "iPhone fixture", "osVersion": "26.0", "build": "fixture", "architecture": "arm64", "locale": "en_US", "thermalState": "nominal", "batteryState": "full" }, "reason": "Fixture only.", "sourceCommand": "fixture"
+}

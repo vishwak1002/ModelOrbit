@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "0.2.0",
+  "detectedAt": "2026-09-16T19:55:33.198Z",
+  "manifests": [
+    {
+      "schemaVersion": "0.2.0",
+      "manifestId": "device-ios-20260916T195533Z",
+      "platform": "ios",
+      "status": "blocked",
+      "detectedAt": "2026-09-16T19:55:33.198Z",
+      "toolchain": {
+        "name": "Xcode/devicectl",
+        "available": true,
+        "version": "Xcode 26.4.1\nBuild version 17E202",
+        "command": "xcodebuild -version; xcrun devicectl list devices"
+      },
+      "device": null,
+      "reason": "No physical iPhone was listed by devicectl; no device evidence was fabricated.",
+      "sourceCommand": "xcrun devicectl list devices"
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "manifestId": "device-android-20260916T195533Z",
+      "platform": "android",
+      "status": "unknown",
+      "detectedAt": "2026-09-16T19:55:33.198Z",
+      "toolchain": {
+        "name": "Android SDK/adb",
+        "available": false,
+        "version": "unavailable",
+        "command": "adb --version; adb devices -l"
+      },
+      "device": null,
+      "reason": "ADB is unavailable or no Android device is connected; no device evidence was fabricated.",
+      "sourceCommand": "adb devices -l"
+    }
+  ]
+}

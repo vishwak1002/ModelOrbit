@@ -1,3 +1,3 @@
 # Android ExecuTorch POC
 
-This POC will load only candidates admitted by the cross-platform preflight, run the shared canonical task, observe the no-network gate, and emit a validated evidence record with the exact Android device and OS manifest.
+The Kotlin harness documents the ExecuTorch boundary and is fail-closed. An Android target must supply a same-repository, immutable-revision candidate, exact device manifest, and the same canonical fixture before model loading. With no Android SDK/ADB/Kotlin toolchain on the current host, no device run is claimed and no benchmark values are emitted.

@@ -1,6 +1,6 @@
 # ModelOrbit MVP Plan
 
-Status: CEO-reviewed, engineering-reviewed, design-reviewed, galaxy MVP implemented; preflight and native POCs pending
+Status: CEO-reviewed, engineering-reviewed, design-reviewed, schema/preflight/device phase implemented; physical-device POCs blocked by missing prerequisites
 Date: 2026-09-17
 Repository: new standalone GitHub repository named `ModelOrbit`
 
@@ -167,6 +167,19 @@ The architecture is approved for implementation with two load-bearing controls:
 2. The evidence schema and status reducer are the source of truth. The galaxy is a read-only projection and must never infer `cross-platform-ready` from incomplete records.
 
 The exact iPhone/OS and Android/OS manifests are still a prerequisite for device runs. Until they are recorded, the intersection is an unknown, not a failure. A verified empty intersection is an acceptable Phase 1 result if every exclusion has a reproducible reason.
+
+## Phase 2 implementation record — 2026-09-17
+
+The next phase was executed from `main` at `395bf11` in the standalone `ModelOrbit` repository.
+
+- Added six versioned JSON Schemas at `packages/evidence-schema/schemas/`, a dependency-free validator, route-state parser, and deterministic fixtures/tests.
+- Normalized all 26 snapshot rows with schema version `0.2.0`; `npm test` passes all 14 tests and `npm run validate` validates 26 model records, 52 preflight records, and 2 device manifests.
+- Ran the matrix at `data/preflight/2026-09-17.json`: 26 models × iOS Core AI and Android ExecuTorch lanes. Outcomes are explicit `blocked` or `unknown`; iOS eligible 0, Android eligible 0, intersection 0 with status `unknown`.
+- iOS toolchain observed: Xcode 26.4.1, build 17E202, `xcrun version 72`, Apple Swift 6.3.1, iOS SDK 26.4. The host is an Apple M1 MacBook Air on macOS 26.4.1, not a physical iPhone.
+- Android toolchain observed: `adb`, Android SDK, Gradle, Java, and Kotlin compiler were unavailable. No Android device manifest could be populated.
+- Device detection evidence is `data/devices/2026-09-16.json` (UTC timestamp): `device-ios-20260916T195533Z` is blocked because no physical iPhone was listed by `devicectl`; `device-android-20260916T195533Z` is unknown because ADB is unavailable. No device identifiers or private payloads were recorded.
+- Swift POC harness compile check passes with Swift 6.3.1. Android POC compile check is blocked by the unavailable Android/Kotlin toolchain. No model weights were downloaded and no benchmark result was emitted.
+- Phase ledger `evidence/runs/phase-2-status.json` records zero POC runs and the unknown intersection. This is not a verified empty intersection: unknown prerequisites remain.
 
 ### Architecture review
 

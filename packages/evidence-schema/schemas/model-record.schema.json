@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://modelorbit.dev/schema/0.2.0/model-record.json",
+  "title": "ModelOrbit model record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "id", "modelId", "author", "pipeline", "url", "revision", "status", "iosStatus", "androidStatus"],
+  "properties": {
+    "schemaVersion": { "const": "0.2.0" },
+    "id": { "type": "string", "minLength": 1 },
+    "modelId": { "type": "string", "pattern": "^[^/]+/.+" },
+    "author": { "type": "string", "minLength": 1 },
+    "pipeline": { "type": "string", "minLength": 1 },
+    "url": { "type": "string", "format": "uri" },
+    "parameters": { "type": ["integer", "null"], "minimum": 0 },
+    "latestRank": { "type": ["integer", "null"], "minimum": 1 },
+    "daysSeen": { "type": ["number", "null"], "minimum": 0 },
+    "frequencyPct": { "type": ["number", "null"], "minimum": 0, "maximum": 100 },
+    "firstSeen": { "type": ["string", "null"], "format": "date" },
+    "lastSeen": { "type": ["string", "null"], "format": "date" },
+    "sourceModified": { "type": ["string", "null"], "format": "date-time" },
+    "revision": { "type": ["string", "null"], "pattern": "^[0-9a-f]{7,64}$" },
+    "status": { "enum": ["unknown", "blocked", "failed", "partial", "stale", "preflight-eligible", "exported", "device-untested", "cross-platform-ready"] },
+    "iosStatus": { "enum": ["unknown", "blocked", "failed", "partial", "stale", "eligible", "exported", "device-tested"] },
+    "androidStatus": { "enum": ["unknown", "blocked", "failed", "partial", "stale", "eligible", "exported", "device-tested"] },
+    "evidenceAgeDays": { "type": ["number", "null"], "minimum": 0 },
+    "orbitIndex": { "type": "integer", "minimum": 0 },
+    "preflight": { "type": "object" },
+    "evidence": { "type": "array", "items": { "type": "string" } },
+    "statusReason": { "type": "string", "minLength": 1 }
+  }
+}

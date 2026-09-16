@@ -1,0 +1,7 @@
+{
+  "fixtureId": "text-generation/basic-v1",
+  "schemaVersion": "0.2.0",
+  "input": "Write one short sentence about a quiet orbit.",
+  "outputValidator": "non-empty-utf8",
+  "networkAllowed": false
+}

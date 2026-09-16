@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://modelorbit.dev/schema/0.2.0/benchmark-result.json",
+  "title": "ModelOrbit benchmark result",
+  "type": "object", "additionalProperties": false,
+  "required": ["schemaVersion", "runId", "modelId", "modelRevision", "platform", "deviceManifestId", "task", "status", "output", "latencyMs", "peakMemoryBytes", "network", "checkedAt"],
+  "properties": {
+    "schemaVersion": { "const": "0.2.0" }, "runId": { "type": "string", "pattern": "^benchmark-[a-z]+-[0-9]{8}T[0-9]{6}Z$" }, "modelId": { "type": "string", "pattern": "^[^/]+/.+" }, "modelRevision": { "type": "string", "pattern": "^[0-9a-f]{7,64}$" }, "platform": { "enum": ["ios", "android"] }, "deviceManifestId": { "type": "string" },
+    "task": { "type": "object", "additionalProperties": false, "required": ["fixtureId", "inputChecksum", "outputValidator"], "properties": { "fixtureId": { "type": "string" }, "inputChecksum": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" }, "outputValidator": { "type": "string" } } },
+    "status": { "enum": ["pass", "fail", "partial", "blocked", "unknown", "stale"] }, "output": { "type": "object", "additionalProperties": false, "required": ["valid", "checksum"], "properties": { "valid": { "type": "boolean" }, "checksum": { "type": ["string", "null"], "pattern": "^sha256:[0-9a-f]{64}$" } } },
+    "latencyMs": { "type": "object", "additionalProperties": false, "required": ["cold", "warm"], "properties": { "cold": { "type": ["number", "null"], "minimum": 0 }, "warm": { "type": ["number", "null"], "minimum": 0 } } }, "peakMemoryBytes": { "type": ["integer", "null"], "minimum": 0 },
+    "network": { "type": "object", "additionalProperties": false, "required": ["allowed", "requestCount", "events"], "properties": { "allowed": { "const": false }, "requestCount": { "type": "integer", "minimum": 0 }, "events": { "type": "array", "items": { "type": "object", "additionalProperties": false, "required": ["kind", "timestamp"], "properties": { "kind": { "type": "string" }, "timestamp": { "type": "string", "format": "date-time" }, "destination": { "type": "string" } } } } } }, "checkedAt": { "type": "string", "format": "date-time" }, "reason": { "type": "string" }
+  }
+}

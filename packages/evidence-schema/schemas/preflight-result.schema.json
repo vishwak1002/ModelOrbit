@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://modelorbit.dev/schema/0.2.0/preflight-result.json",
+  "title": "ModelOrbit preflight result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "runId", "modelId", "modelRevision", "platform", "runtime", "status", "toolchain", "checkedAt", "reason"],
+  "properties": {
+    "schemaVersion": { "const": "0.2.0" },
+    "runId": { "type": "string", "pattern": "^preflight-[0-9]{4}-[0-9]{2}-[0-9]{2}-[a-z0-9-]+$" },
+    "modelId": { "type": "string", "pattern": "^[^/]+/.+" },
+    "modelRevision": { "type": ["string", "null"], "pattern": "^[0-9a-f]{7,64}$" },
+    "platform": { "enum": ["ios", "android"] },
+    "runtime": { "enum": ["core-ai", "executorch"] },
+    "status": { "enum": ["eligible", "blocked", "failed", "unknown"] },
+    "toolchain": { "$ref": "#/$defs/toolchain" },
+    "checkedAt": { "type": "string", "format": "date-time" },
+    "reason": { "type": "string", "minLength": 1 },
+    "command": { "type": ["string", "null"] },
+    "logPath": { "type": ["string", "null"] },
+    "logChecksum": { "type": ["string", "null"], "pattern": "^sha256:[0-9a-f]{64}$" },
+    "capabilities": { "type": "array", "items": { "type": "string" } }
+  },
+  "$defs": { "toolchain": { "type": "object", "additionalProperties": false, "required": ["name", "available", "version"], "properties": { "name": { "type": "string" }, "available": { "type": "boolean" }, "version": { "type": "string" } } } }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "modelorbit",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/**/*.test.mjs",
+    "validate": "node tools/validate-repository.mjs",
+    "preflight": "node tools/preflight/run-preflight.mjs",
+    "devices": "node tools/benchmark/detect-devices.mjs",
+    "phase-status": "node tools/benchmark/write-phase-status.mjs",
+    "read-model": "node tools/build-read-model.mjs",
+    "native:check": "node tools/compile-native.mjs",
+    "normalize": "node tools/normalize-snapshot.mjs && node tools/build-read-model.mjs"
+  }
+}

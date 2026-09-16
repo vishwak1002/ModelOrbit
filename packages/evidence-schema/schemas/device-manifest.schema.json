@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://modelorbit.dev/schema/0.2.0/device-manifest.json",
+  "title": "ModelOrbit device manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "manifestId", "platform", "status", "detectedAt", "toolchain", "device", "reason"],
+  "properties": {
+    "schemaVersion": { "const": "0.2.0" }, "manifestId": { "type": "string", "pattern": "^device-[a-z]+-[0-9]{8}T[0-9]{6}Z$" }, "platform": { "enum": ["ios", "android"] },
+    "status": { "enum": ["available", "blocked", "unknown"] }, "detectedAt": { "type": "string", "format": "date-time" },
+    "toolchain": { "type": "object", "additionalProperties": false, "required": ["name", "available", "version", "command"], "properties": { "name": { "type": "string" }, "available": { "type": "boolean" }, "version": { "type": "string" }, "command": { "type": "string" } } },
+    "device": { "type": ["object", "null"], "additionalProperties": false, "required": ["model", "osVersion", "build", "architecture", "locale", "thermalState", "batteryState"], "properties": { "model": { "type": "string" }, "osVersion": { "type": "string" }, "build": { "type": "string" }, "architecture": { "type": "string" }, "locale": { "type": "string" }, "thermalState": { "enum": ["nominal", "fair", "serious", "critical", "unknown"] }, "batteryState": { "enum": ["charging", "unplugged", "full", "unknown"] } } },
+    "reason": { "type": "string", "minLength": 1 }, "sourceCommand": { "type": "string", "minLength": 1 }
+  }
+}

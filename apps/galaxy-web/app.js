@@ -1,10 +1,12 @@
+import { parseComparisonRoute } from "../../packages/evidence-schema/src/route-state.mjs";
+
 const DATA_URL = "../../data/normalized/models.json";
 const state = { models: [], lens: "both", pipeline: "all", query: "", view: "galaxy", selectedId: null };
 const els = {
-  snapshotDate: document.querySelector("#snapshot-date"), catalogCount: document.querySelector("#catalog-count"), readyCount: document.querySelector("#ready-count"), sourceName: document.querySelector("#source-name"), sourceChecksum: document.querySelector("#source-checksum"), lens: document.querySelector("#lens"), search: document.querySelector("#search"), pipeline: document.querySelector("#pipeline-filter"), resultHeading: document.querySelector("#result-heading"), resultCount: document.querySelector("#result-count"), empty: document.querySelector("#galaxy-empty"), error: document.querySelector("#galaxy-error"), errorCopy: document.querySelector("#error-copy"), stage: document.querySelector("#galaxy-stage"), tableStage: document.querySelector("#table-stage"), nodes: document.querySelector("#orbit-nodes"), table: document.querySelector("#model-table"), showAll: document.querySelector("#show-all"), retry: document.querySelector("#retry"), inspectorEmpty: document.querySelector("#inspector-empty"), inspectorContent: document.querySelector("#inspector-content"), inspectorStatus: document.querySelector("#inspector-status"), modelTitle: document.querySelector("#model-title"), modelAuthor: document.querySelector("#model-author"), modelSource: document.querySelector("#model-source"), modelRevision: document.querySelector("#model-revision"), modelPipeline: document.querySelector("#model-pipeline"), modelIos: document.querySelector("#model-ios"), modelAndroid: document.querySelector("#model-android"), modelParams: document.querySelector("#model-params"), modelAge: document.querySelector("#model-age"), freshness: document.querySelector("#freshness-banner")
+  snapshotDate: document.querySelector("#snapshot-date"), catalogCount: document.querySelector("#catalog-count"), readyCount: document.querySelector("#ready-count"), sourceName: document.querySelector("#source-name"), sourceChecksum: document.querySelector("#source-checksum"), lens: document.querySelector("#lens"), search: document.querySelector("#search"), pipeline: document.querySelector("#pipeline-filter"), resultHeading: document.querySelector("#result-heading"), resultCount: document.querySelector("#result-count"), empty: document.querySelector("#galaxy-empty"), error: document.querySelector("#galaxy-error"), errorCopy: document.querySelector("#error-copy"), stage: document.querySelector("#galaxy-stage"), tableStage: document.querySelector("#table-stage"), nodes: document.querySelector("#orbit-nodes"), table: document.querySelector("#model-table"), showAll: document.querySelector("#show-all"), retry: document.querySelector("#retry"), inspectorEmpty: document.querySelector("#inspector-empty"), inspectorContent: document.querySelector("#inspector-content"), inspectorStatus: document.querySelector("#inspector-status"), modelTitle: document.querySelector("#model-title"), modelAuthor: document.querySelector("#model-author"), modelSource: document.querySelector("#model-source"), modelRevision: document.querySelector("#model-revision"), modelPipeline: document.querySelector("#model-pipeline"), modelIos: document.querySelector("#model-ios"), modelAndroid: document.querySelector("#model-android"), modelParams: document.querySelector("#model-params"), modelAge: document.querySelector("#model-age"), freshness: document.querySelector("#freshness-banner"), comparison: document.querySelector("#comparison-state")
 };
 
-const statusLabel = (status) => ({ ready: "Verified", partial: "Partial", blocked: "Blocked", failed: "Failed", unknown: "Not tested", stale: "Stale" }[status] ?? "Unknown");
+const statusLabel = (status) => ({ ready: "Verified", "cross-platform-ready": "Cross-platform ready", "preflight-eligible": "Preflight eligible", exported: "Exported", "device-untested": "Device untested", eligible: "Eligible", "device-tested": "Device tested", partial: "Partial", blocked: "Blocked", failed: "Failed", unknown: "Unknown", stale: "Stale" }[status] ?? "Unknown");
 const formatParams = (value) => { if (!value) return "Not reported"; if (value >= 1e9) return `${(value / 1e9).toFixed(1)}B`; if (value >= 1e6) return `${(value / 1e6).toFixed(0)}M`; return value.toLocaleString(); };
 const pipelineLabel = (value) => value.replaceAll("-", " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
 const modelStatus = (model) => model.status || "unknown";
@@ -13,7 +15,7 @@ function setSnapshotMeta(payload) {
   const date = payload.sourceSnapshot.replace("-models.tsv", "");
   els.snapshotDate.textContent = date;
   els.catalogCount.textContent = payload.records.length;
-  els.readyCount.textContent = payload.records.filter((model) => modelStatus(model) === "ready").length;
+  els.readyCount.textContent = payload.records.filter((model) => modelStatus(model) === "cross-platform-ready").length;
   els.sourceName.textContent = payload.sourceSnapshot.replace(".tsv", "");
   els.sourceChecksum.textContent = payload.sourceChecksum.slice(0, 16) + "…";
 }
@@ -24,7 +26,7 @@ function filteredModels() {
     const matchesQuery = !state.query || searchable.includes(state.query.toLowerCase());
     const matchesPipeline = state.pipeline === "all" || model.pipeline === state.pipeline;
     const status = modelStatus(model);
-    const matchesLens = state.lens === "all" || (state.lens === "both" && status === "ready") || (state.lens === "ios" && ["ready", "partial"].includes(model.iosStatus)) || (state.lens === "android" && ["ready", "partial"].includes(model.androidStatus));
+    const matchesLens = state.lens === "all" || (state.lens === "both" && status === "cross-platform-ready") || (state.lens === "ios" && ["eligible", "exported", "device-tested", "partial"].includes(model.iosStatus)) || (state.lens === "android" && ["eligible", "exported", "device-tested", "partial"].includes(model.androidStatus));
     return matchesQuery && matchesPipeline && matchesLens;
   });
 }
@@ -107,6 +109,16 @@ function showError(error) {
   els.stage.hidden = true; els.empty.hidden = true; els.error.hidden = false; els.errorCopy.textContent = error instanceof Error ? error.message : "The last valid snapshot could not be loaded.";
 }
 
+function applyRouteState() {
+  if (!new URL(window.location.href).searchParams.has("models")) return;
+  const route = parseComparisonRoute(window.location.href, state.models.map((model) => model.id));
+  if (!route.valid) { els.comparison.hidden = true; els.freshness.hidden = false; els.freshness.textContent = `This comparison link is invalid: ${route.errors.join("; ")}`; return; }
+  const { state: routeState } = route;
+  state.lens = routeState.lens; els.lens.value = routeState.lens;
+  if (["all", ...new Set(state.models.map((model) => model.pipeline))].includes(routeState.pipeline)) { state.pipeline = routeState.pipeline; els.pipeline.value = routeState.pipeline; }
+  if (routeState.models.length) { state.selectedId = routeState.models[0]; els.comparison.hidden = false; els.comparison.textContent = `Comparison state: ${routeState.models.join(" · ")}${routeState.revision ? ` @ ${routeState.revision}` : ""}`; }
+}
+
 async function loadData() {
   els.error.hidden = true;
   try {
@@ -118,6 +130,7 @@ async function loadData() {
     setSnapshotMeta(payload);
     const pipelines = [...new Set(state.models.map((model) => model.pipeline))].sort();
     pipelines.forEach((pipeline) => { const option = document.createElement("option"); option.value = pipeline; option.textContent = pipelineLabel(pipeline); els.pipeline.append(option); });
+    applyRouteState();
     render();
   } catch (error) { showError(error); }
 }

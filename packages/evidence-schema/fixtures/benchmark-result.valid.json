@@ -1,0 +1,3 @@
+{
+  "schemaVersion": "0.2.0", "runId": "benchmark-ios-20260917T000000Z", "modelId": "openai-community/gpt2", "modelRevision": "0123456789abcdef0123456789abcdef01234567", "platform": "ios", "deviceManifestId": "device-ios-20260917T000000Z", "task": { "fixtureId": "text-generation/basic-v1", "inputChecksum": "sha256:0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef", "outputValidator": "non-empty-utf8" }, "status": "pass", "output": { "valid": true, "checksum": "sha256:0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef" }, "latencyMs": { "cold": 120.5, "warm": 35.2 }, "peakMemoryBytes": 104857600, "network": { "allowed": false, "requestCount": 0, "events": [] }, "checkedAt": "2026-09-17T00:00:00.000Z", "reason": "Fixture only."
+}

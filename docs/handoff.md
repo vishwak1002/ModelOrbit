@@ -1,7 +1,7 @@
 # ModelOrbit Handoff
 
 Date: 2026-09-17
-Status: CEO, engineering, and design reviews complete; galaxy MVP implemented; preflight/native POCs pending
+Status: CEO, engineering, and design reviews complete; schema/preflight/device phase implemented; physical-device POCs blocked by missing prerequisites
 
 ## What was decided
 
@@ -71,7 +71,7 @@ The review locked in the following implementation rules:
 
 The engineering review found no critical architecture gap. The two active risks are deliberate and visible: the exact test devices/OS versions still need to be recorded, and the Core AI/ExecuTorch intersection may be empty. Both are handled by the preflight and evidence model rather than being hidden assumptions.
 
-Recommended next sequence: isolated ModelOrbit repository creation, schema and snapshot implementation, 26-model preflight, then the two native POCs and evidence-backed galaxy.
+Recommended next sequence after this phase: obtain trusted physical iPhone and Android manifests, refresh immutable source revisions, then run the fail-closed native adapters on the verified intersection.
 
 ## Design review result
 
@@ -94,4 +94,14 @@ The visual mockup generator could not run because the local design tool has no c
 
 Commit `50c8728` adds the first working galaxy MVP, deterministic snapshot normalizer, and 26-record normalized read model. The default lens intentionally shows zero verified models because no preflight or physical-device evidence has been collected yet.
 
-Next implementation work is the versioned schema package, preflight matrix, exact device manifests, and the iOS Core AI and Android ExecuTorch POCs.
+The versioned schema package and preflight/device evidence are now implemented; remaining work is physical-device adapter execution once the documented prerequisites are available.
+
+## Phase 2 handoff — actual run
+
+The phase is implemented on `main` from baseline `395bf11`. Start with `npm test`, `npm run validate`, and inspect `evidence/runs/phase-2-status.json`.
+
+The checked-in matrix has 52 validated rows in `data/preflight/2026-09-17.json`. It has no eligible intersection: the dated snapshot contains `revision: null` for every record, Android export tooling is unavailable, and unsupported pipeline families are blocked. Because unknown results remain, the intersection is correctly `unknown`, not `verified-empty`.
+
+The exact device detection artifact is `data/devices/2026-09-16.json` (timestamps are UTC; manifests `device-ios-20260916T195533Z` and `device-android-20260916T195533Z`). Xcode 26.4.1 / build 17E202, xcrun 72, Swift 6.3.1, iOS SDK 26.4 were available; no physical iPhone was listed. ADB, Android SDK, Gradle, Java, and Kotlin were unavailable; no Android device was listed. The host is an Apple M1 MacBook Air running macOS 26.4.1. No private device identifiers were retained.
+
+The Swift fail-closed harness is in `pocs/ios-coreai/main.swift`; the portable Kotlin harness is in `pocs/android-executorch/Main.kt`. They emit no measurements without an admitted candidate and exact device manifest. Once a same-repository, immutable-revision candidate appears in the matrix and both manifests are available, the next safe work is to add the platform adapter, run `data/fixtures/*-basic-v1.json` on both devices, validate benchmark results, and rebuild the read model.

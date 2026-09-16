@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "0.2.0",
+  "runId": "phase-2-2026-09-16T19:55:38.437Z",
+  "generatedAt": "2026-09-16T19:55:38.437Z",
+  "deviceManifests": [
+    "device-ios-20260916T195533Z",
+    "device-android-20260916T195533Z"
+  ],
+  "pocSelection": {
+    "status": "unknown",
+    "candidateIds": [],
+    "reason": "The eligible intersection is not yet knowable because one or more records or toolchains are unknown."
+  },
+  "counts": {
+    "modelsSeen": 26,
+    "iosEligible": 0,
+    "androidEligible": 0,
+    "intersection": 0,
+    "deviceRunsStarted": 0,
+    "deviceRunsPassed": 0
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "fixtureId": "sentence-similarity/basic-v1",
+  "schemaVersion": "0.2.0",
+  "input": ["A quiet orbit circles a star.", "A calm path circles a sun."],
+  "outputValidator": "finite-score-0-to-1",
+  "networkAllowed": false
+}

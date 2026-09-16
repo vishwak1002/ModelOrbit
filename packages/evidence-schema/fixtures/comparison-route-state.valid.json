@@ -1,0 +1,3 @@
+{
+  "schemaVersion": "0.2.0", "models": ["openai-community/gpt2", "sentence-transformers/all-MiniLM-L6-v2"], "lens": "both", "pipeline": "all", "revision": "0123456789abcdef0123456789abcdef01234567"
+}

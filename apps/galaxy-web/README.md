@@ -10,7 +10,11 @@ From the repository root:
 
 ```bash
 node tools/normalize-snapshot.mjs
+node tools/preflight/run-preflight.mjs
+node tools/build-read-model.mjs
 python3 -m http.server 4173
 ```
 
 Open `http://127.0.0.1:4173/apps/galaxy-web/`. The browser needs a local HTTP server because the app fetches the normalized snapshot.
+
+Comparison links use `?schema=0.2.0&models=owner%2Fmodel,owner%2Fother&lens=both&pipeline=all`. Unknown model IDs and future schema versions render a recoverable invalid-link banner.

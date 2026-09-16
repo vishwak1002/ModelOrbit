@@ -35,6 +35,7 @@ const records = recordLines.map((line, index) => {
     firstSeen: sourceRecord.first_seen || null,
     lastSeen: sourceRecord.last_seen || null,
     sourceModified: sourceRecord.latest_lastModified || null,
+    schemaVersion: "0.2.0",
     revision: null,
     status: "unknown",
     iosStatus: "unknown",
@@ -45,7 +46,7 @@ const records = recordLines.map((line, index) => {
 });
 
 const payload = {
-  schemaVersion: "0.1.0",
+  schemaVersion: "0.2.0",
   sourceSnapshot: "2026-09-17-models.tsv",
   sourceChecksum: `sha256:${checksum}`,
   generatedAt: snapshotDate === "unknown" ? null : `${snapshotDate}T00:00:00.000Z`,

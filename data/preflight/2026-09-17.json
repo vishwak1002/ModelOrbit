@@ -1,0 +1,1064 @@
+{
+  "schemaVersion": "0.2.0",
+  "snapshot": "2026-09-17-models.tsv",
+  "generatedAt": "2026-09-16T19:56:00.772Z",
+  "toolchains": {
+    "ios": {
+      "name": "Xcode/Core AI export adapter",
+      "available": true,
+      "version": "Xcode 26.4.1 | Build version 17E202"
+    },
+    "android": {
+      "name": "Android SDK/ExecuTorch export adapter",
+      "available": false,
+      "version": "unavailable"
+    }
+  },
+  "results": [
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-ios-f2df0768",
+      "modelId": "openbmb/MiniCPM5-2B",
+      "modelRevision": null,
+      "platform": "ios",
+      "runtime": "core-ai",
+      "status": "unknown",
+      "toolchain": {
+        "name": "Xcode/Core AI export adapter",
+        "available": true,
+        "version": "Xcode 26.4.1 | Build version 17E202"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Immutable Hugging Face revision is not present in the dated snapshot; export was not attempted.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-android-f2df0768",
+      "modelId": "openbmb/MiniCPM5-2B",
+      "modelRevision": null,
+      "platform": "android",
+      "runtime": "executorch",
+      "status": "unknown",
+      "toolchain": {
+        "name": "Android SDK/ExecuTorch export adapter",
+        "available": false,
+        "version": "unavailable"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Android SDK/ExecuTorch export adapter was not available on this host; no export was attempted.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-ios-9a74156f",
+      "modelId": "Qwen/Qwen3.8-27B",
+      "modelRevision": null,
+      "platform": "ios",
+      "runtime": "core-ai",
+      "status": "blocked",
+      "toolchain": {
+        "name": "Xcode/Core AI export adapter",
+        "available": true,
+        "version": "Xcode 26.4.1 | Build version 17E202"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Pipeline image-text-to-text has no core-ai adapter in this phase.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-android-9a74156f",
+      "modelId": "Qwen/Qwen3.8-27B",
+      "modelRevision": null,
+      "platform": "android",
+      "runtime": "executorch",
+      "status": "blocked",
+      "toolchain": {
+        "name": "Android SDK/ExecuTorch export adapter",
+        "available": false,
+        "version": "unavailable"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Pipeline image-text-to-text has no executorch adapter in this phase.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-ios-f1795e8d",
+      "modelId": "ISTA-DASLab/Qwen3.8-27B-GSQ-RCO-GGUF",
+      "modelRevision": null,
+      "platform": "ios",
+      "runtime": "core-ai",
+      "status": "blocked",
+      "toolchain": {
+        "name": "Xcode/Core AI export adapter",
+        "available": true,
+        "version": "Xcode 26.4.1 | Build version 17E202"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Pipeline image-text-to-text has no core-ai adapter in this phase.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-android-f1795e8d",
+      "modelId": "ISTA-DASLab/Qwen3.8-27B-GSQ-RCO-GGUF",
+      "modelRevision": null,
+      "platform": "android",
+      "runtime": "executorch",
+      "status": "blocked",
+      "toolchain": {
+        "name": "Android SDK/ExecuTorch export adapter",
+        "available": false,
+        "version": "unavailable"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Pipeline image-text-to-text has no executorch adapter in this phase.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-ios-bd215a42",
+      "modelId": "Lightricks/LTX-2.5",
+      "modelRevision": null,
+      "platform": "ios",
+      "runtime": "core-ai",
+      "status": "blocked",
+      "toolchain": {
+        "name": "Xcode/Core AI export adapter",
+        "available": true,
+        "version": "Xcode 26.4.1 | Build version 17E202"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Pipeline image-to-video has no core-ai adapter in this phase.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-android-bd215a42",
+      "modelId": "Lightricks/LTX-2.5",
+      "modelRevision": null,
+      "platform": "android",
+      "runtime": "executorch",
+      "status": "blocked",
+      "toolchain": {
+        "name": "Android SDK/ExecuTorch export adapter",
+        "available": false,
+        "version": "unavailable"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Pipeline image-to-video has no executorch adapter in this phase.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-ios-ea496b4b",
+      "modelId": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "modelRevision": null,
+      "platform": "ios",
+      "runtime": "core-ai",
+      "status": "blocked",
+      "toolchain": {
+        "name": "Xcode/Core AI export adapter",
+        "available": true,
+        "version": "Xcode 26.4.1 | Build version 17E202"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Pipeline image-text-to-text has no core-ai adapter in this phase.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-android-ea496b4b",
+      "modelId": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "modelRevision": null,
+      "platform": "android",
+      "runtime": "executorch",
+      "status": "blocked",
+      "toolchain": {
+        "name": "Android SDK/ExecuTorch export adapter",
+        "available": false,
+        "version": "unavailable"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Pipeline image-text-to-text has no executorch adapter in this phase.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-ios-1edf3487",
+      "modelId": "nex-agi/Nex-N2.5-mini",
+      "modelRevision": null,
+      "platform": "ios",
+      "runtime": "core-ai",
+      "status": "unknown",
+      "toolchain": {
+        "name": "Xcode/Core AI export adapter",
+        "available": true,
+        "version": "Xcode 26.4.1 | Build version 17E202"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Immutable Hugging Face revision is not present in the dated snapshot; export was not attempted.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-android-1edf3487",
+      "modelId": "nex-agi/Nex-N2.5-mini",
+      "modelRevision": null,
+      "platform": "android",
+      "runtime": "executorch",
+      "status": "unknown",
+      "toolchain": {
+        "name": "Android SDK/ExecuTorch export adapter",
+        "available": false,
+        "version": "unavailable"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Android SDK/ExecuTorch export adapter was not available on this host; no export was attempted.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-ios-1cceb9b0",
+      "modelId": "nex-agi/Nex-N2.5-Pro",
+      "modelRevision": null,
+      "platform": "ios",
+      "runtime": "core-ai",
+      "status": "unknown",
+      "toolchain": {
+        "name": "Xcode/Core AI export adapter",
+        "available": true,
+        "version": "Xcode 26.4.1 | Build version 17E202"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Immutable Hugging Face revision is not present in the dated snapshot; export was not attempted.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-android-1cceb9b0",
+      "modelId": "nex-agi/Nex-N2.5-Pro",
+      "modelRevision": null,
+      "platform": "android",
+      "runtime": "executorch",
+      "status": "unknown",
+      "toolchain": {
+        "name": "Android SDK/ExecuTorch export adapter",
+        "available": false,
+        "version": "unavailable"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Android SDK/ExecuTorch export adapter was not available on this host; no export was attempted.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-ios-625cc06e",
+      "modelId": "XHToken/Spark-X2.5-4B",
+      "modelRevision": null,
+      "platform": "ios",
+      "runtime": "core-ai",
+      "status": "unknown",
+      "toolchain": {
+        "name": "Xcode/Core AI export adapter",
+        "available": true,
+        "version": "Xcode 26.4.1 | Build version 17E202"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Immutable Hugging Face revision is not present in the dated snapshot; export was not attempted.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-android-625cc06e",
+      "modelId": "XHToken/Spark-X2.5-4B",
+      "modelRevision": null,
+      "platform": "android",
+      "runtime": "executorch",
+      "status": "unknown",
+      "toolchain": {
+        "name": "Android SDK/ExecuTorch export adapter",
+        "available": false,
+        "version": "unavailable"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Android SDK/ExecuTorch export adapter was not available on this host; no export was attempted.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-ios-261b83da",
+      "modelId": "Edge0/Edge0-35B-A3B-preview",
+      "modelRevision": null,
+      "platform": "ios",
+      "runtime": "core-ai",
+      "status": "unknown",
+      "toolchain": {
+        "name": "Xcode/Core AI export adapter",
+        "available": true,
+        "version": "Xcode 26.4.1 | Build version 17E202"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Immutable Hugging Face revision is not present in the dated snapshot; export was not attempted.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-android-261b83da",
+      "modelId": "Edge0/Edge0-35B-A3B-preview",
+      "modelRevision": null,
+      "platform": "android",
+      "runtime": "executorch",
+      "status": "unknown",
+      "toolchain": {
+        "name": "Android SDK/ExecuTorch export adapter",
+        "available": false,
+        "version": "unavailable"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Android SDK/ExecuTorch export adapter was not available on this host; no export was attempted.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-ios-fbac075f",
+      "modelId": "unsloth/Qwen3.8-27B-GGUF",
+      "modelRevision": null,
+      "platform": "ios",
+      "runtime": "core-ai",
+      "status": "blocked",
+      "toolchain": {
+        "name": "Xcode/Core AI export adapter",
+        "available": true,
+        "version": "Xcode 26.4.1 | Build version 17E202"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Pipeline unknown has no core-ai adapter in this phase.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-android-fbac075f",
+      "modelId": "unsloth/Qwen3.8-27B-GGUF",
+      "modelRevision": null,
+      "platform": "android",
+      "runtime": "executorch",
+      "status": "blocked",
+      "toolchain": {
+        "name": "Android SDK/ExecuTorch export adapter",
+        "available": false,
+        "version": "unavailable"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Pipeline unknown has no executorch adapter in this phase.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-ios-0aaf3b3e",
+      "modelId": "m-a-p/YuE2-3B",
+      "modelRevision": null,
+      "platform": "ios",
+      "runtime": "core-ai",
+      "status": "blocked",
+      "toolchain": {
+        "name": "Xcode/Core AI export adapter",
+        "available": true,
+        "version": "Xcode 26.4.1 | Build version 17E202"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Pipeline text-to-audio has no core-ai adapter in this phase.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-android-0aaf3b3e",
+      "modelId": "m-a-p/YuE2-3B",
+      "modelRevision": null,
+      "platform": "android",
+      "runtime": "executorch",
+      "status": "blocked",
+      "toolchain": {
+        "name": "Android SDK/ExecuTorch export adapter",
+        "available": false,
+        "version": "unavailable"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Pipeline text-to-audio has no executorch adapter in this phase.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-ios-3f1a123b",
+      "modelId": "google/timesfm-3.0-pytorch",
+      "modelRevision": null,
+      "platform": "ios",
+      "runtime": "core-ai",
+      "status": "blocked",
+      "toolchain": {
+        "name": "Xcode/Core AI export adapter",
+        "available": true,
+        "version": "Xcode 26.4.1 | Build version 17E202"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Pipeline time-series-forecasting has no core-ai adapter in this phase.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-android-3f1a123b",
+      "modelId": "google/timesfm-3.0-pytorch",
+      "modelRevision": null,
+      "platform": "android",
+      "runtime": "executorch",
+      "status": "blocked",
+      "toolchain": {
+        "name": "Android SDK/ExecuTorch export adapter",
+        "available": false,
+        "version": "unavailable"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Pipeline time-series-forecasting has no executorch adapter in this phase.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-ios-c30e83ad",
+      "modelId": "dealignai/GLM-5.3-CYBERSECURITY-FP8",
+      "modelRevision": null,
+      "platform": "ios",
+      "runtime": "core-ai",
+      "status": "unknown",
+      "toolchain": {
+        "name": "Xcode/Core AI export adapter",
+        "available": true,
+        "version": "Xcode 26.4.1 | Build version 17E202"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Immutable Hugging Face revision is not present in the dated snapshot; export was not attempted.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-android-c30e83ad",
+      "modelId": "dealignai/GLM-5.3-CYBERSECURITY-FP8",
+      "modelRevision": null,
+      "platform": "android",
+      "runtime": "executorch",
+      "status": "unknown",
+      "toolchain": {
+        "name": "Android SDK/ExecuTorch export adapter",
+        "available": false,
+        "version": "unavailable"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Android SDK/ExecuTorch export adapter was not available on this host; no export was attempted.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-ios-1822fadf",
+      "modelId": "TokenRhythm/NeoHorse-1-4B",
+      "modelRevision": null,
+      "platform": "ios",
+      "runtime": "core-ai",
+      "status": "unknown",
+      "toolchain": {
+        "name": "Xcode/Core AI export adapter",
+        "available": true,
+        "version": "Xcode 26.4.1 | Build version 17E202"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Immutable Hugging Face revision is not present in the dated snapshot; export was not attempted.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-android-1822fadf",
+      "modelId": "TokenRhythm/NeoHorse-1-4B",
+      "modelRevision": null,
+      "platform": "android",
+      "runtime": "executorch",
+      "status": "unknown",
+      "toolchain": {
+        "name": "Android SDK/ExecuTorch export adapter",
+        "available": false,
+        "version": "unavailable"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Android SDK/ExecuTorch export adapter was not available on this host; no export was attempted.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-ios-2ad30d6d",
+      "modelId": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
+      "modelRevision": null,
+      "platform": "ios",
+      "runtime": "core-ai",
+      "status": "blocked",
+      "toolchain": {
+        "name": "Xcode/Core AI export adapter",
+        "available": true,
+        "version": "Xcode 26.4.1 | Build version 17E202"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Pipeline image-text-to-text has no core-ai adapter in this phase.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-android-2ad30d6d",
+      "modelId": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
+      "modelRevision": null,
+      "platform": "android",
+      "runtime": "executorch",
+      "status": "blocked",
+      "toolchain": {
+        "name": "Android SDK/ExecuTorch export adapter",
+        "available": false,
+        "version": "unavailable"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Pipeline image-text-to-text has no executorch adapter in this phase.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-ios-d46f7701",
+      "modelId": "sentence-transformers/all-MiniLM-L6-v2",
+      "modelRevision": null,
+      "platform": "ios",
+      "runtime": "core-ai",
+      "status": "unknown",
+      "toolchain": {
+        "name": "Xcode/Core AI export adapter",
+        "available": true,
+        "version": "Xcode 26.4.1 | Build version 17E202"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Immutable Hugging Face revision is not present in the dated snapshot; export was not attempted.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-android-d46f7701",
+      "modelId": "sentence-transformers/all-MiniLM-L6-v2",
+      "modelRevision": null,
+      "platform": "android",
+      "runtime": "executorch",
+      "status": "unknown",
+      "toolchain": {
+        "name": "Android SDK/ExecuTorch export adapter",
+        "available": false,
+        "version": "unavailable"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Android SDK/ExecuTorch export adapter was not available on this host; no export was attempted.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-ios-6f290a63",
+      "modelId": "openai-community/gpt2",
+      "modelRevision": null,
+      "platform": "ios",
+      "runtime": "core-ai",
+      "status": "unknown",
+      "toolchain": {
+        "name": "Xcode/Core AI export adapter",
+        "available": true,
+        "version": "Xcode 26.4.1 | Build version 17E202"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Immutable Hugging Face revision is not present in the dated snapshot; export was not attempted.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-android-6f290a63",
+      "modelId": "openai-community/gpt2",
+      "modelRevision": null,
+      "platform": "android",
+      "runtime": "executorch",
+      "status": "unknown",
+      "toolchain": {
+        "name": "Android SDK/ExecuTorch export adapter",
+        "available": false,
+        "version": "unavailable"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Android SDK/ExecuTorch export adapter was not available on this host; no export was attempted.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-ios-6fd1ed91",
+      "modelId": "WarmBloodAban/Minimax-h3_Singularity",
+      "modelRevision": null,
+      "platform": "ios",
+      "runtime": "core-ai",
+      "status": "blocked",
+      "toolchain": {
+        "name": "Xcode/Core AI export adapter",
+        "available": true,
+        "version": "Xcode 26.4.1 | Build version 17E202"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Pipeline image-to-video has no core-ai adapter in this phase.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-android-6fd1ed91",
+      "modelId": "WarmBloodAban/Minimax-h3_Singularity",
+      "modelRevision": null,
+      "platform": "android",
+      "runtime": "executorch",
+      "status": "blocked",
+      "toolchain": {
+        "name": "Android SDK/ExecuTorch export adapter",
+        "available": false,
+        "version": "unavailable"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Pipeline image-to-video has no executorch adapter in this phase.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-ios-2bf74cb1",
+      "modelId": "Qwen/Qwen3.8-Flash-Next",
+      "modelRevision": null,
+      "platform": "ios",
+      "runtime": "core-ai",
+      "status": "blocked",
+      "toolchain": {
+        "name": "Xcode/Core AI export adapter",
+        "available": true,
+        "version": "Xcode 26.4.1 | Build version 17E202"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Pipeline image-text-to-text has no core-ai adapter in this phase.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-android-2bf74cb1",
+      "modelId": "Qwen/Qwen3.8-Flash-Next",
+      "modelRevision": null,
+      "platform": "android",
+      "runtime": "executorch",
+      "status": "blocked",
+      "toolchain": {
+        "name": "Android SDK/ExecuTorch export adapter",
+        "available": false,
+        "version": "unavailable"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Pipeline image-text-to-text has no executorch adapter in this phase.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-ios-b0612625",
+      "modelId": "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp",
+      "modelRevision": null,
+      "platform": "ios",
+      "runtime": "core-ai",
+      "status": "blocked",
+      "toolchain": {
+        "name": "Xcode/Core AI export adapter",
+        "available": true,
+        "version": "Xcode 26.4.1 | Build version 17E202"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Pipeline image-text-to-text has no core-ai adapter in this phase.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-android-b0612625",
+      "modelId": "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp",
+      "modelRevision": null,
+      "platform": "android",
+      "runtime": "executorch",
+      "status": "blocked",
+      "toolchain": {
+        "name": "Android SDK/ExecuTorch export adapter",
+        "available": false,
+        "version": "unavailable"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Pipeline image-text-to-text has no executorch adapter in this phase.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-ios-e1e805f9",
+      "modelId": "MiniMaxAI/MiniMax-H3",
+      "modelRevision": null,
+      "platform": "ios",
+      "runtime": "core-ai",
+      "status": "blocked",
+      "toolchain": {
+        "name": "Xcode/Core AI export adapter",
+        "available": true,
+        "version": "Xcode 26.4.1 | Build version 17E202"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Pipeline image-text-to-video has no core-ai adapter in this phase.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-android-e1e805f9",
+      "modelId": "MiniMaxAI/MiniMax-H3",
+      "modelRevision": null,
+      "platform": "android",
+      "runtime": "executorch",
+      "status": "blocked",
+      "toolchain": {
+        "name": "Android SDK/ExecuTorch export adapter",
+        "available": false,
+        "version": "unavailable"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Pipeline image-text-to-video has no executorch adapter in this phase.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-ios-1c78d8ce",
+      "modelId": "nvidia/Qwen3.8-Flash-Next-NVFP4",
+      "modelRevision": null,
+      "platform": "ios",
+      "runtime": "core-ai",
+      "status": "blocked",
+      "toolchain": {
+        "name": "Xcode/Core AI export adapter",
+        "available": true,
+        "version": "Xcode 26.4.1 | Build version 17E202"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Pipeline image-text-to-text has no core-ai adapter in this phase.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-android-1c78d8ce",
+      "modelId": "nvidia/Qwen3.8-Flash-Next-NVFP4",
+      "modelRevision": null,
+      "platform": "android",
+      "runtime": "executorch",
+      "status": "blocked",
+      "toolchain": {
+        "name": "Android SDK/ExecuTorch export adapter",
+        "available": false,
+        "version": "unavailable"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Pipeline image-text-to-text has no executorch adapter in this phase.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-ios-aa875ada",
+      "modelId": "IFM/K2-Horizon-MoVA-36B-A4B",
+      "modelRevision": null,
+      "platform": "ios",
+      "runtime": "core-ai",
+      "status": "unknown",
+      "toolchain": {
+        "name": "Xcode/Core AI export adapter",
+        "available": true,
+        "version": "Xcode 26.4.1 | Build version 17E202"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Immutable Hugging Face revision is not present in the dated snapshot; export was not attempted.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-android-aa875ada",
+      "modelId": "IFM/K2-Horizon-MoVA-36B-A4B",
+      "modelRevision": null,
+      "platform": "android",
+      "runtime": "executorch",
+      "status": "unknown",
+      "toolchain": {
+        "name": "Android SDK/ExecuTorch export adapter",
+        "available": false,
+        "version": "unavailable"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Android SDK/ExecuTorch export adapter was not available on this host; no export was attempted.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-ios-5283b6ad",
+      "modelId": "Jackrong/Qwopus3.8-27B-Flash-GGUF",
+      "modelRevision": null,
+      "platform": "ios",
+      "runtime": "core-ai",
+      "status": "blocked",
+      "toolchain": {
+        "name": "Xcode/Core AI export adapter",
+        "available": true,
+        "version": "Xcode 26.4.1 | Build version 17E202"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Pipeline image-text-to-text has no core-ai adapter in this phase.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-android-5283b6ad",
+      "modelId": "Jackrong/Qwopus3.8-27B-Flash-GGUF",
+      "modelRevision": null,
+      "platform": "android",
+      "runtime": "executorch",
+      "status": "blocked",
+      "toolchain": {
+        "name": "Android SDK/ExecuTorch export adapter",
+        "available": false,
+        "version": "unavailable"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Pipeline image-text-to-text has no executorch adapter in this phase.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-ios-4b9ea2d7",
+      "modelId": "zai-org/GLM-5.3-Flash",
+      "modelRevision": null,
+      "platform": "ios",
+      "runtime": "core-ai",
+      "status": "blocked",
+      "toolchain": {
+        "name": "Xcode/Core AI export adapter",
+        "available": true,
+        "version": "Xcode 26.4.1 | Build version 17E202"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Pipeline image-text-to-text has no core-ai adapter in this phase.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-android-4b9ea2d7",
+      "modelId": "zai-org/GLM-5.3-Flash",
+      "modelRevision": null,
+      "platform": "android",
+      "runtime": "executorch",
+      "status": "blocked",
+      "toolchain": {
+        "name": "Android SDK/ExecuTorch export adapter",
+        "available": false,
+        "version": "unavailable"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Pipeline image-text-to-text has no executorch adapter in this phase.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-ios-d12be9fe",
+      "modelId": "openbmb/MiniCPM5-2B-GGUF",
+      "modelRevision": null,
+      "platform": "ios",
+      "runtime": "core-ai",
+      "status": "unknown",
+      "toolchain": {
+        "name": "Xcode/Core AI export adapter",
+        "available": true,
+        "version": "Xcode 26.4.1 | Build version 17E202"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Immutable Hugging Face revision is not present in the dated snapshot; export was not attempted.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-android-d12be9fe",
+      "modelId": "openbmb/MiniCPM5-2B-GGUF",
+      "modelRevision": null,
+      "platform": "android",
+      "runtime": "executorch",
+      "status": "unknown",
+      "toolchain": {
+        "name": "Android SDK/ExecuTorch export adapter",
+        "available": false,
+        "version": "unavailable"
+      },
+      "checkedAt": "2026-09-16T19:56:00.772Z",
+      "reason": "Android SDK/ExecuTorch export adapter was not available on this host; no export was attempted.",
+      "command": null,
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": []
+    }
+  ],
+  "intersection": {
+    "status": "unknown",
+    "candidateIds": [],
+    "reason": "The eligible intersection is not yet knowable because one or more records or toolchains are unknown."
+  }
+}

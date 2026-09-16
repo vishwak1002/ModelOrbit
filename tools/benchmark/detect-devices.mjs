@@ -1,0 +1,20 @@
+import { execFileSync } from "node:child_process";
+import { mkdirSync, writeFileSync } from "node:fs";
+import { resolve } from "node:path";
+import { assertValid } from "../../packages/evidence-schema/src/index.mjs";
+
+const root = resolve(new URL("../..", import.meta.url).pathname);
+const outputDir = resolve(root, "data/devices");
+const detectedAt = new Date().toISOString();
+const compactTime = detectedAt.replace(/[-:]/g, "").replace(/\.\d+Z$/, "Z");
+const run = (command, args) => { try { return execFileSync(command, args, { encoding: "utf8", timeout: 5000, stdio: ["ignore", "pipe", "pipe"] }).trim(); } catch { return null; } };
+const xcode = run("xcodebuild", ["-version"]);
+const adb = run("adb", ["--version"]);
+const iosDevices = xcode ? run("xcrun", ["devicectl", "list", "devices"]) : null;
+const androidDevices = adb ? run("adb", ["devices", "-l"]) : null;
+const ios = assertValid({ schemaVersion: "0.2.0", manifestId: `device-ios-${compactTime}`, platform: "ios", status: iosDevices && /iPhone/i.test(iosDevices) ? "available" : "blocked", detectedAt, toolchain: { name: "Xcode/devicectl", available: Boolean(xcode), version: xcode || "unavailable", command: "xcodebuild -version; xcrun devicectl list devices" }, device: null, reason: iosDevices && /iPhone/i.test(iosDevices) ? "An iPhone was listed; detailed manifest capture requires a connected trusted device." : "No physical iPhone was listed by devicectl; no device evidence was fabricated.", sourceCommand: "xcrun devicectl list devices" }, "device-manifest");
+const android = assertValid({ schemaVersion: "0.2.0", manifestId: `device-android-${compactTime}`, platform: "android", status: androidDevices && /device\s*$/m.test(androidDevices) ? "available" : "unknown", detectedAt, toolchain: { name: "Android SDK/adb", available: Boolean(adb), version: adb || "unavailable", command: "adb --version; adb devices -l" }, device: null, reason: androidDevices && /device\s*$/m.test(androidDevices) ? "An Android device was listed; detailed manifest capture requires a connected device." : "ADB is unavailable or no Android device is connected; no device evidence was fabricated.", sourceCommand: "adb devices -l" }, "device-manifest");
+const payload = { schemaVersion: "0.2.0", detectedAt, manifests: [ios, android] };
+mkdirSync(outputDir, { recursive: true });
+writeFileSync(resolve(outputDir, `${detectedAt.slice(0, 10)}.json`), `${JSON.stringify(payload, null, 2)}\n`);
+console.log(JSON.stringify(payload, null, 2));

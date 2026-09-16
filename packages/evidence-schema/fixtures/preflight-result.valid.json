@@ -1,0 +1,3 @@
+{
+  "schemaVersion": "0.2.0", "runId": "preflight-2026-09-17-ios-fixture", "modelId": "openai-community/gpt2", "modelRevision": "0123456789abcdef0123456789abcdef01234567", "platform": "ios", "runtime": "core-ai", "status": "eligible", "toolchain": { "name": "Xcode/Core AI export adapter", "available": true, "version": "Xcode 26.4.1" }, "checkedAt": "2026-09-17T00:00:00.000Z", "reason": "Fixture only.", "command": "fixture", "logPath": null, "logChecksum": null, "capabilities": ["text-generation"]
+}

@@ -1,0 +1,5 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "https://modelorbit.dev/schema/0.2.0/evidence-link.json", "title": "ModelOrbit evidence link", "type": "object", "additionalProperties": false,
+  "required": ["schemaVersion", "linkId", "modelId", "modelRevision", "platform", "artifactPath", "artifactChecksum", "createdAt", "kind"],
+  "properties": { "schemaVersion": { "const": "0.2.0" }, "linkId": { "type": "string", "pattern": "^evidence-[a-z0-9-]+$" }, "modelId": { "type": "string", "pattern": "^[^/]+/.+" }, "modelRevision": { "type": "string", "pattern": "^[0-9a-f]{7,64}$" }, "platform": { "enum": ["ios", "android", "source", "preflight"] }, "artifactPath": { "type": "string", "pattern": "^(evidence|data|docs)/.+" }, "artifactChecksum": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" }, "createdAt": { "type": "string", "format": "date-time" }, "kind": { "enum": ["preflight-log", "device-manifest", "benchmark-result", "source-snapshot", "read-model"] }, "reviewer": { "type": ["string", "null"] } }
+}

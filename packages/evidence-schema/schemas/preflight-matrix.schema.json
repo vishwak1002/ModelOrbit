@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "https://modelorbit.dev/schema/0.2.0/preflight-matrix.json", "title": "ModelOrbit preflight matrix", "type": "object", "additionalProperties": false,
+  "required": ["schemaVersion", "snapshot", "generatedAt", "toolchains", "results", "intersection"],
+  "properties": {
+    "schemaVersion": { "const": "0.2.0" }, "snapshot": { "type": "string", "minLength": 1 }, "generatedAt": { "type": "string", "format": "date-time" }, "toolchains": { "type": "object" }, "results": { "type": "array", "minItems": 26, "items": { "type": "object" } },
+    "intersection": { "type": "object", "additionalProperties": false, "required": ["status", "candidateIds", "reason"], "properties": { "status": { "enum": ["ready", "verified-empty", "unknown"] }, "candidateIds": { "type": "array", "items": { "type": "string" } }, "reason": { "type": "string", "minLength": 1 } } }
+  }
+}

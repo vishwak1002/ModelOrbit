@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "0.1.0",
+  "schemaVersion": "0.2.0",
   "sourceSnapshot": "2026-09-17-models.tsv",
   "sourceChecksum": "sha256:018af0ee30d2b6d2774961c3db54afd58cee080d4784064191226fc2a7a1ee6c",
   "generatedAt": "2026-09-17T00:00:00.000Z",
@@ -18,12 +18,19 @@
       "firstSeen": "2026-09-10",
       "lastSeen": "2026-09-16",
       "sourceModified": "2026-09-12T07:20:14.000Z",
+      "schemaVersion": "0.2.0",
       "revision": null,
       "status": "unknown",
       "iosStatus": "unknown",
       "androidStatus": "unknown",
       "evidenceAgeDays": null,
-      "orbitIndex": 0
+      "orbitIndex": 0,
+      "preflight": {
+        "ios": "Immutable Hugging Face revision is not present in the dated snapshot; export was not attempted.",
+        "android": "Android SDK/ExecuTorch export adapter was not available on this host; no export was attempted."
+      },
+      "evidence": [],
+      "statusReason": "iOS: Immutable Hugging Face revision is not present in the dated snapshot; export was not attempted.; Android: Android SDK/ExecuTorch export adapter was not available on this host; no export was attempted."
     },
     {
       "id": "Qwen/Qwen3.8-27B",
@@ -38,12 +45,19 @@
       "firstSeen": "2026-09-10",
       "lastSeen": "2026-09-16",
       "sourceModified": "2026-08-14T15:00:01.000Z",
+      "schemaVersion": "0.2.0",
       "revision": null,
-      "status": "unknown",
-      "iosStatus": "unknown",
-      "androidStatus": "unknown",
+      "status": "blocked",
+      "iosStatus": "blocked",
+      "androidStatus": "blocked",
       "evidenceAgeDays": null,
-      "orbitIndex": 1
+      "orbitIndex": 1,
+      "preflight": {
+        "ios": "Pipeline image-text-to-text has no core-ai adapter in this phase.",
+        "android": "Pipeline image-text-to-text has no executorch adapter in this phase."
+      },
+      "evidence": [],
+      "statusReason": "iOS: Pipeline image-text-to-text has no core-ai adapter in this phase.; Android: Pipeline image-text-to-text has no executorch adapter in this phase."
     },
     {
       "id": "ISTA-DASLab/Qwen3.8-27B-GSQ-RCO-GGUF",
@@ -58,12 +72,19 @@
       "firstSeen": "2026-09-10",
       "lastSeen": "2026-09-16",
       "sourceModified": "2026-09-02T09:11:34.000Z",
+      "schemaVersion": "0.2.0",
       "revision": null,
-      "status": "unknown",
-      "iosStatus": "unknown",
-      "androidStatus": "unknown",
+      "status": "blocked",
+      "iosStatus": "blocked",
+      "androidStatus": "blocked",
       "evidenceAgeDays": null,
-      "orbitIndex": 2
+      "orbitIndex": 2,
+      "preflight": {
+        "ios": "Pipeline image-text-to-text has no core-ai adapter in this phase.",
+        "android": "Pipeline image-text-to-text has no executorch adapter in this phase."
+      },
+      "evidence": [],
+      "statusReason": "iOS: Pipeline image-text-to-text has no core-ai adapter in this phase.; Android: Pipeline image-text-to-text has no executorch adapter in this phase."
     },
     {
       "id": "Lightricks/LTX-2.5",
@@ -78,12 +99,19 @@
       "firstSeen": "2026-09-10",
       "lastSeen": "2026-09-16",
       "sourceModified": "2026-09-01T06:29:03.000Z",
+      "schemaVersion": "0.2.0",
       "revision": null,
-      "status": "unknown",
-      "iosStatus": "unknown",
-      "androidStatus": "unknown",
+      "status": "blocked",
+      "iosStatus": "blocked",
+      "androidStatus": "blocked",
       "evidenceAgeDays": null,
-      "orbitIndex": 3
+      "orbitIndex": 3,
+      "preflight": {
+        "ios": "Pipeline image-to-video has no core-ai adapter in this phase.",
+        "android": "Pipeline image-to-video has no executorch adapter in this phase."
+      },
+      "evidence": [],
+      "statusReason": "iOS: Pipeline image-to-video has no core-ai adapter in this phase.; Android: Pipeline image-to-video has no executorch adapter in this phase."
     },
     {
       "id": "deepseek-ai/DeepSeek-V4.1-Flash",
@@ -98,12 +126,19 @@
       "firstSeen": "2026-09-11",
       "lastSeen": "2026-09-16",
       "sourceModified": "2026-09-10T08:18:10.000Z",
+      "schemaVersion": "0.2.0",
       "revision": null,
-      "status": "unknown",
-      "iosStatus": "unknown",
-      "androidStatus": "unknown",
+      "status": "blocked",
+      "iosStatus": "blocked",
+      "androidStatus": "blocked",
       "evidenceAgeDays": null,
-      "orbitIndex": 4
+      "orbitIndex": 4,
+      "preflight": {
+        "ios": "Pipeline image-text-to-text has no core-ai adapter in this phase.",
+        "android": "Pipeline image-text-to-text has no executorch adapter in this phase."
+      },
+      "evidence": [],
+      "statusReason": "iOS: Pipeline image-text-to-text has no core-ai adapter in this phase.; Android: Pipeline image-text-to-text has no executorch adapter in this phase."
     },
     {
       "id": "nex-agi/Nex-N2.5-mini",
@@ -118,12 +153,19 @@
       "firstSeen": "2026-09-11",
       "lastSeen": "2026-09-16",
       "sourceModified": "2026-09-08T16:17:10.000Z",
+      "schemaVersion": "0.2.0",
       "revision": null,
       "status": "unknown",
       "iosStatus": "unknown",
       "androidStatus": "unknown",
       "evidenceAgeDays": null,
-      "orbitIndex": 5
+      "orbitIndex": 5,
+      "preflight": {
+        "ios": "Immutable Hugging Face revision is not present in the dated snapshot; export was not attempted.",
+        "android": "Android SDK/ExecuTorch export adapter was not available on this host; no export was attempted."
+      },
+      "evidence": [],
+      "statusReason": "iOS: Immutable Hugging Face revision is not present in the dated snapshot; export was not attempted.; Android: Android SDK/ExecuTorch export adapter was not available on this host; no export was attempted."
     },
     {
       "id": "nex-agi/Nex-N2.5-Pro",
@@ -138,12 +180,19 @@
       "firstSeen": "2026-09-12",
       "lastSeen": "2026-09-16",
       "sourceModified": "2026-09-11T03:37:15.000Z",
+      "schemaVersion": "0.2.0",
       "revision": null,
       "status": "unknown",
       "iosStatus": "unknown",
       "androidStatus": "unknown",
       "evidenceAgeDays": null,
-      "orbitIndex": 6
+      "orbitIndex": 6,
+      "preflight": {
+        "ios": "Immutable Hugging Face revision is not present in the dated snapshot; export was not attempted.",
+        "android": "Android SDK/ExecuTorch export adapter was not available on this host; no export was attempted."
+      },
+      "evidence": [],
+      "statusReason": "iOS: Immutable Hugging Face revision is not present in the dated snapshot; export was not attempted.; Android: Android SDK/ExecuTorch export adapter was not available on this host; no export was attempted."
     },
     {
       "id": "XHToken/Spark-X2.5-4B",
@@ -158,12 +207,19 @@
       "firstSeen": "2026-09-10",
       "lastSeen": "2026-09-14",
       "sourceModified": "2026-09-14T02:58:09.000Z",
+      "schemaVersion": "0.2.0",
       "revision": null,
       "status": "unknown",
       "iosStatus": "unknown",
       "androidStatus": "unknown",
       "evidenceAgeDays": null,
-      "orbitIndex": 7
+      "orbitIndex": 7,
+      "preflight": {
+        "ios": "Immutable Hugging Face revision is not present in the dated snapshot; export was not attempted.",
+        "android": "Android SDK/ExecuTorch export adapter was not available on this host; no export was attempted."
+      },
+      "evidence": [],
+      "statusReason": "iOS: Immutable Hugging Face revision is not present in the dated snapshot; export was not attempted.; Android: Android SDK/ExecuTorch export adapter was not available on this host; no export was attempted."
     },
     {
       "id": "Edge0/Edge0-35B-A3B-preview",
@@ -178,12 +234,19 @@
       "firstSeen": "2026-09-13",
       "lastSeen": "2026-09-16",
       "sourceModified": "2026-09-14T04:08:09.000Z",
+      "schemaVersion": "0.2.0",
       "revision": null,
       "status": "unknown",
       "iosStatus": "unknown",
       "androidStatus": "unknown",
       "evidenceAgeDays": null,
-      "orbitIndex": 8
+      "orbitIndex": 8,
+      "preflight": {
+        "ios": "Immutable Hugging Face revision is not present in the dated snapshot; export was not attempted.",
+        "android": "Android SDK/ExecuTorch export adapter was not available on this host; no export was attempted."
+      },
+      "evidence": [],
+      "statusReason": "iOS: Immutable Hugging Face revision is not present in the dated snapshot; export was not attempted.; Android: Android SDK/ExecuTorch export adapter was not available on this host; no export was attempted."
     },
     {
       "id": "unsloth/Qwen3.8-27B-GGUF",
@@ -198,12 +261,19 @@
       "firstSeen": "2026-09-10",
       "lastSeen": "2026-09-13",
       "sourceModified": "2026-08-20T12:04:25.000Z",
+      "schemaVersion": "0.2.0",
       "revision": null,
-      "status": "unknown",
-      "iosStatus": "unknown",
-      "androidStatus": "unknown",
+      "status": "blocked",
+      "iosStatus": "blocked",
+      "androidStatus": "blocked",
       "evidenceAgeDays": null,
-      "orbitIndex": 9
+      "orbitIndex": 9,
+      "preflight": {
+        "ios": "Pipeline unknown has no core-ai adapter in this phase.",
+        "android": "Pipeline unknown has no executorch adapter in this phase."
+      },
+      "evidence": [],
+      "statusReason": "iOS: Pipeline unknown has no core-ai adapter in this phase.; Android: Pipeline unknown has no executorch adapter in this phase."
     },
     {
       "id": "m-a-p/YuE2-3B",
@@ -218,12 +288,19 @@
       "firstSeen": "2026-09-14",
       "lastSeen": "2026-09-16",
       "sourceModified": "2026-09-11T17:36:44.000Z",
+      "schemaVersion": "0.2.0",
       "revision": null,
-      "status": "unknown",
-      "iosStatus": "unknown",
-      "androidStatus": "unknown",
+      "status": "blocked",
+      "iosStatus": "blocked",
+      "androidStatus": "blocked",
       "evidenceAgeDays": null,
-      "orbitIndex": 10
+      "orbitIndex": 10,
+      "preflight": {
+        "ios": "Pipeline text-to-audio has no core-ai adapter in this phase.",
+        "android": "Pipeline text-to-audio has no executorch adapter in this phase."
+      },
+      "evidence": [],
+      "statusReason": "iOS: Pipeline text-to-audio has no core-ai adapter in this phase.; Android: Pipeline text-to-audio has no executorch adapter in this phase."
     },
     {
       "id": "google/timesfm-3.0-pytorch",
@@ -238,12 +315,19 @@
       "firstSeen": "2026-09-10",
       "lastSeen": "2026-09-11",
       "sourceModified": "2026-08-24T22:05:51.000Z",
+      "schemaVersion": "0.2.0",
       "revision": null,
-      "status": "unknown",
-      "iosStatus": "unknown",
-      "androidStatus": "unknown",
+      "status": "blocked",
+      "iosStatus": "blocked",
+      "androidStatus": "blocked",
       "evidenceAgeDays": null,
-      "orbitIndex": 11
+      "orbitIndex": 11,
+      "preflight": {
+        "ios": "Pipeline time-series-forecasting has no core-ai adapter in this phase.",
+        "android": "Pipeline time-series-forecasting has no executorch adapter in this phase."
+      },
+      "evidence": [],
+      "statusReason": "iOS: Pipeline time-series-forecasting has no core-ai adapter in this phase.; Android: Pipeline time-series-forecasting has no executorch adapter in this phase."
     },
     {
       "id": "dealignai/GLM-5.3-CYBERSECURITY-FP8",
@@ -258,12 +342,19 @@
       "firstSeen": "2026-09-11",
       "lastSeen": "2026-09-12",
       "sourceModified": "2026-09-08T14:59:56.000Z",
+      "schemaVersion": "0.2.0",
       "revision": null,
       "status": "unknown",
       "iosStatus": "unknown",
       "androidStatus": "unknown",
       "evidenceAgeDays": null,
-      "orbitIndex": 12
+      "orbitIndex": 12,
+      "preflight": {
+        "ios": "Immutable Hugging Face revision is not present in the dated snapshot; export was not attempted.",
+        "android": "Android SDK/ExecuTorch export adapter was not available on this host; no export was attempted."
+      },
+      "evidence": [],
+      "statusReason": "iOS: Immutable Hugging Face revision is not present in the dated snapshot; export was not attempted.; Android: Android SDK/ExecuTorch export adapter was not available on this host; no export was attempted."
     },
     {
       "id": "TokenRhythm/NeoHorse-1-4B",
@@ -278,12 +369,19 @@
       "firstSeen": "2026-09-15",
       "lastSeen": "2026-09-16",
       "sourceModified": "2026-09-10T07:47:12.000Z",
+      "schemaVersion": "0.2.0",
       "revision": null,
       "status": "unknown",
       "iosStatus": "unknown",
       "androidStatus": "unknown",
       "evidenceAgeDays": null,
-      "orbitIndex": 13
+      "orbitIndex": 13,
+      "preflight": {
+        "ios": "Immutable Hugging Face revision is not present in the dated snapshot; export was not attempted.",
+        "android": "Android SDK/ExecuTorch export adapter was not available on this host; no export was attempted."
+      },
+      "evidence": [],
+      "statusReason": "iOS: Immutable Hugging Face revision is not present in the dated snapshot; export was not attempted.; Android: Android SDK/ExecuTorch export adapter was not available on this host; no export was attempted."
     },
     {
       "id": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
@@ -298,12 +396,19 @@
       "firstSeen": "2026-09-10",
       "lastSeen": "2026-09-11",
       "sourceModified": "2026-09-01T07:01:09.000Z",
+      "schemaVersion": "0.2.0",
       "revision": null,
-      "status": "unknown",
-      "iosStatus": "unknown",
-      "androidStatus": "unknown",
+      "status": "blocked",
+      "iosStatus": "blocked",
+      "androidStatus": "blocked",
       "evidenceAgeDays": null,
-      "orbitIndex": 14
+      "orbitIndex": 14,
+      "preflight": {
+        "ios": "Pipeline image-text-to-text has no core-ai adapter in this phase.",
+        "android": "Pipeline image-text-to-text has no executorch adapter in this phase."
+      },
+      "evidence": [],
+      "statusReason": "iOS: Pipeline image-text-to-text has no core-ai adapter in this phase.; Android: Pipeline image-text-to-text has no executorch adapter in this phase."
     },
     {
       "id": "sentence-transformers/all-MiniLM-L6-v2",
@@ -318,12 +423,19 @@
       "firstSeen": "2026-09-10",
       "lastSeen": "2026-09-10",
       "sourceModified": "2026-06-01T06:29:13.000Z",
+      "schemaVersion": "0.2.0",
       "revision": null,
       "status": "unknown",
       "iosStatus": "unknown",
       "androidStatus": "unknown",
       "evidenceAgeDays": null,
-      "orbitIndex": 15
+      "orbitIndex": 15,
+      "preflight": {
+        "ios": "Immutable Hugging Face revision is not present in the dated snapshot; export was not attempted.",
+        "android": "Android SDK/ExecuTorch export adapter was not available on this host; no export was attempted."
+      },
+      "evidence": [],
+      "statusReason": "iOS: Immutable Hugging Face revision is not present in the dated snapshot; export was not attempted.; Android: Android SDK/ExecuTorch export adapter was not available on this host; no export was attempted."
     },
     {
       "id": "openai-community/gpt2",
@@ -338,12 +450,19 @@
       "firstSeen": "2026-09-10",
       "lastSeen": "2026-09-10",
       "sourceModified": "2024-02-19T10:57:45.000Z",
+      "schemaVersion": "0.2.0",
       "revision": null,
       "status": "unknown",
       "iosStatus": "unknown",
       "androidStatus": "unknown",
       "evidenceAgeDays": null,
-      "orbitIndex": 16
+      "orbitIndex": 16,
+      "preflight": {
+        "ios": "Immutable Hugging Face revision is not present in the dated snapshot; export was not attempted.",
+        "android": "Android SDK/ExecuTorch export adapter was not available on this host; no export was attempted."
+      },
+      "evidence": [],
+      "statusReason": "iOS: Immutable Hugging Face revision is not present in the dated snapshot; export was not attempted.; Android: Android SDK/ExecuTorch export adapter was not available on this host; no export was attempted."
     },
     {
       "id": "WarmBloodAban/Minimax-h3_Singularity",
@@ -358,12 +477,19 @@
       "firstSeen": "2026-09-11",
       "lastSeen": "2026-09-11",
       "sourceModified": "2026-09-05T18:51:01.000Z",
+      "schemaVersion": "0.2.0",
       "revision": null,
-      "status": "unknown",
-      "iosStatus": "unknown",
-      "androidStatus": "unknown",
+      "status": "blocked",
+      "iosStatus": "blocked",
+      "androidStatus": "blocked",
       "evidenceAgeDays": null,
-      "orbitIndex": 17
+      "orbitIndex": 17,
+      "preflight": {
+        "ios": "Pipeline image-to-video has no core-ai adapter in this phase.",
+        "android": "Pipeline image-to-video has no executorch adapter in this phase."
+      },
+      "evidence": [],
+      "statusReason": "iOS: Pipeline image-to-video has no core-ai adapter in this phase.; Android: Pipeline image-to-video has no executorch adapter in this phase."
     },
     {
       "id": "Qwen/Qwen3.8-Flash-Next",
@@ -378,12 +504,19 @@
       "firstSeen": "2026-09-11",
       "lastSeen": "2026-09-11",
       "sourceModified": "2026-08-24T08:24:59.000Z",
+      "schemaVersion": "0.2.0",
       "revision": null,
-      "status": "unknown",
-      "iosStatus": "unknown",
-      "androidStatus": "unknown",
+      "status": "blocked",
+      "iosStatus": "blocked",
+      "androidStatus": "blocked",
       "evidenceAgeDays": null,
-      "orbitIndex": 18
+      "orbitIndex": 18,
+      "preflight": {
+        "ios": "Pipeline image-text-to-text has no core-ai adapter in this phase.",
+        "android": "Pipeline image-text-to-text has no executorch adapter in this phase."
+      },
+      "evidence": [],
+      "statusReason": "iOS: Pipeline image-text-to-text has no core-ai adapter in this phase.; Android: Pipeline image-text-to-text has no executorch adapter in this phase."
     },
     {
       "id": "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp",
@@ -398,12 +531,19 @@
       "firstSeen": "2026-09-11",
       "lastSeen": "2026-09-11",
       "sourceModified": "2026-08-31T06:16:18.000Z",
+      "schemaVersion": "0.2.0",
       "revision": null,
-      "status": "unknown",
-      "iosStatus": "unknown",
-      "androidStatus": "unknown",
+      "status": "blocked",
+      "iosStatus": "blocked",
+      "androidStatus": "blocked",
       "evidenceAgeDays": null,
-      "orbitIndex": 19
+      "orbitIndex": 19,
+      "preflight": {
+        "ios": "Pipeline image-text-to-text has no core-ai adapter in this phase.",
+        "android": "Pipeline image-text-to-text has no executorch adapter in this phase."
+      },
+      "evidence": [],
+      "statusReason": "iOS: Pipeline image-text-to-text has no core-ai adapter in this phase.; Android: Pipeline image-text-to-text has no executorch adapter in this phase."
     },
     {
       "id": "MiniMaxAI/MiniMax-H3",
@@ -418,12 +558,19 @@
       "firstSeen": "2026-09-11",
       "lastSeen": "2026-09-11",
       "sourceModified": "2026-07-28T10:45:18.000Z",
+      "schemaVersion": "0.2.0",
       "revision": null,
-      "status": "unknown",
-      "iosStatus": "unknown",
-      "androidStatus": "unknown",
+      "status": "blocked",
+      "iosStatus": "blocked",
+      "androidStatus": "blocked",
       "evidenceAgeDays": null,
-      "orbitIndex": 20
+      "orbitIndex": 20,
+      "preflight": {
+        "ios": "Pipeline image-text-to-video has no core-ai adapter in this phase.",
+        "android": "Pipeline image-text-to-video has no executorch adapter in this phase."
+      },
+      "evidence": [],
+      "statusReason": "iOS: Pipeline image-text-to-video has no core-ai adapter in this phase.; Android: Pipeline image-text-to-video has no executorch adapter in this phase."
     },
     {
       "id": "nvidia/Qwen3.8-Flash-Next-NVFP4",
@@ -438,12 +585,19 @@
       "firstSeen": "2026-09-11",
       "lastSeen": "2026-09-11",
       "sourceModified": "2026-09-02T04:03:35.000Z",
+      "schemaVersion": "0.2.0",
       "revision": null,
-      "status": "unknown",
-      "iosStatus": "unknown",
-      "androidStatus": "unknown",
+      "status": "blocked",
+      "iosStatus": "blocked",
+      "androidStatus": "blocked",
       "evidenceAgeDays": null,
-      "orbitIndex": 21
+      "orbitIndex": 21,
+      "preflight": {
+        "ios": "Pipeline image-text-to-text has no core-ai adapter in this phase.",
+        "android": "Pipeline image-text-to-text has no executorch adapter in this phase."
+      },
+      "evidence": [],
+      "statusReason": "iOS: Pipeline image-text-to-text has no core-ai adapter in this phase.; Android: Pipeline image-text-to-text has no executorch adapter in this phase."
     },
     {
       "id": "IFM/K2-Horizon-MoVA-36B-A4B",
@@ -458,12 +612,19 @@
       "firstSeen": "2026-09-11",
       "lastSeen": "2026-09-11",
       "sourceModified": "2026-09-01T23:01:25.000Z",
+      "schemaVersion": "0.2.0",
       "revision": null,
       "status": "unknown",
       "iosStatus": "unknown",
       "androidStatus": "unknown",
       "evidenceAgeDays": null,
-      "orbitIndex": 22
+      "orbitIndex": 22,
+      "preflight": {
+        "ios": "Immutable Hugging Face revision is not present in the dated snapshot; export was not attempted.",
+        "android": "Android SDK/ExecuTorch export adapter was not available on this host; no export was attempted."
+      },
+      "evidence": [],
+      "statusReason": "iOS: Immutable Hugging Face revision is not present in the dated snapshot; export was not attempted.; Android: Android SDK/ExecuTorch export adapter was not available on this host; no export was attempted."
     },
     {
       "id": "Jackrong/Qwopus3.8-27B-Flash-GGUF",
@@ -478,12 +639,19 @@
       "firstSeen": "2026-09-11",
       "lastSeen": "2026-09-11",
       "sourceModified": "2026-09-04T12:43:31.000Z",
+      "schemaVersion": "0.2.0",
       "revision": null,
-      "status": "unknown",
-      "iosStatus": "unknown",
-      "androidStatus": "unknown",
+      "status": "blocked",
+      "iosStatus": "blocked",
+      "androidStatus": "blocked",
       "evidenceAgeDays": null,
-      "orbitIndex": 23
+      "orbitIndex": 23,
+      "preflight": {
+        "ios": "Pipeline image-text-to-text has no core-ai adapter in this phase.",
+        "android": "Pipeline image-text-to-text has no executorch adapter in this phase."
+      },
+      "evidence": [],
+      "statusReason": "iOS: Pipeline image-text-to-text has no core-ai adapter in this phase.; Android: Pipeline image-text-to-text has no executorch adapter in this phase."
     },
     {
       "id": "zai-org/GLM-5.3-Flash",
@@ -498,12 +666,19 @@
       "firstSeen": "2026-09-11",
       "lastSeen": "2026-09-11",
       "sourceModified": "2026-08-25T06:43:14.000Z",
+      "schemaVersion": "0.2.0",
       "revision": null,
-      "status": "unknown",
-      "iosStatus": "unknown",
-      "androidStatus": "unknown",
+      "status": "blocked",
+      "iosStatus": "blocked",
+      "androidStatus": "blocked",
       "evidenceAgeDays": null,
-      "orbitIndex": 24
+      "orbitIndex": 24,
+      "preflight": {
+        "ios": "Pipeline image-text-to-text has no core-ai adapter in this phase.",
+        "android": "Pipeline image-text-to-text has no executorch adapter in this phase."
+      },
+      "evidence": [],
+      "statusReason": "iOS: Pipeline image-text-to-text has no core-ai adapter in this phase.; Android: Pipeline image-text-to-text has no executorch adapter in this phase."
     },
     {
       "id": "openbmb/MiniCPM5-2B-GGUF",
@@ -518,12 +693,20 @@
       "firstSeen": "2026-09-11",
       "lastSeen": "2026-09-11",
       "sourceModified": "2026-09-05T01:44:34.000Z",
+      "schemaVersion": "0.2.0",
       "revision": null,
       "status": "unknown",
       "iosStatus": "unknown",
       "androidStatus": "unknown",
       "evidenceAgeDays": null,
-      "orbitIndex": 25
+      "orbitIndex": 25,
+      "preflight": {
+        "ios": "Immutable Hugging Face revision is not present in the dated snapshot; export was not attempted.",
+        "android": "Android SDK/ExecuTorch export adapter was not available on this host; no export was attempted."
+      },
+      "evidence": [],
+      "statusReason": "iOS: Immutable Hugging Face revision is not present in the dated snapshot; export was not attempted.; Android: Android SDK/ExecuTorch export adapter was not available on this host; no export was attempted."
     }
-  ]
+  ],
+  "readModelChecksum": "sha256:2b763c4d06242174b9abeffe2a52d1a0eed96cdde8ebd395e7ed9fbf369918bb"
 }

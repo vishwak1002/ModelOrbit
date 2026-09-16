@@ -1,0 +1,3 @@
+{
+  "schemaVersion": "0.2.0", "id": "openai-community/gpt2", "modelId": "openai-community/gpt2", "author": "openai-community", "pipeline": "text-generation", "url": "https://huggingface.co/openai-community/gpt2", "parameters": 137022720, "latestRank": 9, "daysSeen": 1, "frequencyPct": 14.3, "firstSeen": "2026-09-10", "lastSeen": "2026-09-10", "sourceModified": "2024-02-19T10:57:45.000Z", "revision": "0123456789abcdef0123456789abcdef01234567", "status": "unknown", "iosStatus": "unknown", "androidStatus": "unknown", "evidenceAgeDays": null, "orbitIndex": 0, "evidence": [], "statusReason": "Awaiting preflight."
+}
