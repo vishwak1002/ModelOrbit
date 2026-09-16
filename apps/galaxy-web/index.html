@@ -15,6 +15,7 @@
       </a>
       <nav class="primary-nav" aria-label="Primary navigation">
         <a class="active" href="#explore">Explore</a>
+        <a href="#chat">Chat</a>
         <a href="#evidence">Evidence</a>
         <a href="#notes">Research notes</a>
       </nav>
@@ -151,6 +152,58 @@
             <div class="inspector-note"><span aria-hidden="true">◷</span><p>Readiness is never inferred from popularity or size. This record enters the POC lane only after export and physical-device evidence.</p></div>
           </div>
         </aside>
+      </section>
+
+      <section id="chat" class="chat-section" aria-labelledby="chat-title">
+        <div class="chat-intro">
+          <div>
+            <p class="section-kicker">Model conversation</p>
+            <h2 id="chat-title">Ask the evidence<br /><em>before</em> the model.</h2>
+          </div>
+          <div>
+            <p class="chat-intro-copy">Choose a catalog record and explore its revision, platform lanes, and next proof step in one focused conversation.</p>
+            <p class="chat-mode-note"><span class="live-dot" aria-hidden="true"></span> Evidence demo · no model weights or network inference</p>
+          </div>
+        </div>
+
+        <div class="chat-shell">
+          <aside class="chat-context" aria-label="Chat context">
+            <div class="context-heading">
+              <p class="section-kicker">Context</p>
+              <span class="context-index">01 / 01</span>
+            </div>
+            <label class="chat-select-label" for="chat-model">Model record</label>
+            <select id="chat-model" class="chat-model-select" aria-describedby="chat-model-summary"></select>
+            <div id="chat-model-summary" class="chat-model-summary">
+              <span class="summary-placeholder">Load the catalog to choose a model.</span>
+            </div>
+            <div class="chat-prompts">
+              <p class="chat-prompts-label">Try asking</p>
+              <button class="prompt-chip" type="button" data-prompt="What evidence is still missing for this model?">What evidence is missing?</button>
+              <button class="prompt-chip" type="button" data-prompt="Show me the exact revision and both platform lanes.">Show revision + lanes</button>
+              <button class="prompt-chip" type="button" data-prompt="Can this model run on both phones today?">Can it run on both phones?</button>
+            </div>
+          </aside>
+
+          <div class="chat-window">
+            <div class="chat-window-header">
+              <div>
+                <span class="chat-status-dot" aria-hidden="true"></span>
+                <span>Evidence guide</span>
+              </div>
+              <span class="chat-window-meta">read-only context</span>
+            </div>
+            <div id="chat-messages" class="chat-messages" role="log" aria-live="polite" aria-label="ModelOrbit evidence conversation"></div>
+            <form id="chat-form" class="chat-composer">
+              <label class="sr-only" for="chat-input">Ask about the selected model</label>
+              <textarea id="chat-input" rows="1" maxlength="500" placeholder="Ask about revision, evidence, or device readiness…"></textarea>
+              <div class="composer-footer">
+                <span>Enter to send · Shift + Enter for a new line</span>
+                <button class="send-button" type="submit" aria-label="Send message">Send <span aria-hidden="true">↗</span></button>
+              </div>
+            </form>
+          </div>
+        </div>
       </section>
 
       <section id="evidence" class="rules-section" aria-labelledby="rules-title">

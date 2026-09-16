@@ -1,9 +1,9 @@
 import { parseComparisonRoute } from "../../packages/evidence-schema/src/route-state.mjs";
 
 const DATA_URL = "../../data/normalized/models.json";
-const state = { models: [], lens: "both", pipeline: "all", query: "", view: "galaxy", selectedId: null };
+const state = { models: [], lens: "both", pipeline: "all", query: "", view: "galaxy", selectedId: null, chatModelId: null };
 const els = {
-  snapshotDate: document.querySelector("#snapshot-date"), catalogCount: document.querySelector("#catalog-count"), readyCount: document.querySelector("#ready-count"), sourceName: document.querySelector("#source-name"), sourceChecksum: document.querySelector("#source-checksum"), lens: document.querySelector("#lens"), search: document.querySelector("#search"), pipeline: document.querySelector("#pipeline-filter"), resultHeading: document.querySelector("#result-heading"), resultCount: document.querySelector("#result-count"), empty: document.querySelector("#galaxy-empty"), error: document.querySelector("#galaxy-error"), errorCopy: document.querySelector("#error-copy"), stage: document.querySelector("#galaxy-stage"), tableStage: document.querySelector("#table-stage"), nodes: document.querySelector("#orbit-nodes"), table: document.querySelector("#model-table"), showAll: document.querySelector("#show-all"), retry: document.querySelector("#retry"), inspectorEmpty: document.querySelector("#inspector-empty"), inspectorContent: document.querySelector("#inspector-content"), inspectorStatus: document.querySelector("#inspector-status"), modelTitle: document.querySelector("#model-title"), modelAuthor: document.querySelector("#model-author"), modelSource: document.querySelector("#model-source"), modelRevision: document.querySelector("#model-revision"), modelPipeline: document.querySelector("#model-pipeline"), modelIos: document.querySelector("#model-ios"), modelAndroid: document.querySelector("#model-android"), modelParams: document.querySelector("#model-params"), modelAge: document.querySelector("#model-age"), freshness: document.querySelector("#freshness-banner"), comparison: document.querySelector("#comparison-state")
+  snapshotDate: document.querySelector("#snapshot-date"), catalogCount: document.querySelector("#catalog-count"), readyCount: document.querySelector("#ready-count"), sourceName: document.querySelector("#source-name"), sourceChecksum: document.querySelector("#source-checksum"), lens: document.querySelector("#lens"), search: document.querySelector("#search"), pipeline: document.querySelector("#pipeline-filter"), resultHeading: document.querySelector("#result-heading"), resultCount: document.querySelector("#result-count"), empty: document.querySelector("#galaxy-empty"), error: document.querySelector("#galaxy-error"), errorCopy: document.querySelector("#error-copy"), stage: document.querySelector("#galaxy-stage"), tableStage: document.querySelector("#table-stage"), nodes: document.querySelector("#orbit-nodes"), table: document.querySelector("#model-table"), showAll: document.querySelector("#show-all"), retry: document.querySelector("#retry"), inspectorEmpty: document.querySelector("#inspector-empty"), inspectorContent: document.querySelector("#inspector-content"), inspectorStatus: document.querySelector("#inspector-status"), modelTitle: document.querySelector("#model-title"), modelAuthor: document.querySelector("#model-author"), modelSource: document.querySelector("#model-source"), modelRevision: document.querySelector("#model-revision"), modelPipeline: document.querySelector("#model-pipeline"), modelIos: document.querySelector("#model-ios"), modelAndroid: document.querySelector("#model-android"), modelParams: document.querySelector("#model-params"), modelAge: document.querySelector("#model-age"), freshness: document.querySelector("#freshness-banner"), comparison: document.querySelector("#comparison-state"), chatModel: document.querySelector("#chat-model"), chatModelSummary: document.querySelector("#chat-model-summary"), chatMessages: document.querySelector("#chat-messages"), chatForm: document.querySelector("#chat-form"), chatInput: document.querySelector("#chat-input")
 };
 
 const statusLabel = (status) => ({ ready: "Verified", "cross-platform-ready": "Cross-platform ready", "preflight-eligible": "Preflight eligible", exported: "Exported", "device-untested": "Device untested", eligible: "Eligible", "device-tested": "Device tested", partial: "Partial", blocked: "Blocked", failed: "Failed", unknown: "Unknown", stale: "Stale" }[status] ?? "Unknown");
@@ -92,6 +92,73 @@ function selectModel(id) {
   document.querySelectorAll(".orbit-node").forEach((node) => node.classList.toggle("selected", node.dataset.modelId === id));
 }
 
+function chatModel() {
+  return state.models.find((model) => model.id === state.chatModelId) ?? state.models[0] ?? null;
+}
+
+function renderChatContext() {
+  const model = chatModel();
+  if (!model) {
+    els.chatModelSummary.replaceChildren(Object.assign(document.createElement("span"), { className: "summary-placeholder", textContent: "Load the catalog to choose a model." }));
+    return;
+  }
+  state.chatModelId = model.id;
+  els.chatModel.value = model.id;
+  els.chatModelSummary.replaceChildren();
+  const title = document.createElement("strong");
+  title.textContent = model.modelId;
+  const author = document.createElement("span");
+  author.textContent = `by ${model.author}`;
+  const statuses = document.createElement("div");
+  statuses.className = "chat-lane-statuses";
+  for (const [label, status] of [["iPhone", model.iosStatus], ["Android", model.androidStatus]]) {
+    const lane = document.createElement("span");
+    lane.innerHTML = `<i class="lane-dot ${status}" aria-hidden="true"></i>${label} · ${statusLabel(status)}`;
+    statuses.append(lane);
+  }
+  const revision = document.createElement("code");
+  revision.textContent = model.revision ? `rev ${model.revision}` : "revision pending ingest";
+  els.chatModelSummary.append(title, author, statuses, revision);
+}
+
+function addChatMessage(role, text) {
+  const message = document.createElement("article");
+  message.className = `chat-message ${role}`;
+  const label = document.createElement("span");
+  label.className = "message-label";
+  label.textContent = role === "user" ? "You" : "Evidence guide";
+  const body = document.createElement("p");
+  body.textContent = text;
+  message.append(label, body);
+  els.chatMessages.append(message);
+  els.chatMessages.scrollTop = els.chatMessages.scrollHeight;
+}
+
+function evidenceReply(prompt, model) {
+  if (!model) return "The catalog is still loading. Once a model record is available, I can summarize its revision and evidence lanes.";
+  const lower = prompt.toLowerCase();
+  const modelName = model.modelId;
+  const revision = model.revision ? `The recorded revision is ${model.revision}.` : "This record does not have an immutable revision yet.";
+  const lanes = `The iPhone lane is ${statusLabel(model.iosStatus).toLowerCase()} and the Android lane is ${statusLabel(model.androidStatus).toLowerCase()}.`;
+  if (/(both phones|run on both|ready|today)/.test(lower)) return `${modelName} is currently ${statusLabel(modelStatus(model)).toLowerCase()} in ModelOrbit. ${lanes} A green result requires the same repository and revision, a shared task fixture, valid output, memory and latency measurements, and zero-network evidence on both physical devices.`;
+  if (/(revision|lane|ios|iphone|android|executorch|core ai)/.test(lower)) return `${modelName}: ${revision} ${lanes} This interface is reading the checked-in catalog; it is not running weights.`;
+  if (/(missing|evidence|proof|next)/.test(lower)) return `For ${modelName}, the next proof step is to verify the exact revision through both native export paths, then run the shared text-generation fixture on a real iPhone and Android device. ${lanes} No device measurement is fabricated here.`;
+  if (/^(hi|hello|hey|help)/.test(lower)) return `I can explain ${modelName}'s source identity, revision, platform lanes, or the next evidence gate. Try “What evidence is missing?”`;
+  return `I can summarize evidence for ${modelName}, but this is currently a read-only evidence demo. Ask about its revision, platform lanes, or what proof is still missing.`;
+}
+
+function populateChatModels() {
+  els.chatModel.replaceChildren();
+  state.models.forEach((model) => {
+    const option = document.createElement("option");
+    option.value = model.id;
+    option.textContent = model.modelId;
+    els.chatModel.append(option);
+  });
+  if (!state.chatModelId && state.models.length) state.chatModelId = state.models[0].id;
+  renderChatContext();
+}
+
 function render() {
   const models = filteredModels();
   const isBoth = state.lens === "both";
@@ -127,6 +194,7 @@ async function loadData() {
     const payload = await response.json();
     if (!Array.isArray(payload.records) || payload.records.length !== 26) throw new Error("Snapshot validation expected 26 model records.");
     state.models = payload.records;
+    populateChatModels();
     setSnapshotMeta(payload);
     const pipelines = [...new Set(state.models.map((model) => model.pipeline))].sort();
     pipelines.forEach((pipeline) => { const option = document.createElement("option"); option.value = pipeline; option.textContent = pipelineLabel(pipeline); els.pipeline.append(option); });
@@ -141,5 +209,17 @@ els.pipeline.addEventListener("change", (event) => { state.pipeline = event.targ
 document.querySelectorAll(".view-button").forEach((button) => button.addEventListener("click", () => { state.view = button.dataset.view; document.querySelectorAll(".view-button").forEach((candidate) => candidate.classList.toggle("active", candidate === button)); render(); }));
 els.showAll.addEventListener("click", () => { state.lens = "all"; els.lens.value = "all"; render(); });
 els.retry.addEventListener("click", loadData);
+els.chatModel.addEventListener("change", (event) => { state.chatModelId = event.target.value; renderChatContext(); });
+document.querySelectorAll(".prompt-chip").forEach((button) => button.addEventListener("click", () => { els.chatInput.value = button.dataset.prompt; els.chatInput.focus(); }));
+els.chatForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const prompt = els.chatInput.value.trim();
+  if (!prompt) return;
+  addChatMessage("user", prompt);
+  els.chatInput.value = "";
+  addChatMessage("assistant", evidenceReply(prompt, chatModel()));
+});
+els.chatInput.addEventListener("keydown", (event) => { if (event.key === "Enter" && !event.shiftKey) { event.preventDefault(); els.chatForm.requestSubmit(); } });
+addChatMessage("assistant", "Welcome to the evidence guide. Choose a model record, then ask what is known, what is blocked, or what proof comes next.");
 
 loadData();
