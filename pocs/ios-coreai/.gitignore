@@ -1,0 +1,4 @@
+Resources/Models/*
+!Resources/Models/README.md
+build/
+DerivedData/

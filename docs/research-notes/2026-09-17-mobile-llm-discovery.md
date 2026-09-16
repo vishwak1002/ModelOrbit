@@ -41,6 +41,6 @@ The inventory is intentionally conservative: “verified” means the same canon
 
 The inventory and derived artifacts are reproducible with `npm run research:validate`, `npm run research:preflight`, and `npm run research:poc-status`. The three candidate POC entries are built as fail-closed harness records; no inference run or benchmark is claimed.
 
-The current device manifest records Xcode 26.4.1, iOS SDK 26.4, and no physical iPhone. Apple Core AI's repository currently documents the iOS 27/Xcode 27 requirement. The host also has no Android SDK, ADB, Gradle, Java, Kotlin toolchain, or Android device. These conditions produce explicit `blocked` rows in `data/preflight/research-2026-09-17.json` and `evidence/runs/research-poc-status.json`.
+The current device manifest records Xcode 26.4.1, iOS SDK 26.4, and no physical iPhone. Apple Core AI's repository currently documents the iOS 27/Xcode 27 requirement. The host also has no Android SDK, ADB, Gradle, Java, Kotlin toolchain, or Android device. These conditions produce explicit `blocked` rows in `data/preflight/research-2026-09-17.json` and `evidence/runs/research-poc-status.json`. The native projects are nevertheless complete enough to open, install their dependencies, add local model assets, and run on the procured devices.
 
 Exact records and source claims are in [`data/research/mobile-llm-inventory-2026-09-17.json`](../../data/research/mobile-llm-inventory-2026-09-17.json).

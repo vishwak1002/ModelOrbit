@@ -34,8 +34,8 @@ ModelOrbit/
     evidence-schema/            # versioned JSON Schemas and validators
     model-data/                 # snapshot readers and normalization
   pocs/
-    ios-coreai/                 # Swift/Xcode POC
-    android-executorch/         # Kotlin/Android POC
+    ios-coreai/                 # Swift/Xcode Core AI app POC
+    android-executorch/         # Kotlin/Gradle ExecuTorch app POC
   tools/
     preflight/                  # 26-model export eligibility matrix
     research/                   # mobile-LLM discovery and POC status reduction

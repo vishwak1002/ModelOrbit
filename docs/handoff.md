@@ -106,7 +106,7 @@ The checked-in matrix has 52 validated rows in `data/preflight/2026-09-17.json`.
 
 The exact device detection artifact is `data/devices/2026-09-16.json` (timestamps are UTC; manifests `device-ios-20260916T195533Z` and `device-android-20260916T195533Z`). Xcode 26.4.1 / build 17E202, xcrun 72, Swift 6.3.1, iOS SDK 26.4 were available; no physical iPhone was listed. ADB, Android SDK, Gradle, Java, and Kotlin were unavailable; no Android device was listed. The host is an Apple M1 MacBook Air running macOS 26.4.1. No private device identifiers were retained.
 
-The Swift fail-closed harness is in `pocs/ios-coreai/main.swift`; the portable Kotlin harness is in `pocs/android-executorch/Main.kt`. They emit no measurements without an admitted candidate and exact device manifest. Once a same-repository, immutable-revision candidate appears in the matrix and both manifests are available, the next safe work is to add the platform adapter, run `data/fixtures/*-basic-v1.json` on both devices, validate benchmark results, and rebuild the read model.
+The iOS app project is `pocs/ios-coreai/ModelOrbitCoreAI.xcodeproj`, with the Core AI adapter in `pocs/ios-coreai/Sources/CoreAIAdapter.swift`. The Android Studio project is `pocs/android-executorch`, with the ExecuTorch adapter in `pocs/android-executorch/app/src/main/java/dev/modelorbit/executorch/MainActivity.kt`. Both apps are parameterized for the three verified candidates, write schema-shaped benchmark artifacts, and make no network requests. Model weights and exported assets remain local-only. Once both manifests are available, run `data/fixtures/text-generation-basic-v1.json` on both devices, validate benchmark results, and rebuild the read model.
 
 ## Phase 4 handoff — mobile-LLM discovery
 
