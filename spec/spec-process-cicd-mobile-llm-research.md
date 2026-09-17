@@ -1,29 +1,30 @@
 ---
-title: CI/CD Workflow Specification - Free Remote Mobile LLM Research Collector
+title: CI/CD Workflow Specification - Daily Free Remote Mobile Model Research Collector
 version: 1.0
 date_created: 2026-09-17
-last_updated: 2026-09-17
+last_updated: 2026-09-18
 owner: ModelOrbit maintainers
 tags: [process, cicd, github-actions, automation, research, mobile-llm]
 ---
 
 ## Workflow Overview
 
-**Purpose**: Periodically collect reproducible public evidence leads for mobile-specific open-source LLM research without an OpenAI API key.
-**Trigger Events**: Weekly scheduled run and manual dispatch on the default branch.
+**Purpose**: Periodically collect reproducible public evidence leads for mobile-specific open-source model research without an OpenAI API key.
+**Trigger Events**: Daily scheduled run at 02:30 UTC (08:00 Asia/Kolkata) and manual dispatch on the default branch.
 **Target Environments**: GitHub-hosted Ubuntu runner; repository `main`.
 
 ## Execution Flow Diagram
 
 ```mermaid
 graph TD
-    A[Schedule or manual dispatch] --> B[Collect public sources]
-    B --> C[Validate snapshot]
-    C --> D[Run repository quality gates]
-    D --> E{Changes exist?}
-    E -->|Yes| F[Commit and push]
-    E -->|No| G[End with no commit]
-    F --> G
+    A[Daily schedule or manual dispatch] --> B[Discovery: collect public sources]
+    B --> C[Verification: exact IDs and revisions]
+    C --> D[Ranking: score candidates]
+    D --> E[Implementation: registry and adapter POCs]
+    E --> F[Validation: contracts and quality gates]
+    F --> G{Semantic changes?}
+    G -->|Yes| H[Commit and push]
+    G -->|No| I[End with no commit]
     B --> H[Fail if every source is unavailable]
     H --> I[Retain previous valid snapshot]
 ```
@@ -45,6 +46,9 @@ graph TD
 | REQ-003 | Capture public community discovery signals | Medium | Hacker News, Reddit, and Bluesky results are normalized or report errors |
 | REQ-004 | Produce a maximum-three heuristic shortlist | High | Every shortlist entry links to a Hugging Face repository and states that review is required |
 | REQ-005 | Preserve partial source failures | High | Successful sources are committed with failed-source errors visible |
+| REQ-006 | Consider all useful on-device modalities | High | Discovery records text, VLM, OCR/vision, audio/speech, TTS, embeddings, generation, detection, and segmentation leads; admission remains exact-ID/revision gated |
+| REQ-007 | Use a registry and reusable adapter boundary | High | Native and fixture POCs resolve the verified inventory through `tools/research/model-registry.mjs` and expose platform strategies |
+| REQ-008 | Make refreshes idempotent | High | Same semantic fingerprint preserves the dated snapshot and exits through a visible no-change path |
 
 ### Security Requirements
 
@@ -60,7 +64,7 @@ graph TD
 
 ```yaml
 triggers:
-  schedule: weekly, 03:30 UTC Monday
+  schedule: daily, 02:30 UTC
   manual: workflow_dispatch
 public_endpoints:
   - Hugging Face model API
@@ -73,8 +77,8 @@ public_endpoints:
 ### Outputs
 
 ```yaml
-snapshot: data/research/remote/remote-mobile-llm-<utc-timestamp>.json
-human_readable_report: data/research/remote/remote-mobile-llm-<utc-timestamp>.md
+snapshot: data/research/remote/remote-mobile-llm-<utc-date>.json
+human_readable_report: data/research/remote/remote-mobile-llm-<utc-date>.md
 ```
 
 ### Secrets & Variables
@@ -85,6 +89,7 @@ No secrets or repository variables are required.
 
 - **Timeout**: 20 minutes for the job; 20 seconds per public request.
 - **Concurrency**: One collector run at a time; queued runs are not cancelled.
+- **Idempotence**: Semantic fingerprint excludes observation timestamps and stable snapshot IDs; unchanged normalized content creates no commit.
 - **Network Access**: Public HTTPS endpoints only.
 - **Permissions**: `contents: write` for validated commits to `main`.
 
@@ -138,3 +143,4 @@ No secrets or repository variables are required.
 | Version | Date | Changes | Author |
 |---|---|---|---|
 | 1.0 | 2026-09-17 | Replaced API-dependent Codex job with free public-source collector | ModelOrbit maintainers |
+| 1.1 | 2026-09-18 | Added modality-wide discovery, exact three-model ranking, registry/adapter fixture, and daily idempotent delivery | ModelOrbit maintainers |

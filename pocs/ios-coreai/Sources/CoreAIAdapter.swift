@@ -27,7 +27,12 @@ struct CoreAIRun: Sendable {
 }
 
 @available(iOS 27.0, *)
-struct CoreAIAdapter: Sendable {
+protocol NativeModelAdapter: Sendable {
+    func run(candidate: CoreAICandidate, bundleURL: URL, manifestId: String, prompt: String) async throws -> CoreAIRun
+}
+
+@available(iOS 27.0, *)
+struct CoreAIAdapter: NativeModelAdapter, Sendable {
     func run(candidate: CoreAICandidate, bundleURL: URL, manifestId: String, prompt: String) async throws -> CoreAIRun {
         let memoryBefore = residentMemoryBytes()
         let coldStart = ContinuousClock.now

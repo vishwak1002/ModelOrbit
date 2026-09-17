@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 
 const schemaDir = resolve(dirname(fileURLToPath(import.meta.url)), "../schemas");
 export const SCHEMA_VERSION = "0.2.0";
-export const schemaNames = ["model-record", "preflight-result", "device-manifest", "benchmark-result", "evidence-link", "comparison-route-state", "research-inventory", "research-poc-result", "research-poc-status"];
+export const schemaNames = ["model-record", "preflight-result", "device-manifest", "benchmark-result", "evidence-link", "comparison-route-state", "research-inventory", "research-poc-result", "research-poc-status", "poc-fixture-run"];
 export const loadSchema = (name) => JSON.parse(readFileSync(resolve(schemaDir, `${name}.schema.json`), "utf8"));
 
 const typeMatches = (value, type) => type === "null" ? value === null : type === "integer" ? Number.isInteger(value) : type === "number" ? typeof value === "number" && Number.isFinite(value) : type === "array" ? Array.isArray(value) : type === "object" ? value !== null && typeof value === "object" && !Array.isArray(value) : typeof value === type;

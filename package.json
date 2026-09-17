@@ -16,6 +16,8 @@
     "research:poc-status": "node tools/research/build-poc-status.mjs",
     "research:preflight": "node tools/research/build-preflight.mjs",
     "research:remote:collect": "node tools/ingest/collect-remote-research.mjs",
-    "research:remote:validate": "node tools/ingest/validate-remote-research.mjs"
+    "research:remote:validate": "node tools/ingest/validate-remote-research.mjs",
+    "research:registry:validate": "node tools/research/model-registry.mjs",
+    "poc:fixture": "node pocs/cross-platform-adapter/runner.mjs"
   }
 }

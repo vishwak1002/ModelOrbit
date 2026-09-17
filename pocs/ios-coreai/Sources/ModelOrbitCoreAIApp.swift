@@ -25,9 +25,9 @@ private final class ChatViewModel {
         ChatMessage(role: .assistant, text: "Core AI chat is ready. Ask a question and I’ll run it through the selected on-device model, then save the benchmark evidence.")
     ]
 
-    private let adapter: CoreAIAdapter
+    private let adapter: any NativeModelAdapter
 
-    init(selectedModel: CoreAICandidate = CoreAICatalog.verified[0], adapter: CoreAIAdapter = CoreAIAdapter()) {
+    init(selectedModel: CoreAICandidate = CoreAICatalog.verified[0], adapter: any NativeModelAdapter = CoreAIAdapter()) {
         self.selectedModel = selectedModel
         self.adapter = adapter
     }

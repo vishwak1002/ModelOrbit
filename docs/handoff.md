@@ -1,6 +1,6 @@
 # ModelOrbit Handoff
 
-Date: 2026-09-17
+Date: 2026-09-18
 Status: CEO, engineering, and design reviews complete; schema/preflight/device/research phase implemented; physical-device POCs blocked by missing prerequisites
 
 ## What was decided
@@ -118,6 +118,12 @@ Reproduce with `npm run research:validate`, `npm run research:preflight`, `npm r
 
 ## Remote recurring research
 
-The remote scheduler is `.github/workflows/mobile-llm-research.yml`. It runs weekly on Monday at 09:00 Asia/Kolkata via GitHub Actions and can also be started with `workflow_dispatch`. It requires no OpenAI API key or third-party secret. The workflow collects normalized public signals from Hugging Face, official runtime repositories, Hacker News, Reddit, and Bluesky; validates the dated JSON/Markdown snapshot; runs the existing repository gates; and only then commits and pushes to `main`.
+The remote scheduler is `.github/workflows/mobile-llm-research.yml`. It runs daily at 08:00 Asia/Kolkata (02:30 UTC) via GitHub Actions and can also be started with `workflow_dispatch`. It requires no OpenAI API key or third-party secret. The workflow collects normalized public signals from Hugging Face, official runtime repositories, Hacker News, Reddit, and Bluesky; validates the dated JSON/Markdown snapshot; runs the existing repository gates; and only then commits and pushes to `main`. Semantic fingerprints make unchanged daily refreshes a no-change completion rather than a new commit.
 
 The three-model shortlist is intentionally heuristic and is not a readiness decision. A later manual Codex session must review exact immutable revisions and primary Apple Core AI/ExecuTorch evidence before updating the verified inventory or POCs. If all public sources fail, the run exits without replacing the last valid snapshot. See `data/research/remote/README.md` and `spec/spec-process-cicd-mobile-llm-research.md`.
+
+## Phase 5 — maintainable multimodal research pipeline
+
+The research workflow now has explicit discovery, verification, ranking, implementation, validation, and delivery stages. The modality review considers text, vision-language/image-to-text, OCR/computer vision, speech/audio, TTS, embeddings, image generation, and detection/segmentation. It selects exactly three overall because the current exact cross-platform evidence intersection is three Qwen3 revisions; category diversity is not forced. See `docs/research-notes/2026-09-18-mobile-modality-decision.md`.
+
+`tools/research/model-registry.mjs` resolves the verified inventory into the adapter source of truth. The no-weight fixture POC is `pocs/cross-platform-adapter/runner.mjs`; it provides platform strategies for Core AI and ExecuTorch and reports `blocked` until native device evidence exists. Native adapters remain in `pocs/ios-coreai` and `pocs/android-executorch`.

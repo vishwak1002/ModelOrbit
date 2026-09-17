@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://modelorbit.dev/schema/0.2.0/poc-fixture-run.json",
+  "title": "ModelOrbit cross-platform adapter fixture run",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "runId", "mode", "modelId", "modelRevision", "sourceInventoryId", "fixtureId", "prompt", "status", "results", "limitations"],
+  "properties": {
+    "schemaVersion": { "const": "0.2.0" },
+    "runId": { "type": "string", "pattern": "^poc-fixture-[a-z0-9-]+$" },
+    "mode": { "const": "fixture" },
+    "modelId": { "type": "string", "pattern": "^[^/]+/.+" },
+    "modelRevision": { "type": "string", "pattern": "^[0-9a-f]{7,64}$" },
+    "sourceInventoryId": { "type": "string", "pattern": "^research-[a-z0-9-]+$" },
+    "fixtureId": { "const": "text-generation-basic-v1" },
+    "prompt": { "type": "string", "minLength": 1 },
+    "status": { "const": "blocked" },
+    "results": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/result" } },
+    "limitations": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } }
+  },
+  "$defs": {
+    "result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["platform", "runtime", "status", "responseText", "reason"],
+      "properties": {
+        "platform": { "enum": ["ios", "android"] },
+        "runtime": { "enum": ["core-ai", "executorch"] },
+        "status": { "const": "blocked" },
+        "responseText": { "type": "string", "minLength": 1 },
+        "reason": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

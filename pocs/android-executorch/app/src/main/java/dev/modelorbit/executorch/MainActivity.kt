@@ -54,7 +54,16 @@ private data class GenerationObservation(
 )
 
 class MainActivity : Activity() {
+    private interface ModelAdapter {
+        fun run(candidate: Candidate, manifestId: String, prompt: String): String
+    }
+
+    private inner class ExecuTorchAdapter : ModelAdapter {
+        override fun run(candidate: Candidate, manifestId: String, prompt: String): String = runCandidate(candidate, manifestId, prompt)
+    }
+
     private val executor: ExecutorService = Executors.newSingleThreadExecutor()
+    private val modelAdapter: ModelAdapter by lazy { ExecuTorchAdapter() }
     private lateinit var candidateSpinner: Spinner
     private lateinit var manifestInput: EditText
     private lateinit var chatInput: EditText
@@ -124,7 +133,7 @@ class MainActivity : Activity() {
         addMessage("Loading ${candidate.modelId} through ExecuTorch...", false)
         executor.execute {
             val message = try {
-                runCandidate(candidate, manifestId, prompt)
+                modelAdapter.run(candidate, manifestId, prompt)
             } catch (error: Throwable) {
                 "BLOCKED/FAIL: ${error.message ?: error::class.java.simpleName}"
             }

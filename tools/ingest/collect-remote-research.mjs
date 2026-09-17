@@ -1,4 +1,5 @@
-import { mkdirSync, writeFileSync } from "node:fs";
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { createHash } from "node:crypto";
 import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -14,10 +15,24 @@ const nowFromEnvironment = () => {
 };
 
 const iso = (date) => date.toISOString();
-const fileStamp = (date) => iso(date).replace(/[:.]/g, "-");
+const dateStamp = (date) => iso(date).slice(0, 10);
 const asInteger = (value) => Number.isInteger(value) && value >= 0 ? value : null;
 const asText = (value) => typeof value === "string" && value.trim() ? value.trim() : null;
 const unique = (values) => [...new Set(values.filter(Boolean))];
+const fingerprintExcludedKeys = new Set(["snapshotId", "collectedAt", "observedAt", "semanticFingerprint"]);
+
+function canonicalize(value, key = null) {
+  if (fingerprintExcludedKeys.has(key)) return undefined;
+  if (Array.isArray(value)) return value.map((item) => canonicalize(item));
+  if (value && typeof value === "object") {
+    return Object.fromEntries(Object.keys(value).sort().map((childKey) => [childKey, canonicalize(value[childKey], childKey)]).filter(([, childValue]) => childValue !== undefined));
+  }
+  return value;
+}
+
+export function calculateSemanticFingerprint(snapshot) {
+  return createHash("sha256").update(JSON.stringify(canonicalize(snapshot))).digest("hex");
+}
 
 async function fetchJson(url, headers = {}) {
   const response = await fetch(url, {
@@ -31,6 +46,21 @@ async function fetchJson(url, headers = {}) {
 function modelSignals(model, querySignal) {
   const haystack = [model.id, ...(model.tags ?? []), querySignal].join(" ").toLowerCase();
   return unique(mobileSignals.filter((signal) => haystack.includes(signal)));
+}
+
+function modalityForPipeline(pipelineTag) {
+  return {
+    "text-generation": "text-generation",
+    "image-text-to-text": "vision-language",
+    "image-to-text": "ocr-image-to-text",
+    "automatic-speech-recognition": "speech-recognition",
+    "audio-classification": "audio",
+    "text-to-speech": "text-to-speech",
+    "feature-extraction": "embeddings",
+    "text-to-image": "image-generation",
+    "object-detection": "object-detection",
+    "image-segmentation": "image-segmentation",
+  }[pipelineTag] ?? "other";
 }
 
 export function normalizeHuggingFaceModel(model, querySignal, observedAt) {
@@ -49,6 +79,7 @@ export function normalizeHuggingFaceModel(model, querySignal, observedAt) {
     revision,
     pipelineTag: asText(model.pipeline_tag),
     libraryName: asText(model.library_name),
+    modality: modalityForPipeline(asText(model.pipeline_tag)),
     license: asText(model.cardData?.license),
     parameterCount,
     downloads,
@@ -68,31 +99,40 @@ export function normalizeHuggingFaceModel(model, querySignal, observedAt) {
 
 async function collectHuggingFace(observedAt) {
   const queries = [
-    ["mobile", "mobile"],
-    ["executorch", "executorch"],
-    ["edge-llm", "edge llm"],
-    ["coreml", "coreml"],
+    ["mobile-text", "mobile", "text-generation"],
+    ["executorch-text", "executorch", "text-generation"],
+    ["edge-llm", "edge llm", "text-generation"],
+    ["coreml-text", "coreml", "text-generation"],
+    ["vision-language", "vision language", "image-text-to-text"],
+    ["ocr", "ocr", "image-to-text"],
+    ["speech", "speech", "automatic-speech-recognition"],
+    ["audio", "audio", "audio-classification"],
+    ["tts", "text to speech", "text-to-speech"],
+    ["embeddings", "mobile embedding", "feature-extraction"],
+    ["image-generation", "mobile image generation", "text-to-image"],
+    ["detection", "mobile detection", "object-detection"],
+    ["segmentation", "mobile segmentation", "image-segmentation"],
   ];
   const models = new Map();
-  const queryResults = [];
-  for (const [label, search] of queries) {
-    const url = `https://huggingface.co/api/models?search=${encodeURIComponent(search)}&pipeline_tag=text-generation&sort=downloads&direction=-1&limit=30&full=true`;
+  const queryResults = await Promise.all(queries.map(async ([label, search, pipelineTag]) => {
+    const url = `https://huggingface.co/api/models?search=${encodeURIComponent(search)}&pipeline_tag=${encodeURIComponent(pipelineTag)}&sort=downloads&direction=-1&limit=30&full=true`;
     try {
       const payload = await fetchJson(url);
       const entries = Array.isArray(payload) ? payload : [];
       for (const model of entries) {
         const normalized = normalizeHuggingFaceModel(model, search, observedAt);
         if (!normalized) continue;
-        const previous = models.get(normalized.modelId);
-        if (!previous || normalized.discoveryScore > previous.discoveryScore) models.set(normalized.modelId, normalized);
+        const revisionKey = `${normalized.modelId}@${normalized.revision ?? "unresolved"}`;
+        const previous = models.get(revisionKey);
+        if (!previous || normalized.discoveryScore > previous.discoveryScore) models.set(revisionKey, normalized);
       }
-      queryResults.push({ label, url, status: "ok", itemCount: entries.length });
+      return { label, url, pipelineTag, status: "ok", itemCount: entries.length };
     } catch (error) {
-      queryResults.push({ label, url, status: "error", error: error.message });
+      return { label, url, pipelineTag, status: "error", itemCount: 0, error: error.message };
     }
-  }
+  }));
   const items = [...models.values()].sort((a, b) => b.discoveryScore - a.discoveryScore || b.downloads - a.downloads || a.modelId.localeCompare(b.modelId));
-  return { sourceId: "huggingface-models", authority: "huggingface", sourceType: "public-model-api", url: "https://huggingface.co/models?pipeline_tag=text-generation", status: items.length || queryResults.some((query) => query.status === "ok") ? "ok" : "error", itemCount: Math.min(items.length, 50), items: items.slice(0, 50), queries: queryResults, observedAt, ...(items.length || queryResults.some((query) => query.status === "ok") ? {} : { error: "All Hugging Face queries failed." }) };
+  return { sourceId: "huggingface-models", authority: "huggingface", sourceType: "public-model-api", url: "https://huggingface.co/models", status: items.length || queryResults.some((query) => query.status === "ok") ? "ok" : "error", itemCount: Math.min(items.length, 50), items: items.slice(0, 50), queries: queryResults, observedAt, ...(items.length || queryResults.some((query) => query.status === "ok") ? {} : { error: "All Hugging Face queries failed." }) };
 }
 
 function normalizeGitHubRepository(repository, observedAt) {
@@ -190,22 +230,34 @@ async function collectBluesky(observedAt) {
 export function buildSnapshot({ collectedAt, sources }) {
   const modelItems = sources.find((source) => source.sourceId === "huggingface-models")?.items ?? [];
   const shortlist = modelItems.slice(0, 3).map((model, index) => ({ rank: index + 1, modelId: model.modelId, revision: model.revision, discoveryScore: model.discoveryScore, reason: "Transparent popularity plus mobile-signal heuristic; requires Codex review against primary runtime evidence before admission." }));
-  return {
+  const snapshot = {
     schemaVersion: "0.1.0",
-    snapshotId: `remote-mobile-llm-${fileStamp(collectedAt)}`,
+    snapshotId: `remote-mobile-llm-${dateStamp(collectedAt)}`,
     collectedAt: iso(collectedAt),
     collector: { name: "ModelOrbit free remote research collector", version: collectorVersion, credentialsRequired: false, rawPayloadsCommitted: false },
-    scope: { purpose: "Collect public leads for mobile-specific open-source LLM research before manual Codex synthesis.", modelFilter: "Hugging Face text-generation repositories returned by mobile, ExecuTorch, edge-LLM, and Core ML searches.", communitySources: ["Hacker News", "Reddit r/LocalLLaMA", "Bluesky public search"] },
+    scope: { purpose: "Collect public leads for mobile-specific open-source model research before manual Codex synthesis.", modelFilter: "Hugging Face repositories across text generation, vision-language, OCR, audio/speech, TTS, embeddings, image generation, detection, and segmentation searches.", communitySources: ["Hacker News", "Reddit r/LocalLLaMA", "Bluesky public search"] },
     sources,
     shortlist,
+    pipeline: {
+      stages: [
+        { name: "discovery", status: "complete", description: "Collect normalized public leads from allowlisted sources." },
+        { name: "verification", status: "manual-required", description: "Confirm exact immutable revisions and primary Apple/ExecuTorch evidence." },
+        { name: "ranking", status: "heuristic-complete", description: "Rank leads with transparent popularity and mobile-signal inputs." },
+        { name: "implementation", status: "manual-required", description: "Use the model registry and adapter strategies to wire platform POCs." },
+        { name: "validation", status: "complete", description: "Validate the snapshot contract and repository gates." },
+        { name: "delivery", status: "workflow-controlled", description: "Commit and push only validated changes; preserve the no-change path." },
+      ],
+    },
     limitations: ["Popularity and community signals are discovery aids, not proof of iOS or Android execution.", "Exact immutable revisions and primary Apple Core AI/ExecuTorch evidence must be reviewed before changing the verified inventory.", "Unavailable sources remain visible as errors; a run is invalid only when every source fails."],
   };
+  snapshot.semanticFingerprint = calculateSemanticFingerprint(snapshot);
+  return snapshot;
 }
 
 export function validateRemoteSnapshot(snapshot) {
   const errors = [];
   if (snapshot?.schemaVersion !== "0.1.0") errors.push("schemaVersion must be 0.1.0");
-  if (!/^remote-mobile-llm-[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{3}Z$/.test(snapshot?.snapshotId ?? "")) errors.push("snapshotId must contain an ISO UTC timestamp");
+  if (!/^remote-mobile-llm-[0-9]{4}-[0-9]{2}-[0-9]{2}(T[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{3}Z)?$/.test(snapshot?.snapshotId ?? "")) errors.push("snapshotId must contain a UTC date");
   if (Number.isNaN(new Date(snapshot?.collectedAt ?? "").valueOf())) errors.push("collectedAt must be a valid date");
   if (!Array.isArray(snapshot?.sources) || !snapshot.sources.length) errors.push("sources must be non-empty");
   const successful = (snapshot?.sources ?? []).filter((source) => source.status === "ok");
@@ -217,6 +269,9 @@ export function validateRemoteSnapshot(snapshot) {
     if (JSON.stringify(source).match(/rawPayload|privateKey|apiKey|authorization/i)) errors.push(`sensitive/raw field found in source: ${source.sourceId ?? "unknown"}`);
   }
   if (!Array.isArray(snapshot?.shortlist) || snapshot.shortlist.length > 3) errors.push("shortlist must contain at most three candidates");
+  const stageNames = (snapshot?.pipeline?.stages ?? []).map((stage) => stage.name);
+  if (JSON.stringify(stageNames) !== JSON.stringify(["discovery", "verification", "ranking", "implementation", "validation", "delivery"])) errors.push("pipeline must contain the six research stages in order");
+  if (!/^[0-9a-f]{64}$/.test(snapshot?.semanticFingerprint ?? "") || snapshot.semanticFingerprint !== calculateSemanticFingerprint(snapshot)) errors.push("semanticFingerprint must match the normalized snapshot");
   return errors;
 }
 
@@ -264,6 +319,15 @@ export async function collectAndWrite({ collectedAt = nowFromEnvironment(), outp
   mkdirSync(outputDir, { recursive: true });
   const jsonPath = resolve(outputDir, `${snapshot.snapshotId}.json`);
   const markdownPath = resolve(outputDir, `${snapshot.snapshotId}.md`);
+  try {
+    const previous = JSON.parse(readFileSync(jsonPath, "utf8"));
+    if (validateRemoteSnapshot(previous).length === 0 && previous.semanticFingerprint === snapshot.semanticFingerprint) {
+      console.log(`No semantic research changes for ${snapshot.snapshotId}; preserving the existing snapshot.`);
+      return snapshot;
+    }
+  } catch {
+    // A missing or malformed previous file is replaced by the validated snapshot below.
+  }
   writeFileSync(jsonPath, `${JSON.stringify(snapshot, null, 2)}\n`);
   writeFileSync(markdownPath, markdown(snapshot));
   console.log(`Collected ${snapshot.shortlist.length} heuristic model leads from ${sources.filter((source) => source.status === "ok").length}/${sources.length} public source groups.`);

@@ -1,9 +1,9 @@
-name: ModelOrbit free remote mobile LLM research
+name: ModelOrbit free remote mobile model research
 
 on:
   schedule:
-    # Mondays at 09:00 Asia/Kolkata (03:30 UTC). GitHub may delay scheduled runs.
-    - cron: "30 3 * * 1"
+    # Daily at 08:00 Asia/Kolkata (02:30 UTC). GitHub may delay scheduled runs.
+    - cron: "30 2 * * *"
   workflow_dispatch:
 
 concurrency:
@@ -37,8 +37,10 @@ jobs:
           npm test
           npm run validate
           npm run research:validate
+          npm run research:registry:validate
           npm run research:preflight
           npm run research:poc-status
+          npm run poc:fixture -- --mock --platform both
           npm run normalize
           git diff --check
 
@@ -53,7 +55,7 @@ jobs:
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A .github data/research/remote docs/handoff.md README.md package.json spec test tools/ingest
+          git add -A .github data/research/remote docs/handoff.md docs/research-notes README.md package.json spec test tools/ingest tools/research packages/evidence-schema pocs/cross-platform-adapter pocs/ios-coreai pocs/android-executorch
           git diff --cached --check
           git commit -m "chore: refresh mobile LLM research"
           git push origin HEAD:main

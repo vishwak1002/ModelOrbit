@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { buildSnapshot, normalizeHuggingFaceModel, validateRemoteSnapshot } from "../tools/ingest/collect-remote-research.mjs";
+import { buildSnapshot, calculateSemanticFingerprint, normalizeHuggingFaceModel, validateRemoteSnapshot } from "../tools/ingest/collect-remote-research.mjs";
 
 const collectedAt = new Date("2026-09-17T00:00:00.000Z");
 
@@ -41,4 +41,12 @@ test("remote snapshot rejects an all-source outage", () => {
     sources: [{ sourceId: "source-a", authority: "test", sourceType: "public", url: "https://example.com", status: "error", itemCount: 0, items: [], observedAt: collectedAt.toISOString(), error: "offline" }],
   });
   assert.ok(validateRemoteSnapshot(snapshot).some((error) => error.includes("at least one source must succeed")));
+});
+
+test("remote snapshot fingerprint ignores observation timestamps but detects content changes", () => {
+  const snapshot = buildSnapshot({ collectedAt, sources: [{ sourceId: "huggingface-models", authority: "huggingface", sourceType: "public-model-api", url: "https://huggingface.co/models", status: "ok", itemCount: 0, items: [], observedAt: collectedAt.toISOString() }] });
+  const sameObservation = { ...snapshot, snapshotId: "remote-mobile-llm-2026-09-18", collectedAt: "2026-09-18T00:00:00.000Z", sources: [{ ...snapshot.sources[0], observedAt: "2026-09-18T00:00:00.000Z" }] };
+  assert.equal(calculateSemanticFingerprint(snapshot), calculateSemanticFingerprint(sameObservation));
+  const changed = { ...sameObservation, sources: [{ ...sameObservation.sources[0], items: [{ modelId: "new/model" }], itemCount: 1 }] };
+  assert.notEqual(calculateSemanticFingerprint(snapshot), calculateSemanticFingerprint(changed));
 });

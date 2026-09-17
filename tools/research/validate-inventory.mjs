@@ -20,4 +20,14 @@ for (const record of verified) {
 for (const record of inventory.records.filter((entry) => entry.disposition === "deduplicated-variant")) {
   if (record.modelId === record.canonicalModelId) throw new Error(`${record.modelId} is marked as a variant of itself.`);
 }
+if (!Array.isArray(inventory.pocSelection) || inventory.pocSelection.length !== 3) throw new Error("POC selection must contain exactly three candidates.");
+const selectionIds = inventory.pocSelection.map((candidate) => candidate.modelId);
+if (JSON.stringify(selectionIds) !== JSON.stringify(inventory.verifiedIntersection)) throw new Error("POC selection must be exactly the verified intersection in rank order.");
+if (JSON.stringify(inventory.pocSelection.map((candidate) => candidate.rank)) !== JSON.stringify([1, 2, 3])) throw new Error("POC selection ranks must be exactly 1, 2, 3.");
+for (const candidate of inventory.pocSelection) {
+  const record = byId.get(candidate.modelId);
+  if (!record || record.revision !== candidate.revision) throw new Error(`${candidate.modelId} POC selection revision does not match the inventory.`);
+  const factorTotal = Object.values(candidate.factors).reduce((sum, value) => sum + value, 0);
+  if (factorTotal !== candidate.score) throw new Error(`${candidate.modelId} POC selection score does not equal its factor total.`);
+}
 console.log(`Validated ${inventory.records.length} research records; verified intersection=${verified.length}; claimed=${inventory.records.filter((r) => r.disposition === "claimed-but-unverified").length}; excluded=${inventory.records.filter((r) => r.disposition === "excluded").length}; variants=${inventory.records.filter((r) => r.disposition === "deduplicated-variant").length}.`);

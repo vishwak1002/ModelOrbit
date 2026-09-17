@@ -338,5 +338,14 @@
     }
   ],
   "verifiedIntersection": ["Qwen/Qwen3-0.6B", "Qwen/Qwen3-1.7B", "Qwen/Qwen3-4B"],
-  "intersectionReason": "Only these three exact HF repository IDs have current Apple Core AI iOS evidence and PyTorch ExecuTorch Android evidence in the recorded search. This is a discoverable intersection, not a mathematically exhaustive claim; device execution is still unverified."
+  "intersectionReason": "Only these three exact HF repository IDs have current Apple Core AI iOS evidence and PyTorch ExecuTorch Android evidence in the recorded search. This is a discoverable intersection, not a mathematically exhaustive claim; device execution is still unverified.",
+  "modalityReview": {
+    "considered": ["text generation", "vision-language and image-to-text", "OCR and computer vision", "speech recognition and audio-language", "text-to-speech", "embeddings", "image generation", "segmentation and detection"],
+    "decision": "Do not force category diversity. The top-three POC lane remains the exact cross-platform intersection because current primary-source evidence is strongest there; other modalities remain discovery candidates until exact repository/revision evidence covers both platforms."
+  },
+  "pocSelection": [
+    { "rank": 1, "modelId": "Qwen/Qwen3-0.6B", "revision": "a9c98e602b9d36d2a2f7ba1eb0f5f31e4e8e5143", "score": 27.5, "factors": { "evidence": 5, "researchValue": 4, "sizeLatency": 5, "runtimeMaturity": 5, "license": 5, "integrationEffort": 3.5 } },
+    { "rank": 2, "modelId": "Qwen/Qwen3-1.7B", "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e", "score": 26.5, "factors": { "evidence": 5, "researchValue": 5, "sizeLatency": 4, "runtimeMaturity": 5, "license": 5, "integrationEffort": 2.5 } },
+    { "rank": 3, "modelId": "Qwen/Qwen3-4B", "revision": "1cfa9a7", "score": 22.5, "factors": { "evidence": 5, "researchValue": 5, "sizeLatency": 2, "runtimeMaturity": 5, "license": 5, "integrationEffort": 0.5 } }
+  ]
 }

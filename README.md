@@ -19,6 +19,7 @@ Read the [MVP plan](docs/mvp-plan.md) and [handoff](docs/handoff.md) before chan
 - `packages/model-data`: snapshots, normalization, and status reduction.
 - `pocs/ios-coreai`: iOS Core AI prototype.
 - `pocs/android-executorch`: Android ExecuTorch prototype.
+- `pocs/cross-platform-adapter`: runnable no-weight adapter-strategy fixture POC for both native lanes.
 - `tools/preflight`: cross-platform export eligibility matrix.
 - `tools/research`: mobile-LLM inventory validation, research preflight, and POC status reduction.
 - `tools/benchmark`: device manifests and evidence capture.
@@ -48,6 +49,8 @@ npm run research:validate
 npm run research:preflight
 npm run research:poc-status
 npm run research:remote:validate
+npm run research:registry:validate
+npm run poc:fixture -- --mock --platform both
 npm test
 npm run validate
 ```
