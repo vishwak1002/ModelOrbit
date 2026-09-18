@@ -11,9 +11,9 @@ export function assetNameForModel(modelId) {
 
 export function loadModelRegistry(inventoryPath = DEFAULT_INVENTORY_PATH) {
   const inventory = JSON.parse(readFileSync(inventoryPath, "utf8"));
-  const verifiedIds = new Set(inventory.verifiedIntersection);
+  const selectedIds = new Set(inventory.pocSelection.map((candidate) => candidate.modelId));
   const records = inventory.records
-    .filter((record) => verifiedIds.has(record.modelId) && record.disposition === "verified")
+    .filter((record) => selectedIds.has(record.modelId) && record.disposition === "verified")
     .map((record) => {
       const selection = inventory.pocSelection?.find((candidate) => candidate.modelId === record.modelId && candidate.revision === record.revision);
       return {
@@ -21,14 +21,15 @@ export function loadModelRegistry(inventoryPath = DEFAULT_INVENTORY_PATH) {
       revision: record.revision,
       assetName: assetNameForModel(record.modelId),
       repositoryUrl: record.repositoryUrl,
-      modality: "text-generation",
+      modality: record.modality ?? "text-generation",
       selectionRank: selection?.rank ?? null,
       selectionScore: selection?.score ?? null,
       runtimes: { ios: "core-ai", android: "executorch" },
       };
-    });
+    })
+    .sort((left, right) => (left.selectionRank ?? Number.MAX_SAFE_INTEGER) - (right.selectionRank ?? Number.MAX_SAFE_INTEGER));
   const revisionKeys = records.map((record) => `${record.modelId}@${record.revision}`);
-  if (records.length !== verifiedIds.size) throw new Error("Model registry does not match the verified inventory intersection.");
+  if (records.length !== selectedIds.size) throw new Error("Model registry does not match the ranked POC selection.");
   if (new Set(revisionKeys).size !== revisionKeys.length) throw new Error("Model registry contains duplicate model revisions.");
   return { sourceInventoryId: inventory.inventoryId, generatedAt: inventory.searchedAt, records };
 }

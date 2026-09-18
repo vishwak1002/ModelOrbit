@@ -4,13 +4,14 @@
   "mode": "fixture",
   "modelId": "Qwen/Qwen3-0.6B",
   "modelRevision": "a9c98e602b9d36d2a2f7ba1eb0f5f31e4e8e5143",
+  "modality": "text-generation",
   "sourceInventoryId": "research-mobile-llm-2026-09-17",
   "fixtureId": "text-generation-basic-v1",
   "prompt": "Explain why immutable model revisions matter for mobile POCs.",
   "status": "blocked",
   "results": [
-    { "platform": "ios", "runtime": "core-ai", "status": "blocked", "responseText": "[fixture] Qwen/Qwen3-0.6B received: Explain why immutable model revisions matter for mobile POCs.", "reason": "Mock adapter only; physical iPhone evidence is required." },
-    { "platform": "android", "runtime": "executorch", "status": "blocked", "responseText": "[fixture] Qwen/Qwen3-0.6B received: Explain why immutable model revisions matter for mobile POCs.", "reason": "Mock adapter only; physical Android evidence is required." }
+    { "platform": "ios", "runtime": "core-ai", "modality": "text-generation", "status": "blocked", "responseText": "[fixture:text-generation] Qwen/Qwen3-0.6B received fixture input: Explain why immutable model revisions matter for mobile POCs.", "reason": "Mock adapter only; physical iPhone evidence is required." },
+    { "platform": "android", "runtime": "executorch", "modality": "text-generation", "status": "blocked", "responseText": "[fixture:text-generation] Qwen/Qwen3-0.6B received fixture input: Explain why immutable model revisions matter for mobile POCs.", "reason": "Mock adapter only; physical Android evidence is required." }
   ],
   "limitations": ["Fixture output is deterministic adapter plumbing, not a model response."]
 }

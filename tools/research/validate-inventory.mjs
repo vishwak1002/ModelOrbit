@@ -22,7 +22,7 @@ for (const record of inventory.records.filter((entry) => entry.disposition === "
 }
 if (!Array.isArray(inventory.pocSelection) || inventory.pocSelection.length !== 3) throw new Error("POC selection must contain exactly three candidates.");
 const selectionIds = inventory.pocSelection.map((candidate) => candidate.modelId);
-if (JSON.stringify(selectionIds) !== JSON.stringify(inventory.verifiedIntersection)) throw new Error("POC selection must be exactly the verified intersection in rank order.");
+if (selectionIds.some((modelId) => !inventory.verifiedIntersection.includes(modelId))) throw new Error("POC selection must be a subset of the verified intersection.");
 if (JSON.stringify(inventory.pocSelection.map((candidate) => candidate.rank)) !== JSON.stringify([1, 2, 3])) throw new Error("POC selection ranks must be exactly 1, 2, 3.");
 for (const candidate of inventory.pocSelection) {
   const record = byId.get(candidate.modelId);

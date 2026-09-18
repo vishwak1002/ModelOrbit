@@ -44,7 +44,7 @@ test("research preflight is explicit and fail-closed", () => {
 
 test("research POC status covers every verified candidate without fabricating measurements", () => {
   assert.doesNotThrow(() => assertValid(pocStatus, "research-poc-status"));
-  assert.deepEqual(pocStatus.records.map((record) => record.modelId).sort(), [...inventory.verifiedIntersection].sort());
+  assert.deepEqual(pocStatus.records.map((record) => record.modelId).sort(), inventory.pocSelection.map((record) => record.modelId).sort());
   assert.ok(pocStatus.records.every((record) => record.ios.status === "blocked" && record.android.status === "blocked"));
   assert.ok(pocStatus.records.every((record) => record.ios.artifactPath === undefined && record.android.artifactPath === undefined));
 });

@@ -335,17 +335,87 @@
         { "platform": "ios", "runtime": "other", "status": "unsupported", "evidenceSourceIds": ["source-hf-minilm"], "artifactFormat": null }
       ],
       "reason": "Excluded as a non-generative sentence-similarity encoder; it is retained to show the LLM boundary."
+    },
+    {
+      "recordId": "research-record-qwen3-vl-2b-instruct",
+      "modelId": "Qwen/Qwen3-VL-2B-Instruct",
+      "canonicalModelId": "Qwen/Qwen3-VL-2B-Instruct",
+      "modality": "vision-language",
+      "disposition": "verified",
+      "repositoryUrl": "https://huggingface.co/Qwen/Qwen3-VL-2B-Instruct",
+      "revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+      "license": "apache-2.0",
+      "architecture": "Qwen3VLForConditionalGeneration",
+      "parameterCount": 2127532032,
+      "quantization": "Core AI VLM bundle; ExecuTorch XNNPACK multimodal export with 8da4w/8da8w options",
+      "sourceEvidence": [
+        { "sourceId": "source-hf-qwen3-vl-2b", "url": "https://huggingface.co/Qwen/Qwen3-VL-2B-Instruct/tree/89644892e4d85e24eaac8bacfd4f463576704203", "sourceType": "hf-revision", "authority": "huggingface", "observedAt": "2026-09-18T02:31:50.000Z", "repositoryId": "Qwen/Qwen3-VL-2B-Instruct", "revision": "89644892e4d85e24eaac8bacfd4f463576704203", "claim": "HF API identifies the exact image-text-to-text repository, Apache-2.0 license, and immutable revision." },
+        { "sourceId": "source-apple-qwen3-vl", "url": "https://github.com/apple/coreai-models/blob/main/python/src/coreai_models/vlm/export.py", "sourceType": "official-runtime-repo", "authority": "apple", "observedAt": "2026-09-18T02:31:50.000Z", "repositoryId": "Qwen/Qwen3-VL-2B-Instruct", "revision": null, "claim": "Apple Core AI's VLM exporter names Qwen/Qwen3-VL-2B-Instruct and produces a multi-asset iOS bundle with text, embedding, vision, and tokenizer assets." },
+        { "sourceId": "source-executorch-qwen3-vl", "url": "https://github.com/pytorch/executorch/releases/tag/v1.4.0", "sourceType": "official-runtime-repo", "authority": "pytorch", "observedAt": "2026-09-18T02:31:50.000Z", "repositoryId": "Qwen/Qwen3-VL-2B-Instruct", "revision": "89644892e4d85e24eaac8bacfd4f463576704203", "claim": "ExecuTorch v1.4 release notes add Qwen3-VL export and evaluation coverage; the linked Optimum recipe supplies the exact repository and XNNPACK multimodal export path." },
+        { "sourceId": "source-optimum-qwen3-vl", "url": "https://github.com/huggingface/optimum-executorch/pull/214", "sourceType": "official-runtime-doc", "authority": "community", "observedAt": "2026-09-18T02:31:50.000Z", "repositoryId": "Qwen/Qwen3-VL-2B-Instruct", "revision": "89644892e4d85e24eaac8bacfd4f463576704203", "claim": "The merged Optimum ExecuTorch coverage names Qwen/Qwen3-VL-2B-Instruct and an XNNPACK multimodal-text-to-text export command." }
+      ],
+      "runtimeSupport": [
+        { "platform": "ios", "runtime": "core-ai", "status": "verified", "evidenceSourceIds": ["source-apple-qwen3-vl"], "artifactFormat": "multi-asset .aimodel VLM bundle" },
+        { "platform": "android", "runtime": "executorch", "status": "verified", "evidenceSourceIds": ["source-executorch-qwen3-vl", "source-optimum-qwen3-vl"], "artifactFormat": ".pte XNNPACK multimodal export" }
+      ],
+      "reason": "Exact Qwen3-VL repository and revision have direct Apple Core AI VLM export evidence and official ExecuTorch/Optimum XNNPACK export and evaluation coverage. Device execution remains unmeasured."
+    },
+    {
+      "recordId": "research-record-parakeet-tdt-0-6b-v3",
+      "modelId": "nvidia/parakeet-tdt-0.6b-v3",
+      "canonicalModelId": "nvidia/parakeet-tdt-0.6b-v3",
+      "modality": "speech-recognition",
+      "disposition": "verified",
+      "repositoryUrl": "https://huggingface.co/nvidia/parakeet-tdt-0.6b-v3",
+      "revision": "541d1f99c6b0c3cd0b11a95167540bb8edefd82b",
+      "license": "cc-by-4.0",
+      "architecture": "FastConformer plus Token-and-Duration Transducer",
+      "parameterCount": 627057286,
+      "quantization": "Core AI fp16/fp32 three-graph bundle; ExecuTorch XNNPACK 8da4w or 8da8w",
+      "sourceEvidence": [
+        { "sourceId": "source-hf-parakeet-v3", "url": "https://huggingface.co/nvidia/parakeet-tdt-0.6b-v3/tree/541d1f99c6b0c3cd0b11a95167540bb8edefd82b", "sourceType": "hf-revision", "authority": "huggingface", "observedAt": "2026-09-18T02:31:50.000Z", "repositoryId": "nvidia/parakeet-tdt-0.6b-v3", "revision": "541d1f99c6b0c3cd0b11a95167540bb8edefd82b", "claim": "HF API identifies the exact automatic-speech-recognition repository, CC-BY-4.0 license, and immutable revision." },
+        { "sourceId": "source-apple-parakeet-v3", "url": "https://github.com/apple/coreai-models/blob/main/models/parakeet/export.py", "sourceType": "official-runtime-repo", "authority": "apple", "observedAt": "2026-09-18T02:31:50.000Z", "repositoryId": "nvidia/parakeet-tdt-0.6b-v3", "revision": null, "claim": "Apple Core AI's Parakeet exporter names the exact NVIDIA repository and produces an iOS Core AI three-graph speech-recognition bundle." },
+        { "sourceId": "source-executorch-parakeet-v3", "url": "https://github.com/pytorch/executorch/blob/main/examples/models/parakeet/README.md", "sourceType": "official-runtime-repo", "authority": "pytorch", "observedAt": "2026-09-18T02:31:50.000Z", "repositoryId": "nvidia/parakeet-tdt-0.6b-v3", "revision": "541d1f99c6b0c3cd0b11a95167540bb8edefd82b", "claim": "ExecuTorch's Parakeet example names the exact NVIDIA repository, XNNPACK/Vulkan export options, and a mobile Android app path." }
+      ],
+      "runtimeSupport": [
+        { "platform": "ios", "runtime": "core-ai", "status": "verified", "evidenceSourceIds": ["source-apple-parakeet-v3"], "artifactFormat": "three .aimodel graphs plus processor" },
+        { "platform": "android", "runtime": "executorch", "status": "verified", "evidenceSourceIds": ["source-executorch-parakeet-v3"], "artifactFormat": ".pte plus tokenizer" }
+      ],
+      "reason": "Parakeet is the strongest new speech candidate: the exact repository and revision are named by both Apple Core AI and ExecuTorch mobile export paths. Device WER, latency, and memory remain unmeasured."
+    },
+    {
+      "recordId": "research-record-whisper-large-v3-turbo",
+      "modelId": "openai/whisper-large-v3-turbo",
+      "canonicalModelId": "openai/whisper-large-v3-turbo",
+      "modality": "speech-recognition",
+      "disposition": "verified",
+      "repositoryUrl": "https://huggingface.co/openai/whisper-large-v3-turbo",
+      "revision": "41f01f3fe87f28c78e2fbf8b568835947dd65ed9",
+      "license": "mit",
+      "architecture": "WhisperForConditionalGeneration",
+      "parameterCount": 808878080,
+      "quantization": "Core AI float export; ExecuTorch int4/int8 and Metal/XNNPACK runner paths",
+      "sourceEvidence": [
+        { "sourceId": "source-hf-whisper-large-v3-turbo", "url": "https://huggingface.co/openai/whisper-large-v3-turbo/tree/41f01f3fe87f28c78e2fbf8b568835947dd65ed9", "sourceType": "hf-revision", "authority": "huggingface", "observedAt": "2026-09-18T02:31:50.000Z", "repositoryId": "openai/whisper-large-v3-turbo", "revision": "41f01f3fe87f28c78e2fbf8b568835947dd65ed9", "claim": "HF API identifies the exact automatic-speech-recognition repository, MIT license, and immutable revision." },
+        { "sourceId": "source-apple-whisper-large-v3-turbo", "url": "https://github.com/apple/coreai-models/blob/main/models/whisper/export.py", "sourceType": "official-runtime-repo", "authority": "apple", "observedAt": "2026-09-18T02:31:50.000Z", "repositoryId": "openai/whisper-large-v3-turbo", "revision": null, "claim": "Apple Core AI's official Whisper exporter names openai/whisper-large-v3-turbo as an iOS-exportable model." },
+        { "sourceId": "source-executorch-whisper-large-v3-turbo", "url": "https://github.com/pytorch/executorch/releases/tag/v1.3.1", "sourceType": "official-runtime-repo", "authority": "pytorch", "observedAt": "2026-09-18T02:31:50.000Z", "repositoryId": "openai/whisper-large-v3-turbo", "revision": "41f01f3fe87f28c78e2fbf8b568835947dd65ed9", "claim": "ExecuTorch release artifacts include an openai-whisper-large-v3-turbo export, and the official Whisper runner documents large-v3-turbo feature geometry plus an Android demo path." }
+      ],
+      "runtimeSupport": [
+        { "platform": "ios", "runtime": "core-ai", "status": "verified", "evidenceSourceIds": ["source-apple-whisper-large-v3-turbo"], "artifactFormat": ".aimodel" },
+        { "platform": "android", "runtime": "executorch", "status": "verified", "evidenceSourceIds": ["source-executorch-whisper-large-v3-turbo"], "artifactFormat": ".pte plus tokenizer and preprocessor" }
+      ],
+      "reason": "Whisper large-v3-turbo adds a mature multilingual ASR lane with exact Apple exporter and ExecuTorch mobile runner/artifact evidence. Device transcription quality, latency, and memory remain unmeasured."
     }
   ],
-  "verifiedIntersection": ["Qwen/Qwen3-0.6B", "Qwen/Qwen3-1.7B", "Qwen/Qwen3-4B"],
-  "intersectionReason": "Only these three exact HF repository IDs have current Apple Core AI iOS evidence and PyTorch ExecuTorch Android evidence in the recorded search. This is a discoverable intersection, not a mathematically exhaustive claim; device execution is still unverified.",
+  "verifiedIntersection": ["Qwen/Qwen3-0.6B", "Qwen/Qwen3-1.7B", "Qwen/Qwen3-4B", "Qwen/Qwen3-VL-2B-Instruct", "nvidia/parakeet-tdt-0.6b-v3", "openai/whisper-large-v3-turbo"],
+  "intersectionReason": "These six exact HF repository IDs have current Apple Core AI iOS evidence and PyTorch ExecuTorch Android evidence in the recorded search. Device execution is still unverified.",
   "modalityReview": {
     "considered": ["text generation", "vision-language and image-to-text", "OCR and computer vision", "speech recognition and audio-language", "text-to-speech", "embeddings", "image generation", "segmentation and detection"],
     "decision": "Do not force category diversity. The top-three POC lane remains the exact cross-platform intersection because current primary-source evidence is strongest there; other modalities remain discovery candidates until exact repository/revision evidence covers both platforms."
   },
   "pocSelection": [
-    { "rank": 1, "modelId": "Qwen/Qwen3-0.6B", "revision": "a9c98e602b9d36d2a2f7ba1eb0f5f31e4e8e5143", "score": 27.5, "factors": { "evidence": 5, "researchValue": 4, "sizeLatency": 5, "runtimeMaturity": 5, "license": 5, "integrationEffort": 3.5 } },
-    { "rank": 2, "modelId": "Qwen/Qwen3-1.7B", "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e", "score": 26.5, "factors": { "evidence": 5, "researchValue": 5, "sizeLatency": 4, "runtimeMaturity": 5, "license": 5, "integrationEffort": 2.5 } },
-    { "rank": 3, "modelId": "Qwen/Qwen3-4B", "revision": "1cfa9a7", "score": 22.5, "factors": { "evidence": 5, "researchValue": 5, "sizeLatency": 2, "runtimeMaturity": 5, "license": 5, "integrationEffort": 0.5 } }
+    { "rank": 1, "modelId": "nvidia/parakeet-tdt-0.6b-v3", "revision": "541d1f99c6b0c3cd0b11a95167540bb8edefd82b", "score": 27.5, "factors": { "evidence": 5, "researchValue": 5, "sizeLatency": 4.5, "runtimeMaturity": 4.5, "license": 4, "integrationEffort": 4.5 } },
+    { "rank": 2, "modelId": "Qwen/Qwen3-VL-2B-Instruct", "revision": "89644892e4d85e24eaac8bacfd4f463576704203", "score": 26.5, "factors": { "evidence": 4.5, "researchValue": 5, "sizeLatency": 3.5, "runtimeMaturity": 4, "license": 5, "integrationEffort": 4.5 } },
+    { "rank": 3, "modelId": "openai/whisper-large-v3-turbo", "revision": "41f01f3fe87f28c78e2fbf8b568835947dd65ed9", "score": 25.5, "factors": { "evidence": 4.5, "researchValue": 4.5, "sizeLatency": 3.5, "runtimeMaturity": 4.5, "license": 5, "integrationEffort": 3.5 } }
   ]
 }

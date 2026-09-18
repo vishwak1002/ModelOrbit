@@ -42,6 +42,7 @@
       "recordId": { "type": "string", "pattern": "^research-record-[a-z0-9-]+$" },
       "modelId": { "type": "string", "pattern": "^[^/]+/.+" },
       "canonicalModelId": { "type": "string", "pattern": "^[^/]+/.+" },
+      "modality": { "type": "string", "minLength": 1 },
       "disposition": { "enum": ["verified", "claimed-but-unverified", "excluded", "deduplicated-variant"] },
       "repositoryUrl": { "type": "string", "format": "uri" },
       "revision": { "type": ["string", "null"], "pattern": "^[0-9a-f]{7,64}$" },

@@ -26,9 +26,10 @@ export class FixtureAdapterStrategy extends ModelAdapterStrategy {
     return {
       platform: this.platform,
       runtime: this.runtime,
+      modality: model.modality,
       status: "blocked",
-      responseText: `[fixture] ${model.modelId} received: ${prompt}`,
-      reason: `Mock adapter only. Replace with a ${boundary}; this run contains no device latency, memory, or network evidence.`,
+      responseText: `[fixture:${model.modality}] ${model.modelId} received fixture input: ${prompt}`,
+      reason: `Mock adapter only. Replace with a ${boundary} and the modality-specific input path; this run contains no device quality, latency, memory, or network evidence.`,
     };
   }
 }
@@ -45,6 +46,7 @@ export async function runFixture({ modelId, prompt, platform = "both", inventory
     mode: "fixture",
     modelId: model.modelId,
     modelRevision: model.revision,
+    modality: model.modality,
     sourceInventoryId: registry.sourceInventoryId,
     fixtureId: "text-generation-basic-v1",
     prompt,

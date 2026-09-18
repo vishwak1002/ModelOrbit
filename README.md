@@ -8,7 +8,7 @@ The first interface is a visual model galaxy backed by an evidence ledger. Phase
 
 ## Current status
 
-Design and engineering reviews are complete. The executable schema/preflight/device-detection phase and benchmark evidence gate are checked in. The dated mobile-LLM discovery contains 15 scoped records: 3 verified exact cross-platform candidates, 7 claimed-but-unverified records, 4 exclusions, and 1 deduplicated artifact variant. The verified candidates are Qwen3 0.6B, 1.7B, and 4B; all native runs remain blocked on this host because Xcode/iOS 27 and physical devices are unavailable, and Android SDK/ADB/device prerequisites are absent.
+Design and engineering reviews are complete. The executable schema/preflight/device-detection phase and benchmark evidence gate are checked in. The dated mobile-LLM discovery contains 18 scoped records: 6 verified exact cross-platform candidates, 7 claimed-but-unverified records, 4 exclusions, and 1 deduplicated artifact variant. The ranked POC selection is three new multimodal/audio candidates—Parakeet TDT v3, Qwen3-VL 2B, and Whisper large-v3-turbo—while the earlier Qwen3 text revisions remain in the verified intersection. All native runs remain blocked on this host because Xcode/iOS 27 and physical devices are unavailable, and Android SDK/ADB/device prerequisites are absent.
 
 Read the [MVP plan](docs/mvp-plan.md) and [handoff](docs/handoff.md) before changing scope.
 

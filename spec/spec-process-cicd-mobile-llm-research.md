@@ -44,11 +44,12 @@ graph TD
 | REQ-001 | Query public Hugging Face mobile/edge search results | High | Snapshot contains normalized model leads or a visible source error |
 | REQ-002 | Query official mobile runtime repositories | High | Snapshot records Apple/PyTorch/Google repository metadata when available |
 | REQ-003 | Capture public community discovery signals | Medium | Hacker News, Reddit, and Bluesky results are normalized or report errors |
-| REQ-004 | Produce a maximum-three heuristic shortlist | High | Every shortlist entry links to a Hugging Face repository and states that review is required |
+| REQ-004 | Produce a maximum-three heuristic shortlist | High | Every shortlist entry links to a Hugging Face repository, states that review is required, and the dated POC selection contains exactly the top three admitted records |
 | REQ-005 | Preserve partial source failures | High | Successful sources are committed with failed-source errors visible |
 | REQ-006 | Consider all useful on-device modalities | High | Discovery records text, VLM, OCR/vision, audio/speech, TTS, embeddings, generation, detection, and segmentation leads; admission remains exact-ID/revision gated |
 | REQ-007 | Use a registry and reusable adapter boundary | High | Native and fixture POCs resolve the verified inventory through `tools/research/model-registry.mjs` and expose platform strategies |
 | REQ-008 | Make refreshes idempotent | High | Same semantic fingerprint preserves the dated snapshot and exits through a visible no-change path |
+| REQ-009 | Prefer genuinely new POC candidates | Medium | A refresh may replace a prior POC selection with higher-ranked admitted records, but it must not repeat prior selections when new records clear the same exact-ID/revision gate |
 
 ### Security Requirements
 

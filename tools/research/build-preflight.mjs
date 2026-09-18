@@ -31,7 +31,7 @@ const results = inventory.verifiedIntersection.flatMap((modelId) => {
       command: manifest.sourceCommand,
       logPath: null,
       logChecksum: null,
-      capabilities: ["text-generation", "source-evidence-verified"]
+      capabilities: [record.modality ?? "text-generation", "source-evidence-verified"]
     }, "preflight-result");
   });
 });
