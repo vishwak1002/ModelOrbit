@@ -1,0 +1,2384 @@
+{
+  "schemaVersion": "0.1.0",
+  "snapshotId": "remote-mobile-llm-2026-09-24",
+  "collectedAt": "2026-09-24T07:43:56.377Z",
+  "collector": {
+    "name": "ModelOrbit free remote research collector",
+    "version": "1.0.0",
+    "credentialsRequired": false,
+    "rawPayloadsCommitted": false
+  },
+  "scope": {
+    "purpose": "Collect public leads for mobile-specific open-source model research before manual Codex synthesis.",
+    "modelFilter": "Hugging Face repositories across text generation, vision-language, OCR, audio/speech, TTS, embeddings, image generation, detection, and segmentation searches.",
+    "communitySources": [
+      "Hacker News",
+      "Reddit r/LocalLLaMA",
+      "Bluesky public search"
+    ]
+  },
+  "sources": [
+    {
+      "sourceId": "huggingface-models",
+      "authority": "huggingface",
+      "sourceType": "public-model-api",
+      "url": "https://huggingface.co/models",
+      "status": "ok",
+      "itemCount": 50,
+      "items": [
+        {
+          "modelId": "MIT/ast-finetuned-audioset-10-10-0.4593",
+          "repositoryUrl": "https://huggingface.co/MIT/ast-finetuned-audioset-10-10-0.4593",
+          "revision": "f826b80d28226b62986cc218e5cec390b1096902",
+          "pipelineTag": "audio-classification",
+          "libraryName": "transformers",
+          "modality": "audio",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 794259,
+          "likes": 371,
+          "lastModified": "2023-09-06T14:49:15.000Z",
+          "gated": false,
+          "tags": [
+            "transformers",
+            "pytorch",
+            "safetensors",
+            "audio-spectrogram-transformer",
+            "audio-classification",
+            "arxiv:2104.01778",
+            "license:bsd-3-clause",
+            "endpoints_compatible",
+            "region:us",
+            "deploy:azure"
+          ],
+          "mobileSignals": [
+            "ios"
+          ],
+          "discoveryScore": 79.85,
+          "evidenceUrls": [
+            "https://huggingface.co/MIT/ast-finetuned-audioset-10-10-0.4593",
+            "https://huggingface.co/MIT/ast-finetuned-audioset-10-10-0.4593/tree/f826b80d28226b62986cc218e5cec390b1096902"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "zai-org/GLM-OCR",
+          "repositoryUrl": "https://huggingface.co/zai-org/GLM-OCR",
+          "revision": "2e85a62840ccac27daa451df36c736c4636b8628",
+          "pipelineTag": "image-to-text",
+          "libraryName": "transformers",
+          "modality": "ocr-image-to-text",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 1693628,
+          "likes": 2080,
+          "lastModified": "2026-09-11T11:59:14.000Z",
+          "gated": false,
+          "tags": [
+            "transformers",
+            "safetensors",
+            "glm_ocr",
+            "image-text-to-text",
+            "conversational",
+            "image-to-text",
+            "zh",
+            "en",
+            "fr",
+            "es",
+            "ru",
+            "de",
+            "ja",
+            "ko",
+            "arxiv:2603.10910",
+            "license:mit",
+            "eval-results",
+            "endpoints_compatible",
+            "deploy:azure",
+            "deploy:sagemaker",
+            "region:us"
+          ],
+          "mobileSignals": [],
+          "discoveryScore": 78.88,
+          "evidenceUrls": [
+            "https://huggingface.co/zai-org/GLM-OCR",
+            "https://huggingface.co/zai-org/GLM-OCR/tree/2e85a62840ccac27daa451df36c736c4636b8628"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "kha-white/manga-ocr-base",
+          "repositoryUrl": "https://huggingface.co/kha-white/manga-ocr-base",
+          "revision": "aa6573bd10b0d446cbf622e29c3e084914df9741",
+          "pipelineTag": "image-to-text",
+          "libraryName": "transformers",
+          "modality": "ocr-image-to-text",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 1115160,
+          "likes": 183,
+          "lastModified": "2022-06-22T15:34:05.000Z",
+          "gated": false,
+          "tags": [
+            "transformers",
+            "pytorch",
+            "vision-encoder-decoder",
+            "image-text-to-text",
+            "image-to-text",
+            "ja",
+            "dataset:manga109s",
+            "license:apache-2.0",
+            "endpoints_compatible",
+            "region:us"
+          ],
+          "mobileSignals": [],
+          "discoveryScore": 71.8,
+          "evidenceUrls": [
+            "https://huggingface.co/kha-white/manga-ocr-base",
+            "https://huggingface.co/kha-white/manga-ocr-base/tree/aa6573bd10b0d446cbf622e29c3e084914df9741"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "nvidia/nemotron-speech-streaming-en-0.6b",
+          "repositoryUrl": "https://huggingface.co/nvidia/nemotron-speech-streaming-en-0.6b",
+          "revision": "ebe59e5a817142986528bbbee5dba8db7b38ed50",
+          "pipelineTag": "automatic-speech-recognition",
+          "libraryName": "nemo",
+          "modality": "speech-recognition",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 410269,
+          "likes": 627,
+          "lastModified": "2026-08-05T21:45:11.000Z",
+          "gated": false,
+          "tags": [
+            "nemo",
+            "safetensors",
+            "gguf",
+            "nemotron_asr_streaming",
+            "feature-extraction",
+            "transformers",
+            "speech-recognition",
+            "cache-aware ASR",
+            "automatic-speech-recognition",
+            "streaming-asr",
+            "speech",
+            "audio",
+            "FastConformer",
+            "RNNT",
+            "Parakeet",
+            "ASR",
+            "pytorch",
+            "NeMo",
+            "hf-asr-leaderboard",
+            "dataset:nvidia/Granary",
+            "dataset:YTC",
+            "dataset:Yodas2",
+            "dataset:LibriLight",
+            "dataset:librispeech_asr",
+            "dataset:fisher_corpus",
+            "dataset:Switchboard-1",
+            "dataset:WSJ-0",
+            "dataset:WSJ-1",
+            "dataset:National-Singapore-Corpus-Part-1",
+            "dataset:National-Singapore-Corpus-Part-6",
+            "dataset:vctk",
+            "dataset:voxpopuli",
+            "dataset:europarl",
+            "dataset:multilingual_librispeech",
+            "dataset:fleurs",
+            "dataset:mozilla-foundation/common_voice_8_0",
+            "dataset:MLCommons/peoples_speech",
+            "dataset:google/speech_commands",
+            "arxiv:2312.17279",
+            "arxiv:2305.05084"
+          ],
+          "mobileSignals": [],
+          "discoveryScore": 70.12,
+          "evidenceUrls": [
+            "https://huggingface.co/nvidia/nemotron-speech-streaming-en-0.6b",
+            "https://huggingface.co/nvidia/nemotron-speech-streaming-en-0.6b/tree/ebe59e5a817142986528bbbee5dba8db7b38ed50"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "PaddlePaddle/PP-OCRv5_server_det",
+          "repositoryUrl": "https://huggingface.co/PaddlePaddle/PP-OCRv5_server_det",
+          "revision": "ca867c897ecbca8873081573a802ad70d499cb94",
+          "pipelineTag": "image-to-text",
+          "libraryName": "PaddleOCR",
+          "modality": "ocr-image-to-text",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 622000,
+          "likes": 75,
+          "lastModified": "2025-07-22T10:03:07.000Z",
+          "gated": false,
+          "tags": [
+            "PaddleOCR",
+            "OCR",
+            "PaddlePaddle",
+            "textline_detection",
+            "image-to-text",
+            "en",
+            "zh",
+            "arxiv:1212.1442",
+            "license:apache-2.0",
+            "region:us"
+          ],
+          "mobileSignals": [],
+          "discoveryScore": 67.34,
+          "evidenceUrls": [
+            "https://huggingface.co/PaddlePaddle/PP-OCRv5_server_det",
+            "https://huggingface.co/PaddlePaddle/PP-OCRv5_server_det/tree/ca867c897ecbca8873081573a802ad70d499cb94"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "facebook/audiobox-aesthetics",
+          "repositoryUrl": "https://huggingface.co/facebook/audiobox-aesthetics",
+          "revision": "9b1dd8e5df9af7216e836a98974fe3b82c56ded6",
+          "pipelineTag": "audio-classification",
+          "libraryName": null,
+          "modality": "audio",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 617320,
+          "likes": 51,
+          "lastModified": "2025-03-04T21:32:30.000Z",
+          "gated": false,
+          "tags": [
+            "safetensors",
+            "model_hub_mixin",
+            "pytorch_model_hub_mixin",
+            "audio-classification",
+            "arxiv:2502.05139",
+            "license:cc-by-4.0",
+            "region:us"
+          ],
+          "mobileSignals": [],
+          "discoveryScore": 66.49,
+          "evidenceUrls": [
+            "https://huggingface.co/facebook/audiobox-aesthetics",
+            "https://huggingface.co/facebook/audiobox-aesthetics/tree/9b1dd8e5df9af7216e836a98974fe3b82c56ded6"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "PaddlePaddle/en_PP-OCRv5_mobile_rec",
+          "repositoryUrl": "https://huggingface.co/PaddlePaddle/en_PP-OCRv5_mobile_rec",
+          "revision": "267c36e24c331595590fe7bd72bde2436fd286f2",
+          "pipelineTag": "image-to-text",
+          "libraryName": "PaddleOCR",
+          "modality": "ocr-image-to-text",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 327679,
+          "likes": 3,
+          "lastModified": "2025-08-29T06:39:03.000Z",
+          "gated": false,
+          "tags": [
+            "PaddleOCR",
+            "OCR",
+            "PaddlePaddle",
+            "textline_recognition",
+            "image-to-text",
+            "en",
+            "license:apache-2.0",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "mobile"
+          ],
+          "discoveryScore": 66.16,
+          "evidenceUrls": [
+            "https://huggingface.co/PaddlePaddle/en_PP-OCRv5_mobile_rec",
+            "https://huggingface.co/PaddlePaddle/en_PP-OCRv5_mobile_rec/tree/267c36e24c331595590fe7bd72bde2436fd286f2"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "ibm-granite/granite-speech-4.1-2b",
+          "repositoryUrl": "https://huggingface.co/ibm-granite/granite-speech-4.1-2b",
+          "revision": "de575db64086f84fdc79da4932d1076e965bc546",
+          "pipelineTag": "automatic-speech-recognition",
+          "libraryName": "transformers",
+          "modality": "speech-recognition",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 209896,
+          "likes": 163,
+          "lastModified": "2026-06-12T17:45:27.000Z",
+          "gated": false,
+          "tags": [
+            "transformers",
+            "safetensors",
+            "granite_speech",
+            "automatic-speech-recognition",
+            "multilingual",
+            "en",
+            "fr",
+            "de",
+            "es",
+            "pt",
+            "ja",
+            "arxiv:2310.02943",
+            "arxiv:2505.08699",
+            "arxiv:2603.11243",
+            "arxiv:2604.12398",
+            "arxiv:2604.22817",
+            "arxiv:2604.11269",
+            "arxiv:2603.08397",
+            "base_model:ibm-granite/granite-4.0-1b-base",
+            "base_model:finetune:ibm-granite/granite-4.0-1b-base",
+            "license:apache-2.0",
+            "eval-results",
+            "endpoints_compatible",
+            "region:us",
+            "deploy:azure",
+            "deploy:sagemaker"
+          ],
+          "mobileSignals": [],
+          "discoveryScore": 64.29,
+          "evidenceUrls": [
+            "https://huggingface.co/ibm-granite/granite-speech-4.1-2b",
+            "https://huggingface.co/ibm-granite/granite-speech-4.1-2b/tree/de575db64086f84fdc79da4932d1076e965bc546"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "PaddlePaddle/PP-OCRv5_mobile_det",
+          "repositoryUrl": "https://huggingface.co/PaddlePaddle/PP-OCRv5_mobile_det",
+          "revision": "0d63e78e2b680928f6b1747d76a08db6e645efb7",
+          "pipelineTag": "image-to-text",
+          "libraryName": "PaddleOCR",
+          "modality": "ocr-image-to-text",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 55717,
+          "likes": 30,
+          "lastModified": "2025-07-22T10:03:05.000Z",
+          "gated": false,
+          "tags": [
+            "PaddleOCR",
+            "OCR",
+            "PaddlePaddle",
+            "textline_detection",
+            "image-to-text",
+            "en",
+            "zh",
+            "arxiv:1212.1442",
+            "license:apache-2.0",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "mobile"
+          ],
+          "discoveryScore": 62.92,
+          "evidenceUrls": [
+            "https://huggingface.co/PaddlePaddle/PP-OCRv5_mobile_det",
+            "https://huggingface.co/PaddlePaddle/PP-OCRv5_mobile_det/tree/0d63e78e2b680928f6b1747d76a08db6e645efb7"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "ibm-granite/granite-speech-4.1-2b-plus",
+          "repositoryUrl": "https://huggingface.co/ibm-granite/granite-speech-4.1-2b-plus",
+          "revision": "1454e6e1e33845ca9280ff65f52cf1141ba6e6e2",
+          "pipelineTag": "automatic-speech-recognition",
+          "libraryName": "transformers",
+          "modality": "speech-recognition",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 126645,
+          "likes": 93,
+          "lastModified": "2026-06-16T18:20:43.000Z",
+          "gated": false,
+          "tags": [
+            "transformers",
+            "safetensors",
+            "granite_speech_plus",
+            "automatic-speech-recognition",
+            "multilingual",
+            "en",
+            "fr",
+            "de",
+            "es",
+            "pt",
+            "arxiv:2604.11269",
+            "arxiv:2604.22817",
+            "arxiv:2604.12398",
+            "arxiv:2505.08699",
+            "arxiv:2603.11243",
+            "arxiv:2603.08397",
+            "base_model:ibm-granite/granite-4.0-1b-base",
+            "base_model:finetune:ibm-granite/granite-4.0-1b-base",
+            "license:apache-2.0",
+            "endpoints_compatible",
+            "region:us"
+          ],
+          "mobileSignals": [],
+          "discoveryScore": 60.89,
+          "evidenceUrls": [
+            "https://huggingface.co/ibm-granite/granite-speech-4.1-2b-plus",
+            "https://huggingface.co/ibm-granite/granite-speech-4.1-2b-plus/tree/1454e6e1e33845ca9280ff65f52cf1141ba6e6e2"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "PaddlePaddle/PP-OCRv5_server_rec",
+          "repositoryUrl": "https://huggingface.co/PaddlePaddle/PP-OCRv5_server_rec",
+          "revision": "b26c3587fda8da3c8ec0ce357214b4d661ff1558",
+          "pipelineTag": "image-to-text",
+          "libraryName": "PaddleOCR",
+          "modality": "ocr-image-to-text",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 190243,
+          "likes": 30,
+          "lastModified": "2025-07-22T10:04:11.000Z",
+          "gated": false,
+          "tags": [
+            "PaddleOCR",
+            "OCR",
+            "PaddlePaddle",
+            "textline_recognition",
+            "image-to-text",
+            "en",
+            "zh",
+            "arxiv:1212.1442",
+            "license:apache-2.0",
+            "region:us"
+          ],
+          "mobileSignals": [],
+          "discoveryScore": 60.25,
+          "evidenceUrls": [
+            "https://huggingface.co/PaddlePaddle/PP-OCRv5_server_rec",
+            "https://huggingface.co/PaddlePaddle/PP-OCRv5_server_rec/tree/b26c3587fda8da3c8ec0ce357214b4d661ff1558"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "facebook/MobileLLM-125M",
+          "repositoryUrl": "https://huggingface.co/facebook/MobileLLM-125M",
+          "revision": "f6820a829b347aaa6674a705c82be3db47b1f9ee",
+          "pipelineTag": "text-generation",
+          "libraryName": "transformers",
+          "modality": "text-generation",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 2073,
+          "likes": 137,
+          "lastModified": "2025-05-05T21:32:24.000Z",
+          "gated": true,
+          "tags": [
+            "transformers",
+            "pytorch",
+            "mobilellm",
+            "text-generation",
+            "facebook",
+            "meta",
+            "custom_code",
+            "en",
+            "arxiv:2402.14905",
+            "license:other",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "mobile",
+            "llm"
+          ],
+          "discoveryScore": 59.87,
+          "evidenceUrls": [
+            "https://huggingface.co/facebook/MobileLLM-125M",
+            "https://huggingface.co/facebook/MobileLLM-125M/tree/f6820a829b347aaa6674a705c82be3db47b1f9ee"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "mlx-community/GLM-OCR-4bit",
+          "repositoryUrl": "https://huggingface.co/mlx-community/GLM-OCR-4bit",
+          "revision": "97f587506984cc92fa69b2694b4128e53db6b081",
+          "pipelineTag": "image-to-text",
+          "libraryName": "transformers",
+          "modality": "ocr-image-to-text",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 64775,
+          "likes": 4,
+          "lastModified": "2026-02-03T11:26:12.000Z",
+          "gated": false,
+          "tags": [
+            "transformers",
+            "safetensors",
+            "glm_ocr",
+            "image-text-to-text",
+            "mlx",
+            "image-to-text",
+            "zh",
+            "en",
+            "fr",
+            "es",
+            "ru",
+            "de",
+            "ja",
+            "ko",
+            "license:mit",
+            "endpoints_compatible",
+            "4-bit",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "mlx"
+          ],
+          "discoveryScore": 59.61,
+          "evidenceUrls": [
+            "https://huggingface.co/mlx-community/GLM-OCR-4bit",
+            "https://huggingface.co/mlx-community/GLM-OCR-4bit/tree/97f587506984cc92fa69b2694b4128e53db6b081"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "PaddlePaddle/PP-OCRv6_medium_rec_onnx",
+          "repositoryUrl": "https://huggingface.co/PaddlePaddle/PP-OCRv6_medium_rec_onnx",
+          "revision": "50c7eacafc52fa7bcf4194e8cd08e46f8558504b",
+          "pipelineTag": "image-to-text",
+          "libraryName": "PaddleOCR",
+          "modality": "ocr-image-to-text",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 160865,
+          "likes": 25,
+          "lastModified": "2026-06-18T11:07:56.000Z",
+          "gated": false,
+          "tags": [
+            "PaddleOCR",
+            "onnx",
+            "OCR",
+            "PaddlePaddle",
+            "text_recognition",
+            "image-to-text",
+            "en",
+            "zh",
+            "arxiv:2606.13108",
+            "license:apache-2.0",
+            "region:us"
+          ],
+          "mobileSignals": [],
+          "discoveryScore": 59.14,
+          "evidenceUrls": [
+            "https://huggingface.co/PaddlePaddle/PP-OCRv6_medium_rec_onnx",
+            "https://huggingface.co/PaddlePaddle/PP-OCRv6_medium_rec_onnx/tree/50c7eacafc52fa7bcf4194e8cd08e46f8558504b"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "microsoft/speecht5_asr",
+          "repositoryUrl": "https://huggingface.co/microsoft/speecht5_asr",
+          "revision": "53615c10408485422e09a12cda191a747f4bbe34",
+          "pipelineTag": "automatic-speech-recognition",
+          "libraryName": "transformers",
+          "modality": "speech-recognition",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 104071,
+          "likes": 45,
+          "lastModified": "2023-03-22T20:10:20.000Z",
+          "gated": false,
+          "tags": [
+            "transformers",
+            "pytorch",
+            "speecht5",
+            "automatic-speech-recognition",
+            "audio",
+            "dataset:librispeech_asr",
+            "arxiv:2110.07205",
+            "license:mit",
+            "endpoints_compatible",
+            "region:us"
+          ],
+          "mobileSignals": [],
+          "discoveryScore": 58.49,
+          "evidenceUrls": [
+            "https://huggingface.co/microsoft/speecht5_asr",
+            "https://huggingface.co/microsoft/speecht5_asr/tree/53615c10408485422e09a12cda191a747f4bbe34"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "PaddlePaddle/latin_PP-OCRv5_mobile_rec",
+          "repositoryUrl": "https://huggingface.co/PaddlePaddle/latin_PP-OCRv5_mobile_rec",
+          "revision": "ab2cd5cc5fa6309be2e5acdfe66eca2c2c127d57",
+          "pipelineTag": "image-to-text",
+          "libraryName": "PaddleOCR",
+          "modality": "ocr-image-to-text",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 35307,
+          "likes": 7,
+          "lastModified": "2025-10-16T09:01:34.000Z",
+          "gated": false,
+          "tags": [
+            "PaddleOCR",
+            "OCR",
+            "PaddlePaddle",
+            "textline_recognition",
+            "image-to-text",
+            "en",
+            "zh",
+            "license:apache-2.0",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "mobile"
+          ],
+          "discoveryScore": 57.99,
+          "evidenceUrls": [
+            "https://huggingface.co/PaddlePaddle/latin_PP-OCRv5_mobile_rec",
+            "https://huggingface.co/PaddlePaddle/latin_PP-OCRv5_mobile_rec/tree/ab2cd5cc5fa6309be2e5acdfe66eca2c2c127d57"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "ibm-granite/granite-speech-3.3-2b",
+          "repositoryUrl": "https://huggingface.co/ibm-granite/granite-speech-3.3-2b",
+          "revision": "4ac2f02f413c6169ae8c0ccc217115a366e552d7",
+          "pipelineTag": "automatic-speech-recognition",
+          "libraryName": "transformers",
+          "modality": "speech-recognition",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 72016,
+          "likes": 56,
+          "lastModified": "2026-04-07T16:07:17.000Z",
+          "gated": false,
+          "tags": [
+            "transformers",
+            "safetensors",
+            "granite_speech",
+            "automatic-speech-recognition",
+            "multilingual",
+            "en",
+            "fr",
+            "de",
+            "es",
+            "pt",
+            "arxiv:2505.08699",
+            "base_model:ibm-granite/granite-3.3-2b-instruct",
+            "base_model:finetune:ibm-granite/granite-3.3-2b-instruct",
+            "license:apache-2.0",
+            "eval-results",
+            "endpoints_compatible",
+            "region:us",
+            "deploy:azure"
+          ],
+          "mobileSignals": [],
+          "discoveryScore": 57.35,
+          "evidenceUrls": [
+            "https://huggingface.co/ibm-granite/granite-speech-3.3-2b",
+            "https://huggingface.co/ibm-granite/granite-speech-3.3-2b/tree/4ac2f02f413c6169ae8c0ccc217115a366e552d7"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "ibm-granite/granite-speech-3.3-8b",
+          "repositoryUrl": "https://huggingface.co/ibm-granite/granite-speech-3.3-8b",
+          "revision": "5670dcfae4a296e6993ac53eb25f638c6aaa54d0",
+          "pipelineTag": "automatic-speech-recognition",
+          "libraryName": "transformers",
+          "modality": "speech-recognition",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 40781,
+          "likes": 171,
+          "lastModified": "2026-04-02T14:39:55.000Z",
+          "gated": false,
+          "tags": [
+            "transformers",
+            "safetensors",
+            "granite_speech",
+            "automatic-speech-recognition",
+            "multilingual",
+            "en",
+            "fr",
+            "de",
+            "es",
+            "pt",
+            "arxiv:2505.08699",
+            "base_model:ibm-granite/granite-3.3-8b-instruct",
+            "base_model:finetune:ibm-granite/granite-3.3-8b-instruct",
+            "license:apache-2.0",
+            "eval-results",
+            "endpoints_compatible",
+            "region:us"
+          ],
+          "mobileSignals": [],
+          "discoveryScore": 57.28,
+          "evidenceUrls": [
+            "https://huggingface.co/ibm-granite/granite-speech-3.3-8b",
+            "https://huggingface.co/ibm-granite/granite-speech-3.3-8b/tree/5670dcfae4a296e6993ac53eb25f638c6aaa54d0"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "PaddlePaddle/PP-OCRv5_mobile_rec",
+          "repositoryUrl": "https://huggingface.co/PaddlePaddle/PP-OCRv5_mobile_rec",
+          "revision": "682f20538d8c086cb2128e5cfac775e6c4904e85",
+          "pipelineTag": "image-to-text",
+          "libraryName": "PaddleOCR",
+          "modality": "ocr-image-to-text",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 20129,
+          "likes": 16,
+          "lastModified": "2025-07-22T10:04:13.000Z",
+          "gated": false,
+          "tags": [
+            "PaddleOCR",
+            "OCR",
+            "PaddlePaddle",
+            "textline_recognition",
+            "image-to-text",
+            "en",
+            "zh",
+            "arxiv:1212.1442",
+            "license:apache-2.0",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "mobile"
+          ],
+          "discoveryScore": 57.19,
+          "evidenceUrls": [
+            "https://huggingface.co/PaddlePaddle/PP-OCRv5_mobile_rec",
+            "https://huggingface.co/PaddlePaddle/PP-OCRv5_mobile_rec/tree/682f20538d8c086cb2128e5cfac775e6c4904e85"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "ibm-granite/granite-speech-3.2-8b",
+          "repositoryUrl": "https://huggingface.co/ibm-granite/granite-speech-3.2-8b",
+          "revision": "d5835026ead54ba48927de4f6ed12b67848444f3",
+          "pipelineTag": "automatic-speech-recognition",
+          "libraryName": "transformers",
+          "modality": "speech-recognition",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 55304,
+          "likes": 88,
+          "lastModified": "2025-04-16T15:00:00.000Z",
+          "gated": false,
+          "tags": [
+            "transformers",
+            "safetensors",
+            "granite_speech",
+            "automatic-speech-recognition",
+            "custom_code",
+            "en",
+            "base_model:ibm-granite/granite-3.2-8b-instruct",
+            "base_model:finetune:ibm-granite/granite-3.2-8b-instruct",
+            "license:apache-2.0",
+            "endpoints_compatible",
+            "region:us"
+          ],
+          "mobileSignals": [],
+          "discoveryScore": 57.17,
+          "evidenceUrls": [
+            "https://huggingface.co/ibm-granite/granite-speech-3.2-8b",
+            "https://huggingface.co/ibm-granite/granite-speech-3.2-8b/tree/d5835026ead54ba48927de4f6ed12b67848444f3"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "ibm-granite/granite-4.0-1b-speech",
+          "repositoryUrl": "https://huggingface.co/ibm-granite/granite-4.0-1b-speech",
+          "revision": "bd87ab862416353633ea431fe49b1614003623c5",
+          "pipelineTag": "automatic-speech-recognition",
+          "libraryName": "transformers",
+          "modality": "speech-recognition",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 31054,
+          "likes": 252,
+          "lastModified": "2026-04-02T14:28:38.000Z",
+          "gated": false,
+          "tags": [
+            "transformers",
+            "safetensors",
+            "granite_speech",
+            "automatic-speech-recognition",
+            "multilingual",
+            "en",
+            "fr",
+            "de",
+            "es",
+            "pt",
+            "ja",
+            "arxiv:2505.08699",
+            "arxiv:2603.11243",
+            "base_model:ibm-granite/granite-4.0-1b-base",
+            "base_model:finetune:ibm-granite/granite-4.0-1b-base",
+            "license:apache-2.0",
+            "eval-results",
+            "endpoints_compatible",
+            "region:us",
+            "deploy:azure"
+          ],
+          "mobileSignals": [],
+          "discoveryScore": 56.94,
+          "evidenceUrls": [
+            "https://huggingface.co/ibm-granite/granite-4.0-1b-speech",
+            "https://huggingface.co/ibm-granite/granite-4.0-1b-speech/tree/bd87ab862416353633ea431fe49b1614003623c5"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "PaddlePaddle/PP-OCRv6_medium_det",
+          "repositoryUrl": "https://huggingface.co/PaddlePaddle/PP-OCRv6_medium_det",
+          "revision": "8e0f56fb2ef86b461d99cfc7ac5c137738985f61",
+          "pipelineTag": "image-to-text",
+          "libraryName": "PaddleOCR",
+          "modality": "ocr-image-to-text",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 79823,
+          "likes": 31,
+          "lastModified": "2026-06-12T03:10:45.000Z",
+          "gated": false,
+          "tags": [
+            "PaddleOCR",
+            "OCR",
+            "PaddlePaddle",
+            "textline_detection",
+            "image-to-text",
+            "en",
+            "zh",
+            "arxiv:2606.13108",
+            "license:apache-2.0",
+            "region:us"
+          ],
+          "mobileSignals": [],
+          "discoveryScore": 56.55,
+          "evidenceUrls": [
+            "https://huggingface.co/PaddlePaddle/PP-OCRv6_medium_det",
+            "https://huggingface.co/PaddlePaddle/PP-OCRv6_medium_det/tree/8e0f56fb2ef86b461d99cfc7ac5c137738985f61"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "PaddlePaddle/en_PP-OCRv4_mobile_rec",
+          "repositoryUrl": "https://huggingface.co/PaddlePaddle/en_PP-OCRv4_mobile_rec",
+          "revision": "f97b62fdc0eb71c689393a19a4b21baa1795c9ab",
+          "pipelineTag": "image-to-text",
+          "libraryName": "PaddleOCR",
+          "modality": "ocr-image-to-text",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 26159,
+          "likes": 6,
+          "lastModified": "2025-07-22T10:04:06.000Z",
+          "gated": false,
+          "tags": [
+            "PaddleOCR",
+            "OCR",
+            "PaddlePaddle",
+            "textline_recognition",
+            "image-to-text",
+            "en",
+            "zh",
+            "license:apache-2.0",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "mobile"
+          ],
+          "discoveryScore": 56.4,
+          "evidenceUrls": [
+            "https://huggingface.co/PaddlePaddle/en_PP-OCRv4_mobile_rec",
+            "https://huggingface.co/PaddlePaddle/en_PP-OCRv4_mobile_rec/tree/f97b62fdc0eb71c689393a19a4b21baa1795c9ab"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "ibm-granite/granite-speech-5.0-470m-turboctc",
+          "repositoryUrl": "https://huggingface.co/ibm-granite/granite-speech-5.0-470m-turboctc",
+          "revision": "286456107c8ba1161f5c22dfe85466402c88333b",
+          "pipelineTag": "automatic-speech-recognition",
+          "libraryName": "transformers",
+          "modality": "speech-recognition",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 49633,
+          "likes": 69,
+          "lastModified": "2026-09-18T15:17:13.000Z",
+          "gated": false,
+          "tags": [
+            "transformers",
+            "safetensors",
+            "granite_speech5_ctc",
+            "automatic-speech-recognition",
+            "en",
+            "arxiv:2609.20104",
+            "license:apache-2.0",
+            "endpoints_compatible",
+            "region:us"
+          ],
+          "mobileSignals": [],
+          "discoveryScore": 56.18,
+          "evidenceUrls": [
+            "https://huggingface.co/ibm-granite/granite-speech-5.0-470m-turboctc",
+            "https://huggingface.co/ibm-granite/granite-speech-5.0-470m-turboctc/tree/286456107c8ba1161f5c22dfe85466402c88333b"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "PaddlePaddle/PP-OCRv6_medium_rec",
+          "repositoryUrl": "https://huggingface.co/PaddlePaddle/PP-OCRv6_medium_rec",
+          "revision": "e5a92bcbc5cc1b494628e458d267778f0704fd7c",
+          "pipelineTag": "image-to-text",
+          "libraryName": "PaddleOCR",
+          "modality": "ocr-image-to-text",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 66264,
+          "likes": 29,
+          "lastModified": "2026-06-12T10:07:33.000Z",
+          "gated": false,
+          "tags": [
+            "PaddleOCR",
+            "OCR",
+            "PaddlePaddle",
+            "text_recognition",
+            "image-to-text",
+            "en",
+            "zh",
+            "arxiv:2606.13108",
+            "license:apache-2.0",
+            "region:us"
+          ],
+          "mobileSignals": [],
+          "discoveryScore": 55.6,
+          "evidenceUrls": [
+            "https://huggingface.co/PaddlePaddle/PP-OCRv6_medium_rec",
+            "https://huggingface.co/PaddlePaddle/PP-OCRv6_medium_rec/tree/e5a92bcbc5cc1b494628e458d267778f0704fd7c"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "PaddlePaddle/PP-OCRv6_medium_det_onnx",
+          "repositoryUrl": "https://huggingface.co/PaddlePaddle/PP-OCRv6_medium_det_onnx",
+          "revision": "61323801669c338b7891481ec7bac61ce31b576a",
+          "pipelineTag": "image-to-text",
+          "libraryName": "PaddleOCR",
+          "modality": "ocr-image-to-text",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 63717,
+          "likes": 27,
+          "lastModified": "2026-06-18T10:55:30.000Z",
+          "gated": false,
+          "tags": [
+            "PaddleOCR",
+            "onnx",
+            "OCR",
+            "PaddlePaddle",
+            "textline_detection",
+            "ONNX",
+            "image-to-text",
+            "en",
+            "zh",
+            "arxiv:2606.13108",
+            "license:apache-2.0",
+            "region:us"
+          ],
+          "mobileSignals": [],
+          "discoveryScore": 55.28,
+          "evidenceUrls": [
+            "https://huggingface.co/PaddlePaddle/PP-OCRv6_medium_det_onnx",
+            "https://huggingface.co/PaddlePaddle/PP-OCRv6_medium_det_onnx/tree/61323801669c338b7891481ec7bac61ce31b576a"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "software-mansion/react-native-executorch-gemma-4",
+          "repositoryUrl": "https://huggingface.co/software-mansion/react-native-executorch-gemma-4",
+          "revision": "e20831dd07f0f0d2bb6ee85e204e974a8a69b903",
+          "pipelineTag": "text-generation",
+          "libraryName": "executorch",
+          "modality": "text-generation",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 3742,
+          "likes": 3,
+          "lastModified": "2026-09-07T13:54:38.000Z",
+          "gated": false,
+          "tags": [
+            "executorch",
+            "google",
+            "deepmind",
+            "gemma4",
+            "edge",
+            "text-generation",
+            "base_model:google/gemma-4-E2B",
+            "base_model:quantized:google/gemma-4-E2B",
+            "license:gemma",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "executorch",
+            "edge"
+          ],
+          "discoveryScore": 54.74,
+          "evidenceUrls": [
+            "https://huggingface.co/software-mansion/react-native-executorch-gemma-4",
+            "https://huggingface.co/software-mansion/react-native-executorch-gemma-4/tree/e20831dd07f0f0d2bb6ee85e204e974a8a69b903"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "unsloth/GLM-OCR",
+          "repositoryUrl": "https://huggingface.co/unsloth/GLM-OCR",
+          "revision": "fae39dc9c35655593e5f9f77e2b01276ad343b38",
+          "pipelineTag": "image-to-text",
+          "libraryName": "transformers",
+          "modality": "ocr-image-to-text",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 41402,
+          "likes": 37,
+          "lastModified": "2026-02-03T14:29:16.000Z",
+          "gated": false,
+          "tags": [
+            "transformers",
+            "safetensors",
+            "glm_ocr",
+            "image-text-to-text",
+            "image-to-text",
+            "zh",
+            "en",
+            "fr",
+            "es",
+            "ru",
+            "de",
+            "ja",
+            "ko",
+            "base_model:zai-org/GLM-OCR",
+            "base_model:finetune:zai-org/GLM-OCR",
+            "license:mit",
+            "endpoints_compatible",
+            "region:us"
+          ],
+          "mobileSignals": [],
+          "discoveryScore": 54.07,
+          "evidenceUrls": [
+            "https://huggingface.co/unsloth/GLM-OCR",
+            "https://huggingface.co/unsloth/GLM-OCR/tree/fae39dc9c35655593e5f9f77e2b01276ad343b38"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "enterprise-explorers/Llama-2-7b-chat-coreml",
+          "repositoryUrl": "https://huggingface.co/enterprise-explorers/Llama-2-7b-chat-coreml",
+          "revision": "eaf97358a37d03fd48e5a87d15aff2e8423c1afb",
+          "pipelineTag": "text-generation",
+          "libraryName": "transformers",
+          "modality": "text-generation",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 3037,
+          "likes": 136,
+          "lastModified": "2023-07-18T22:34:22.000Z",
+          "gated": false,
+          "tags": [
+            "transformers",
+            "coreml",
+            "llama",
+            "text-generation",
+            "meta",
+            "llama-2",
+            "license:other",
+            "endpoints_compatible",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "coreml"
+          ],
+          "discoveryScore": 53.51,
+          "evidenceUrls": [
+            "https://huggingface.co/enterprise-explorers/Llama-2-7b-chat-coreml",
+            "https://huggingface.co/enterprise-explorers/Llama-2-7b-chat-coreml/tree/eaf97358a37d03fd48e5a87d15aff2e8423c1afb"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "handy-computer/granite-speech-4.1-2b-gguf",
+          "repositoryUrl": "https://huggingface.co/handy-computer/granite-speech-4.1-2b-gguf",
+          "revision": "8636dae5eebb011a3d9b56215944ed0925a0d035",
+          "pipelineTag": "automatic-speech-recognition",
+          "libraryName": "transcribe.cpp",
+          "modality": "speech-recognition",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 34537,
+          "likes": 0,
+          "lastModified": "2026-09-15T07:05:34.000Z",
+          "gated": false,
+          "tags": [
+            "transcribe.cpp",
+            "gguf",
+            "asr",
+            "speech-to-text",
+            "granite",
+            "granite-speech",
+            "audio-llm",
+            "multilingual",
+            "automatic-speech-recognition",
+            "en",
+            "fr",
+            "de",
+            "es",
+            "pt",
+            "ja",
+            "arxiv:2310.02943",
+            "arxiv:2505.08699",
+            "arxiv:2603.11243",
+            "arxiv:2604.12398",
+            "arxiv:2604.22817",
+            "arxiv:2604.11269",
+            "arxiv:2603.08397",
+            "base_model:ibm-granite/granite-speech-4.1-2b",
+            "base_model:quantized:ibm-granite/granite-speech-4.1-2b",
+            "license:apache-2.0",
+            "region:us",
+            "conversational"
+          ],
+          "mobileSignals": [
+            "llm"
+          ],
+          "discoveryScore": 53.38,
+          "evidenceUrls": [
+            "https://huggingface.co/handy-computer/granite-speech-4.1-2b-gguf",
+            "https://huggingface.co/handy-computer/granite-speech-4.1-2b-gguf/tree/8636dae5eebb011a3d9b56215944ed0925a0d035"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "software-mansion/react-native-executorch-qwen-3",
+          "repositoryUrl": "https://huggingface.co/software-mansion/react-native-executorch-qwen-3",
+          "revision": "5004436bc2c31aeaeb272a1ea6e47bd7d91da95c",
+          "pipelineTag": "text-generation",
+          "libraryName": "executorch",
+          "modality": "text-generation",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 13612,
+          "likes": 5,
+          "lastModified": "2026-09-23T08:22:40.000Z",
+          "gated": false,
+          "tags": [
+            "executorch",
+            "text-generation",
+            "conversational",
+            "license:apache-2.0",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "executorch"
+          ],
+          "discoveryScore": 53.23,
+          "evidenceUrls": [
+            "https://huggingface.co/software-mansion/react-native-executorch-qwen-3",
+            "https://huggingface.co/software-mansion/react-native-executorch-qwen-3/tree/5004436bc2c31aeaeb272a1ea6e47bd7d91da95c"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "software-mansion/react-native-executorch-qwen-2.5",
+          "repositoryUrl": "https://huggingface.co/software-mansion/react-native-executorch-qwen-2.5",
+          "revision": "317a0eac7f04d9c83fdf17e5a5a3fc615350d0ec",
+          "pipelineTag": "text-generation",
+          "libraryName": "executorch",
+          "modality": "text-generation",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 26420,
+          "likes": 0,
+          "lastModified": "2026-09-07T13:55:08.000Z",
+          "gated": false,
+          "tags": [
+            "executorch",
+            "text-generation",
+            "conversational",
+            "license:apache-2.0",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "executorch"
+          ],
+          "discoveryScore": 52.22,
+          "evidenceUrls": [
+            "https://huggingface.co/software-mansion/react-native-executorch-qwen-2.5",
+            "https://huggingface.co/software-mansion/react-native-executorch-qwen-2.5/tree/317a0eac7f04d9c83fdf17e5a5a3fc615350d0ec"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "PaddlePaddle/korean_PP-OCRv5_mobile_rec",
+          "repositoryUrl": "https://huggingface.co/PaddlePaddle/korean_PP-OCRv5_mobile_rec",
+          "revision": "c02ecaf1f22bfd1c618cce154fd19185b47e663a",
+          "pipelineTag": "image-to-text",
+          "libraryName": "PaddleOCR",
+          "modality": "ocr-image-to-text",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 6147,
+          "likes": 17,
+          "lastModified": "2026-07-22T11:40:15.000Z",
+          "gated": false,
+          "tags": [
+            "PaddleOCR",
+            "OCR",
+            "PaddlePaddle",
+            "textline_recognition",
+            "image-to-text",
+            "en",
+            "zh",
+            "ko",
+            "license:apache-2.0",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "mobile"
+          ],
+          "discoveryScore": 52.16,
+          "evidenceUrls": [
+            "https://huggingface.co/PaddlePaddle/korean_PP-OCRv5_mobile_rec",
+            "https://huggingface.co/PaddlePaddle/korean_PP-OCRv5_mobile_rec/tree/c02ecaf1f22bfd1c618cce154fd19185b47e663a"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "MIT/ast-finetuned-audioset-14-14-0.443",
+          "repositoryUrl": "https://huggingface.co/MIT/ast-finetuned-audioset-14-14-0.443",
+          "revision": "b11a9849b3fefcda0ca9111ba85bd923094db9b2",
+          "pipelineTag": "audio-classification",
+          "libraryName": "transformers",
+          "modality": "audio",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 9705,
+          "likes": 6,
+          "lastModified": "2024-04-16T16:58:17.000Z",
+          "gated": false,
+          "tags": [
+            "transformers",
+            "pytorch",
+            "safetensors",
+            "audio-spectrogram-transformer",
+            "audio-classification",
+            "arxiv:2104.01778",
+            "license:bsd-3-clause",
+            "endpoints_compatible",
+            "region:us",
+            "deploy:azure"
+          ],
+          "mobileSignals": [
+            "ios"
+          ],
+          "discoveryScore": 52.1,
+          "evidenceUrls": [
+            "https://huggingface.co/MIT/ast-finetuned-audioset-14-14-0.443",
+            "https://huggingface.co/MIT/ast-finetuned-audioset-14-14-0.443/tree/b11a9849b3fefcda0ca9111ba85bd923094db9b2"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "PaddlePaddle/PP-OCRv3_mobile_det",
+          "repositoryUrl": "https://huggingface.co/PaddlePaddle/PP-OCRv3_mobile_det",
+          "revision": "58f4e5b132e34e516486fb0d0266c662feb48ca1",
+          "pipelineTag": "image-to-text",
+          "libraryName": "PaddleOCR",
+          "modality": "ocr-image-to-text",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 17667,
+          "likes": 1,
+          "lastModified": "2025-07-23T06:43:48.000Z",
+          "gated": false,
+          "tags": [
+            "PaddleOCR",
+            "OCR",
+            "PaddlePaddle",
+            "textline_detection",
+            "image-to-text",
+            "en",
+            "zh",
+            "license:apache-2.0",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "mobile"
+          ],
+          "discoveryScore": 51.98,
+          "evidenceUrls": [
+            "https://huggingface.co/PaddlePaddle/PP-OCRv3_mobile_det",
+            "https://huggingface.co/PaddlePaddle/PP-OCRv3_mobile_det/tree/58f4e5b132e34e516486fb0d0266c662feb48ca1"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "software-mansion/react-native-executorch-smolLm-2",
+          "repositoryUrl": "https://huggingface.co/software-mansion/react-native-executorch-smolLm-2",
+          "revision": "ca256eec04136b82507d78d08e22a95ddd9172d2",
+          "pipelineTag": "text-generation",
+          "libraryName": "executorch",
+          "modality": "text-generation",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 2678,
+          "likes": 1,
+          "lastModified": "2026-09-07T13:55:20.000Z",
+          "gated": false,
+          "tags": [
+            "executorch",
+            "text-generation",
+            "conversational",
+            "license:apache-2.0",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "executorch",
+            "llm"
+          ],
+          "discoveryScore": 51.78,
+          "evidenceUrls": [
+            "https://huggingface.co/software-mansion/react-native-executorch-smolLm-2",
+            "https://huggingface.co/software-mansion/react-native-executorch-smolLm-2/tree/ca256eec04136b82507d78d08e22a95ddd9172d2"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "experimentalmachines/LFM2.5-2.6B-ExecuTorch",
+          "repositoryUrl": "https://huggingface.co/experimentalmachines/LFM2.5-2.6B-ExecuTorch",
+          "revision": "d661b4c17092530e7c31586360b318e84be69ed3",
+          "pipelineTag": "text-generation",
+          "libraryName": "executorch",
+          "modality": "text-generation",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 561,
+          "likes": 0,
+          "lastModified": "2026-09-22T04:51:40.000Z",
+          "gated": false,
+          "tags": [
+            "executorch",
+            "android",
+            "mtk",
+            "on-device",
+            "openweights",
+            "xnnpack",
+            "text-generation",
+            "base_model:LiquidAI/LFM2.5-2.6B",
+            "base_model:quantized:LiquidAI/LFM2.5-2.6B",
+            "license:other",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "android",
+            "executorch",
+            "on-device"
+          ],
+          "discoveryScore": 51.5,
+          "evidenceUrls": [
+            "https://huggingface.co/experimentalmachines/LFM2.5-2.6B-ExecuTorch",
+            "https://huggingface.co/experimentalmachines/LFM2.5-2.6B-ExecuTorch/tree/d661b4c17092530e7c31586360b318e84be69ed3"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "PaddlePaddle/PP-OCRv5_mobile_det_onnx",
+          "repositoryUrl": "https://huggingface.co/PaddlePaddle/PP-OCRv5_mobile_det_onnx",
+          "revision": "e6f4fa85f00e168c862bc462aebca69eef9b3d3d",
+          "pipelineTag": "image-to-text",
+          "libraryName": "PaddleOCR",
+          "modality": "ocr-image-to-text",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 21897,
+          "likes": 0,
+          "lastModified": "2026-06-10T07:49:02.000Z",
+          "gated": false,
+          "tags": [
+            "PaddleOCR",
+            "onnx",
+            "OCR",
+            "PaddlePaddle",
+            "textline_detection",
+            "image-to-text",
+            "en",
+            "zh",
+            "license:apache-2.0",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "mobile"
+          ],
+          "discoveryScore": 51.4,
+          "evidenceUrls": [
+            "https://huggingface.co/PaddlePaddle/PP-OCRv5_mobile_det_onnx",
+            "https://huggingface.co/PaddlePaddle/PP-OCRv5_mobile_det_onnx/tree/e6f4fa85f00e168c862bc462aebca69eef9b3d3d"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "PaddlePaddle/en_PP-OCRv3_mobile_rec",
+          "repositoryUrl": "https://huggingface.co/PaddlePaddle/en_PP-OCRv3_mobile_rec",
+          "revision": "321b476529616da79d896969cbd251198fb7a75b",
+          "pipelineTag": "image-to-text",
+          "libraryName": "PaddleOCR",
+          "modality": "ocr-image-to-text",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 15085,
+          "likes": 1,
+          "lastModified": "2025-07-22T10:03:31.000Z",
+          "gated": false,
+          "tags": [
+            "PaddleOCR",
+            "OCR",
+            "PaddlePaddle",
+            "textline_recognition",
+            "image-to-text",
+            "en",
+            "zh",
+            "license:apache-2.0",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "mobile"
+          ],
+          "discoveryScore": 51.29,
+          "evidenceUrls": [
+            "https://huggingface.co/PaddlePaddle/en_PP-OCRv3_mobile_rec",
+            "https://huggingface.co/PaddlePaddle/en_PP-OCRv3_mobile_rec/tree/321b476529616da79d896969cbd251198fb7a75b"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "facebook/MobileLLM-R1-140M-base",
+          "repositoryUrl": "https://huggingface.co/facebook/MobileLLM-R1-140M-base",
+          "revision": "27cb0e3b88e117559000732d26d3b08d0339cf7e",
+          "pipelineTag": "text-generation",
+          "libraryName": "transformers",
+          "modality": "text-generation",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 563,
+          "likes": 23,
+          "lastModified": "2025-11-10T22:50:45.000Z",
+          "gated": true,
+          "tags": [
+            "transformers",
+            "safetensors",
+            "llama4_text",
+            "text-generation",
+            "facebook",
+            "meta",
+            "pytorch",
+            "mobilellm",
+            "en",
+            "arxiv:2509.24945",
+            "license:other",
+            "endpoints_compatible",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "mobile",
+            "llm"
+          ],
+          "discoveryScore": 50.41,
+          "evidenceUrls": [
+            "https://huggingface.co/facebook/MobileLLM-R1-140M-base",
+            "https://huggingface.co/facebook/MobileLLM-R1-140M-base/tree/27cb0e3b88e117559000732d26d3b08d0339cf7e"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "m3hrdadfi/wav2vec2-xlsr-persian-speech-emotion-recognition",
+          "repositoryUrl": "https://huggingface.co/m3hrdadfi/wav2vec2-xlsr-persian-speech-emotion-recognition",
+          "revision": "a71bf01ccb1cfc182c37550938d78c958f18a5eb",
+          "pipelineTag": "automatic-speech-recognition",
+          "libraryName": "transformers",
+          "modality": "speech-recognition",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 31155,
+          "likes": 10,
+          "lastModified": "2021-07-27T06:12:46.000Z",
+          "gated": false,
+          "tags": [
+            "transformers",
+            "pytorch",
+            "wav2vec2",
+            "audio",
+            "automatic-speech-recognition",
+            "speech",
+            "speech-emotion-recognition",
+            "fa",
+            "dataset:ShEMO",
+            "license:apache-2.0",
+            "endpoints_compatible",
+            "region:us",
+            "deploy:azure"
+          ],
+          "mobileSignals": [],
+          "discoveryScore": 50.14,
+          "evidenceUrls": [
+            "https://huggingface.co/m3hrdadfi/wav2vec2-xlsr-persian-speech-emotion-recognition",
+            "https://huggingface.co/m3hrdadfi/wav2vec2-xlsr-persian-speech-emotion-recognition/tree/a71bf01ccb1cfc182c37550938d78c958f18a5eb"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "litert-community/functiongemma-270m-ft-mobile-actions",
+          "repositoryUrl": "https://huggingface.co/litert-community/functiongemma-270m-ft-mobile-actions",
+          "revision": "f752a74080682b379823794defdbbdf8c2663609",
+          "pipelineTag": "text-generation",
+          "libraryName": "litert-lm",
+          "modality": "text-generation",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 1054,
+          "likes": 237,
+          "lastModified": "2026-08-31T13:49:04.000Z",
+          "gated": true,
+          "tags": [
+            "litert-lm",
+            "gemma3",
+            "gemma",
+            "functiongemma",
+            "text-generation",
+            "base_model:google/functiongemma-270m-it",
+            "base_model:finetune:google/functiongemma-270m-it",
+            "license:gemma",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "mobile"
+          ],
+          "discoveryScore": 50.12,
+          "evidenceUrls": [
+            "https://huggingface.co/litert-community/functiongemma-270m-ft-mobile-actions",
+            "https://huggingface.co/litert-community/functiongemma-270m-ft-mobile-actions/tree/f752a74080682b379823794defdbbdf8c2663609"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "handy-computer/granite-4.0-1b-speech-gguf",
+          "repositoryUrl": "https://huggingface.co/handy-computer/granite-4.0-1b-speech-gguf",
+          "revision": "9f243e662e448e8bcc64c3b1195413e106002334",
+          "pipelineTag": "automatic-speech-recognition",
+          "libraryName": "transcribe.cpp",
+          "modality": "speech-recognition",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 14337,
+          "likes": 0,
+          "lastModified": "2026-09-15T07:05:33.000Z",
+          "gated": false,
+          "tags": [
+            "transcribe.cpp",
+            "gguf",
+            "asr",
+            "speech-to-text",
+            "granite",
+            "granite-speech",
+            "audio-llm",
+            "multilingual",
+            "automatic-speech-recognition",
+            "en",
+            "fr",
+            "de",
+            "es",
+            "pt",
+            "ja",
+            "arxiv:2505.08699",
+            "arxiv:2603.11243",
+            "base_model:ibm-granite/granite-4.0-1b-speech",
+            "base_model:quantized:ibm-granite/granite-4.0-1b-speech",
+            "license:apache-2.0",
+            "region:us",
+            "conversational"
+          ],
+          "mobileSignals": [
+            "llm"
+          ],
+          "discoveryScore": 49.56,
+          "evidenceUrls": [
+            "https://huggingface.co/handy-computer/granite-4.0-1b-speech-gguf",
+            "https://huggingface.co/handy-computer/granite-4.0-1b-speech-gguf/tree/9f243e662e448e8bcc64c3b1195413e106002334"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "PaddlePaddle/eslav_PP-OCRv5_mobile_rec",
+          "repositoryUrl": "https://huggingface.co/PaddlePaddle/eslav_PP-OCRv5_mobile_rec",
+          "revision": "7553801264d3379d8d2e854971989e5e26c22e03",
+          "pipelineTag": "image-to-text",
+          "libraryName": "PaddleOCR",
+          "modality": "ocr-image-to-text",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 5948,
+          "likes": 4,
+          "lastModified": "2025-07-22T10:04:25.000Z",
+          "gated": false,
+          "tags": [
+            "PaddleOCR",
+            "OCR",
+            "PaddlePaddle",
+            "textline_recognition",
+            "image-to-text",
+            "en",
+            "zh",
+            "license:apache-2.0",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "mobile"
+          ],
+          "discoveryScore": 49.24,
+          "evidenceUrls": [
+            "https://huggingface.co/PaddlePaddle/eslav_PP-OCRv5_mobile_rec",
+            "https://huggingface.co/PaddlePaddle/eslav_PP-OCRv5_mobile_rec/tree/7553801264d3379d8d2e854971989e5e26c22e03"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "experimentalmachines/SmolLM2-135M-Instruct-ExecuTorch",
+          "repositoryUrl": "https://huggingface.co/experimentalmachines/SmolLM2-135M-Instruct-ExecuTorch",
+          "revision": "4cd2b22cdc98aa6f9af45cba049ce6d35ecd16fd",
+          "pipelineTag": "text-generation",
+          "libraryName": "executorch",
+          "modality": "text-generation",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 49,
+          "likes": 0,
+          "lastModified": "2026-09-18T10:08:28.000Z",
+          "gated": false,
+          "tags": [
+            "executorch",
+            "android",
+            "on-device",
+            "openweights",
+            "xnnpack",
+            "text-generation",
+            "base_model:HuggingFaceTB/SmolLM2-135M-Instruct",
+            "base_model:quantized:HuggingFaceTB/SmolLM2-135M-Instruct",
+            "license:apache-2.0",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "android",
+            "executorch",
+            "on-device",
+            "llm"
+          ],
+          "discoveryScore": 48.99,
+          "evidenceUrls": [
+            "https://huggingface.co/experimentalmachines/SmolLM2-135M-Instruct-ExecuTorch",
+            "https://huggingface.co/experimentalmachines/SmolLM2-135M-Instruct-ExecuTorch/tree/4cd2b22cdc98aa6f9af45cba049ce6d35ecd16fd"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "Gustking/wav2vec2-large-xlsr-deepfake-audio-classification",
+          "repositoryUrl": "https://huggingface.co/Gustking/wav2vec2-large-xlsr-deepfake-audio-classification",
+          "revision": "f7050b586236dc910d1157f430def2d0647b02b4",
+          "pipelineTag": "audio-classification",
+          "libraryName": "transformers",
+          "modality": "audio",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 29726,
+          "likes": 6,
+          "lastModified": "2024-05-15T22:35:35.000Z",
+          "gated": false,
+          "tags": [
+            "transformers",
+            "safetensors",
+            "wav2vec2",
+            "audio-classification",
+            "base_model:alefiury/wav2vec2-large-xlsr-53-gender-recognition-librispeech",
+            "base_model:finetune:alefiury/wav2vec2-large-xlsr-53-gender-recognition-librispeech",
+            "license:apache-2.0",
+            "endpoints_compatible",
+            "region:us"
+          ],
+          "mobileSignals": [],
+          "discoveryScore": 48.96,
+          "evidenceUrls": [
+            "https://huggingface.co/Gustking/wav2vec2-large-xlsr-deepfake-audio-classification",
+            "https://huggingface.co/Gustking/wav2vec2-large-xlsr-deepfake-audio-classification/tree/f7050b586236dc910d1157f430def2d0647b02b4"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "handy-computer/granite-speech-4.1-2b-plus-gguf",
+          "repositoryUrl": "https://huggingface.co/handy-computer/granite-speech-4.1-2b-plus-gguf",
+          "revision": "fc98d5c650f77eaa6210f0d70aac73c3c567f38c",
+          "pipelineTag": "automatic-speech-recognition",
+          "libraryName": "transcribe.cpp",
+          "modality": "speech-recognition",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 11853,
+          "likes": 0,
+          "lastModified": "2026-09-15T07:05:34.000Z",
+          "gated": false,
+          "tags": [
+            "transcribe.cpp",
+            "gguf",
+            "asr",
+            "speech-to-text",
+            "granite",
+            "granite-speech",
+            "audio-llm",
+            "multilingual",
+            "word-timestamps",
+            "diarization",
+            "automatic-speech-recognition",
+            "en",
+            "fr",
+            "de",
+            "es",
+            "pt",
+            "arxiv:2604.11269",
+            "arxiv:2604.22817",
+            "arxiv:2604.12398",
+            "arxiv:2505.08699",
+            "arxiv:2603.11243",
+            "arxiv:2603.08397",
+            "base_model:ibm-granite/granite-speech-4.1-2b-plus",
+            "base_model:quantized:ibm-granite/granite-speech-4.1-2b-plus",
+            "license:apache-2.0",
+            "region:us",
+            "conversational"
+          ],
+          "mobileSignals": [
+            "llm"
+          ],
+          "discoveryScore": 48.74,
+          "evidenceUrls": [
+            "https://huggingface.co/handy-computer/granite-speech-4.1-2b-plus-gguf",
+            "https://huggingface.co/handy-computer/granite-speech-4.1-2b-plus-gguf/tree/fc98d5c650f77eaa6210f0d70aac73c3c567f38c"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "Xenova/ast-finetuned-audioset-10-10-0.4593",
+          "repositoryUrl": "https://huggingface.co/Xenova/ast-finetuned-audioset-10-10-0.4593",
+          "revision": "249a1fbf0286b40e7f1ed687a8ae396997bf7dc6",
+          "pipelineTag": "audio-classification",
+          "libraryName": "transformers.js",
+          "modality": "audio",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 11479,
+          "likes": 0,
+          "lastModified": "2025-06-27T17:39:25.000Z",
+          "gated": false,
+          "tags": [
+            "transformers.js",
+            "onnx",
+            "audio-spectrogram-transformer",
+            "audio-classification",
+            "base_model:MIT/ast-finetuned-audioset-10-10-0.4593",
+            "base_model:quantized:MIT/ast-finetuned-audioset-10-10-0.4593",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "ios"
+          ],
+          "discoveryScore": 48.6,
+          "evidenceUrls": [
+            "https://huggingface.co/Xenova/ast-finetuned-audioset-10-10-0.4593",
+            "https://huggingface.co/Xenova/ast-finetuned-audioset-10-10-0.4593/tree/249a1fbf0286b40e7f1ed687a8ae396997bf7dc6"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "PaddlePaddle/PP-OCRv4_mobile_det",
+          "repositoryUrl": "https://huggingface.co/PaddlePaddle/PP-OCRv4_mobile_det",
+          "revision": "3cc09f3a5b424e8e010abc7a4271aea12999c2f7",
+          "pipelineTag": "image-to-text",
+          "libraryName": "PaddleOCR",
+          "modality": "ocr-image-to-text",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 4624,
+          "likes": 5,
+          "lastModified": "2025-07-22T10:03:01.000Z",
+          "gated": false,
+          "tags": [
+            "PaddleOCR",
+            "OCR",
+            "PaddlePaddle",
+            "textline_detection",
+            "image-to-text",
+            "en",
+            "zh",
+            "license:apache-2.0",
+            "region:us"
+          ],
+          "mobileSignals": [
+            "mobile"
+          ],
+          "discoveryScore": 48.54,
+          "evidenceUrls": [
+            "https://huggingface.co/PaddlePaddle/PP-OCRv4_mobile_det",
+            "https://huggingface.co/PaddlePaddle/PP-OCRv4_mobile_det/tree/3cc09f3a5b424e8e010abc7a4271aea12999c2f7"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "modelId": "tiiuae/Falcon-OCR",
+          "repositoryUrl": "https://huggingface.co/tiiuae/Falcon-OCR",
+          "revision": "fe757d59ecd79d4d68760162306a70a015761ad9",
+          "pipelineTag": "image-to-text",
+          "libraryName": "transformers",
+          "modality": "ocr-image-to-text",
+          "license": null,
+          "parameterCount": null,
+          "downloads": 5613,
+          "likes": 157,
+          "lastModified": "2026-09-11T22:04:44.000Z",
+          "gated": false,
+          "tags": [
+            "transformers",
+            "safetensors",
+            "falcon_ocr",
+            "text-generation",
+            "falcon",
+            "ocr",
+            "vision-language",
+            "document-understanding",
+            "v1.5",
+            "image-to-text",
+            "custom_code",
+            "arxiv:2603.27365",
+            "license:apache-2.0",
+            "eval-results",
+            "region:us"
+          ],
+          "mobileSignals": [],
+          "discoveryScore": 48.49,
+          "evidenceUrls": [
+            "https://huggingface.co/tiiuae/Falcon-OCR",
+            "https://huggingface.co/tiiuae/Falcon-OCR/tree/fe757d59ecd79d4d68760162306a70a015761ad9"
+          ],
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        }
+      ],
+      "queries": [
+        {
+          "label": "mobile-text",
+          "url": "https://huggingface.co/api/models?search=mobile&pipeline_tag=text-generation&sort=downloads&direction=-1&limit=30&full=true",
+          "pipelineTag": "text-generation",
+          "status": "ok",
+          "itemCount": 30
+        },
+        {
+          "label": "executorch-text",
+          "url": "https://huggingface.co/api/models?search=executorch&pipeline_tag=text-generation&sort=downloads&direction=-1&limit=30&full=true",
+          "pipelineTag": "text-generation",
+          "status": "ok",
+          "itemCount": 30
+        },
+        {
+          "label": "edge-llm",
+          "url": "https://huggingface.co/api/models?search=edge%20llm&pipeline_tag=text-generation&sort=downloads&direction=-1&limit=30&full=true",
+          "pipelineTag": "text-generation",
+          "status": "ok",
+          "itemCount": 4
+        },
+        {
+          "label": "coreml-text",
+          "url": "https://huggingface.co/api/models?search=coreml&pipeline_tag=text-generation&sort=downloads&direction=-1&limit=30&full=true",
+          "pipelineTag": "text-generation",
+          "status": "ok",
+          "itemCount": 30
+        },
+        {
+          "label": "vision-language",
+          "url": "https://huggingface.co/api/models?search=vision%20language&pipeline_tag=image-text-to-text&sort=downloads&direction=-1&limit=30&full=true",
+          "pipelineTag": "image-text-to-text",
+          "status": "ok",
+          "itemCount": 2
+        },
+        {
+          "label": "ocr",
+          "url": "https://huggingface.co/api/models?search=ocr&pipeline_tag=image-to-text&sort=downloads&direction=-1&limit=30&full=true",
+          "pipelineTag": "image-to-text",
+          "status": "ok",
+          "itemCount": 30
+        },
+        {
+          "label": "speech",
+          "url": "https://huggingface.co/api/models?search=speech&pipeline_tag=automatic-speech-recognition&sort=downloads&direction=-1&limit=30&full=true",
+          "pipelineTag": "automatic-speech-recognition",
+          "status": "ok",
+          "itemCount": 30
+        },
+        {
+          "label": "audio",
+          "url": "https://huggingface.co/api/models?search=audio&pipeline_tag=audio-classification&sort=downloads&direction=-1&limit=30&full=true",
+          "pipelineTag": "audio-classification",
+          "status": "ok",
+          "itemCount": 30
+        },
+        {
+          "label": "tts",
+          "url": "https://huggingface.co/api/models?search=text%20to%20speech&pipeline_tag=text-to-speech&sort=downloads&direction=-1&limit=30&full=true",
+          "pipelineTag": "text-to-speech",
+          "status": "ok",
+          "itemCount": 26
+        },
+        {
+          "label": "embeddings",
+          "url": "https://huggingface.co/api/models?search=mobile%20embedding&pipeline_tag=feature-extraction&sort=downloads&direction=-1&limit=30&full=true",
+          "pipelineTag": "feature-extraction",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "label": "image-generation",
+          "url": "https://huggingface.co/api/models?search=mobile%20image%20generation&pipeline_tag=text-to-image&sort=downloads&direction=-1&limit=30&full=true",
+          "pipelineTag": "text-to-image",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "label": "detection",
+          "url": "https://huggingface.co/api/models?search=mobile%20detection&pipeline_tag=object-detection&sort=downloads&direction=-1&limit=30&full=true",
+          "pipelineTag": "object-detection",
+          "status": "ok",
+          "itemCount": 5
+        },
+        {
+          "label": "segmentation",
+          "url": "https://huggingface.co/api/models?search=mobile%20segmentation&pipeline_tag=image-segmentation&sort=downloads&direction=-1&limit=30&full=true",
+          "pipelineTag": "image-segmentation",
+          "status": "ok",
+          "itemCount": 1
+        }
+      ],
+      "observedAt": "2026-09-24T07:43:56.377Z"
+    },
+    {
+      "sourceId": "github-runtime-repositories",
+      "authority": "github",
+      "sourceType": "public-repository-api",
+      "url": "https://github.com/apple/coreai-models",
+      "status": "ok",
+      "itemCount": 4,
+      "items": [
+        {
+          "repositoryId": "apple/coreai-models",
+          "url": "https://github.com/apple/coreai-models",
+          "description": "Model export recipes, Python primitives, and Swift runtime utilities for on-device AI",
+          "stars": 2137,
+          "forks": 209,
+          "openIssues": 32,
+          "defaultBranch": "main",
+          "pushedAt": "2026-09-23T19:01:02Z",
+          "topics": [],
+          "license": "BSD-3-Clause",
+          "archived": false,
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "repositoryId": "apple/coremltools",
+          "url": "https://github.com/apple/coremltools",
+          "description": "Core ML tools contain supporting tools for Core ML model conversion, editing, and validation.",
+          "stars": 5431,
+          "forks": 852,
+          "openIssues": 509,
+          "defaultBranch": "main",
+          "pushedAt": "2026-09-22T18:07:52Z",
+          "topics": [
+            "coreml",
+            "coremltools",
+            "machine-learning",
+            "model-conversion",
+            "model-converter",
+            "pytorch",
+            "tensorflow"
+          ],
+          "license": "BSD-3-Clause",
+          "archived": false,
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "repositoryId": "pytorch/executorch",
+          "url": "https://github.com/pytorch/executorch",
+          "description": "On-device AI across mobile, embedded and edge for PyTorch",
+          "stars": 5051,
+          "forks": 1168,
+          "openIssues": 1281,
+          "defaultBranch": "main",
+          "pushedAt": "2026-09-24T07:19:25Z",
+          "topics": [
+            "deep-learning",
+            "embedded",
+            "gpu",
+            "machine-learning",
+            "mobile",
+            "neural-network",
+            "tensor"
+          ],
+          "license": "NOASSERTION",
+          "archived": false,
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        },
+        {
+          "repositoryId": "google-ai-edge/litert-torch",
+          "url": "https://github.com/google-ai-edge/litert-torch",
+          "description": "Support PyTorch model conversion with LiteRT.",
+          "stars": 1101,
+          "forks": 190,
+          "openIssues": 204,
+          "defaultBranch": "main",
+          "pushedAt": "2026-09-24T07:39:06Z",
+          "topics": [],
+          "license": "Apache-2.0",
+          "archived": false,
+          "observedAt": "2026-09-24T07:43:56.377Z"
+        }
+      ],
+      "observedAt": "2026-09-24T07:43:56.377Z"
+    },
+    {
+      "sourceId": "hacker-news-mobile-llm",
+      "authority": "hacker-news",
+      "sourceType": "public-community-search",
+      "url": "https://hn.algolia.com/api/v1/search_by_date?query=mobile%20LLM&tags=story&hitsPerPage=25",
+      "status": "ok",
+      "itemCount": 25,
+      "items": [
+        {
+          "title": "Show HN: OnPanda – Steer LLMs and agents at the token level",
+          "url": "https://onpanda.diyer22.com/",
+          "discussionUrl": "https://news.ycombinator.com/item?id=49759013",
+          "author": "diyer22",
+          "points": 5,
+          "comments": 0,
+          "createdAt": "2026-09-18T19:26:50Z"
+        },
+        {
+          "title": "Show HN: Cactus Needle 3: 8-29MB automation models can match DeepSeek V4 Flash",
+          "url": "https://cactuscompute.com/needle",
+          "discussionUrl": "https://news.ycombinator.com/item?id=49748553",
+          "author": "HenryNdubuaku",
+          "points": 236,
+          "comments": 92,
+          "createdAt": "2026-09-18T00:11:44Z"
+        },
+        {
+          "title": "Ask HN: How do you test an app from a region you're not physically in?",
+          "url": "https://news.ycombinator.com/item?id=49723043",
+          "discussionUrl": "https://news.ycombinator.com/item?id=49723043",
+          "author": "Stranger5901",
+          "points": 1,
+          "comments": 1,
+          "createdAt": "2026-09-16T07:11:09Z"
+        },
+        {
+          "title": "Show HN: StemJSON – a language for LLMs to extend native mobile apps on the fly",
+          "url": "https://stemjson.com/",
+          "discussionUrl": "https://news.ycombinator.com/item?id=49695057",
+          "author": "vkrychun",
+          "points": 8,
+          "comments": 7,
+          "createdAt": "2026-09-14T11:26:45Z"
+        },
+        {
+          "title": "Kelivo: A Flutter LLM Chat Client. Support Mobile and Desktop",
+          "url": "https://github.com/Chevey339/kelivo",
+          "discussionUrl": "https://news.ycombinator.com/item?id=49639819",
+          "author": "xbmcuser",
+          "points": 2,
+          "comments": 0,
+          "createdAt": "2026-09-10T07:37:08Z"
+        },
+        {
+          "title": "The universal programming language of LLMs",
+          "url": "https://news.ycombinator.com/item?id=49617509",
+          "discussionUrl": "https://news.ycombinator.com/item?id=49617509",
+          "author": "senorqa",
+          "points": 5,
+          "comments": 9,
+          "createdAt": "2026-09-08T21:42:35Z"
+        },
+        {
+          "title": "Show HN: Texttile, a multiplayer blog engine for people who write together",
+          "url": "https://www.texttile.blog/",
+          "discussionUrl": "https://news.ycombinator.com/item?id=49477217",
+          "author": "klausbreyer",
+          "points": 13,
+          "comments": 2,
+          "createdAt": "2026-08-28T11:52:11Z"
+        },
+        {
+          "title": "Launch HN: Salem Robotics (YC S26) – Software for industrial inspection robots",
+          "url": "https://news.ycombinator.com/item?id=49466715",
+          "discussionUrl": "https://news.ycombinator.com/item?id=49466715",
+          "author": "Salem_robotics",
+          "points": 49,
+          "comments": 31,
+          "createdAt": "2026-08-27T15:46:04Z"
+        },
+        {
+          "title": "Show HN: Canaster is a canvas based visual workspace",
+          "url": "https://news.ycombinator.com/item?id=49436551",
+          "discussionUrl": "https://news.ycombinator.com/item?id=49436551",
+          "author": "shardullavekar",
+          "points": 2,
+          "comments": 1,
+          "createdAt": "2026-08-25T16:21:05Z"
+        },
+        {
+          "title": "Show HN: Youtilitics, energy usage analytics from utility data, no hardware",
+          "url": "https://youtilitics.com/",
+          "discussionUrl": "https://news.ycombinator.com/item?id=49380974",
+          "author": "ClaudyFocan",
+          "points": 2,
+          "comments": 0,
+          "createdAt": "2026-08-20T22:13:14Z"
+        },
+        {
+          "title": "Show HN: Bisecto – A minimalist game about cutting shapes into 50/50 halves",
+          "url": "https://bisecto.com/",
+          "discussionUrl": "https://news.ycombinator.com/item?id=49374879",
+          "author": "bpx51",
+          "points": 7,
+          "comments": 4,
+          "createdAt": "2026-08-20T14:15:29Z"
+        },
+        {
+          "title": "Show HN: Orca – Instant cross-platform in-app purchase orchestration",
+          "url": "https://news.ycombinator.com/item?id=49286271",
+          "discussionUrl": "https://news.ycombinator.com/item?id=49286271",
+          "author": "pcvetkovski",
+          "points": 5,
+          "comments": 0,
+          "createdAt": "2026-08-13T14:12:06Z"
+        },
+        {
+          "title": "Show HN: Word-finder/anagram solver web app for mobile browsers",
+          "url": "https://wanderinghorse.net/gaming/paperback/words.html",
+          "discussionUrl": "https://news.ycombinator.com/item?id=49272369",
+          "author": "sgbeal",
+          "points": 2,
+          "comments": 0,
+          "createdAt": "2026-08-12T13:46:48Z"
+        },
+        {
+          "title": "Show HN: Needle2: 14MB agentic LLM for phones, wearables, smart home and robots",
+          "url": "https://cactuscompute.com/needle",
+          "discussionUrl": "https://news.ycombinator.com/item?id=49246804",
+          "author": "HenryNdubuaku",
+          "points": 537,
+          "comments": 185,
+          "createdAt": "2026-08-10T17:22:07Z"
+        },
+        {
+          "title": "Ask HN: Why mobile software infrastructure never belongs to its owner?",
+          "url": "https://news.ycombinator.com/item?id=49187820",
+          "discussionUrl": "https://news.ycombinator.com/item?id=49187820",
+          "author": "rezvovmobile",
+          "points": 2,
+          "comments": 6,
+          "createdAt": "2026-08-05T19:34:47Z"
+        },
+        {
+          "title": "Show HN: I spent 2.5 years developing my 3D portfolio website, all under 5 MB",
+          "url": "https://shees.dev",
+          "discussionUrl": "https://news.ycombinator.com/item?id=49145566",
+          "author": "sheesdev",
+          "points": 3,
+          "comments": 4,
+          "createdAt": "2026-08-02T15:38:22Z"
+        },
+        {
+          "title": "Show HN: One page personal calendar with hierarchy",
+          "url": "https://news.ycombinator.com/item?id=49119723",
+          "discussionUrl": "https://news.ycombinator.com/item?id=49119723",
+          "author": "eltonlin",
+          "points": 2,
+          "comments": 0,
+          "createdAt": "2026-07-31T06:33:17Z"
+        },
+        {
+          "title": "How to get more coding productivity with LLMs",
+          "url": "https://news.ycombinator.com/item?id=49104392",
+          "discussionUrl": "https://news.ycombinator.com/item?id=49104392",
+          "author": "DaveParkCity",
+          "points": 9,
+          "comments": 2,
+          "createdAt": "2026-07-29T23:28:10Z"
+        },
+        {
+          "title": "Show HN: WhipDesk – Control your full dev machine from your phone",
+          "url": "https://github.com/BinaryBananaLLC/WhipDesk",
+          "discussionUrl": "https://news.ycombinator.com/item?id=49044039",
+          "author": "FreeGuessr",
+          "points": 3,
+          "comments": 0,
+          "createdAt": "2026-07-25T02:49:10Z"
+        },
+        {
+          "title": "Ask HN: What's the best AI coding tool today?",
+          "url": "https://news.ycombinator.com/item?id=49040025",
+          "discussionUrl": "https://news.ycombinator.com/item?id=49040025",
+          "author": "FrenchDevRemote",
+          "points": 2,
+          "comments": 2,
+          "createdAt": "2026-07-24T18:49:35Z"
+        },
+        {
+          "title": "Show HN: A live map of the news cycle, rebuilt hourly from embedded headlines",
+          "url": "https://journofinder.com/news-graph",
+          "discussionUrl": "https://news.ycombinator.com/item?id=49019336",
+          "author": "sach90",
+          "points": 4,
+          "comments": 3,
+          "createdAt": "2026-07-23T10:21:58Z"
+        },
+        {
+          "title": "Build: Mobile-First AI Creation on Roblox",
+          "url": "https://about.roblox.com/newsroom/2026/07/build-without-limits-on-roblox",
+          "discussionUrl": "https://news.ycombinator.com/item?id=48958809",
+          "author": "nyku",
+          "points": 1,
+          "comments": 0,
+          "createdAt": "2026-07-18T15:07:39Z"
+        },
+        {
+          "title": "Show HN: OSS Pi Agent for Slack and Linear",
+          "url": "https://github.com/brainwavesio/pi-digby",
+          "discussionUrl": "https://news.ycombinator.com/item?id=48943863",
+          "author": "grrowl",
+          "points": 3,
+          "comments": 0,
+          "createdAt": "2026-07-17T06:14:04Z"
+        },
+        {
+          "title": "Show HN: Rejourney – Open-source revenue leak prediction for web and mobile apps",
+          "url": "https://github.com/rejourneyco/rejourney",
+          "discussionUrl": "https://news.ycombinator.com/item?id=48904912",
+          "author": "mrr7337",
+          "points": 34,
+          "comments": 6,
+          "createdAt": "2026-07-14T11:06:09Z"
+        },
+        {
+          "title": "Show HN: ContextVault – Shared memory layer for your AI and your team",
+          "url": "https://www.contextvault.dev/",
+          "discussionUrl": "https://news.ycombinator.com/item?id=48900288",
+          "author": "Repeater22746",
+          "points": 12,
+          "comments": 11,
+          "createdAt": "2026-07-13T23:22:18Z"
+        }
+      ],
+      "observedAt": "2026-09-24T07:43:56.377Z"
+    },
+    {
+      "sourceId": "reddit-localllama-mobile",
+      "authority": "reddit",
+      "sourceType": "public-community-search",
+      "url": "https://www.reddit.com/r/LocalLLaMA/search.json?q=mobile%20LLM&restrict_sr=1&sort=new&limit=25",
+      "status": "error",
+      "itemCount": 0,
+      "items": [],
+      "observedAt": "2026-09-24T07:43:56.377Z",
+      "error": "HTTP 403 Blocked"
+    },
+    {
+      "sourceId": "bluesky-mobile-llm",
+      "authority": "bluesky",
+      "sourceType": "public-community-search",
+      "url": "https://public.api.bsky.app/xrpc/app.bsky.feed.searchPosts?q=mobile%20LLM&limit=25",
+      "status": "error",
+      "itemCount": 0,
+      "items": [],
+      "observedAt": "2026-09-24T07:43:56.377Z",
+      "error": "HTTP 403 Forbidden"
+    }
+  ],
+  "shortlist": [
+    {
+      "rank": 1,
+      "modelId": "MIT/ast-finetuned-audioset-10-10-0.4593",
+      "revision": "f826b80d28226b62986cc218e5cec390b1096902",
+      "discoveryScore": 79.85,
+      "reason": "Transparent popularity plus mobile-signal heuristic; requires Codex review against primary runtime evidence before admission."
+    },
+    {
+      "rank": 2,
+      "modelId": "zai-org/GLM-OCR",
+      "revision": "2e85a62840ccac27daa451df36c736c4636b8628",
+      "discoveryScore": 78.88,
+      "reason": "Transparent popularity plus mobile-signal heuristic; requires Codex review against primary runtime evidence before admission."
+    },
+    {
+      "rank": 3,
+      "modelId": "kha-white/manga-ocr-base",
+      "revision": "aa6573bd10b0d446cbf622e29c3e084914df9741",
+      "discoveryScore": 71.8,
+      "reason": "Transparent popularity plus mobile-signal heuristic; requires Codex review against primary runtime evidence before admission."
+    }
+  ],
+  "pipeline": {
+    "stages": [
+      {
+        "name": "discovery",
+        "status": "complete",
+        "description": "Collect normalized public leads from allowlisted sources."
+      },
+      {
+        "name": "verification",
+        "status": "manual-required",
+        "description": "Confirm exact immutable revisions and primary Apple/ExecuTorch evidence."
+      },
+      {
+        "name": "ranking",
+        "status": "heuristic-complete",
+        "description": "Rank leads with transparent popularity and mobile-signal inputs."
+      },
+      {
+        "name": "implementation",
+        "status": "manual-required",
+        "description": "Use the model registry and adapter strategies to wire platform POCs."
+      },
+      {
+        "name": "validation",
+        "status": "complete",
+        "description": "Validate the snapshot contract and repository gates."
+      },
+      {
+        "name": "delivery",
+        "status": "workflow-controlled",
+        "description": "Commit and push only validated changes; preserve the no-change path."
+      }
+    ]
+  },
+  "limitations": [
+    "Popularity and community signals are discovery aids, not proof of iOS or Android execution.",
+    "Exact immutable revisions and primary Apple Core AI/ExecuTorch evidence must be reviewed before changing the verified inventory.",
+    "Unavailable sources remain visible as errors; a run is invalid only when every source fails."
+  ],
+  "semanticFingerprint": "043974ac01d40524add008f324ccbdfafe54ff7615962e71d3e5c36d5547a0ca"
+}
