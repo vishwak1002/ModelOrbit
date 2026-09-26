@@ -118,9 +118,9 @@ Reproduce with `npm run research:validate`, `npm run research:preflight`, `npm r
 
 ## Remote recurring research
 
-The remote scheduler is `.github/workflows/mobile-llm-research.yml`. It runs daily at 08:00 Asia/Kolkata (02:30 UTC) via GitHub Actions and can also be started with `workflow_dispatch`. It requires no OpenAI API key or third-party secret. The workflow collects normalized public signals from Hugging Face, official runtime repositories, Hacker News, Reddit, and Bluesky; validates the dated JSON/Markdown snapshot; runs the existing repository gates; and only then commits and pushes to `main`. Semantic fingerprints make unchanged daily refreshes a no-change completion rather than a new commit.
+As of 2026-09-26, the daily Codex task at 08:00 Asia/Kolkata owns discovery, implementation, validation, and pushing to `main`. `.github/workflows/mobile-llm-research.yml` runs read-only validation after a push or manual dispatch. Its former daily collector committed only research snapshots, leaving selected POC code unchanged. The daily task now requires executable POC source and smoke tests with any newly selected model before publication; an evidence-only refresh is not a completed run.
 
-The three-model shortlist is intentionally heuristic and is not a readiness decision. A later manual Codex session must review exact immutable revisions and primary Apple Core AI/ExecuTorch evidence before updating the verified inventory or POCs. If all public sources fail, the run exits without replacing the last valid snapshot. See `data/research/remote/README.md` and `spec/spec-process-cicd-mobile-llm-research.md`.
+The three-model discovery shortlist is intentionally heuristic and is not a readiness decision. The daily Codex task reviews exact immutable revisions and primary Apple Core AI/Core ML and Android runtime evidence before updating the verified inventory or POCs. If all public sources fail, the collector exits without replacing the last valid snapshot. See `data/research/remote/README.md`.
 
 ## Phase 5 — maintainable multimodal research pipeline
 

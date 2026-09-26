@@ -2,12 +2,14 @@
 title: CI/CD Workflow Specification - Daily Free Remote Mobile Model Research Collector
 version: 1.0
 date_created: 2026-09-17
-last_updated: 2026-09-18
+last_updated: 2026-09-26
 owner: ModelOrbit maintainers
 tags: [process, cicd, github-actions, automation, research, mobile-llm]
 ---
 
 ## Workflow Overview
+
+**Current operation (2026-09-26):** The collector schedule and automatic snapshot commits described below were retired. A daily Codex task performs research and POC implementation; `.github/workflows/mobile-llm-research.yml` now runs read-only validation on pushes to `main` and manual dispatch. The remaining collector design is historical context.
 
 **Purpose**: Periodically collect reproducible public evidence leads for mobile-specific open-source model research without an OpenAI API key.
 **Trigger Events**: Daily scheduled run at 02:30 UTC (08:00 Asia/Kolkata) and manual dispatch on the default branch.

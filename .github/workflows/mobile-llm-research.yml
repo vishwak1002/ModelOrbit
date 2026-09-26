@@ -1,9 +1,8 @@
-name: ModelOrbit free remote mobile model research
+name: ModelOrbit research and POC validation
 
 on:
-  schedule:
-    # Daily at 08:00 Asia/Kolkata (02:30 UTC). GitHub may delay scheduled runs.
-    - cron: "30 2 * * *"
+  push:
+    branches: [main]
   workflow_dispatch:
 
 concurrency:
@@ -11,7 +10,7 @@ concurrency:
   cancel-in-progress: false
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   research:
@@ -28,10 +27,7 @@ jobs:
         with:
           node-version: 22
 
-      - name: Collect public research evidence
-        run: npm run research:remote:collect
-
-      - name: Validate collected evidence and repository
+      - name: Validate research evidence and POC contracts
         run: |
           npm run research:remote:validate
           npm test
@@ -43,19 +39,3 @@ jobs:
           npm run poc:fixture -- --mock --platform both
           npm run normalize
           git diff --check
-
-      - name: Commit and push validated refresh
-        if: github.ref == 'refs/heads/main'
-        shell: bash
-        run: |
-          if [[ -z "$(git status --porcelain)" ]]; then
-            echo "No research changes to commit."
-            exit 0
-          fi
-
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A .github data/research/remote docs/handoff.md docs/research-notes README.md package.json spec test tools/ingest tools/research packages/evidence-schema pocs/cross-platform-adapter pocs/ios-coreai pocs/android-executorch
-          git diff --cached --check
-          git commit -m "chore: refresh mobile LLM research"
-          git push origin HEAD:main

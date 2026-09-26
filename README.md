@@ -23,11 +23,11 @@ Read the [MVP plan](docs/mvp-plan.md) and [handoff](docs/handoff.md) before chan
 - `tools/preflight`: cross-platform export eligibility matrix.
 - `tools/research`: mobile-LLM inventory validation, research preflight, and POC status reduction.
 - `tools/benchmark`: device manifests and evidence capture.
-- `tools/ingest`: scheduled Hugging Face snapshot refresh.
+- `tools/ingest`: public-source snapshot collector for the daily Codex research task.
 - `data/snapshots`: immutable source inputs.
 - `data/research`: dated discovery inventory and reproducibility notes.
 - `evidence/runs`: validated benchmark artifacts, never model weights.
-- `data/research/remote`: credential-free, dated public-source research snapshots from the remote GitHub Actions collector.
+- `data/research/remote`: credential-free, dated public-source research snapshots.
 
 ## Trust boundary
 
