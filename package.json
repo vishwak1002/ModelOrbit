@@ -18,6 +18,8 @@
     "research:remote:collect": "node tools/ingest/collect-remote-research.mjs",
     "research:remote:validate": "node tools/ingest/validate-remote-research.mjs",
     "research:registry:validate": "node tools/research/model-registry.mjs",
+    "devices:validate": "node tools/research/validate-device-pocs.mjs",
+    "devices:smoke": "sh devices/ios/Tests/run-fixture-smoke.sh && node devices/android/fixture-smoke.mjs",
     "poc:fixture": "node pocs/cross-platform-adapter/runner.mjs"
   }
 }

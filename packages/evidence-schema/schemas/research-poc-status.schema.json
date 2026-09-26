@@ -19,9 +19,9 @@
     } } }
   },
   "$defs": { "lane": { "type": "object", "additionalProperties": false, "required": ["runtime", "status", "harnessPath", "reason"], "properties": {
-    "runtime": { "enum": ["core-ai", "executorch"] },
+    "runtime": { "enum": ["core-ai", "core-ml", "executorch"] },
     "status": { "enum": ["built", "blocked", "run", "pass", "fail", "unknown"] },
-    "harnessPath": { "type": "string", "pattern": "^pocs/.+" },
+    "harnessPath": { "type": "string", "pattern": "^(pocs|devices)/.+" },
     "reason": { "type": "string", "minLength": 1 },
     "artifactPath": { "type": ["string", "null"], "pattern": "^(evidence|data)/.+" }
   } } }

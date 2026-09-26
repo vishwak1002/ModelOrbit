@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "1",
+  "platform": "ios",
+  "project": "devices/ios/ModelOrbitDevices.xcodeproj",
+  "models": [
+    {
+      "modelId": "nvidia/parakeet-tdt-0.6b-v3",
+      "revision": "541d1f99c6b0c3cd0b11a95167540bb8edefd82b",
+      "modality": "speech-recognition",
+      "runtime": "core-ai",
+      "adapterSource": "devices/ios/Sources/NativeAdapters.swift",
+      "fixtureCommand": "sh devices/ios/Tests/run-fixture-smoke.sh",
+      "nativeStatus": "adapter-implemented-device-unverified"
+    },
+    {
+      "modelId": "Qwen/Qwen3-0.6B",
+      "revision": "a9c98e602b9d36d2a2f7ba1eb0f5f31e4e8e5143",
+      "modality": "text-generation",
+      "runtime": "core-ai",
+      "adapterSource": "devices/ios/Sources/NativeAdapters.swift",
+      "fixtureCommand": "sh devices/ios/Tests/run-fixture-smoke.sh",
+      "nativeStatus": "adapter-implemented-device-unverified"
+    },
+    {
+      "modelId": "Qwen/Qwen3-1.7B",
+      "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+      "modality": "text-generation",
+      "runtime": "core-ai",
+      "adapterSource": "devices/ios/Sources/NativeAdapters.swift",
+      "fixtureCommand": "sh devices/ios/Tests/run-fixture-smoke.sh",
+      "nativeStatus": "adapter-implemented-device-unverified"
+    },
+    {
+      "modelId": "Qwen/Qwen3-4B",
+      "revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "modality": "text-generation",
+      "runtime": "core-ai",
+      "adapterSource": "devices/ios/Sources/NativeAdapters.swift",
+      "fixtureCommand": "sh devices/ios/Tests/run-fixture-smoke.sh",
+      "nativeStatus": "adapter-implemented-device-unverified"
+    },
+    {
+      "modelId": "openai/whisper-large-v3-turbo",
+      "revision": "41f01f3fe87f28c78e2fbf8b568835947dd65ed9",
+      "modality": "speech-recognition",
+      "runtime": "core-ml",
+      "adapterSource": "devices/ios/Sources/NativeAdapters.swift",
+      "fixtureCommand": "sh devices/ios/Tests/run-fixture-smoke.sh",
+      "nativeStatus": "adapter-implemented-pinned-conversion-unverified"
+    },
+    {
+      "modelId": "Qwen/Qwen3-VL-2B-Instruct",
+      "revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+      "modality": "image-to-text",
+      "runtime": "core-ai",
+      "adapterSource": "devices/ios/Sources/NativeAdapters.swift",
+      "fixtureCommand": "sh devices/ios/Tests/run-fixture-smoke.sh",
+      "nativeStatus": "experimental-adapter-ios-export-unverified"
+    }
+  ]
+}

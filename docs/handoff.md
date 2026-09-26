@@ -1,5 +1,7 @@
 # ModelOrbit Handoff
 
+Current device POC feasibility was revised on 2026-09-26; the earlier phase summaries below are historical. See [the dated correction](research-notes/2026-09-26-native-feasibility-correction.md) and the current inventory before treating a model as cross-platform.
+
 Date: 2026-09-18
 Status: CEO, engineering, and design reviews complete; schema/preflight/device/research phase implemented; physical-device POCs blocked by missing prerequisites
 
@@ -127,3 +129,9 @@ The three-model discovery shortlist is intentionally heuristic and is not a read
 The research workflow now has explicit discovery, verification, ranking, implementation, validation, and delivery stages. The modality review considers text, vision-language/image-to-text, OCR/computer vision, speech/audio, TTS, embeddings, image generation, and detection/segmentation. It selects exactly three overall from the six-record verified intersection, avoiding duplicate prior POC selections while admitting genuinely new, source-supported modalities: Parakeet TDT v3, Qwen3-VL 2B, and Whisper large-v3-turbo. See `docs/research-notes/2026-09-18-mobile-modality-decision.md`.
 
 `tools/research/model-registry.mjs` resolves the verified inventory into the adapter source of truth. The no-weight fixture POC is `pocs/cross-platform-adapter/runner.mjs`; it provides platform strategies for Core AI and ExecuTorch and reports `blocked` until native device evidence exists. Native adapters remain in `pocs/ios-coreai` and `pocs/android-executorch`.
+
+## 2026-09-26 device POC handoff
+
+The active projects are now `devices/ios/ModelOrbitDevices.xcodeproj` and `devices/android`. Both contain no-weight fixture modes, exact model/revision catalogs, and modality-specific native adapters. The source-verified cross-platform set is Parakeet TDT v3 plus Qwen3 0.6B, 1.7B, and 4B. The ranked top three are Parakeet, Qwen3 0.6B, and Qwen3 1.7B; the 4B text POC is also included because the research documents an on-device path. Whisper large-v3-turbo remains an experimental speech POC on both platforms; Qwen3-VL remains an experimental iOS POC and a blocked Android research lane. See the [dated feasibility correction](research-notes/2026-09-26-native-feasibility-correction.md).
+
+`npm run devices:validate` checks the exact verified inventory against both project catalogs and native adapter routes. `npm run devices:smoke` runs six iOS and five Android no-weight fixture records. These checks do not execute models. Native builds and device inference are unverified because this host has Xcode 26.4.1 rather than the required iOS 27 toolchain, and lacks the Android SDK, Gradle, ADB, exported model artifacts, and devices. Parakeet and Whisper Android inference additionally need a matching custom JNI AAR; Whisper iOS needs a pinned Core ML conversion for exact-revision provenance.

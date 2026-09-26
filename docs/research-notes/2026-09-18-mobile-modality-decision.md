@@ -1,5 +1,7 @@
 # Mobile modality decision — 2026-09-18
 
+Historical decision: the cross-platform claims for Qwen3-VL below were corrected on 2026-09-26. See [native feasibility correction](2026-09-26-native-feasibility-correction.md) and the current inventory before using this selection.
+
 ## Decision
 
 The verified intersection now contains six exact repository/revision records. The POC lane contains exactly three genuinely new models, without a quota for category diversity and without repeating the prior Qwen3 text-only POC selection:

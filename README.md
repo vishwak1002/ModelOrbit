@@ -8,7 +8,7 @@ The first interface is a visual model galaxy backed by an evidence ledger. Phase
 
 ## Current status
 
-Design and engineering reviews are complete. The executable schema/preflight/device-detection phase and benchmark evidence gate are checked in. The dated mobile-LLM discovery contains 18 scoped records: 6 verified exact cross-platform candidates, 7 claimed-but-unverified records, 4 exclusions, and 1 deduplicated artifact variant. The ranked POC selection is three new multimodal/audio candidates—Parakeet TDT v3, Qwen3-VL 2B, and Whisper large-v3-turbo—while the earlier Qwen3 text revisions remain in the verified intersection. All native runs remain blocked on this host because Xcode/iOS 27 and physical devices are unavailable, and Android SDK/ADB/device prerequisites are absent.
+Design and engineering reviews are complete. The executable schema/preflight/device-detection phase and benchmark evidence gate are checked in. The dated discovery contains 18 scoped records: 4 source-verified cross-platform candidates, 9 claimed-but-unverified records, 4 exclusions, and 1 deduplicated artifact variant. The ranked device POC selection is Parakeet TDT v3 and Qwen3 0.6B/1.7B; Qwen3 4B also has device POC routes. Whisper large-v3-turbo and Qwen3-VL 2B have experimental device routes, with unresolved exact-revision conversion or runtime support described in the [2026-09-26 correction](docs/research-notes/2026-09-26-native-feasibility-correction.md). No native device inference has been measured on this host.
 
 Read the [MVP plan](docs/mvp-plan.md) and [handoff](docs/handoff.md) before changing scope.
 
@@ -17,6 +17,8 @@ Read the [MVP plan](docs/mvp-plan.md) and [handoff](docs/handoff.md) before chan
 - `apps/galaxy-web`: read-only galaxy, evidence inspector, filters, and comparisons.
 - `packages/evidence-schema`: versioned JSON Schemas and validators.
 - `packages/model-data`: snapshots, normalization, and status reduction.
+- `devices/ios`: Xcode device POC project with Core AI, Core ML, and no-weight fixture adapters.
+- `devices/android`: Android Studio device POC project with ExecuTorch and no-weight fixture adapters.
 - `pocs/ios-coreai`: iOS Core AI prototype.
 - `pocs/android-executorch`: Android ExecuTorch prototype.
 - `pocs/cross-platform-adapter`: runnable no-weight adapter-strategy fixture POC for both native lanes.
@@ -50,6 +52,8 @@ npm run research:preflight
 npm run research:poc-status
 npm run research:remote:validate
 npm run research:registry:validate
+npm run devices:validate
+npm run devices:smoke
 npm run poc:fixture -- --mock --platform both
 npm test
 npm run validate

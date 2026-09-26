@@ -41,7 +41,7 @@ const payload = {
   generatedAt: inventory.searchedAt,
   toolchains: { ios: iosManifest.toolchain, android: androidManifest.toolchain },
   results,
-  intersection: { status: "verified-empty", candidateIds: [], reason: "No source-verified candidate passed executable preflight on this host; all six rows are blocked by known toolchain/device prerequisites." }
+  intersection: { status: "verified-empty", candidateIds: [], reason: `No source-verified candidate passed executable preflight on this host; all ${results.length} rows are blocked by known toolchain/device prerequisites.` }
 };
 assertValid(payload, "preflight-matrix");
 writeFileSync(resolve(root, "data/preflight/research-2026-09-17.json"), `${JSON.stringify(payload, null, 2)}\n`);

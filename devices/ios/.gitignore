@@ -1,0 +1,8 @@
+Resources/Models/*/
+*.aimodel
+*.aimodelc/
+*.mlmodel
+*.mlmodelc/
+*.mlpackage/
+*.pte
+*.bin

@@ -1,0 +1,12 @@
+.gradle/
+build/
+app/build/
+app/libs/
+app/src/main/assets/models/**/*.pte
+app/src/main/assets/models/**/*.ptd
+app/src/main/assets/models/**/*.model
+app/src/main/assets/models/**/tokenizer.json
+app/src/main/assets/models/**/tokenizer_config.json
+app/src/main/assets/models/**/special_tokens_map.json
+*.aar
+local.properties

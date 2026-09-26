@@ -113,7 +113,7 @@
       "schemaVersion": "0.2.0",
       "runId": "preflight-2026-09-17-research-ios-f443c628",
       "modelId": "Qwen/Qwen3-4B",
-      "modelRevision": "1cfa9a7",
+      "modelRevision": "1cfa9a7208912126459214e8b04321603b3df60c",
       "platform": "ios",
       "runtime": "core-ai",
       "status": "blocked",
@@ -136,7 +136,7 @@
       "schemaVersion": "0.2.0",
       "runId": "preflight-2026-09-17-research-android-f443c628",
       "modelId": "Qwen/Qwen3-4B",
-      "modelRevision": "1cfa9a7",
+      "modelRevision": "1cfa9a7208912126459214e8b04321603b3df60c",
       "platform": "android",
       "runtime": "executorch",
       "status": "blocked",
@@ -152,52 +152,6 @@
       "logChecksum": null,
       "capabilities": [
         "text-generation",
-        "source-evidence-verified"
-      ]
-    },
-    {
-      "schemaVersion": "0.2.0",
-      "runId": "preflight-2026-09-17-research-ios-caed228c",
-      "modelId": "Qwen/Qwen3-VL-2B-Instruct",
-      "modelRevision": "89644892e4d85e24eaac8bacfd4f463576704203",
-      "platform": "ios",
-      "runtime": "core-ai",
-      "status": "blocked",
-      "toolchain": {
-        "name": "Xcode/devicectl",
-        "available": false,
-        "version": "Xcode 26.4.1\nBuild version 17E202"
-      },
-      "checkedAt": "2026-09-16T20:20:04.000Z",
-      "reason": "Research preflight blocked: Apple Core AI requires Xcode/iOS 27, but Xcode 26.4.1 Build version 17E202 was observed; No physical iPhone was listed by devicectl; no device evidence was fabricated.",
-      "command": "xcrun devicectl list devices",
-      "logPath": null,
-      "logChecksum": null,
-      "capabilities": [
-        "vision-language",
-        "source-evidence-verified"
-      ]
-    },
-    {
-      "schemaVersion": "0.2.0",
-      "runId": "preflight-2026-09-17-research-android-caed228c",
-      "modelId": "Qwen/Qwen3-VL-2B-Instruct",
-      "modelRevision": "89644892e4d85e24eaac8bacfd4f463576704203",
-      "platform": "android",
-      "runtime": "executorch",
-      "status": "blocked",
-      "toolchain": {
-        "name": "Android SDK/adb",
-        "available": false,
-        "version": "unavailable"
-      },
-      "checkedAt": "2026-09-16T20:20:04.000Z",
-      "reason": "Research preflight blocked: Android SDK/adb and a physical device are unavailable; ADB is unavailable or no Android device is connected; no device evidence was fabricated.",
-      "command": "adb devices -l",
-      "logPath": null,
-      "logChecksum": null,
-      "capabilities": [
-        "vision-language",
         "source-evidence-verified"
       ]
     },
@@ -246,57 +200,11 @@
         "speech-recognition",
         "source-evidence-verified"
       ]
-    },
-    {
-      "schemaVersion": "0.2.0",
-      "runId": "preflight-2026-09-17-research-ios-c4b9d4bb",
-      "modelId": "openai/whisper-large-v3-turbo",
-      "modelRevision": "41f01f3fe87f28c78e2fbf8b568835947dd65ed9",
-      "platform": "ios",
-      "runtime": "core-ai",
-      "status": "blocked",
-      "toolchain": {
-        "name": "Xcode/devicectl",
-        "available": false,
-        "version": "Xcode 26.4.1\nBuild version 17E202"
-      },
-      "checkedAt": "2026-09-16T20:20:04.000Z",
-      "reason": "Research preflight blocked: Apple Core AI requires Xcode/iOS 27, but Xcode 26.4.1 Build version 17E202 was observed; No physical iPhone was listed by devicectl; no device evidence was fabricated.",
-      "command": "xcrun devicectl list devices",
-      "logPath": null,
-      "logChecksum": null,
-      "capabilities": [
-        "speech-recognition",
-        "source-evidence-verified"
-      ]
-    },
-    {
-      "schemaVersion": "0.2.0",
-      "runId": "preflight-2026-09-17-research-android-c4b9d4bb",
-      "modelId": "openai/whisper-large-v3-turbo",
-      "modelRevision": "41f01f3fe87f28c78e2fbf8b568835947dd65ed9",
-      "platform": "android",
-      "runtime": "executorch",
-      "status": "blocked",
-      "toolchain": {
-        "name": "Android SDK/adb",
-        "available": false,
-        "version": "unavailable"
-      },
-      "checkedAt": "2026-09-16T20:20:04.000Z",
-      "reason": "Research preflight blocked: Android SDK/adb and a physical device are unavailable; ADB is unavailable or no Android device is connected; no device evidence was fabricated.",
-      "command": "adb devices -l",
-      "logPath": null,
-      "logChecksum": null,
-      "capabilities": [
-        "speech-recognition",
-        "source-evidence-verified"
-      ]
     }
   ],
   "intersection": {
     "status": "verified-empty",
     "candidateIds": [],
-    "reason": "No source-verified candidate passed executable preflight on this host; all six rows are blocked by known toolchain/device prerequisites."
+    "reason": "No source-verified candidate passed executable preflight on this host; all 8 rows are blocked by known toolchain/device prerequisites."
   }
 }

@@ -34,8 +34,23 @@ jobs:
           npm run validate
           npm run research:validate
           npm run research:registry:validate
+          npm run devices:validate
+          node devices/android/fixture-smoke.mjs
           npm run research:preflight
           npm run research:poc-status
           npm run poc:fixture -- --mock --platform both
           npm run normalize
           git diff --check
+
+  ios-fixture:
+    runs-on: macos-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out ModelOrbit
+        uses: actions/checkout@v4
+
+      - name: Validate iOS project and no-weight fixture
+        run: |
+          plutil -lint devices/ios/ModelOrbitDevices.xcodeproj/project.pbxproj
+          swiftc -frontend -parse devices/ios/Sources/*.swift
+          sh devices/ios/Tests/run-fixture-smoke.sh

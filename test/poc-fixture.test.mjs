@@ -7,6 +7,7 @@ test("cross-platform fixture emits blocked results for both native strategy boun
   const result = await runFixture({ modelId: "nvidia/parakeet-tdt-0.6b-v3", prompt: "audio fixture: 16 kHz mono sample", platform: "both" });
   assertValid(result, "poc-fixture-run");
   assert.equal(result.modality, "speech-recognition");
+  assert.equal(result.fixtureId, "speech-recognition-pcm16k-v1");
   assert.deepEqual(result.results.map((entry) => entry.platform), ["ios", "android"]);
   assert.ok(result.results.every((entry) => entry.status === "blocked"));
 });

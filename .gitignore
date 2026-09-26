@@ -19,6 +19,10 @@ dist/
 *.pt
 *.pth
 *.onnx
+*.pte
+*.aimodel
+*.mlmodel
+*.mlpackage/
 *.mlmodelc/
 *.tflite
 *.zip
@@ -27,6 +31,8 @@ dist/
 *.xcarchive/
 evidence/runs/*/private/
 evidence/runs/*/network-payloads/
+devices/ios/Resources/Models/*/
+devices/android/app/src/main/assets/models/*/
 
 # Keep directory placeholders
 !.gitkeep

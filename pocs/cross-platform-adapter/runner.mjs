@@ -37,9 +37,11 @@ export class FixtureAdapterStrategy extends ModelAdapterStrategy {
 export async function runFixture({ modelId, prompt, platform = "both", inventoryPath } = {}) {
   const registry = loadModelRegistry(inventoryPath);
   const model = resolveRegistryModel(modelId ?? registry.records[0]?.modelId, registry);
+  const fixtureIds = { "text-generation": "text-generation-basic-v1", "speech-recognition": "speech-recognition-pcm16k-v1", "vision-language": "vision-language-image-question-v1" };
+  const fixtureInput = prompt ?? (model.modality === "speech-recognition" ? "16 kHz mono PCM fixture; no waveform loaded" : "Explain why immutable model revisions matter for mobile POCs.");
   const selectedPlatforms = platform === "both" ? Object.keys(platforms) : [platform];
   if (selectedPlatforms.some((candidate) => !platforms[candidate])) throw new Error(`Unsupported platform: ${platform}`);
-  const results = await Promise.all(selectedPlatforms.map((candidate) => new FixtureAdapterStrategy(candidate, platforms[candidate].runtime).generate({ model, prompt })));
+  const results = await Promise.all(selectedPlatforms.map((candidate) => new FixtureAdapterStrategy(candidate, platforms[candidate].runtime).generate({ model, prompt: fixtureInput })));
   return {
     schemaVersion: "0.2.0",
     runId: `poc-fixture-${model.modelId.replace(/[^a-z0-9]+/gi, "-").toLowerCase()}-${model.revision.slice(0, 8)}`,
@@ -48,8 +50,8 @@ export async function runFixture({ modelId, prompt, platform = "both", inventory
     modelRevision: model.revision,
     modality: model.modality,
     sourceInventoryId: registry.sourceInventoryId,
-    fixtureId: "text-generation-basic-v1",
-    prompt,
+    fixtureId: fixtureIds[model.modality] ?? `${model.modality}-basic-v1`,
+    prompt: fixtureInput,
     status: "blocked",
     results,
     limitations: ["Fixture output is deterministic adapter plumbing, not a model response.", "Native POCs must attach device manifests, exported artifacts, and validated benchmark evidence before status can become pass."],
@@ -57,7 +59,7 @@ export async function runFixture({ modelId, prompt, platform = "both", inventory
 }
 
 function parseArgs(args) {
-  const options = { prompt: "Explain why immutable model revisions matter for mobile POCs.", platform: "both" };
+  const options = { modelId: "Qwen/Qwen3-0.6B", platform: "both" };
   for (let index = 0; index < args.length; index += 1) {
     if (args[index] === "--model-id") options.modelId = args[++index];
     else if (args[index] === "--platform") options.platform = args[++index];

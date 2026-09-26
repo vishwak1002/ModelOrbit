@@ -7,54 +7,54 @@
       "pocId": "poc-nvidia-parakeet-tdt-0-6b-v3",
       "modelId": "nvidia/parakeet-tdt-0.6b-v3",
       "modelRevision": "541d1f99c6b0c3cd0b11a95167540bb8edefd82b",
-      "fixtureId": "text-generation/basic-v1",
+      "fixtureId": "speech-recognition/pcm16k-v1",
       "ios": {
         "runtime": "core-ai",
         "status": "blocked",
-        "harnessPath": "pocs/cross-platform-adapter/runner.mjs",
-        "reason": "Core AI POC blocked: requires Xcode/iOS 27 and an available physical iPhone; observed Xcode 26.4.1\nBuild version 17E202."
+        "harnessPath": "devices/ios/Sources/NativeAdapters.swift",
+        "reason": "adapter-implemented-device-unverified; observed Xcode 26.4.1\nBuild version 17E202. No native inference is claimed."
       },
       "android": {
         "runtime": "executorch",
         "status": "blocked",
-        "harnessPath": "pocs/cross-platform-adapter/runner.mjs",
-        "reason": "ExecuTorch POC blocked: requires Android SDK/adb and an available physical Android device; observed ADB is unavailable or no Android device is connected; no device evidence was fabricated."
+        "harnessPath": "devices/android/app/src/main/java/dev/modelorbit/executorch/NativeAdapters.kt",
+        "reason": "blocked-until-custom-aar-assets-and-device; observed ADB is unavailable or no Android device is connected; no device evidence was fabricated. No native inference is claimed."
       }
     },
     {
-      "pocId": "poc-qwen-qwen3-vl-2b-instruct",
-      "modelId": "Qwen/Qwen3-VL-2B-Instruct",
-      "modelRevision": "89644892e4d85e24eaac8bacfd4f463576704203",
+      "pocId": "poc-qwen-qwen3-0-6b",
+      "modelId": "Qwen/Qwen3-0.6B",
+      "modelRevision": "a9c98e602b9d36d2a2f7ba1eb0f5f31e4e8e5143",
       "fixtureId": "text-generation/basic-v1",
       "ios": {
         "runtime": "core-ai",
         "status": "blocked",
-        "harnessPath": "pocs/cross-platform-adapter/runner.mjs",
-        "reason": "Core AI POC blocked: requires Xcode/iOS 27 and an available physical iPhone; observed Xcode 26.4.1\nBuild version 17E202."
+        "harnessPath": "devices/ios/Sources/NativeAdapters.swift",
+        "reason": "adapter-implemented-device-unverified; observed Xcode 26.4.1\nBuild version 17E202. No native inference is claimed."
       },
       "android": {
         "runtime": "executorch",
         "status": "blocked",
-        "harnessPath": "pocs/cross-platform-adapter/runner.mjs",
-        "reason": "ExecuTorch POC blocked: requires Android SDK/adb and an available physical Android device; observed ADB is unavailable or no Android device is connected; no device evidence was fabricated."
+        "harnessPath": "devices/android/app/src/main/java/dev/modelorbit/executorch/NativeAdapters.kt",
+        "reason": "blocked-until-exported-assets-and-device; observed ADB is unavailable or no Android device is connected; no device evidence was fabricated. No native inference is claimed."
       }
     },
     {
-      "pocId": "poc-openai-whisper-large-v3-turbo",
-      "modelId": "openai/whisper-large-v3-turbo",
-      "modelRevision": "41f01f3fe87f28c78e2fbf8b568835947dd65ed9",
+      "pocId": "poc-qwen-qwen3-1-7b",
+      "modelId": "Qwen/Qwen3-1.7B",
+      "modelRevision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
       "fixtureId": "text-generation/basic-v1",
       "ios": {
         "runtime": "core-ai",
         "status": "blocked",
-        "harnessPath": "pocs/cross-platform-adapter/runner.mjs",
-        "reason": "Core AI POC blocked: requires Xcode/iOS 27 and an available physical iPhone; observed Xcode 26.4.1\nBuild version 17E202."
+        "harnessPath": "devices/ios/Sources/NativeAdapters.swift",
+        "reason": "adapter-implemented-device-unverified; observed Xcode 26.4.1\nBuild version 17E202. No native inference is claimed."
       },
       "android": {
         "runtime": "executorch",
         "status": "blocked",
-        "harnessPath": "pocs/cross-platform-adapter/runner.mjs",
-        "reason": "ExecuTorch POC blocked: requires Android SDK/adb and an available physical Android device; observed ADB is unavailable or no Android device is connected; no device evidence was fabricated."
+        "harnessPath": "devices/android/app/src/main/java/dev/modelorbit/executorch/NativeAdapters.kt",
+        "reason": "blocked-until-exported-assets-and-device; observed ADB is unavailable or no Android device is connected; no device evidence was fabricated. No native inference is claimed."
       }
     }
   ]
