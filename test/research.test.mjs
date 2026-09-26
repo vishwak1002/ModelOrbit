@@ -39,6 +39,10 @@ test("research preflight is explicit and fail-closed", () => {
   assert.doesNotThrow(() => assertValid(preflight, "preflight-matrix"));
   assert.equal(preflight.results.length, inventory.verifiedIntersection.length * 2);
   assert.ok(preflight.results.every((result) => result.status === "blocked"));
+  for (const result of preflight.results) {
+    const record = inventory.records.find((candidate) => candidate.modelId === result.modelId);
+    assert.equal(result.runtime, record.runtimeSupport.find((lane) => lane.platform === result.platform && lane.status === "verified")?.runtime);
+  }
   assert.equal(preflight.intersection.status, "verified-empty");
 });
 

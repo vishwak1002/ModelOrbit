@@ -58,15 +58,20 @@ internal class DeviceAdapter : ModelAdapter {
     }
 
     private fun runText(context: Context, model: ModelSpec, prompt: String): PocResult {
-        if (prompt.isBlank()) return PocResult("blocked", "", "Enter a prompt for the Qwen3 text POC.")
+        if (prompt.isBlank()) return PocResult("blocked", "", "Enter a prompt for the text POC.")
         val modelPath = copyAsset(context, model, "model.pte")
-        val tokenizerPath = copyAsset(context, model, "tokenizer.json")
+        val tokenizerFile = if (model.id.startsWith("meta-llama/")) "tokenizer.model" else "tokenizer.json"
+        val tokenizerPath = copyAsset(context, model, tokenizerFile)
         val module = LlmModule(modelPath.absolutePath, tokenizerPath.absolutePath, 0.0f)
         check(module.load() == 0) { "ExecuTorch could not load ${model.id}" }
         val output = StringBuilder()
         var failure: String? = null
         val config = LlmGenerationConfig.create().seqLen(128).temperature(0.0f).echo(false).build()
-        val formatted = "<|im_start|>user\n$prompt<|im_end|>\n<|im_start|>assistant\n"
+        val formatted = when {
+            model.id.startsWith("meta-llama/") ->
+                "<|begin_of_text|><|start_header_id|>user<|end_header_id|>\n\n$prompt<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n"
+            else -> "<|im_start|>user\n$prompt<|im_end|>\n<|im_start|>assistant\n"
+        }
         module.generate(formatted, config, object : LlmCallback {
             override fun onResult(token: String) { output.append(token) }
             override fun onStats(statsJson: String) = Unit
@@ -121,12 +126,19 @@ internal class DeviceAdapter : ModelAdapter {
     } catch (_: Exception) { false }
 
     private fun copyAsset(context: Context, model: ModelSpec, name: String): File {
-        val target = File(context.filesDir, "models/${model.assetDirectory}/$name")
-        if (target.length() > 0) return target
+        val directory = File(context.filesDir, "models/${model.assetDirectory}/${model.revision}")
+        val target = File(directory, name)
+        val stamp = File(directory, "$name.package-update")
+        val packageUpdatedAt = context.packageManager.getPackageInfo(context.packageName, 0).lastUpdateTime.toString()
+        if (target.length() > 0 && stamp.takeIf { it.isFile }?.readText() == packageUpdatedAt) return target
         target.parentFile?.mkdirs()
+        val pending = File(directory, "$name.pending")
         context.assets.open("models/${model.assetDirectory}/$name").use { input ->
-            FileOutputStream(target).use { output -> input.copyTo(output) }
+            FileOutputStream(pending).use { output -> input.copyTo(output) }
         }
+        check(pending.length() > 0) { "Packaged asset $name is empty" }
+        check(pending.renameTo(target)) { "Could not replace cached asset $name" }
+        stamp.writeText(packageUpdatedAt)
         return target
     }
 }

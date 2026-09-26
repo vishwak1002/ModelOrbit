@@ -15,6 +15,11 @@
 		A00000000000000000000006 /* NativeAdapters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00000000000000000000006 /* NativeAdapters.swift */; };
 		A00000000000000000000007 /* CoreAISpeech in Frameworks */ = {isa = PBXBuildFile; productRef = D00000000000000000000003 /* CoreAISpeech */; };
 		A00000000000000000000008 /* WhisperKit in Frameworks */ = {isa = PBXBuildFile; productRef = D00000000000000000000004 /* WhisperKit */; };
+		A00000000000000000000009 /* executorch_llm in Frameworks */ = {isa = PBXBuildFile; productRef = D00000000000000000000007 /* executorch_llm */; };
+		A0000000000000000000000A /* backend_xnnpack in Frameworks */ = {isa = PBXBuildFile; productRef = D00000000000000000000008 /* backend_xnnpack */; };
+		A0000000000000000000000B /* kernels_llm in Frameworks */ = {isa = PBXBuildFile; productRef = D00000000000000000000009 /* kernels_llm */; };
+		A0000000000000000000000C /* kernels_optimized in Frameworks */ = {isa = PBXBuildFile; productRef = D0000000000000000000000A /* kernels_optimized */; };
+		A0000000000000000000000D /* kernels_quantized in Frameworks */ = {isa = PBXBuildFile; productRef = D0000000000000000000000B /* kernels_quantized */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +39,11 @@
 				A00000000000000000000004 /* CoreAILM in Frameworks */,
 				A00000000000000000000007 /* CoreAISpeech in Frameworks */,
 				A00000000000000000000008 /* WhisperKit in Frameworks */,
+				A00000000000000000000009 /* executorch_llm in Frameworks */,
+				A0000000000000000000000A /* backend_xnnpack in Frameworks */,
+				A0000000000000000000000B /* kernels_llm in Frameworks */,
+				A0000000000000000000000C /* kernels_optimized in Frameworks */,
+				A0000000000000000000000D /* kernels_quantized in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +106,11 @@
 				D00000000000000000000001 /* CoreAILM */,
 				D00000000000000000000003 /* CoreAISpeech */,
 				D00000000000000000000004 /* WhisperKit */,
+				D00000000000000000000007 /* executorch_llm */,
+				D00000000000000000000008 /* backend_xnnpack */,
+				D00000000000000000000009 /* kernels_llm */,
+				D0000000000000000000000A /* kernels_optimized */,
+				D0000000000000000000000B /* kernels_quantized */,
 			);
 			productName = ModelOrbitDevices;
 			productReference = B00000000000000000000004 /* ModelOrbitDevices.app */;
@@ -124,6 +139,7 @@
 			packageReferences = (
 				D00000000000000000000002 /* XCRemoteSwiftPackageReference "coreai-models" */,
 				D00000000000000000000005 /* XCRemoteSwiftPackageReference "argmax-oss-swift" */,
+				D00000000000000000000006 /* XCRemoteSwiftPackageReference "executorch" */,
 			);
 			productRefGroup = E00000000000000000000004 /* Products */;
 			projectDirPath = "";
@@ -172,6 +188,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "$(inherited) -Wl,-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.modelorbit.devices;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 6.0;
@@ -190,6 +207,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "$(inherited) -Wl,-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.modelorbit.devices;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -251,6 +269,11 @@
 		};
 		D00000000000000000000003 /* CoreAISpeech */ = {isa = XCSwiftPackageProductDependency; package = D00000000000000000000002 /* XCRemoteSwiftPackageReference "coreai-models" */; productName = CoreAISpeech; };
 		D00000000000000000000004 /* WhisperKit */ = {isa = XCSwiftPackageProductDependency; package = D00000000000000000000005 /* XCRemoteSwiftPackageReference "argmax-oss-swift" */; productName = WhisperKit; };
+		D00000000000000000000007 /* executorch_llm */ = {isa = XCSwiftPackageProductDependency; package = D00000000000000000000006 /* XCRemoteSwiftPackageReference "executorch" */; productName = executorch_llm; };
+		D00000000000000000000008 /* backend_xnnpack */ = {isa = XCSwiftPackageProductDependency; package = D00000000000000000000006 /* XCRemoteSwiftPackageReference "executorch" */; productName = backend_xnnpack; };
+		D00000000000000000000009 /* kernels_llm */ = {isa = XCSwiftPackageProductDependency; package = D00000000000000000000006 /* XCRemoteSwiftPackageReference "executorch" */; productName = kernels_llm; };
+		D0000000000000000000000A /* kernels_optimized */ = {isa = XCSwiftPackageProductDependency; package = D00000000000000000000006 /* XCRemoteSwiftPackageReference "executorch" */; productName = kernels_optimized; };
+		D0000000000000000000000B /* kernels_quantized */ = {isa = XCSwiftPackageProductDependency; package = D00000000000000000000006 /* XCRemoteSwiftPackageReference "executorch" */; productName = kernels_quantized; };
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -263,6 +286,7 @@
 			};
 		};
 		D00000000000000000000005 /* XCRemoteSwiftPackageReference "argmax-oss-swift" */ = {isa = XCRemoteSwiftPackageReference; repositoryURL = "https://github.com/argmaxinc/argmax-oss-swift.git"; requirement = { kind = upToNextMajorVersion; minimumVersion = 1.0.0; }; };
+		D00000000000000000000006 /* XCRemoteSwiftPackageReference "executorch" */ = {isa = XCRemoteSwiftPackageReference; repositoryURL = "https://github.com/pytorch/executorch.git"; requirement = { branch = "swiftpm-1.5.1"; kind = branch; }; };
 /* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = E20000000000000000000001 /* Project object */;

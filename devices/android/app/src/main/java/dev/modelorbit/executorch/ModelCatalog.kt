@@ -55,6 +55,22 @@ internal object ModelCatalog {
             InputKind.TEXT,
             listOf("model.pte", "tokenizer.json"),
             "org.pytorch.executorch.extension.llm.LlmModule"
+        ),
+        ModelSpec(
+            "HuggingFaceTB/SmolLM2-135M-Instruct",
+            "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+            "smollm2_135m_instruct",
+            InputKind.TEXT,
+            listOf("model.pte", "tokenizer.json"),
+            "org.pytorch.executorch.extension.llm.LlmModule"
+        ),
+        ModelSpec(
+            "meta-llama/Llama-3.2-1B-Instruct",
+            "9213176726f574b556790deb65791e0c5aa438b6",
+            "llama3_2_1b_instruct",
+            InputKind.TEXT,
+            listOf("model.pte", "tokenizer.model"),
+            "org.pytorch.executorch.extension.llm.LlmModule"
         )
     )
 

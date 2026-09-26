@@ -59,7 +59,7 @@
       "sourceId": { "type": "string", "pattern": "^source-[a-z0-9-]+$" },
       "url": { "type": "string", "format": "uri" },
       "sourceType": { "enum": ["hf-model-card", "hf-revision", "official-runtime-doc", "official-runtime-repo", "official-artifact-card", "official-issue"] },
-      "authority": { "enum": ["huggingface", "apple", "pytorch", "microsoft", "community"] },
+      "authority": { "enum": ["huggingface", "apple", "pytorch", "microsoft", "software-mansion", "community"] },
       "observedAt": { "type": "string", "format": "date-time" },
       "repositoryId": { "type": "string", "minLength": 1 },
       "revision": { "type": ["string", "null"], "pattern": "^[0-9a-f]{7,64}$" },

@@ -12,10 +12,11 @@ const androidManifest = devices.find((manifest) => manifest.platform === "androi
 const results = inventory.verifiedIntersection.flatMap((modelId) => {
   const record = inventory.records.find((candidate) => candidate.modelId === modelId);
   return ["ios", "android"].map((platform) => {
-    const runtime = platform === "ios" ? "core-ai" : "executorch";
+    const runtime = record.runtimeSupport.find((lane) => lane.platform === platform && lane.status === "verified")?.runtime;
+    if (!runtime) throw new Error(`Missing verified ${platform} runtime for ${modelId}`);
     const manifest = platform === "ios" ? iosManifest : androidManifest;
     const reason = platform === "ios"
-      ? `Research preflight blocked: Apple Core AI requires Xcode/iOS 27, but ${iosManifest.toolchain.version.replace(/\n/g, " ")} was observed; ${iosManifest.reason}`
+      ? `Research preflight blocked for ${runtime}: the checked-in iOS project targets iOS 27, but ${iosManifest.toolchain.version.replace(/\n/g, " ")} was observed; ${iosManifest.reason}`
       : `Research preflight blocked: Android SDK/adb and a physical device are unavailable; ${androidManifest.reason}`;
     return assertValid({
       schemaVersion: "0.2.0",

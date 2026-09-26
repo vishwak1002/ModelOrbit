@@ -2,6 +2,7 @@ import CoreAI
 import CoreAILanguageModels
 import CoreAISpeech
 import CoreAIShared
+import ExecuTorchLLM
 import Foundation
 import FoundationModels
 import Tokenizers
@@ -17,9 +18,12 @@ struct NativeModelRouter: ModelAdapter {
         case "nvidia/parakeet-tdt-0.6b-v3":
             guard case .audio(let url) = input else { throw ModelRunError.wrongInput("Choose an audio file for Parakeet.") }
             return try await ParakeetAdapter().transcribe(audioURL: url, bundleURL: resourceURL)
-        case "Qwen/Qwen3-0.6B", "Qwen/Qwen3-1.7B", "Qwen/Qwen3-4B":
-            guard case .text(let prompt) = input else { throw ModelRunError.wrongInput("Enter text for Qwen3.") }
-            return try await QwenTextAdapter().generate(prompt: prompt, bundleURL: resourceURL)
+        case "Qwen/Qwen3-0.6B", "Qwen/Qwen3-1.7B", "Qwen/Qwen3-4B", "HuggingFaceTB/SmolLM2-135M-Instruct":
+            guard case .text(let prompt) = input else { throw ModelRunError.wrongInput("Enter text for this language model.") }
+            return try await CoreAITextAdapter().generate(prompt: prompt, bundleURL: resourceURL)
+        case "meta-llama/Llama-3.2-1B-Instruct":
+            guard case .text(let prompt) = input else { throw ModelRunError.wrongInput("Enter text for Llama 3.2.") }
+            return try await LlamaTextAdapter().generate(prompt: prompt, bundleURL: resourceURL)
         case "Qwen/Qwen3-VL-2B-Instruct":
             guard case .image(let url, let prompt) = input else { throw ModelRunError.wrongInput("Choose an image for Qwen3-VL.") }
             return try await QwenVisionAdapter().describe(imageURL: url, prompt: prompt, bundleURL: resourceURL)
@@ -56,7 +60,7 @@ struct WhisperAdapter {
 }
 
 @available(iOS 27.0, *)
-struct QwenTextAdapter {
+struct CoreAITextAdapter {
     func generate(prompt: String, bundleURL: URL) async throws -> ModelOutput {
         let model = try await CoreAILanguageModel(resourcesAt: bundleURL, mode: .eager)
         defer { model.unload() }
@@ -65,6 +69,55 @@ struct QwenTextAdapter {
         let text = String(response.content)
         guard !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { throw ModelRunError.emptyOutput }
         return ModelOutput(text: text, isFixture: false)
+    }
+}
+
+@available(iOS 27.0, *)
+struct LlamaTextAdapter {
+    func generate(prompt: String, bundleURL: URL) async throws -> ModelOutput {
+        let modelURL = bundleURL.appendingPathComponent("llama_3_2_1b_instruct.pte")
+        let tokenizerURL = bundleURL.appendingPathComponent("tokenizer.model")
+        guard FileManager.default.fileExists(atPath: modelURL.path),
+              FileManager.default.fileExists(atPath: tokenizerURL.path) else {
+            throw ModelRunError.missingAsset("Llama 3.2 requires a locally exported .pte and tokenizer.model in Models/llama_3_2_1b_instruct/.")
+        }
+        return try await Task.detached(priority: .userInitiated) {
+            let runner = TextLLMRunner(
+                modelPath: modelURL.path,
+                tokenizerPath: tokenizerURL.path,
+                specialTokens: ["<|begin_of_text|>", "<|end_of_text|>", "<|eot_id|>", "<|start_header_id|>", "<|end_header_id|>"]
+            )
+            try runner.load()
+            defer { runner.reset() }
+            let chatPrompt = "<|begin_of_text|><|start_header_id|>user<|end_header_id|>\n\n\(prompt)<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n"
+            let output = LlamaTokenBuffer()
+            try runner.generate(chatPrompt, Config {
+                $0.temperature = 0.0
+                $0.sequenceLength = 2048
+            }) { token in
+                output.append(token)
+            }
+            let text = output.text.trimmingCharacters(in: .whitespacesAndNewlines)
+            guard !text.isEmpty else { throw ModelRunError.emptyOutput }
+            return ModelOutput(text: text, isFixture: false)
+        }.value
+    }
+}
+
+private final class LlamaTokenBuffer: @unchecked Sendable {
+    private let lock = NSLock()
+    private var storage = ""
+
+    func append(_ token: String) {
+        lock.lock()
+        defer { lock.unlock() }
+        storage += token
+    }
+
+    var text: String {
+        lock.lock()
+        defer { lock.unlock() }
+        return storage
     }
 }
 

@@ -13,7 +13,17 @@ struct FixtureSmoke {
             }
             return (record, input)
         }
-        precondition(cases.count == 6)
+        precondition(cases.count == 8)
+        precondition(cases.contains { record, _ in
+            record.id == "HuggingFaceTB/SmolLM2-135M-Instruct" &&
+            record.revision == "12fd25f77366fa6b3b4b768ec3050bf629380bac" &&
+            record.modality == .textGeneration
+        })
+        precondition(cases.contains { record, _ in
+            record.id == "meta-llama/Llama-3.2-1B-Instruct" &&
+            record.revision == "9213176726f574b556790deb65791e0c5aa438b6" &&
+            record.modality == .textGeneration
+        })
         for (record, input) in cases {
             let result = try await fixture.run(input, model: record, resourceURL: nil)
             precondition(result.isFixture)

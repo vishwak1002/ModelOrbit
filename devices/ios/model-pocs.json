@@ -40,6 +40,24 @@
       "nativeStatus": "adapter-implemented-device-unverified"
     },
     {
+      "modelId": "HuggingFaceTB/SmolLM2-135M-Instruct",
+      "revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+      "modality": "text-generation",
+      "runtime": "core-ai",
+      "adapterSource": "devices/ios/Sources/NativeAdapters.swift",
+      "fixtureCommand": "sh devices/ios/Tests/run-fixture-smoke.sh",
+      "nativeStatus": "adapter-implemented-device-unverified"
+    },
+    {
+      "modelId": "meta-llama/Llama-3.2-1B-Instruct",
+      "revision": "9213176726f574b556790deb65791e0c5aa438b6",
+      "modality": "text-generation",
+      "runtime": "executorch",
+      "adapterSource": "devices/ios/Sources/NativeAdapters.swift",
+      "fixtureCommand": "sh devices/ios/Tests/run-fixture-smoke.sh",
+      "nativeStatus": "adapter-implemented-export-device-unverified"
+    },
+    {
       "modelId": "openai/whisper-large-v3-turbo",
       "revision": "41f01f3fe87f28c78e2fbf8b568835947dd65ed9",
       "modality": "speech-recognition",

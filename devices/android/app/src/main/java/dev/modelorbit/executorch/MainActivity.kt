@@ -32,7 +32,7 @@ class MainActivity : Activity() {
         modelSpinner = Spinner(this).apply {
             adapter = ArrayAdapter(this@MainActivity, android.R.layout.simple_spinner_dropdown_item, models)
         }
-        promptInput = EditText(this).apply { hint = "Qwen3 text prompt" }
+        promptInput = EditText(this).apply { hint = "Text model prompt" }
         fileLabel = TextView(this).apply { text = "No WAV selected (16 kHz mono PCM16 required)" }
         resultLabel = TextView(this).apply { text = "Select a model. Fixture runs need no weights." }
         runButton = Button(this).apply { text = "Run on device"; setOnClickListener { run(false) } }

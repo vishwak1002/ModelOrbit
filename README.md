@@ -8,7 +8,7 @@ The first interface is a visual model galaxy backed by an evidence ledger. Phase
 
 ## Current status
 
-Design and engineering reviews are complete. The executable schema/preflight/device-detection phase and benchmark evidence gate are checked in. The dated discovery contains 18 scoped records: 4 source-verified cross-platform candidates, 9 claimed-but-unverified records, 4 exclusions, and 1 deduplicated artifact variant. The ranked device POC selection is Parakeet TDT v3 and Qwen3 0.6B/1.7B; Qwen3 4B also has device POC routes. Whisper large-v3-turbo and Qwen3-VL 2B have experimental device routes, with unresolved exact-revision conversion or runtime support described in the [2026-09-26 correction](docs/research-notes/2026-09-26-native-feasibility-correction.md). No native device inference has been measured on this host.
+Design and engineering reviews are complete. The executable schema/preflight/device-detection phase and benchmark evidence gate are checked in. The dated discovery contains 18 scoped records: 6 source-verified cross-platform candidates, 9 claimed-but-unverified records, 2 exclusions, and 1 deduplicated artifact variant. The device projects cover the verified Qwen3 0.6B/1.7B/4B, Parakeet TDT v3, SmolLM2 135M Instruct, and Llama 3.2 1B Instruct source revisions. Whisper large-v3-turbo and Qwen3-VL 2B retain experimental or blocked routes. See the [complete research audit](docs/research-notes/2026-09-26-complete-research-model-audit.md) for all discovered models and evidence gaps. No native device inference has been measured on this host.
 
 Read the [MVP plan](docs/mvp-plan.md) and [handoff](docs/handoff.md) before changing scope.
 

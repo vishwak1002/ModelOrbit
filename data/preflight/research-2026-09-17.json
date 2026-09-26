@@ -1,7 +1,7 @@
 {
   "schemaVersion": "0.2.0",
   "snapshot": "research-mobile-llm-2026-09-17",
-  "generatedAt": "2026-09-16T20:20:04.000Z",
+  "generatedAt": "2026-09-26T17:54:27.000Z",
   "toolchains": {
     "ios": {
       "name": "Xcode/devicectl",
@@ -30,8 +30,8 @@
         "available": false,
         "version": "Xcode 26.4.1\nBuild version 17E202"
       },
-      "checkedAt": "2026-09-16T20:20:04.000Z",
-      "reason": "Research preflight blocked: Apple Core AI requires Xcode/iOS 27, but Xcode 26.4.1 Build version 17E202 was observed; No physical iPhone was listed by devicectl; no device evidence was fabricated.",
+      "checkedAt": "2026-09-26T17:54:27.000Z",
+      "reason": "Research preflight blocked for core-ai: the checked-in iOS project targets iOS 27, but Xcode 26.4.1 Build version 17E202 was observed; No physical iPhone was listed by devicectl; no device evidence was fabricated.",
       "command": "xcrun devicectl list devices",
       "logPath": null,
       "logChecksum": null,
@@ -53,7 +53,7 @@
         "available": false,
         "version": "unavailable"
       },
-      "checkedAt": "2026-09-16T20:20:04.000Z",
+      "checkedAt": "2026-09-26T17:54:27.000Z",
       "reason": "Research preflight blocked: Android SDK/adb and a physical device are unavailable; ADB is unavailable or no Android device is connected; no device evidence was fabricated.",
       "command": "adb devices -l",
       "logPath": null,
@@ -76,8 +76,8 @@
         "available": false,
         "version": "Xcode 26.4.1\nBuild version 17E202"
       },
-      "checkedAt": "2026-09-16T20:20:04.000Z",
-      "reason": "Research preflight blocked: Apple Core AI requires Xcode/iOS 27, but Xcode 26.4.1 Build version 17E202 was observed; No physical iPhone was listed by devicectl; no device evidence was fabricated.",
+      "checkedAt": "2026-09-26T17:54:27.000Z",
+      "reason": "Research preflight blocked for core-ai: the checked-in iOS project targets iOS 27, but Xcode 26.4.1 Build version 17E202 was observed; No physical iPhone was listed by devicectl; no device evidence was fabricated.",
       "command": "xcrun devicectl list devices",
       "logPath": null,
       "logChecksum": null,
@@ -99,7 +99,7 @@
         "available": false,
         "version": "unavailable"
       },
-      "checkedAt": "2026-09-16T20:20:04.000Z",
+      "checkedAt": "2026-09-26T17:54:27.000Z",
       "reason": "Research preflight blocked: Android SDK/adb and a physical device are unavailable; ADB is unavailable or no Android device is connected; no device evidence was fabricated.",
       "command": "adb devices -l",
       "logPath": null,
@@ -122,8 +122,8 @@
         "available": false,
         "version": "Xcode 26.4.1\nBuild version 17E202"
       },
-      "checkedAt": "2026-09-16T20:20:04.000Z",
-      "reason": "Research preflight blocked: Apple Core AI requires Xcode/iOS 27, but Xcode 26.4.1 Build version 17E202 was observed; No physical iPhone was listed by devicectl; no device evidence was fabricated.",
+      "checkedAt": "2026-09-26T17:54:27.000Z",
+      "reason": "Research preflight blocked for core-ai: the checked-in iOS project targets iOS 27, but Xcode 26.4.1 Build version 17E202 was observed; No physical iPhone was listed by devicectl; no device evidence was fabricated.",
       "command": "xcrun devicectl list devices",
       "logPath": null,
       "logChecksum": null,
@@ -145,7 +145,99 @@
         "available": false,
         "version": "unavailable"
       },
-      "checkedAt": "2026-09-16T20:20:04.000Z",
+      "checkedAt": "2026-09-26T17:54:27.000Z",
+      "reason": "Research preflight blocked: Android SDK/adb and a physical device are unavailable; ADB is unavailable or no Android device is connected; no device evidence was fabricated.",
+      "command": "adb devices -l",
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": [
+        "text-generation",
+        "source-evidence-verified"
+      ]
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-research-ios-bed3655d",
+      "modelId": "HuggingFaceTB/SmolLM2-135M-Instruct",
+      "modelRevision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+      "platform": "ios",
+      "runtime": "core-ai",
+      "status": "blocked",
+      "toolchain": {
+        "name": "Xcode/devicectl",
+        "available": false,
+        "version": "Xcode 26.4.1\nBuild version 17E202"
+      },
+      "checkedAt": "2026-09-26T17:54:27.000Z",
+      "reason": "Research preflight blocked for core-ai: the checked-in iOS project targets iOS 27, but Xcode 26.4.1 Build version 17E202 was observed; No physical iPhone was listed by devicectl; no device evidence was fabricated.",
+      "command": "xcrun devicectl list devices",
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": [
+        "text-generation",
+        "source-evidence-verified"
+      ]
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-research-android-bed3655d",
+      "modelId": "HuggingFaceTB/SmolLM2-135M-Instruct",
+      "modelRevision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+      "platform": "android",
+      "runtime": "executorch",
+      "status": "blocked",
+      "toolchain": {
+        "name": "Android SDK/adb",
+        "available": false,
+        "version": "unavailable"
+      },
+      "checkedAt": "2026-09-26T17:54:27.000Z",
+      "reason": "Research preflight blocked: Android SDK/adb and a physical device are unavailable; ADB is unavailable or no Android device is connected; no device evidence was fabricated.",
+      "command": "adb devices -l",
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": [
+        "text-generation",
+        "source-evidence-verified"
+      ]
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-research-ios-b52d3253",
+      "modelId": "meta-llama/Llama-3.2-1B-Instruct",
+      "modelRevision": "9213176726f574b556790deb65791e0c5aa438b6",
+      "platform": "ios",
+      "runtime": "executorch",
+      "status": "blocked",
+      "toolchain": {
+        "name": "Xcode/devicectl",
+        "available": false,
+        "version": "Xcode 26.4.1\nBuild version 17E202"
+      },
+      "checkedAt": "2026-09-26T17:54:27.000Z",
+      "reason": "Research preflight blocked for executorch: the checked-in iOS project targets iOS 27, but Xcode 26.4.1 Build version 17E202 was observed; No physical iPhone was listed by devicectl; no device evidence was fabricated.",
+      "command": "xcrun devicectl list devices",
+      "logPath": null,
+      "logChecksum": null,
+      "capabilities": [
+        "text-generation",
+        "source-evidence-verified"
+      ]
+    },
+    {
+      "schemaVersion": "0.2.0",
+      "runId": "preflight-2026-09-17-research-android-b52d3253",
+      "modelId": "meta-llama/Llama-3.2-1B-Instruct",
+      "modelRevision": "9213176726f574b556790deb65791e0c5aa438b6",
+      "platform": "android",
+      "runtime": "executorch",
+      "status": "blocked",
+      "toolchain": {
+        "name": "Android SDK/adb",
+        "available": false,
+        "version": "unavailable"
+      },
+      "checkedAt": "2026-09-26T17:54:27.000Z",
       "reason": "Research preflight blocked: Android SDK/adb and a physical device are unavailable; ADB is unavailable or no Android device is connected; no device evidence was fabricated.",
       "command": "adb devices -l",
       "logPath": null,
@@ -168,8 +260,8 @@
         "available": false,
         "version": "Xcode 26.4.1\nBuild version 17E202"
       },
-      "checkedAt": "2026-09-16T20:20:04.000Z",
-      "reason": "Research preflight blocked: Apple Core AI requires Xcode/iOS 27, but Xcode 26.4.1 Build version 17E202 was observed; No physical iPhone was listed by devicectl; no device evidence was fabricated.",
+      "checkedAt": "2026-09-26T17:54:27.000Z",
+      "reason": "Research preflight blocked for core-ai: the checked-in iOS project targets iOS 27, but Xcode 26.4.1 Build version 17E202 was observed; No physical iPhone was listed by devicectl; no device evidence was fabricated.",
       "command": "xcrun devicectl list devices",
       "logPath": null,
       "logChecksum": null,
@@ -191,7 +283,7 @@
         "available": false,
         "version": "unavailable"
       },
-      "checkedAt": "2026-09-16T20:20:04.000Z",
+      "checkedAt": "2026-09-26T17:54:27.000Z",
       "reason": "Research preflight blocked: Android SDK/adb and a physical device are unavailable; ADB is unavailable or no Android device is connected; no device evidence was fabricated.",
       "command": "adb devices -l",
       "logPath": null,
@@ -205,6 +297,6 @@
   "intersection": {
     "status": "verified-empty",
     "candidateIds": [],
-    "reason": "No source-verified candidate passed executable preflight on this host; all 8 rows are blocked by known toolchain/device prerequisites."
+    "reason": "No source-verified candidate passed executable preflight on this host; all 12 rows are blocked by known toolchain/device prerequisites."
   }
 }
